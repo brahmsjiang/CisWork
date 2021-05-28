@@ -1,0 +1,48 @@
+
+
+        return (MyData)getData() .callInfo.calledParty;
+
+
+
+        callFeature = new CallFeature ("Call-" + ordinal);
+					    CallFeature (final String callLabel) {
+        			super(callLabel, false, CallControlState.INACTIVE.getId(), new MyData());
+    		}
+    		
+    		public Feature (final String label, final boolean enabled, final int state, final Object data ) {  <==参数就是data
+	        this ( label, INVOKE_DEFAULT, enabled, state, data,
+	               NO_HELP, IInfo.CORE_APP );
+	    	}
+	    	《===初始化MyData应该是NULL，不会有value
+	    	
+寻觅设置MyData的地方：
+	    void setCalledParty (final CallPartyId calledParty) {
+        final CallInfo prevCallInfo = ((MyData)getData()).callInfo;
+        ( (MyData) getData()).callInfo = new CallInfo(prevCallInfo.callType,
+                calledParty, prevCallInfo.callingParty);
+    }
+    or====
+
+        SipCcEventDispatcher.addListener(callControlStatusSink, mgmtSink, mgmtHandler, callList,
+--------
+
+public static void onCallEvent(int callEvent, int call, int callInfo) {	//SipCcEventDispacher.java
+	static void updateCallInfo (ObservedCall ocall, int callInfo, boolean sendCallInfo, boolean updateGlobalId) {	//SipCcEventDispacher.java
+
+        public void callInfo(final CallHandle callHandle, final CallType callType, final CallPartyId callingParty,	//call.java
+                final CallPartyId calledParty, final CallPartyId originalCalledParty,
+                final CallPartyId lastRedirectingParty, final CallPartyId huntPilotParty, final CallId callId,
+                final CallSecurity callSecurity, final String calDisplayText, final boolean isCallLogInfo) {
+    void callInfo(final CallType callType,	//call.java
+                  final CallPartyId callingParty,
+                  final CallPartyId calledParty,
+                  final CallPartyId originalCalledParty,
+                  final CallPartyId lastRedirectingParty,
+                  final CallPartyId huntPilotParty,
+                  final CallId callId, final CallSecurity callSecurity,
+                  final String calDisplayText,
+                  final boolean isCallLogInfo) {
+                  
+	    void setCallInfo (final CallInfo callInfo) {	//callfeatture.java
+	        ((MyData)getData()).callInfo = callInfo;
+	    }

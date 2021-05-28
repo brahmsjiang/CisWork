@@ -1,0 +1,151 @@
+<phrase i="4805" t="Incoming call on %s"/>
+
+
+    public String[] getSessionLabels(boolean isNewCallAlert) {
+    
+    
+    
+    public SessionItemModel getSelectedSession() {
+    
+
+找不到
+setCallingParty 或者  feature的方法   
+public final void setData ( final Object data, final boolean notify ) {
+        this.data = data;
+        if (notify) {
+            changed();
+        }
+    }
+是那里调用的
+
+
+
+------------------
+根据log调用栈
+
+java:
+SipCcEventDispatcher
+    public static void onCallEvent(int callEvent, int call, int callInfo) { 《===这里的callinfo就是下面的handle，只不过先从sip那里收到callback,然后calljni罢了
+			case SipCcConstants.CALLEVENT_CALLINFO : 
+	
+	
+Native:
+JNIEXPORT jstring JNICALL Java_cip_sipcc_NativeCCAPICallInfoJni_CCAPICallInfogetCallingPartyNumber
+    (JNIEnv *jenv, jclass cls, jint handle)
+  {
+  	return (*jenv)->NewStringUTF(jenv, CCAPI_CallInfo_getCallingPartyNumber((cc_callinfo_ref_t)handle));
+  }
+
+
+cc_string_t CCAPI_CallInfo_getCallingPartyName(cc_callinfo_ref_t handle){
+  static const char *fname="CCAPI_CallInfo_getCallingPartyName";
+  session_data_t *data = (session_data_t *)handle;
+  if ( data != NULL && snapshotRefFindhash(data) != NULL){
+
+     return data->clg_name; <<==看看handle实参有没有这个
+  }
+
+  return strlib_empty();
+}
+
+
+******下一步要看session到底是在哪里显示的。我的目的是修改session，并且把读cucm配置和显示结合起来
+
+
+---
+
+PageManager::setQMLProperty:设置object的属性sourcePage和objectName的值
+
+
+
+加载页面分为动态和静态2种，前者从xsi的http server上面获取；后者则是本地页面
+The xsi prefix referring to the The Schema Instance Namespace http://www.w3.org/2001/XMLSchema-instance is used in XML document instances for several special attributes defined by the XML Schema Recommendation:
+xsi:type allows an XML instance to associate element type information directly rather than through an XSD. See How to restrict the value of an XML element using xsi:type in XSD?
+xsi:nil allows an empty element to be considered to be valid when the XSD might not otherwise have allowed it.
+xsi:schemaLocation and xsi:noNamespaceSchemaLocation provide hints to the XML processor as to how to associate an XSD with an XML document. Use xsi:schemaLocation when there is a namespace; use xsi:noNamespaceSchemaLocation when there is no namespace.
+
+
+但是是怎么获取qml里面的内容的呢？PAGE_ACTIONABLENEWCALLALERT 开始搜索
+获取pages：
+Page *PageManager::getPage(const QString& pageId)  或者
+QHash<QString, Page *>* PageManager::getAllPage()
+
+或者获取pageQmls：
+QString PageManager::getPageQmlFile(Page* page) const
+
+
+================》参考actionablenewalert分析==========》
+  private void updateUILabeldata(String[] labels) {  <=== 明天从这里开始
+
+	protected void setData() {
+        // set call name as String0
+        QtProvider.setPreserveString(getPageId(), ((ActionableNewCallAlertModel)view.getModel()).callId, 0);
+        // set call number or Uri as String1
+        QtProvider.setPreserveString(getPageId(), ((ActionableNewCallAlertModel)view.getModel()).callNumberOrUri, 1);
+				}
+
+---------
+JNIEXPORT jint JNICALL Java_cip_qt_JniNativeQtApi_setPreserveString
+	    int methodIndex = metaObj->indexOfMethod("setPreserveString(QString,QString,int)");
+
+
+            SLText {
+                id: callNoUri
+                visible: pageActionableNewCallAlert.preserveString1.length > 0
+                text: pageActionableNewCallAlert.preserveString1
+                maximumLineCount: 2
+                elide: Text.ElideRight
+                wrapMode: Text.WrapAnywhere
+                color: (!callUi.isSymphony || !supportColor) ? Skin.WHITE : Skin.DARK_GREY
+                opacity:root.contentOpacity
+            }
+            
+            -> void PageManager::setPreserveString(const QString& pageId, const QString& data, int index)
+
+
+================》参考actionablenewalert分析==========》
+
+
+
+
+
+================》参考jutian的CALL_PARK_MONITOR例子分析==============》
+设置config：
+configObject.setVendorConfig(...,(byte)MultiLevelConfig.getMultiLevelInt(XmlVendorConfigObject.CALL_PARK_MONITOR))
+读取config：
+    private boolean isCallParkedToastSupport() {
+        if (SystemManager.getPropertyManager().propertyExists(cip.cfg.PropertyNames.CALL_PARK_MONITOR)) {
+            try {
+                BooleanProperty callParkMonitorProperty = (BooleanProperty)SystemManager.getPropertyManager().
+                        getProperty(cip.cfg.PropertyNames.CALL_PARK_MONITOR);
+                return callParkMonitorProperty.getValue() ? false: true;
+涉及到显示：
+    if(isNotificationNeeded(statusText)){
+        SLNotification toast = new SLNotification(SLNotification.TYPE_TRANSIENT, TimeFormat.ONE_SECOND * DEFAULT_TOAST_TIMEOUT,
+                statusText, "", SLNotification.TOAST_NO_TITLE);
+        genToast(toast);
+    }    
+    ==>
+            public void startToastNotification( final SLNotification notification ) {
+            // Display the notification if we are in the right state         
+            if ( notification.getType() == SLNotification.TYPE_CONTEXTUAL) {
+            	contextualRunnable(notification);
+            } 
+            else {                
+            	transientRunnable(notification);
+            }
+        }
+         ==>
+         public int startNotification (final SLNotification notification) {     
+         	==>
+          public static int startNotification(final int id, final int iHUDType, final int minValue, final int numberOfSteps, final int currentValue, final int duration) {
+						   remoteQtProxy.startNotificationHUD(id, iHUDType, minValue, numberOfSteps, currentValue, duration);
+        			return localQtProxy.startNotificationHUD(id, iHUDType, minValue, numberOfSteps, currentValue, duration);
+        		==>
+        		public final class JniNativeQtApi {
+        		    public static native int startNotificationHUD(int id, int hudType, int minValue, int numberOfSteps, int currentValue, int timeOut);
+
+        			
+        			
+         			
+================》参考jutian的CALL_PARK_MONITOR例子分析==============》
