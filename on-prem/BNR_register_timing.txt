@@ -1,0 +1,51 @@
+afs
+
+
+
+
+            case SipCcConstants.DEVICEINFO_STATE_INS:
+			    // "device in-service" 
+			    if(serviceCause != SipCcConstants.DEVICEINFO_CAUSE_AUTH_FAILED && serviceCause != -1) {
+			        ccMgmt.ccReady(deviceInfoRef, deviceEvent);
+			    }
+			    sessionMgr.onUpdate(new SessionManagerEvent(SessionManagerEvent.EVENT_STATUS_CHANGE, new Integer(SessionManagerEvent.CC_INSERVICE)));
+			    
+			    	((SessionManagerListener) eventListener.get(app)).sessionManagerUpdate(se);
+			    
+			    
+			        public void sessionManagerUpdate(SessionManagerEvent ev) {
+        if (ev.getID() == SessionManagerEvent.EVENT_STATUS_CHANGE) {
+            int state = ((Integer) ev.getData()).intValue();
+            switch(state) {
+            case SessionManagerEvent.CC_INSERVICE:
+                getCallUIModel().inService();
+                
+                
+                
+			    
+			    
+			    
+			    
+===============================  
+[2022-11-23T14:28:39.87087Z] NOT JAVA (5210:5414)Thread-10|cip.sipcc.SipCcAdapter$CcMgmtListener:  - lineNotify():mgmtState=MGMT_REGISTERING(4) line=1 registered=false inService=true regRequired = true
+
+[2022-11-23T14:28:40.302206Z] NOT guiapp (5255:5255)initPage(): AlertModel-0 initPage json: 
+
+[2022-11-23T14:28:40.379406Z] NOT guiapp (5255:5255)showPage(): showPage: AlertModel-0  visible:  true
+[2022-11-23T14:28:40.379483Z] WRN guiapp (5255:5255)[Profiling-Stub] showPage(): AlertModel-0  isVisible: true
+[2022-11-23T14:28:40.395029Z] NOT JAVA (5210:5380)callui MQThread|cip.callui.OverviewModel:detect key - model:AlertModel-0
+
+[2022-11-23T14:28:45.483587Z] NOT guiapp (5255:5255)~SoftkeyModel(): destruct softkey: SK_BNR_ENABLE_WHITE SoftkeyModel(0x26e9c80)
+
+[2022-11-23T14:28:56.056623Z] NOT JAVA (5210:5414)Thread-10|cip.cfg.Config:  - [SipConfig] On-board time:5064 (ms) 
+		1. File download/handle time:4854 (ms) 
+			1.1. CTL/ITL download time:458 (ms) 
+			1.2. CTL/ITL handle time:705 (ms) 
+			1.3. Config file download time:176 (ms) 
+			1.4. Config file handle time:3515 (ms) 
+		2. Register time:210 (ms) 
+
+[2022-11-23T14:28:56.965978Z] NOT JAVA (5210:5398)sidecar MQThread|cip.sidecar.Sidecar:inService - Try to enable Ehook in SideCar isPhoneRegistered:true, isEhookEnabled:true
+
+
+

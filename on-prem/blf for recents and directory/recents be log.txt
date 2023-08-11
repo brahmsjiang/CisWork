@@ -1,0 +1,1642 @@
+
+
+4431 NOT Apr 13 10:36:53.372226 (4386-4526) JAVA-NIOGetEvent: hard key event read: 0x00010055
+4432 INF Apr 13 10:36:53.372279 (4386-4526) JAVA-[[MESSAGE_1.0]]: [NativeIO] --> 18.1(press) --> [JAVA] :
+4433 NOT Apr 13 10:36:53.372380 (4386-4526) JAVA-NativeUserInput|cip.userio.InputManager$NativeEventThread:? - Forwarding native input event
+4434 INF Apr 13 10:36:53.373422 (4386-4539) JAVA-callagent MQThread|cip.callagent.EmbraceCcRouter:  - isEmbraceLine, supportsBtHfp: true, callHandle: 0, line: 1
+4435 INF Apr 13 10:36:53.373582 (4386-4539) JAVA-callagent MQThread|cip.sipcc.SipCcAdapter$SipCcListeners:  - featureInvoked():Case2  call=cip.callagent.LineHandle@0 featureVal=New Call
+4436 DEB Apr 13 10:36:53.373809 (4386-4563) JAVA-embracecc MQThread|cip.embracecc.EmbraceCcAdapter:  - waitingToStartNewCall, timeout: 2000
+4437 DEB Apr 13 10:36:53.373873 (4386-4563) JAVA-embracecc MQThread|cip.embracecc.EmbraceCcAdapter:  - waitingToStartNewCall, no active call or no dial out call
+4438 NOT Apr 13 10:36:53.373965 (4386-4539) JAVA-callagent MQThread|cip.sipcc.SipCcAdapter$SipCcListeners: - featureInvoked():Case2, OK to process SIP call
+4439 DEB Apr 13 10:36:53.374067 (4386-4539) JAVA-callagent MQThread|cip.sipcc.SipCcAdapter$SipCcListeners:  - featureInvoked(): no specific handle
+4440 NOT Apr 13 10:36:53.374134 (4386-4539) JAVA-callagent MQThread|cip.sipcc.SipCcAdapter$CcMgmtListener:  - mgmtState=MGMT_REGTD(5)
+4441 INF Apr 13 10:36:53.374172 (4386-4539) JAVA-callagent MQThread|cip.sipcc.SipCcAdapter$SipCcListeners:  - Terminate huron paging call
+4442 INF Apr 13 10:36:53.374227 (4386-4539) JAVA-callagent MQThread|cip.sipcc.SipCcAdapter:  - checkAllowedEvents: speakerOn = true headsetOn = false
+4443 INF Apr 13 10:36:53.374264 (4386-4539) JAVA-callagent MQThread|cip.sipcc.SipCcAdapter:  - checkChaperoneAllowedSofykeys
+4444 INF Apr 13 10:36:53.374349 (4386-4539) JAVA-callagent MQThread|cip.sipcc.SipCcAdapter:  - checkMncReached case1: call=0 line=1 feature=New Call eventID=2
+4445 INF Apr 13 10:36:53.374401 (4386-4539) JAVA-callagent MQThread|SipCcFeatureAction:  - ccSkAction():  call=0 line=1 feature=New Call eventID =2 parknumber=
+4446 DEB Apr 13 10:36:53.374450 (4386-4539) JAVA-SNAPSHOT-CREATE: CCAPI_Line_getLineInfo:  reference pointer=4bebadc8
+4447 DEB Apr 13 10:36:53.374494 (4386-4539) JAVA-SIPCC-SIP_CC_PROV: 1/0, CCAPI_lineInfo_getLineType: returned 9
+4448 DEB Apr 13 10:36:53.374532 (4386-4539) JAVA-SNAPSHOT-RELEASE: CCAPI_Line_releaseLineInfo:  reference pointer=4bebadc8, ref released
+4449 DEB Apr 13 10:36:53.374565 (4386-4539) JAVA-[[MESSAGE_1.0]]: [PHONE-APP] --> originateCall() --> [SIPCC] : 
+4450 NOT Apr 13 10:36:53.374686 (4386-4539) JAVA-cc_call_features.c cc_invokeFeature id: DIALSTR
+4451 NOT Apr 13 10:36:53.374946 (4386-4580) JAVA-SIPCC-CC_API: 1/188, cc_int_offhook: UI -> GSM: OFFHOOK             
+4452 DEB Apr 13 10:36:53.375082 (4386-4583) JAVA-SIPCC-GSM: gsm_process_msg: cmd= 0xad
+4453 NOT Apr 13 10:36:53.375114 (4386-4583) JAVA-SIPCC-DCSM: dcsm_process_event: DCSM 10  :(DCSM_READY:OFFHOOK )
+4454 DEB Apr 13 10:36:53.375471 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:selectFeatureSet() - The length of featureSet is 4
+4455 DEB Apr 13 10:36:53.375748 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [cfwd to any line] = true
+4456 DEB Apr 13 10:36:53.375923 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [cfwd to any line] = true
+4457 INF Apr 13 10:36:53.377742 (4386-4526) JAVA-NativeUserInput|cip.userio.InputManager:? - Received Session: 1
+4458 NOT Apr 13 10:36:53.378666 invalid event: No such file or directory
+4459 DEB Apr 13 10:36:53.378047 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - [doDefaultUserActiveAction] ew:false
+4460 DEB Apr 13 10:36:53.378096 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - clearUriTimer
+4461 DEB Apr 13 10:36:53.378169 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - setIdleTimer(3600000)
+4462 DEB Apr 13 10:36:53.378212 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - IsIdleTimerSet NULL=true
+4463 NOT Apr 13 10:36:53.378392 (4386-4537) JAVA-display MQThread|EWProperty:getDurationFromNow - PSP is disabled
+4464 DEB Apr 13 10:36:53.378464 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - isPowerOffTimerRunning(): true
+4465 DEB Apr 13 10:36:53.378519 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - doEnergyWiseUserActiveAction()
+	ew = false
+	energySaveProperty.isEnabled() = false
+	ew-enabled-today:false
+	isAlerting() = false
+	allowEnergyWiseOverrides.getValue() = false
+	in ew-alert timeframe?true
+	isWithinPowerOnTime()?true
+	isWithinPowerDownAlertTime = false
+	isDisplayOn() = true
+	isPowerOffTimerRunning() = true
+	powerdownFailed=false
+4466 DEB Apr 13 10:36:53.378569 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - DisplayOn(): is display currently on? true,ew:false
+4467 DEB Apr 13 10:36:53.399084 (4386-4583) JAVA-WLAN not connected, state=0
+4468 DEB Apr 13 10:36:53.399221 (4386-4583) JAVA-VCM : vcmIsICESupported : mediaTraversalMode(1)=Standard.
+4469 DEB Apr 13 10:36:53.399428 (4386-4583) JAVA-SIPCC-SIP_SESSION_ID: sipGenerateLocalUuid: Generated local-uuid: 7cec30d100105000a000ac7e8ab604fb
+4470 DEB Apr 13 10:36:53.399539 (4386-4583) JAVA-SIPCC-GSM: gsmsdp_get_media_capability: dcb video pref SDP_DIRECTION_SENDRECV
+4471 NOT Apr 13 10:36:53.399581 (4386-4583) JAVA-SIPCC-CC_API: 1/188, cc_int_offhook: GSM -> SIP: OFFHOOK             
+4472 NOT Apr 13 10:36:53.399701 (4386-4583) JAVA-delayed PLAR enable? 0
+4473 DEB Apr 13 10:36:53.400219 (4386-4581) JAVA-SIPCC-MSG_SEND_REQ: SIPSPISendSubNotify: Sending NOTIFY...
+4474 DEB Apr 13 10:36:53.400605 (4386-4583) JAVA-VCM : vcmEnableSidetone : vcm_enable_side_tone: entry sidetone=1
+4475 NOT Apr 13 10:36:53.400688 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: ccappUpdateSessionData: CCAPP -> GSM: Setting Privacy to FULL. eventID= 4
+4476 NOT Apr 13 10:36:53.400701 (4369-4369) ms-APATH.ms_setSideTone enable side tone
+4477 DEB Apr 13 10:36:53.400760 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: 0x0, CCAPI_DeviceInfo_isPhoneIdle: idle state=1 session_id=0x0 call-state=0 handle=0
+4478 NOT Apr 13 10:36:53.400862 (4386-4583) JAVA-delayed PLAR enable? 0
+4479 NOT Apr 13 10:36:53.400904 (4386-4583) JAVA-SIPCC-MED_API: lsm_util_start_tone: Enter, line=1, call_id=188.
+4480 DEB Apr 13 10:36:53.400922 (4386-4580) JAVA-Thread-4|cip.embracecc.EmbraceCcAdapter:hasHfuCall -  return = false
+4481 DEB Apr 13 10:36:53.400957 (4386-4583) JAVA-PLAT_API :  1/188 : vcmToneStart : grp_id=188:str_id=0:tone=0 :: direction=1 
+4482 DEB Apr 13 10:36:53.400980 (4386-4580) JAVA-Thread-4|JniJSessionApi:? - has hfu call: false
+4483 DEB Apr 13 10:36:53.401025 (4386-4580) JAVA-[[MESSAGE_1.0]]: [PHONE-APP] --> getCallInfo() --> [SIPCC] : 
+4484 DEB Apr 13 10:36:53.401095 (4386-4580) JAVA-SNAPSHOT-CREATE: CCAPI_Call_getCallInfo:  reference pointer=4bec7e10
+4485 NOT Apr 13 10:36:53.401123 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_callEvent: CallEvent=CREATED, CallState=OFFHOOK
+4486 DEB Apr 13 10:36:53.401143 (4386-4580) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> CREATED(OFFHOOK) --> [PHONE-APP] : 
+4487 NOT Apr 13 10:36:53.401143 (4369-4369) ms-TONESESSION.ms_startTone [session=1][toneIndex=ms_TONEINDEX_INSIDE_DIALTONE_TONE][local=1]
+4488 INF Apr 13 10:36:53.401251 (4386-4580) JAVA-Thread-4|SipCcEventDispatcher:  - onCallEvent:  callEvent=0 call=65724 callInfo=1273789968
+4489 DEB Apr 13 10:36:53.401747 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+4490 DEB Apr 13 10:36:53.401812 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+4491 DEB Apr 13 10:36:53.401853 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+4492 DEB Apr 13 10:36:53.401938 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+4493 DEB Apr 13 10:36:53.401987 (4386-4581) JAVA-SIPCC-SIP_SUB: xmlEncodeEventData: Encode event data: entered,
+4494 NOT Apr 13 10:36:53.402058 (4386-4581) JAVA-SIPCC-SIP_REG: xmlEncodeEventData: returned content after encoding:
+	<?xml version="1.0" encoding="UTF-8" ?>
+	<dialog-info xmlns:call="urn:x-cisco:parmams:xml:ns:dialog-info:dialog:callinfo-dialog" version="12" state="partial" entity="sip:***@10.79.57.215">
+	<dialog id="188" call-id="ac7e8ab6-04fb7713-619f034a-2436d881@10.79.57.215" local-tag="ac7e8ab604fb8e8f470de2f5-010e0951"><state>trying</state></dialog>
+	</dialog-info>
+4495 DEB Apr 13 10:36:53.402127 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[1172] 
+4496 NOT Apr 13 10:36:53.402187 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:NOTIFY : "***" <sip:***@10.79.57.147> :237 NOTIFY::0bc84933-3f0978b8@10.79.57.215
+4497 DEB Apr 13 10:36:53.402331 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<1172>, message=
+4498 DEB Apr 13 10:36:53.402887 (4386-4581) JAVA-sipio-sent---> NOTIFY sip:***@10.79.57.147 SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK6dd2b7be^M
+	To: "***" <sip:***@10.79.57.147>^M
+	From: "***" <sip:***@10.79.57.147>;tag=ac7e8ab604fb8e9078cedf54-73a05c16^M
+	Call-ID: 0bc84933-3f0978b8@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 237 NOTIFY^M
+	Event: dialog^M
+	Subscription-State: active^M
+	Max-Forwards: 70^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Allow: ACK,BYE,CANCEL,INVITE,NOTIFY,OPTIONS,REFER,REGISTER,UPDATE,SUBSCRIBE^M
+	Content-Length: 356^M
+	Content-Type: application/dialog-info+xml^M
+	Content-Disposition: session;handling=required^M
+	^M
+	<?xml version="1.0" encoding="UTF-8" ?>
+	<dialog-info xmlns:call="urn:x-cisco:parmams:xml:ns:dialog-info:dialog:callinfo-dialog" version="12" state="partial" entity="sip:***@10.79.57.215">
+	<dialog id="188" call-id="ac7e8ab6-04fb7713-619f034a-2436d881@10.79.57.215" loc
+4499 DEB Apr 13 10:36:53.402920 (4386-4581) JAVA-al-tag="ac7e8ab604fb8e8f470de2f5-010e0951"><state>trying</state></dialog>
+	</dialog-info>
+4500 DEB Apr 13 10:36:53.402957 (4386-4581) JAVA-::End-Of-Sip-Message::
+4501 DEB Apr 13 10:36:53.403091 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: 1/0, CCAPI_CallInfo_getLine: returned 1
+4502 DEB Apr 13 10:36:53.403131 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: line:1/call:0, handle:1273789968, CCAPI_CallInfo_getCallState: returned 00
+4503 DEB Apr 13 10:36:53.403163 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: line:1/call:0, handle:1273789968, CCAPI_CallInfo_getCallType: returned 00
+4504 DEB Apr 13 10:36:53.403191 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: line:1/call:0, handle:1273789968, CCAPI_CallInfo_getCallInstance: returned 0
+4505 DEB Apr 13 10:36:53.403216 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: line:1/call:0, handle:1273789968, CCAPI_CallInfo_getCallAttr: returned 00
+4506 INF Apr 13 10:36:53.403360 (4386-4580) JAVA-Thread-4|SipCcEventDispatcher:  - CALLEVENT_CREATED: call created on line=1 call=65724 calltype=UNKNOWN state=0
+4507 DEB Apr 13 10:36:53.403727 (4386-4580) JAVA-Thread-4|cip.sipcc.ObservedCall:  -  state.process(): state=0 state=cip.sipcc.StateHandler$OffHookHandler@16809ab disFeatLen=0
+4508 DEB Apr 13 10:36:53.403788 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: 0x0, CCAPI_DeviceInfo_getMlppEnabled: called ... 
+4509 INF Apr 13 10:36:53.403843 (4386-4580) JAVA-Thread-4|StateHandler:  - lineId=1 callId=65724 ofhkSkSet=OFFHOOK
+4510 INF Apr 13 10:36:53.403999 (4386-4580) JAVA-Thread-4|StateHandler:  - OffHookHandler--(theCallhandle:cip.callagent.LineHandle@100bc,theCallhandleValue:65724,externalAppId:,useExternalAppUI:0)
+4511 INF Apr 13 10:36:53.404061 (4386-4580) JAVA-Thread-4|StateHandler:  - OffHookHandler w yield:change callstate() to state=OFFHOOK mlppPrecLvl=ROUTINE
+4512 NOT Apr 13 10:36:53.404250 (4386-4539) JAVA-callagent MQThread|cip.callagent.Line:? - callState=OFFHOOK
+4513 NOT Apr 13 10:36:53.404428 (4386-4539) JAVA-callagent MQThread|cip.callagent.Line:attention: set reviseendCall - theCall.reviseendCall=true
+4514 DEB Apr 13 10:36:53.404506 (4386-4539) JAVA-callagent MQThread|cip.callagent.CallHistoryLogger:? - setCallInfo(): tempCall=null, state=OFFHOOK
+4515 NOT Apr 13 10:36:53.404894 (4386-4539) JAVA-callagent MQThread|cip.callagent.Line:? - setActiveCall - enter
+4516 NOT Apr 13 10:36:53.405021 (4386-4539) JAVA-callagent MQThread|cip.callagent.Call:activate - callhandle=cip.callagent.CallNumberHandle@12
+4517 NOT Apr 13 10:36:53.405390 (4386-4539) JAVA-callagent MQThread|cip.callagent.Line:? - prevLineState=INACTIVE, lineState=OFFHOOK
+4518 DEB Apr 13 10:36:53.405729 (4386-4541) JAVA-callui MQThread|cip.callui.LineListModel:callBegin - call=
+4519 DEB Apr 13 10:36:53.405848 (4386-4541) JAVA-callui MQThread|cip.callui.LineListModel:featureChanged - call=
+4520 DEB Apr 13 10:36:53.405932 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:callFeatureChanged() - Access to process call state changed and update call list.
+4521 DEB Apr 13 10:36:53.405982 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:callFeatureChanged() - process call state changed of the callSession[0] in line:1
+4522 DEB Apr 13 10:36:53.406063 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:processCallStateChanged - prevCallState=0, callState=2, oldPrivate=true, newPrivate=false, prevWaitingForDigits=false, waitingForDigits=false
+4523 DEB Apr 13 10:36:53.406346 (4386-4541) JAVA-callui MQThread|cip.callui.SessionLineMode:callFeatureChanged() - prevCallState=0 callState=2
+4524 DEB Apr 13 10:36:53.407570 (4386-4541) JAVA-callui MQThread|CallSessionFilter:filterSessionList() - selection states:
+		:> newFirstSessionIndex: 0
+		:> newConnectedIndex: -1
+		:> newUserIndex: 0
+		:> newSelSessionIndex: -1
+4525 NOT Apr 13 10:36:53.407676 (4386-4541) JAVA-delayed PLAR enable? 0
+4526 DEB Apr 13 10:36:53.407722 (4386-4541) JAVA-callui MQThread|CallSessionFilter:filterSessionList - :> so.. itemToSelect: 0
+4527 DEB Apr 13 10:36:53.407793 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:? - ==! notify update focus, field=LIST
+4528 DEB Apr 13 10:36:53.408040 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [cfwd to any line] = true
+4529 DEB Apr 13 10:36:53.408484 (4386-4541) JAVA-cprLedSet: Set led data, key_index = 71, key_led_status = 2, key_led_color = 2
+4530 DEB Apr 13 10:36:53.408645 (4386-4570) JAVA-dbusmod MQThread|cip.dbus.DBusLineListener:? - DBusLineListener call has begun.
+4531 DEB Apr 13 10:36:53.408718 (4386-4570) JAVA-dbusmod MQThread|cip.dbus.DBusModule:? - manageCallStates got callRef= 65724state=callBegin
+4532 DEB Apr 13 10:36:53.408968 (4386-4570) JAVA-dbusmod MQThread|cip.dbus.DBusCallListener:? - featureChanged called: callHandle=cip.callagent.CallNumberHandle@12 feature=cip.callagent.CallFeature@114a644
+4533 DEB Apr 13 10:36:53.409146 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - propertyChanged: device.callagent.callcount
+4534 DEB Apr 13 10:36:53.409203 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - handleCallCountChanged() call-count:1,old call-count:0
+4535 DEB Apr 13 10:36:53.409251 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - isUriTimerSet=false
+4536 DEB Apr 13 10:36:53.409407 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - isWithinActiveTime=true
+4537 NOT Apr 13 10:36:53.409649 (4386-4537) JAVA-display MQThread|EWProperty:getDurationFromNow - PSP is disabled
+4538 DEB Apr 13 10:36:53.409725 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - isPowerOffTimerRunning(): true
+4539 DEB Apr 13 10:36:53.409771 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - doEnergyWiseUserActiveAction()
+	ew = false
+	energySaveProperty.isEnabled() = false
+	ew-enabled-today:false
+	isAlerting() = false
+	allowEnergyWiseOverrides.getValue() = false
+	in ew-alert timeframe?true
+	isWithinPowerOnTime()?true
+	isWithinPowerDownAlertTime = false
+	isDisplayOn() = true
+	isPowerOffTimerRunning() = true
+	powerdownFailed=false
+4540 DEB Apr 13 10:36:53.409841 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - propertyChanged: device.callagent.callcount
+4541 DEB Apr 13 10:36:53.409889 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - handleCallCountChanged() call-count:1,old call-count:1
+4542 DEB Apr 13 10:36:53.409930 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - isUriTimerSet=false
+4543 DEB Apr 13 10:36:53.410041 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - isWithinActiveTime=true
+4544 NOT Apr 13 10:36:53.410231 (4386-4537) JAVA-display MQThread|EWProperty:getDurationFromNow - PSP is disabled
+4545 DEB Apr 13 10:36:53.410296 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - isPowerOffTimerRunning(): true
+4546 DEB Apr 13 10:36:53.410342 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - doEnergyWiseUserActiveAction()
+	ew = false
+	energySaveProperty.isEnabled() = false
+	ew-enabled-today:false
+	isAlerting() = false
+	allowEnergyWiseOverrides.getValue() = false
+	in ew-alert timeframe?true
+	isWithinPowerOnTime()?true
+	isWithinPowerDownAlertTime = false
+	isDisplayOn() = true
+	isPowerOffTimerRunning() = true
+	powerdownFailed=false
+4547 NOT Apr 13 10:36:53.410437 (4386-4546) JAVA-configmgr MQThread|ConfigManager:? - --->ConfigManager PropertyChanged: device.callagent.callcount
+4548 NOT Apr 13 10:36:53.410494 (4386-4546) JAVA-configmgr MQThread|ConfigManager:? - <---ConfigManager PropertyChanged: device.callagent.callcount
+4549 NOT Apr 13 10:36:53.410572 (4386-4546) JAVA-configmgr MQThread|cip.cfg.Config:  - [propertyChanged()] propName:"device.callagent.callcount"
+4550 NOT Apr 13 10:36:53.410646 (4386-4546) JAVA-configmgr MQThread|ConfigManager:? - --->ConfigManager PropertyChanged: device.callagent.callcount
+4551 NOT Apr 13 10:36:53.410692 (4386-4546) JAVA-configmgr MQThread|ConfigManager:? - <---ConfigManager PropertyChanged: device.callagent.callcount
+4552 NOT Apr 13 10:36:53.410749 (4386-4546) JAVA-configmgr MQThread|cip.cfg.Config:  - [propertyChanged()] propName:"device.callagent.callcount"
+4553 DEB Apr 13 10:36:53.410864 (4386-4567) JAVA-headset MQThread|cip.headset.Headset:propertyChanged -  propertyName=device.callagent.callcount
+4554 DEB Apr 13 10:36:53.410961 (4386-4567) JAVA-headset MQThread|cip.headset.Headset:propertyChanged -  propertyName=device.callagent.callcount
+4555 NOT Apr 13 10:36:53.411085 (4386-4573) JAVA-sipcc MQThread|cip.sipcc.SipCcAdapter:  - propertyChanged(): device.callagent.callcount
+4556 NOT Apr 13 10:36:53.411168 (4386-4573) JAVA-sipcc MQThread|cip.sipcc.SipCcAdapter:  - propertyChanged(): device.callagent.callcount
+4557 NOT Apr 13 10:36:53.411275 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControl:callState - The CallControlState isOFFHOOK
+4558 DEB Apr 13 10:36:53.411350 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControl:? - MediaManager: SessionUpdate: offhook
+4559 INF Apr 13 10:36:53.411411 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControl$3:execute - [TR] received event in state: Event =EventSessionStartedEvent; State =StateNoAudio
+4560 NOT Apr 13 10:36:53.412262 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControl$3:execute - [TR] executing the state-event handlerFunction=NoAudioSessionStartedFunc
+4561 DEB Apr 13 10:36:53.412314 (4386-4538) JAVA-SIPCC-MSP: mp_set_media_led: enabled_led=2,disabled_led=0
+4562 DEB Apr 13 10:36:53.412913 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> NOTIFY sip:***@10.79.57.147 SIP/2.0() --> [10.79.57.147] : 
+4563 DEB Apr 13 10:36:53.413169 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+4564 DEB Apr 13 10:36:53.413195 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:NOTIFY sip:***@10.79.57.147 SIP/2.0  Cseq:237 NOTIFY CallId:0bc84933-3f0978b8@10.79.57.215    
+4565 DEB Apr 13 10:36:53.413379 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+4566 DEB Apr 13 10:36:53.413543 (4386-4581) JAVA-sipio-recv<--- SIP/2.0 200 OK^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK6dd2b7be^M
+	From: "***" <sip:***@10.79.57.147>;tag=ac7e8ab604fb8e9078cedf54-73a05c16^M
+	To: "***" <sip:***@10.79.57.147>;tag=2062483459^M
+	Date: Thu, 13 Apr 2023 02:36:50 GMT^M
+	Call-ID: 0bc84933-3f0978b8@10.79.57.215^M
+	CSeq: 237 NOTIFY^M
+	Server: Cisco-CUCM14.0^M
+	Content-Length: 0^M
+	^M
+4567 DEB Apr 13 10:36:53.413580 (4386-4581) JAVA-::End-Of-Sip-Message::
+4568 DEB Apr 13 10:36:53.413603 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> SIP/2.0 200 OK() --> [SIPCC] : 
+4569 NOT Apr 13 10:36:53.414000 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:200 OK
+4570 DEB Apr 13 10:36:53.414160 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+4571 DEB Apr 13 10:36:53.414185 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:SIP/2.0 200 OK  Cseq:237 NOTIFY CallId:0bc84933-3f0978b8@10.79.57.215    
+4572 DEB Apr 13 10:36:53.414252 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+4573 WRN Apr 13 10:36:53.417371 (4386-4580) JAVA-Thread-4|PhraseTags:? - phrase id 132 is not translated
+4574 DEB Apr 13 10:36:53.417525 (4386-4580) JAVA-Thread-4|cip.sipcc.Dialer:? - callState is OFFHOOK state is 0 handle is cip.callagent.LineHandle@100bc callHandle is cip.callagent.LineHandle@100b7
+4575 DEB Apr 13 10:36:53.417568 (4386-4580) JAVA-Thread-4|cip.sipcc.Dialer:? - SIPDialer::callState false==dialerStarted 
+4576 DEB Apr 13 10:36:53.417620 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: line:1/call:0, handle:1273789968, CCAPI_Call_releaseCallInfo: ref=0x4bec7e10: count=0
+4577 DEB Apr 13 10:36:53.417711 (4386-4580) JAVA-SNAPSHOT-RELEASE: CCAPI_Call_releaseCallInfo:  reference pointer=4bec7e10
+4578 DEB Apr 13 10:36:53.418740 (4386-4541) JAVA-callui MQThread|ObservedCallList:  - getHuronPagingCall NOT found
+4579 DEB Apr 13 10:36:53.420323 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:setPhoneIdle -  phoneIdle:false
+4580 DEB Apr 13 10:36:53.421039 (4386-4541) JAVA-callui MQThread|cip.callui.LineListModel:featureChanged - feature=cip.callagent.LineFeature
+<-------------
+
+
+4581 DEB Apr 13 10:36:53.421258 (4386-4541) JAVA-callui MQThread|cip.callui.LineItemModel:getHuntGroupStatusText - return: 
+4582 NOT Apr 13 10:36:53.423841 (4369-4369) ms-CALLBKMGR.cb_mediaLocalAdded [callId=0][seh=1]
+4583 DEB Apr 13 10:36:53.424242 (4386-4607) JAVA-libms: libmsAEventThread - AEvent- recv, fid = 60, len = 8132, callback type = 27
+4584 DEB Apr 13 10:36:53.424286 (4386-4607) JAVA-libms: libmsAEventThread - Received Local Media Added, sessionid x1
+4585 DEB Apr 13 10:36:53.424314 (4386-4607) JAVA-SIPCC-MSP: media_server_callback_handler: entry
+4586 NOT Apr 13 10:36:53.424357 (4369-4369) ms-TONECORE.tonecorePlayATone_ TONE_START: [toneIndex=ms_TONEINDEX_INSIDE_DIALTONE_TONE][local=1][network=0][numberDestinations=0][session=1]
+4587 NOT Apr 13 10:36:53.424402 (4369-4369) ms-SESSIONMGR.ms_startSession[T:1] enter
+4588 NOT Apr 13 10:36:53.424425 (4369-4369) ms-SESSIONMGR.ms_startSession[T:1] exit [status=0][errno=0]
+4589 NOT Apr 13 10:36:53.424591 (4386-4583) JAVA-SIPCC-FSM: 1/188, fsm_change_state: DEF: IDLE -> COLLECTING_INFO
+4590 NOT Apr 13 10:36:53.424638 (4386-4583) JAVA-SIPCC-DCSM: dcsm_update_gsm_state: 188 : DCSM_READY --> DCSM_READY
+4591 NOT Apr 13 10:36:53.424666 (4386-4583) JAVA-SIPCC-GSM: 1/188, sm_process_event: DEF   :(IDLE:OFFHOOK )
+4592 DEB Apr 13 10:36:53.424690 (4386-4583) JAVA-SIPCC-GSM: gsm_process_msg: Message Processed: 0xad
+4593 NOT Apr 13 10:36:53.432445 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: ccappUpdateSessionData: CCAPP -> GSM: Call_STATE:. state=21, privacy=0, attr=0, cause=5, instance=0
+4594 DEB Apr 13 10:36:53.432499 (4386-4580) JAVA-[[MESSAGE_1.0]]: [PHONE-APP] --> getCallInfo() --> [SIPCC] : 
+4595 DEB Apr 13 10:36:53.432567 (4386-4580) JAVA-SNAPSHOT-CREATE: CCAPI_Call_getCallInfo:  reference pointer=4bec7aa8
+4596 NOT Apr 13 10:36:53.432595 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_callEvent: CallEvent=STATE, CallState=WAITINGFORDIGITS
+4597 DEB Apr 13 10:36:53.432615 (4386-4580) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> STATE(WAITINGFORDIGITS) --> [PHONE-APP] : 
+4598 INF Apr 13 10:36:53.432716 (4386-4580) JAVA-Thread-4|SipCcEventDispatcher:  - onCallEvent:  callEvent=1 call=65724 callInfo=1273789096
+4599 DEB Apr 13 10:36:53.432759 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: line:1/call:0, handle:1273789096, CCAPI_CallInfo_getCallState: returned 15
+4600 DEB Apr 13 10:36:53.432786 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: line:1/call:0, handle:1273789096, CCAPI_CallInfo_getOnhookReason: returned 5
+4601 DEB Apr 13 10:36:53.432827 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: line:1/call:0, handle:1273789096, CCAPI_CallInfo_getPrivacy: returned 00
+4602 DEB Apr 13 10:36:53.432861 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: 1/0, CCAPI_CallInfo_getLine: returned 1
+4603 INF Apr 13 10:36:53.432900 (4386-4580) JAVA-Thread-4|SipCcEventDispatcher:  - CALLEVENT_STATE: call=65724 line=1 state=21 private=0 cause=6
+4604 DEB Apr 13 10:36:53.433006 (4386-4580) JAVA-Thread-4|cip.sipcc.ObservedCall:  -  state.process(): state=21 state=cip.sipcc.StateHandler$WaitingForDigitsHandler@1edee68 disFeatLen=0
+4605 DEB Apr 13 10:36:53.433108 (4386-4580) JAVA-Thread-4|cip.sipcc.Dialer:? - callState is OFFHOOK state is 0 handle is cip.callagent.LineHandle@100bc callHandle is cip.callagent.LineHandle@100b7
+4606 DEB Apr 13 10:36:53.433148 (4386-4580) JAVA-Thread-4|cip.sipcc.Dialer:? - SIPDialer::callState false==dialerStarted 
+4607 DEB Apr 13 10:36:53.433209 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: 0x0, CCAPI_DeviceInfo_getMlppEnabled: called ... 
+4608 DEB Apr 13 10:36:53.433339 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: line:1/call:0, handle:1273789096, CCAPI_Call_releaseCallInfo: ref=0x4bec7aa8: count=0
+4609 DEB Apr 13 10:36:53.433428 (4386-4580) JAVA-SNAPSHOT-RELEASE: CCAPI_Call_releaseCallInfo:  reference pointer=4bec7aa8
+4610 DEB Apr 13 10:36:53.433497 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: 0x0, CCAPI_DeviceInfo_isPhoneIdle: idle state=0 session_id=0x100100bc call-state=21 handle=0
+4611 NOT Apr 13 10:36:53.441403 (4369-4369) ms-LEDMGR.ms_setMediaLED enter [offbit=0x0] [onbit=0xd]
+4612 NOT Apr 13 10:36:53.441595 (4369-4369) ms-LEDMGR.ms_setMediaLED exit [rv=0]
+4613 DEB Apr 13 10:36:53.441802 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControl:? - set Audio Path curDefaultAudioPath = AUDIO_PATH_SPEAKER curDefaultHeadset= 1 isInBandRinging= false
+4614 DEB Apr 13 10:36:53.441917 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControl:? - setting audio path to : AUDIO_PATH_SPEAKER
+4615 DEB Apr 13 10:36:53.442580 (4386-4538) JAVA-SIPCC-MSP: mp_set_selected_audiopath: entry.., path=1, default_headset=1
+4616 NOT Apr 13 10:36:53.442673 (4369-4369) ms-APATH.ms_setInputAudioPath Saving [input audio device = AD_INPUT_INTERNAL_MIC]
+4617 NOT Apr 13 10:36:53.442710 (4369-4369) ms-APATH.ms_setInputAudioPath No active streams, exiting
+4618 DEB Apr 13 10:36:53.442868 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControl:? - set rtp default audio: audioPath=4 curDefaultHeadset=1 currVolume=0
+4619 DEB Apr 13 10:36:53.443002 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControlUI:? - send volume level to phone slid =  -1
+4620 NOT Apr 13 10:36:53.443107 (4369-4369) ms-APATH.ms_setOutputAudioPath Saving [output audio device = AD_OUTPUT_INTERNAL_SPEAKER][volumeStep=0]
+4621 NOT Apr 13 10:36:53.443282 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControl:? - ignore updating local volume 0 for remote config, audioPath=AUDIO_PATH_SPEAKER_OUT
+4622 DEB Apr 13 10:36:53.443407 (4386-4538) JAVA-enter request: id = 5
+4623 DEB Apr 13 10:36:53.443434 (4386-4538) JAVA-VCM : request : Request reservation for resource id=5, iterator on 2 with priority=10
+4624 DEB Apr 13 10:36:53.443455 (4386-4538) JAVA-VCM : request : Request reservation for resource id=5, iterator on 3 with priority=11
+4625 DEB Apr 13 10:36:53.443473 (4386-4538) JAVA-VCM : request : Request reservation for resource id=5, iterator on 4 with priority=11
+4626 DEB Apr 13 10:36:53.443491 (4386-4538) JAVA-VCM : request : Request reservation for resource id=5, iterator on 5 with priority=30
+4627 DEB Apr 13 10:36:53.443507 (4386-4538) JAVA-request: no existing granted reservation. new[30].
+4628 DEB Apr 13 10:36:53.443525 (4386-4538) JAVA-VCM : request : RESERVATION_GRANTED for id=5, priority=30
+4629 DEB Apr 13 10:36:53.443542 (4386-4538) JAVA-VCM : postMsg : Enter postMsg
+4630 DEB Apr 13 10:36:53.443676 (4386-4538) JAVA-VCM : release : Release reservation session id=5
+4631 DEB Apr 13 10:36:53.443707 (4386-4538) JAVA-VCM : release : release reservation: id[5].
+4632 DEB Apr 13 10:36:53.443725 (4386-4538) JAVA-VCM : postMsg : Enter postMsg
+4633 DEB Apr 13 10:36:53.443743 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: msp_handler: Received Cmd 6
+4634 DEB Apr 13 10:36:53.443767 (4386-4580) JAVA-In the msp_handler and the type is 6
+4635 DEB Apr 13 10:36:53.443793 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: msp_handler: FeatureUpdate 
+4636 DEB Apr 13 10:36:53.443816 (4386-4538) JAVA-VCM : release : Release reservation session id=5
+4637 DEB Apr 13 10:36:53.443849 (4386-4538) JAVA-VCM : release : Release reservation session id=5
+4638 INF Apr 13 10:36:53.443906 (4386-4580) JAVA-Thread-4|cip.sessionmgr.impl.SessionManagerImpl:  - SessionManager:featureUpdate:fid=101
+4639 DEB Apr 13 10:36:53.443961 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControl:? - ==! processMuteState(), toggle=false call.muteState=false
+4640 DEB Apr 13 10:36:53.443999 (4386-4538) JAVA-SIPCC-MSP: mp_set_media_led: enabled_led=0,disabled_led=1
+4641 NOT Apr 13 10:36:53.444082 (4369-4369) ms-LEDMGR.ms_setMediaLED enter [offbit=0xe] [onbit=0x0]
+4642 NOT Apr 13 10:36:53.444252 (4369-4369) ms-LEDMGR.ms_setMediaLED exit [rv=0]
+4643 DEB Apr 13 10:36:53.444270 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: msp_handler: Received Cmd 6
+4644 DEB Apr 13 10:36:53.444297 (4386-4580) JAVA-In the msp_handler and the type is 6
+4645 DEB Apr 13 10:36:53.444316 (4386-4580) JAVA-SIPCC-SIP_CC_PROV: msp_handler: FeatureUpdate 
+4646 INF Apr 13 10:36:53.444394 (4386-4580) JAVA-Thread-4|cip.sessionmgr.impl.SessionManagerImpl:  - SessionManager:featureUpdate:fid=101
+4647 DEB Apr 13 10:36:53.444434 (4386-4527) JAVA-SIPCC-MSP: mp_set_mute: state = 0
+4648 DEB Apr 13 10:36:53.444641 (4386-4580) JAVA-VCM : release : Release reservation session id=5
+4649 DEB Apr 13 10:36:53.444671 (4386-4580) JAVA-VCM : release : Release reservation session id=5
+4650 NOT Apr 13 10:36:53.444776 (4386-4552) JAVA-bthfgeventmanager MQThread|cip.accessories.bluetooth.BtHfgEventManager:callState - The prevCallControlState is INACTIVE, CallControlState is OFFHOOK and the CallHandle is cip.callagent.LineHandle@100bc
+4651 DEB Apr 13 10:36:53.445097 (4386-4539) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:callState - CALL STATE IS  =OFFHOOK
+4652 NOT Apr 13 10:36:53.445503 (4386-4539) JAVA-callagent MQThread|cip.callagent.Line:? - callState=OFFHOOK
+4653 DEB Apr 13 10:36:53.445602 (4386-4539) JAVA-callagent MQThread|cip.callagent.CallHistoryLogger:? - setCallInfo(): tempCall=null, state=OFFHOOK
+4654 NOT Apr 13 10:36:53.445855 (4386-4539) JAVA-callagent MQThread|cip.callagent.Line:? - setActiveCall - enter
+4655 NOT Apr 13 10:36:53.445975 (4386-4539) JAVA-callagent MQThread|cip.callagent.Call:activate - callhandle=cip.callagent.CallNumberHandle@12
+4656 NOT Apr 13 10:36:53.446232 (4386-4539) JAVA-callagent MQThread|cip.callagent.Line:? - prevLineState=OFFHOOK, lineState=OFFHOOK
+4657 NOT Apr 13 10:36:53.446390 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControl:callState - The CallControlState isOFFHOOK
+4658 NOT Apr 13 10:36:53.446444 (4386-4560) JAVA-sidecar MQThread|cip.sidecar.Sidecar:In the PropertyChanged - PHONE_IDLE_PROPERTY_NAME and it is false
+4659 DEB Apr 13 10:36:53.447252 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControl:? - MediaManager: SessionUpdate: offhook
+4660 NOT Apr 13 10:36:53.447317 (4386-4573) JAVA-sipcc MQThread|cip.sipcc.SipCcAdapter:  - propertyChanged(): device.callagent.callcount
+4661 INF Apr 13 10:36:53.447351 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControl$3:execute - [TR] received event in state: Event =EventSessionStartedEvent; State =StateActiveSpeaker
+4662 NOT Apr 13 10:36:53.447419 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControl$3:execute - [TR] executing the state-event handlerFunction=ActiveSpeakerSessionStartedFunc
+4663 DEB Apr 13 10:36:53.447492 (4386-4541) JAVA-callui MQThread|cip.callui.LineListModel:selectFeatureSet - call=
+4664 DEB Apr 13 10:36:53.447557 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:selectFeatureSet() - The length of featureSet is 7
+4665 DEB Apr 13 10:36:53.447579 (4386-4567) JAVA-headset MQThread|cip.headset.Headset:propertyChanged -  propertyName=device.callagent.callcount
+4666 DEB Apr 13 10:36:53.447723 (4386-4538) JAVA-mediacontrolui MQThread|cip.msui.MediaControl:? - ==! processMuteState(), toggle=false call.muteState=false
+4667 DEB Apr 13 10:36:53.447767 (4386-4538) JAVA-SIPCC-MSP: mp_set_media_led: enabled_led=0,disabled_led=1
+4668 NOT Apr 13 10:36:53.447849 (4369-4369) ms-LEDMGR.ms_setMediaLED enter [offbit=0xe] [onbit=0x0]
+4669 DEB Apr 13 10:36:53.447895 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [cfwd to any line] = true
+4670 DEB Apr 13 10:36:53.448014 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [uri dial] = true
+4671 NOT Apr 13 10:36:53.448013 (4369-4369) ms-LEDMGR.ms_setMediaLED exit [rv=0]
+4672 DEB Apr 13 10:36:53.448197 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [cfwd to any line] = true
+4673 DEB Apr 13 10:36:53.448308 (4386-4527) JAVA-SIPCC-MSP: mp_set_mute: state = 0
+4674 DEB Apr 13 10:36:53.448434 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [uri dial] = true
+4675 NOT Apr 13 10:36:53.448504 (4386-4552) JAVA-bthfgeventmanager MQThread|cip.accessories.bluetooth.BtHfgEventManager:callState - The prevCallControlState is OFFHOOK, CallControlState is OFFHOOK and the CallHandle is cip.callagent.LineHandle@100bc
+4676 DEB Apr 13 10:36:53.448729 (4386-4539) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:callState - CALL STATE IS  =OFFHOOK
+4677 DEB Apr 13 10:36:53.449314 (4386-4541) JAVA-callui MQThread|cip.callui.LineListModel:callStatus - callStatus: ???, 0
+4678 DEB Apr 13 10:36:53.449391 (4386-4541) JAVA-callui MQThread|cip.callui.LineListModel:featureChanged - feature=cip.callagent.LineFeature
+4679 DEB Apr 13 10:36:53.449617 (4386-4541) JAVA-callui MQThread|cip.callui.LineItemModel:getHuntGroupStatusText - return: 
+4680 DEB Apr 13 10:36:53.450398 (4386-4541) JAVA-callui MQThread|cip.callui.LineListModel:featureChanged - call=
+4681 DEB Apr 13 10:36:53.450500 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:callFeatureChanged() - Access to process call state changed and update call list.
+4682 DEB Apr 13 10:36:53.450568 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:callFeatureChanged() - process call state changed of the callSession[0] in line:1
+4683 DEB Apr 13 10:36:53.450656 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:processCallStateChanged - prevCallState=2, callState=2, oldPrivate=false, newPrivate=false, prevWaitingForDigits=false, waitingForDigits=true
+4684 DEB Apr 13 10:36:53.450870 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiChildManager:launchOffhookDial() - feature=-1
+4685 NOT Apr 13 10:36:53.451005 (4386-4541) JAVA-delayed PLAR enable? 0
+4686 DEB Apr 13 10:36:53.451228 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [cfwd to any line] = true
+4687 DEB Apr 13 10:36:53.451359 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [uri dial] = true
+4688 NOT Apr 13 10:36:53.452484 (4386-4546) JAVA-configmgr MQThread|ConfigManager:? - --->ConfigManager PropertyChanged: device.callagent.callcount
+4689 NOT Apr 13 10:36:53.452557 (4386-4546) JAVA-configmgr MQThread|ConfigManager:? - <---ConfigManager PropertyChanged: device.callagent.callcount
+4690 NOT Apr 13 10:36:53.452635 (4386-4546) JAVA-configmgr MQThread|cip.cfg.Config:  - [propertyChanged()] propName:"device.callagent.callcount"
+4691 DEB Apr 13 10:36:53.452801 (4386-4570) JAVA-dbusmod MQThread|cip.dbus.DBusCallListener:? - DBusCallListener call status called: callHandle=cip.callagent.CallNumberHandle@12 statusText=???
+4692 DEB Apr 13 10:36:53.452891 (4386-4570) JAVA-dbusmod MQThread|cip.dbus.DBusModule:? - manageCallStates got callRef= 65724state=offhook
+4693 DEB Apr 13 10:36:53.453134 (4386-4570) JAVA-dbusmod MQThread|cip.dbus.DBusCallListener:? - featureChanged called: callHandle=cip.callagent.CallNumberHandle@12 feature=cip.callagent.CallFeature@148385
+4694 DEB Apr 13 10:36:53.453323 (4386-4541) JAVA-callui MQThread|cip.callui.DialModel:initializeControl - isInitialized:false
+<-----new DialModel
+
+4695 DEB Apr 13 10:36:53.453390 (4386-4541) JAVA-callui MQThread|cip.comp.SLComponentView:initialize - initialize NewCall enter
+4696 DEB Apr 13 10:36:53.453676 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [cfwd to any line] = true
+4697 DEB Apr 13 10:36:53.453816 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [uri dial] = true
+4698 DEB Apr 13 10:36:53.453911 (4386-4541) JAVA-callui MQThread|cip.comp.SLComponentView:initialize - initialize NewCall exit
+4699 DEB Apr 13 10:36:53.454144 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiHelper:addListenerForProperties - propertiesName len=3
+4700 DEB Apr 13 10:36:53.454344 (4386-4541) JAVA-callui MQThread|cip.util.ObjectPool:? - ObjectPool created: Name: ITimerListener Size: 4 CurrentCapacity: 4 StartSize: 4 MaxSize: 16 isEmpty: false
+4701 DEB Apr 13 10:36:53.454415 (4386-4541) JAVA-callui MQThread|cip.callui.DialModel:? - ==! notify update focus, field=INPUT_FIELD
+4702 DEB Apr 13 10:36:53.454584 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [cfwd to any line] = true
+4703 DEB Apr 13 10:36:53.454697 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [uri dial] = true
+4704 DEB Apr 13 10:36:53.454983 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? - get newestTimeStamp=0 targetModel.size=0 this.size=0
+4705 DEB Apr 13 10:36:53.455052 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? - populateCallHistoryFromProperty(): lineIndex=0
+4706 DEB Apr 13 10:36:53.455181 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   Call History (type=cip.callagent.CallHistoryProperty@11f5922) number of calls = 50
+4707 DEB Apr 13 10:36:53.455269 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4708 DEB Apr 13 10:36:53.455396 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4709 DEB Apr 13 10:36:53.455523 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4710 DEB Apr 13 10:36:53.455634 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4711 DEB Apr 13 10:36:53.455766 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4712 DEB Apr 13 10:36:53.455893 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4713 DEB Apr 13 10:36:53.456009 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4714 DEB Apr 13 10:36:53.456135 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4715 DEB Apr 13 10:36:53.456254 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4716 DEB Apr 13 10:36:53.456363 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4717 DEB Apr 13 10:36:53.457253 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4718 DEB Apr 13 10:36:53.457375 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4719 DEB Apr 13 10:36:53.457499 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4720 DEB Apr 13 10:36:53.457615 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4721 DEB Apr 13 10:36:53.457731 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4722 DEB Apr 13 10:36:53.457846 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4723 DEB Apr 13 10:36:53.457961 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4724 DEB Apr 13 10:36:53.458076 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4725 DEB Apr 13 10:36:53.458183 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4726 DEB Apr 13 10:36:53.458288 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4727 DEB Apr 13 10:36:53.458399 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4728 DEB Apr 13 10:36:53.458513 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4729 DEB Apr 13 10:36:53.458626 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4730 DEB Apr 13 10:36:53.458742 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4731 DEB Apr 13 10:36:53.458854 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4732 DEB Apr 13 10:36:53.458967 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4733 DEB Apr 13 10:36:53.459079 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4734 DEB Apr 13 10:36:53.459191 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4735 DEB Apr 13 10:36:53.459304 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4736 DEB Apr 13 10:36:53.459418 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4737 DEB Apr 13 10:36:53.459530 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4738 DEB Apr 13 10:36:53.459642 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4739 DEB Apr 13 10:36:53.459754 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4740 DEB Apr 13 10:36:53.459875 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4741 DEB Apr 13 10:36:53.459991 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4742 DEB Apr 13 10:36:53.460105 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4743 DEB Apr 13 10:36:53.460226 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4744 DEB Apr 13 10:36:53.460356 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4745 DEB Apr 13 10:36:53.460472 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4746 DEB Apr 13 10:36:53.460587 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4747 DEB Apr 13 10:36:53.460707 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4748 DEB Apr 13 10:36:53.460836 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4749 DEB Apr 13 10:36:53.460958 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4750 DEB Apr 13 10:36:53.461079 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4751 DEB Apr 13 10:36:53.461198 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4752 DEB Apr 13 10:36:53.461317 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4753 DEB Apr 13 10:36:53.461442 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4754 DEB Apr 13 10:36:53.462512 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4755 DEB Apr 13 10:36:53.462667 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4756 DEB Apr 13 10:36:53.462781 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4757 DEB Apr 13 10:36:53.462916 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   Call History (type=cip.callagent.CallHistoryProperty@b80868) number of calls = 50
+4758 DEB Apr 13 10:36:53.462993 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4759 DEB Apr 13 10:36:53.463119 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4760 DEB Apr 13 10:36:53.463235 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4761 DEB Apr 13 10:36:53.463353 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4762 DEB Apr 13 10:36:53.463467 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4763 DEB Apr 13 10:36:53.463581 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4764 DEB Apr 13 10:36:53.463734 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4765 DEB Apr 13 10:36:53.463856 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4766 DEB Apr 13 10:36:53.463974 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4767 DEB Apr 13 10:36:53.464093 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4768 DEB Apr 13 10:36:53.464210 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4769 DEB Apr 13 10:36:53.464326 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4770 DEB Apr 13 10:36:53.464441 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4771 DEB Apr 13 10:36:53.464547 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4772 DEB Apr 13 10:36:53.464653 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4773 DEB Apr 13 10:36:53.464768 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4774 DEB Apr 13 10:36:53.464882 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4775 DEB Apr 13 10:36:53.465004 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4776 DEB Apr 13 10:36:53.465112 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4777 DEB Apr 13 10:36:53.465218 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4778 DEB Apr 13 10:36:53.465333 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4779 DEB Apr 13 10:36:53.465449 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4780 DEB Apr 13 10:36:53.465563 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4781 DEB Apr 13 10:36:53.465680 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4782 DEB Apr 13 10:36:53.465807 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4783 DEB Apr 13 10:36:53.465945 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4784 DEB Apr 13 10:36:53.466070 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4785 DEB Apr 13 10:36:53.466180 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4786 DEB Apr 13 10:36:53.466294 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4787 DEB Apr 13 10:36:53.466410 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4788 DEB Apr 13 10:36:53.467303 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4789 DEB Apr 13 10:36:53.467443 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4790 DEB Apr 13 10:36:53.467559 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4791 DEB Apr 13 10:36:53.467679 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4792 DEB Apr 13 10:36:53.467794 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4793 DEB Apr 13 10:36:53.467908 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4794 DEB Apr 13 10:36:53.468022 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4795 DEB Apr 13 10:36:53.468135 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4796 DEB Apr 13 10:36:53.468249 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4797 DEB Apr 13 10:36:53.468363 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4798 DEB Apr 13 10:36:53.468478 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4799 DEB Apr 13 10:36:53.468591 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4800 DEB Apr 13 10:36:53.468705 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4801 DEB Apr 13 10:36:53.468817 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4802 DEB Apr 13 10:36:53.468931 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4803 DEB Apr 13 10:36:53.469050 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4804 DEB Apr 13 10:36:53.469165 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4805 DEB Apr 13 10:36:53.469278 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4806 DEB Apr 13 10:36:53.469391 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4807 DEB Apr 13 10:36:53.469509 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4808 DEB Apr 13 10:36:53.469643 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   Call History (type=cip.callagent.CallHistoryProperty@13fec9a) number of calls = 50
+4809 DEB Apr 13 10:36:53.469718 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4810 DEB Apr 13 10:36:53.469816 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4811 DEB Apr 13 10:36:53.469904 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4812 DEB Apr 13 10:36:53.470000 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4813 DEB Apr 13 10:36:53.470104 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4814 DEB Apr 13 10:36:53.470192 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4815 DEB Apr 13 10:36:53.470288 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4816 DEB Apr 13 10:36:53.470384 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4817 DEB Apr 13 10:36:53.470479 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4818 DEB Apr 13 10:36:53.470579 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4819 DEB Apr 13 10:36:53.470686 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4820 DEB Apr 13 10:36:53.470789 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4821 DEB Apr 13 10:36:53.470895 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4822 DEB Apr 13 10:36:53.470991 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4823 DEB Apr 13 10:36:53.471099 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4824 DEB Apr 13 10:36:53.471198 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4825 DEB Apr 13 10:36:53.471296 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4826 DEB Apr 13 10:36:53.471392 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4827 DEB Apr 13 10:36:53.472577 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - propertyChanged: device.callagent.callcount
+4828 DEB Apr 13 10:36:53.472651 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - handleCallCountChanged() call-count:1,old call-count:1
+4829 DEB Apr 13 10:36:53.472706 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - isUriTimerSet=false
+4830 DEB Apr 13 10:36:53.472877 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - isWithinActiveTime=true
+4831 DEB Apr 13 10:36:53.473680 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4832 DEB Apr 13 10:36:53.473802 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4833 DEB Apr 13 10:36:53.473903 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4834 DEB Apr 13 10:36:53.474000 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4835 DEB Apr 13 10:36:53.474096 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4836 DEB Apr 13 10:36:53.474192 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4837 DEB Apr 13 10:36:53.474287 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4838 DEB Apr 13 10:36:53.474383 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4839 DEB Apr 13 10:36:53.474489 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4840 DEB Apr 13 10:36:53.474585 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4841 DEB Apr 13 10:36:53.474697 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4842 DEB Apr 13 10:36:53.474792 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4843 DEB Apr 13 10:36:53.474887 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4844 DEB Apr 13 10:36:53.474981 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4845 DEB Apr 13 10:36:53.475081 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4846 DEB Apr 13 10:36:53.475176 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4847 DEB Apr 13 10:36:53.475270 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4848 DEB Apr 13 10:36:53.475363 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4849 DEB Apr 13 10:36:53.475459 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4850 DEB Apr 13 10:36:53.475560 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4851 DEB Apr 13 10:36:53.475657 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4852 DEB Apr 13 10:36:53.475756 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4853 DEB Apr 13 10:36:53.475856 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4854 DEB Apr 13 10:36:53.475955 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4855 DEB Apr 13 10:36:53.476057 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4856 DEB Apr 13 10:36:53.476158 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4857 DEB Apr 13 10:36:53.476256 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4858 DEB Apr 13 10:36:53.476366 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4859 DEB Apr 13 10:36:53.477236 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4860 DEB Apr 13 10:36:53.477338 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4861 DEB Apr 13 10:36:53.477433 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4862 DEB Apr 13 10:36:53.477530 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? -   calling checkAndAddItemToList for lineIndex=0
+4863 DEB Apr 13 10:36:53.477595 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? - calling addFavoritesToModel (AFTER recents!)
+4864 DEB Apr 13 10:36:53.477637 (4386-4541) JAVA-callui MQThread|FavoriteNativeCallback:? - updateModelWithFavorites
+4865 DEB Apr 13 10:36:53.477681 (4386-4541) JAVA-callui MQThread|FavoriteNativeCallback:? - favorites service init rc=0
+<------------
+
+4866 DEB Apr 13 10:36:53.477731 (4386-4541) JAVA-callui MQThread|FavoriteNativeCallback:? - updateModelWithFavorites: lineIndex=0
+4867 DEB Apr 13 10:36:53.477754 (4386-4541) JAVA-Java_cip_dir_FavoriteService_getFavorites: enter
+4868 DEB Apr 13 10:36:53.477779 (4386-4541) JAVA-Java_cip_dir_FavoriteService_getFavorites: FavoriteContactListener created
+4869 DEB Apr 13 10:36:53.477859 (4386-4541) JAVA-Java_cip_dir_FavoriteService_getFavorites: exit
+4870 DEB Apr 13 10:36:53.477982 (4386-4541) JAVA-callui MQThread|cip.callui.DialCallHistoryList:? - after prepareList, targetModel.size=00
+4871 DEB Apr 13 10:36:53.478119 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:openChild - open child NewCall enter
+4872 DEB Apr 13 10:36:53.478211 (4386-4541) JAVA-callui MQThread|cip.callui.DialModel:activate - activate enter
+4873 DEB Apr 13 10:36:53.478945 (4386-4541) JAVA-callui MQThread|cip.callui.DialModel:openMe - openMe enter
+4874 DEB Apr 13 10:36:53.479021 (4386-4541) JAVA-callui MQThread|cip.comp.SLComponentView:processOpen - isOpen:false, isPause:false
+4875 DEB Apr 13 10:36:53.479098 (4386-4541) JAVA-callui MQThread|cip.callui.DialFullDisplay:open - inForeground:true, isInitialized:true
+4876 DEB Apr 13 10:36:53.479304 (4386-4541) JAVA-callui MQThread|cip.callui.DialFullDisplay:open - inForeground:true, to set data
+4877 DEB Apr 13 10:36:53.479440 (4386-4541) JAVA-callui MQThread|cip.callui.DialModel:activated - activated entry:-1 enter
+4878 DEB Apr 13 10:36:53.479983 (4386-13204) JAVA-queryResponse: favorites list size=0
+4879 DEB Apr 13 10:36:53.480024 (4386-13204) JAVA-queryResponse: calling javaSearchComplete recordCount=0, totalCount=0
+4880 DEB Apr 13 10:36:53.480044 (4386-13204) JAVA-FavoriteServiceJniNotifyJavaSearchComplete: ENTRY
+4881 DEB Apr 13 10:36:53.480065 (4386-13204) JAVA-FavoriteServiceJniNotifyJavaSearchComplete: result count = 0
+4882 DEB Apr 13 10:36:53.480091 (4386-13204) JAVA-FavoriteServiceJniNotifyJavaSearchComplete: attaching to vm thread...
+4883 INF Apr 13 10:36:53.480162 (4386-4527) JAVA-appmgr MQThread|cip.app.AppFrameSoftkeyBar:? - showSoftkeyBar true
+4884 DEB Apr 13 10:36:53.480226 (4386-4541) JAVA-callui MQThread|cip.callui.DialModel:activated - activated entry:-1 exit
+4885 DEB Apr 13 10:36:53.480312 (4386-4541) JAVA-callui MQThread|cip.comp.SLKateInputEngine:enterInputMode - ==! enterInputMode...
+4886 DEB Apr 13 10:36:53.480397 (4386-4541) JAVA-callui MQThread|cip.callui.DialModel:? - ==! notify Input update, field=INPUT_FIELD
+<------?? DialModel blfSubscribeProxy.subscribeItem((BLFListItemModel)item); ????
+
+4887 DEB Apr 13 10:36:53.480461 (4386-4541) JAVA-callui MQThread|cip.callui.DialFullDisplay:update - field:5
+4888 DEB Apr 13 10:36:53.480502 (4386-13204) JAVA-FavoriteServiceJniNotifyJavaSearchComplete: calling static void method
+4889 DEB Apr 13 10:36:53.480577 (4386-13204) JAVA-Thread-875|FavoriteNativeCallback:? - searchCompletedCallback:  qStr:'' found total:0 out of 0, entry length=0
+4890 DEB Apr 13 10:36:53.481011 (4386-13204) JAVA-FavoriteServiceJniNotifyJavaSearchComplete: EXIT
+4891 DEB Apr 13 10:36:53.482617 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [cfwd to any line] = true
+4892 DEB Apr 13 10:36:53.482779 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [uri dial] = true
+4893 DEB Apr 13 10:36:53.483913 (4386-4541) JAVA-callui MQThread|cip.callui.DialFullDisplay:update - field:9
+4894 NOT Apr 13 10:36:53.492461 (4386-4526) JAVA-NIOGetEvent: hard key event read: 0x00020055
+4895 INF Apr 13 10:36:53.492540 (4386-4526) JAVA-[[MESSAGE_1.0]]: [NativeIO] --> 18.1(release) --> [JAVA] :
+4896 NOT Apr 13 10:36:53.492649 (4386-4526) JAVA-NativeUserInput|cip.userio.InputManager$NativeEventThread:? - Forwarding native input event
+4897 INF Apr 13 10:36:53.492749 (4386-4526) JAVA-NativeUserInput|cip.userio.InputManager:? - Received Session: 1
+4898 NOT Apr 13 10:36:53.519447 invalid event: No such file or directory
+4899 DEB Apr 13 10:36:53.504073 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+4900 DEB Apr 13 10:36:53.504139 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+4901 DEB Apr 13 10:36:53.504236 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+4902 DEB Apr 13 10:36:53.504276 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+4903 DEB Apr 13 10:36:53.504360 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+4904 DEB Apr 13 10:36:53.504398 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+4905 DEB Apr 13 10:36:53.504481 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+4906 DEB Apr 13 10:36:53.504519 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+4907 DEB Apr 13 10:36:53.504603 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+4908 DEB Apr 13 10:36:53.504640 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+4909 DEB Apr 13 10:36:53.504723 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+4910 DEB Apr 13 10:36:53.504761 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+4911 DEB Apr 13 10:36:53.504845 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+4912 DEB Apr 13 10:36:53.504885 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+4913 DEB Apr 13 10:36:53.504967 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+4914 DEB Apr 13 10:36:53.505005 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+4915 DEB Apr 13 10:36:53.505088 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+4916 DEB Apr 13 10:36:53.505127 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+4917 DEB Apr 13 10:36:53.505210 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+4918 DEB Apr 13 10:36:53.505248 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+4919 DEB Apr 13 10:36:53.505327 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+4920 DEB Apr 13 10:36:53.505365 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+4921 NOT Apr 13 10:36:53.505783 (4386-4537) JAVA-display MQThread|EWProperty:getDurationFromNow - PSP is disabled
+4922 DEB Apr 13 10:36:53.505891 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - isPowerOffTimerRunning(): true
+4923 DEB Apr 13 10:36:53.505961 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - doEnergyWiseUserActiveAction()
+	ew = false
+	energySaveProperty.isEnabled() = false
+	ew-enabled-today:false
+	isAlerting() = false
+	allowEnergyWiseOverrides.getValue() = false
+	in ew-alert timeframe?true
+	isWithinPowerOnTime()?true
+	isWithinPowerDownAlertTime = false
+	isDisplayOn() = true
+	isPowerOffTimerRunning() = true
+	powerdownFailed=false
+4924 DEB Apr 13 10:36:53.512779 (4386-13205) JAVA-Thread-876|cip.dbus.DBusSignalHandler:? - Handle got type=2 key= state=1
+4925 WRN Apr 13 10:36:53.533483 (4386-4387) JAVA-Could not assign source of type 'int' to property 'background'.
+4926 WRN Apr 13 10:36:53.533574 (4386-4387) JAVA-Could not assign source of type 'int' to property 'backgroundBlur'.
+4927 DEB Apr 13 10:36:53.570504 (4386-4619) JAVA-CallUiEventThread|cip.callui.SessionListModel:? - updateAllSessionLEDs, firstVisible:0
+4928 DEB Apr 13 10:36:53.570651 (4386-4619) JAVA-CallUiEventThread|cip.callui.LineListModel:updateSessionLED - Index=0
+4929 DEB Apr 13 10:36:53.570727 (4386-4619) JAVA-CallUiEventThread|ObservedCallList:  - getHuronPagingCall NOT found
+4930 DEB Apr 13 10:36:53.570778 (4386-4619) JAVA-cprLedSet: Set led data, key_index = 101, key_led_status = 2, key_led_color = 2
+4931 DEB Apr 13 10:36:53.572888 (4386-4619) JAVA-CallUiEventThread|cip.callui.LineListModel:updateSessionLED - Index=1
+4932 DEB Apr 13 10:36:53.572941 (4386-4619) JAVA-cprLedSet: Set led data, key_index = 102, key_led_status = 1, key_led_color = 1
+4933 DEB Apr 13 10:36:53.574001 (4386-4619) JAVA-CallUiEventThread|cip.callui.LineListModel:updateSessionLED - Index=2
+4934 DEB Apr 13 10:36:53.574050 (4386-4619) JAVA-cprLedSet: Set led data, key_index = 103, key_led_status = 1, key_led_color = 1
+4935 DEB Apr 13 10:36:53.575140 (4386-4619) JAVA-CallUiEventThread|cip.callui.LineListModel:updateSessionLED - Index=3
+4936 DEB Apr 13 10:36:53.575183 (4386-4619) JAVA-cprLedSet: Set led data, key_index = 104, key_led_status = 1, key_led_color = 1
+4937 DEB Apr 13 10:36:53.576261 (4386-4619) JAVA-CallUiEventThread|cip.callui.LineListModel:updateSessionLED - Index=4
+4938 DEB Apr 13 10:36:53.576301 (4386-4619) JAVA-cprLedSet: Set led data, key_index = 105, key_led_status = 1, key_led_color = 1
+4939 DEB Apr 13 10:36:53.632875 (4386-13206) JAVA-Thread-877|cip.dbus.DBusSignalHandler:? - Handle got type=2 key= state=2
+4940 DEB Apr 13 10:36:53.807393 (4386-4541) JAVA-callui MQThread|cip.snf.TransactionId:? - New transaction id 1098 actually:(97)
+<-----------
+    public void subscribeItem(BLFListItemModel blfItem)
+
+4941 DEB Apr 13 10:36:53.807504 (4386-4541) JAVA-callui MQThread|cip.sipcc.SubscriptionHandler:  - : Calling blf subscribe
+<-----------
+
+4942 DEB Apr 13 10:36:53.807595 (4386-4541) JAVA-callui MQThread|cip.snf.SubscriptionManager:? - Subscription: 1098 Subscribee: 
+4943 DEB Apr 13 10:36:53.807711 (4386-4541) JAVA-callui MQThread|cip.snf.TransactionId:? - New transaction id 1099 actually:(98)
+4944 DEB Apr 13 10:36:53.807767 (4386-4541) JAVA-callui MQThread|cip.sipcc.SubscriptionHandler:  - : Calling blf subscribe
+4945 DEB Apr 13 10:36:53.807826 (4386-4541) JAVA-callui MQThread|cip.snf.SubscriptionManager:? - Subscription: 1099 Subscribee: 
+4946 DEB Apr 13 10:36:53.807916 (4386-4541) JAVA-callui MQThread|cip.snf.TransactionId:? - New transaction id 1100 actually:(99)
+4947 DEB Apr 13 10:36:53.807968 (4386-4541) JAVA-callui MQThread|cip.snf.SubscriptionManager:? - Subscription: 1100 Subscribee: 
+4948 DEB Apr 13 10:36:53.808063 (4386-4541) JAVA-callui MQThread|cip.snf.TransactionId:? - New transaction id 1101 actually:(100)
+4949 DEB Apr 13 10:36:53.808114 (4386-4541) JAVA-callui MQThread|cip.sipcc.SubscriptionHandler:  - : Calling blf subscribe
+4950 DEB Apr 13 10:36:53.808169 (4386-4541) JAVA-callui MQThread|cip.snf.SubscriptionManager:? - Subscription: 1101 Subscribee: 
+4951 DEB Apr 13 10:36:53.808270 (4386-4541) JAVA-callui MQThread|cip.snf.TransactionId:? - New transaction id 1102 actually:(101)
+4952 DEB Apr 13 10:36:53.808322 (4386-4541) JAVA-callui MQThread|cip.sipcc.SubscriptionHandler:  - : Calling blf subscribe
+4953 DEB Apr 13 10:36:53.808376 (4386-4541) JAVA-callui MQThread|cip.snf.SubscriptionManager:? - Subscription: 1102 Subscribee: 
+4954 DEB Apr 13 10:36:53.808485 (4386-4541) JAVA-callui MQThread|cip.snf.TransactionId:? - New transaction id 1103 actually:(102)
+4955 DEB Apr 13 10:36:53.808539 (4386-4541) JAVA-callui MQThread|cip.sipcc.SubscriptionHandler:  - : Calling blf subscribe
+4956 DEB Apr 13 10:36:53.808596 (4386-4541) JAVA-callui MQThread|cip.snf.SubscriptionManager:? - Subscription: 1103 Subscribee: 
+4957 DEB Apr 13 10:36:53.808716 (4386-4541) JAVA-callui MQThread|cip.snf.TransactionId:? - New transaction id 1104 actually:(103)
+4958 DEB Apr 13 10:36:53.808770 (4386-4541) JAVA-callui MQThread|cip.sipcc.SubscriptionHandler:  - : Calling blf subscribe
+4959 DEB Apr 13 10:36:53.808827 (4386-4541) JAVA-callui MQThread|cip.snf.SubscriptionManager:? - Subscription: 1104 Subscribee: 
+4960 DEB Apr 13 10:36:53.808953 (4386-4541) JAVA-callui MQThread|cip.snf.TransactionId:? - New transaction id 1105 actually:(104)
+4961 DEB Apr 13 10:36:53.809003 (4386-4541) JAVA-callui MQThread|cip.sipcc.SubscriptionHandler:  - : Calling blf subscribe
+4962 DEB Apr 13 10:36:53.809058 (4386-4541) JAVA-callui MQThread|cip.snf.SubscriptionManager:? - Subscription: 1105 Subscribee: 
+4963 DEB Apr 13 10:36:53.809394 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [cfwd to any line] = true
+4964 DEB Apr 13 10:36:53.809519 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [uri dial] = true
+4965 DEB Apr 13 10:36:53.810107 (4386-4541) JAVA-callui MQThread|cip.callui.DialFullDisplay:update - field:7
+4966 DEB Apr 13 10:36:53.810210 (4386-4541) JAVA-callui MQThread|cip.comp.SLComponentView:processChildOpened - processChildOpened enter
+4967 DEB Apr 13 10:36:53.810279 (4386-4541) JAVA-callui MQThread|cip.comp.SLComponentView:onChildOpened - to hide
+4968 DEB Apr 13 10:36:53.810350 (4386-4541) JAVA-callui MQThread|cip.comp.SLComponentView:processChildOpened - processChildOpened exit
+4969 DEB Apr 13 10:36:53.810396 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:childOpened - childOpened child:NewCall
+4970 DEB Apr 13 10:36:53.810435 (4386-4541) JAVA-callui MQThread|cip.callui.DialModel:openMe - openMe exit
+4971 DEB Apr 13 10:36:53.810467 (4386-4541) JAVA-callui MQThread|cip.callui.DialModel:activate - activate exit
+4972 DEB Apr 13 10:36:53.810628 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [cfwd to any line] = true
+4973 DEB Apr 13 10:36:53.810733 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [uri dial] = true
+4974 DEB Apr 13 10:36:53.811287 (4386-4541) JAVA-callui MQThread|cip.callui.DialFullDisplay:update - field:7
+4975 DEB Apr 13 10:36:53.811364 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:openChild - open child NewCall exit
+4976 NOT Apr 13 10:36:53.813104 (4386-4584) JAVA-SIPCC-BLF_INFO: get_state: REQ 1098: TM 3600: FMSK 0: APP 0
+4977 NOT Apr 13 10:36:53.813195 (4386-4584) JAVA-SIPCC-BLF_INFO: get_state: REQ 1099: TM 3600: FMSK 0: APP 0
+4978 NOT Apr 13 10:36:53.813238 (4386-4584) JAVA-SIPCC-BLF_INFO: get_state: REQ 1101: TM 3600: FMSK 0: APP 0
+4979 NOT Apr 13 10:36:53.813277 (4386-4584) JAVA-SIPCC-BLF_INFO: get_state: REQ 1102: TM 3600: FMSK 0: APP 0
+4980 NOT Apr 13 10:36:53.813314 (4386-4584) JAVA-SIPCC-BLF_INFO: get_state: REQ 1103: TM 3600: FMSK 0: APP 0
+4981 NOT Apr 13 10:36:53.813351 (4386-4584) JAVA-SIPCC-BLF_INFO: get_state: REQ 1104: TM 3600: FMSK 0: APP 0
+4982 NOT Apr 13 10:36:53.813388 (4386-4584) JAVA-SIPCC-BLF_INFO: get_state: REQ 1105: TM 3600: FMSK 0: APP 0
+4983 DEB Apr 13 10:36:53.813784 (4386-4581) JAVA-SIPCC-MSG_SEND_REQ: SIPSPISendSubscribe: Sending SUBSCRIBE...
+4984 DEB Apr 13 10:36:53.814164 (4386-4541) JAVA-callui MQThread|cip.callui.SessionLineMode:callFeatureChanged() - prevCallState=2 callState=2
+4985 DEB Apr 13 10:36:53.814632 (4386-4541) JAVA-callui MQThread|CallSessionFilter:filterSessionList() - selection states:
+		:> newFirstSessionIndex: 0
+		:> newConnectedIndex: -1
+		:> newUserIndex: 0
+		:> newSelSessionIndex: 0
+4986 NOT Apr 13 10:36:53.814744 (4386-4541) JAVA-delayed PLAR enable? 0
+4987 DEB Apr 13 10:36:53.814792 (4386-4541) JAVA-callui MQThread|CallSessionFilter:filterSessionList - :> so.. itemToSelect: 0
+4988 DEB Apr 13 10:36:53.814866 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:? - ==! notify update focus, field=LIST
+4989 DEB Apr 13 10:36:53.815769 (4386-4541) JAVA-callui MQThread|ObservedCallList:  - getHuronPagingCall NOT found
+4990 DEB Apr 13 10:36:53.818559 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [cfwd to any line] = true
+4991 DEB Apr 13 10:36:53.818670 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [uri dial] = true
+4992 DEB Apr 13 10:36:53.818992 (4386-4541) JAVA-callui MQThread|cip.callui.LineListModel:selectFeatureSet - call=
+4993 DEB Apr 13 10:36:53.819056 (4386-4541) JAVA-callui MQThread|cip.callui.CallUiModel:selectFeatureSet() - The length of featureSet is 7
+4994 DEB Apr 13 10:36:53.819236 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [cfwd to any line] = true
+4995 DEB Apr 13 10:36:53.819347 (4386-4541) JAVA-callui MQThread|FeatureController:  - feature [uri dial] = true
+4996 DEB Apr 13 10:36:53.820780 (4386-4541) JAVA-callui MQThread|cip.callui.DialFullDisplay:update - field:9
+4997 DEB Apr 13 10:36:53.829690 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+4998 DEB Apr 13 10:36:53.829763 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+4999 DEB Apr 13 10:36:53.829855 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+5000 DEB Apr 13 10:36:53.829897 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+5001 DEB Apr 13 10:36:53.829979 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+5002 DEB Apr 13 10:36:53.830017 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+5003 DEB Apr 13 10:36:53.830097 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+5004 DEB Apr 13 10:36:53.830136 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+5005 DEB Apr 13 10:36:53.830213 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+5006 DEB Apr 13 10:36:53.830250 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+5007 DEB Apr 13 10:36:53.830328 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+5008 DEB Apr 13 10:36:53.830367 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+5009 DEB Apr 13 10:36:53.830449 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+5010 DEB Apr 13 10:36:53.830487 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+5011 DEB Apr 13 10:36:53.830573 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+5012 DEB Apr 13 10:36:53.830611 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+5013 DEB Apr 13 10:36:53.830689 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+5014 DEB Apr 13 10:36:53.830727 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+5015 DEB Apr 13 10:36:53.830811 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+5016 DEB Apr 13 10:36:53.830853 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+5017 DEB Apr 13 10:36:53.830936 (4386-4541) JAVA-CallHistoryItem:setData* mCallIsTele=  false 
+5018 DEB Apr 13 10:36:53.830976 (4386-4541) JAVA-CallHistoryItem:setData* CallIsTeleRole=  false 
+5019 DEB Apr 13 10:36:53.839437 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+5020 DEB Apr 13 10:36:53.839515 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+5021 DEB Apr 13 10:36:53.839544 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+5022 DEB Apr 13 10:36:53.839630 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+5023 DEB Apr 13 10:36:53.839677 (4386-4581) JAVA-SIPCC-SIP_SUB: sipSPIAddRouteHeadersToSubNot: Route info not available; will not add Route header.
+5024 DEB Apr 13 10:36:53.839727 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[757] 
+5025 NOT Apr 13 10:36:53.839781 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:SUBSCRI: <sip:***@10.79.57.147> :1000 SUBSCRIBE::ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215
+5026 DEB Apr 13 10:36:53.839900 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<757>, message=
+5027 DEB Apr 13 10:36:53.840198 (4386-4581) JAVA-sipio-sent---> SUBSCRIBE sip:***@10.79.57.147 SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK1778b9e0^M
+	From: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9131829b48-5d062cf7^M
+	To: <sip:***@10.79.57.147>^M
+	Call-ID: ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 1000 SUBSCRIBE^M
+	User-Agent: Cisco-CP8865/14.2.1^M
+	Event: presence^M
+	Accept: application/cpim-pidf+xml^M
+	Expires: 3600^M
+	Max-Forwards: 70^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Allow: ACK,BYE,CANCEL,INVITE,NOTIFY,OPTIONS,REFER,REGISTER,UPDATE,SUBSCRIBE^M
+	Content-Length: 0^M
+	^M
+5028 DEB Apr 13 10:36:53.840237 (4386-4581) JAVA-::End-Of-Sip-Message::
+5029 DEB Apr 13 10:36:53.840260 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Starting reTx timer for 32000 secs
+5030 DEB Apr 13 10:36:53.840388 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SUBSCRIBE sip:***@10.79.57.147 SIP/2.0() --> [10.79.57.147] : 
+5031 DEB Apr 13 10:36:53.840611 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5032 DEB Apr 13 10:36:53.840635 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SUBSCRIBE sip:***@10.79.57.147 SIP/2.0  Cseq:1000 SUBSCRIBE CallId:ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215    
+5033 DEB Apr 13 10:36:53.840765 (4386-4581) JAVA-SIPCC-MSG_SEND_REQ: SIPSPISendSubscribe: Sending SUBSCRIBE...
+5034 DEB Apr 13 10:36:53.843200 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+5035 DEB Apr 13 10:36:53.843260 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+5036 DEB Apr 13 10:36:53.843285 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+5037 DEB Apr 13 10:36:53.843363 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+5038 DEB Apr 13 10:36:53.843405 (4386-4581) JAVA-SIPCC-SIP_SUB: sipSPIAddRouteHeadersToSubNot: Route info not available; will not add Route header.
+5039 DEB Apr 13 10:36:53.843452 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[757] 
+5040 NOT Apr 13 10:36:53.843504 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:SUBSCRI: <sip:***@10.79.57.147> :1000 SUBSCRIBE::ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215
+5041 DEB Apr 13 10:36:53.843594 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<757>, message=
+5042 DEB Apr 13 10:36:53.843925 (4386-4581) JAVA-sipio-sent---> SUBSCRIBE sip:***@10.79.57.147 SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK66395021^M
+	From: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e926a0c485e-223128dd^M
+	To: <sip:***@10.79.57.147>^M
+	Call-ID: ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 1000 SUBSCRIBE^M
+	User-Agent: Cisco-CP8865/14.2.1^M
+	Event: presence^M
+	Accept: application/cpim-pidf+xml^M
+	Expires: 3600^M
+	Max-Forwards: 70^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Allow: ACK,BYE,CANCEL,INVITE,NOTIFY,OPTIONS,REFER,REGISTER,UPDATE,SUBSCRIBE^M
+	Content-Length: 0^M
+	^M
+5043 DEB Apr 13 10:36:53.843967 (4386-4581) JAVA-::End-Of-Sip-Message::
+5044 DEB Apr 13 10:36:53.843991 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Starting reTx timer for 32000 secs
+5045 DEB Apr 13 10:36:53.844122 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SUBSCRIBE sip:***@10.79.57.147 SIP/2.0() --> [10.79.57.147] : 
+5046 DEB Apr 13 10:36:53.844321 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5047 DEB Apr 13 10:36:53.844346 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SUBSCRIBE sip:***@10.79.57.147 SIP/2.0  Cseq:1000 SUBSCRIBE CallId:ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215    
+5048 DEB Apr 13 10:36:53.844458 (4386-4581) JAVA-SIPCC-MSG_SEND_REQ: SIPSPISendSubscribe: Sending SUBSCRIBE...
+5049 DEB Apr 13 10:36:53.848823 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+5050 DEB Apr 13 10:36:53.848897 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+5051 DEB Apr 13 10:36:53.848924 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+5052 DEB Apr 13 10:36:53.849011 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+5053 DEB Apr 13 10:36:53.849055 (4386-4581) JAVA-SIPCC-SIP_SUB: sipSPIAddRouteHeadersToSubNot: Route info not available; will not add Route header.
+5054 DEB Apr 13 10:36:53.849107 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[755] 
+5055 NOT Apr 13 10:36:53.849161 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:SUBSCRI: <sip:***@10.79.57.147> :1000 SUBSCRIBE::ac7e8ab6-04fb1314-54db2f25-042059a2@10.79.57.215
+5056 DEB Apr 13 10:36:53.849274 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<755>, message=
+5057 DEB Apr 13 10:36:53.849567 (4386-4581) JAVA-sipio-sent---> SUBSCRIBE sip:***@10.79.57.147 SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK6edd47ce^M
+	From: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9300c18542-137aea9f^M
+	To: <sip:***@10.79.57.147>^M
+	Call-ID: ac7e8ab6-04fb1314-54db2f25-042059a2@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 1000 SUBSCRIBE^M
+	User-Agent: Cisco-CP8865/14.2.1^M
+	Event: presence^M
+	Accept: application/cpim-pidf+xml^M
+	Expires: 3600^M
+	Max-Forwards: 70^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Allow: ACK,BYE,CANCEL,INVITE,NOTIFY,OPTIONS,REFER,REGISTER,UPDATE,SUBSCRIBE^M
+	Content-Length: 0^M
+	^M
+5058 DEB Apr 13 10:36:53.849606 (4386-4581) JAVA-::End-Of-Sip-Message::
+5059 DEB Apr 13 10:36:53.849629 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Starting reTx timer for 32000 secs
+5060 DEB Apr 13 10:36:53.849752 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SUBSCRIBE sip:***@10.79.57.147 SIP/2.0() --> [10.79.57.147] : 
+5061 DEB Apr 13 10:36:53.849957 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5062 DEB Apr 13 10:36:53.849981 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SUBSCRIBE sip:***@10.79.57.147 SIP/2.0  Cseq:1000 SUBSCRIBE CallId:ac7e8ab6-04fb1314-54db2f25-042059a2@10.79.57.215    
+5063 DEB Apr 13 10:36:53.850102 (4386-4581) JAVA-SIPCC-MSG_SEND_REQ: SIPSPISendSubscribe: Sending SUBSCRIBE...
+5064 DEB Apr 13 10:36:53.853535 (4386-4619) JAVA-CallUiEventThread|cip.callui.SessionListModel:? - updateAllSessionLEDs, firstVisible:0
+5065 DEB Apr 13 10:36:53.853709 (4386-4619) JAVA-CallUiEventThread|cip.callui.LineListModel:updateSessionLED - Index=0
+5066 DEB Apr 13 10:36:53.853789 (4386-4619) JAVA-CallUiEventThread|ObservedCallList:  - getHuronPagingCall NOT found
+5067 DEB Apr 13 10:36:53.853835 (4386-4619) JAVA-cprLedSet: Set led data, key_index = 101, key_led_status = 2, key_led_color = 2
+5068 DEB Apr 13 10:36:53.854891 (4386-4619) JAVA-CallUiEventThread|cip.callui.LineListModel:updateSessionLED - Index=1
+5069 DEB Apr 13 10:36:53.854933 (4386-4619) JAVA-cprLedSet: Set led data, key_index = 102, key_led_status = 1, key_led_color = 1
+5070 DEB Apr 13 10:36:53.855949 (4386-4619) JAVA-CallUiEventThread|cip.callui.LineListModel:updateSessionLED - Index=2
+5071 DEB Apr 13 10:36:53.855989 (4386-4619) JAVA-cprLedSet: Set led data, key_index = 103, key_led_status = 1, key_led_color = 1
+5072 DEB Apr 13 10:36:53.857817 (4386-4619) JAVA-CallUiEventThread|cip.callui.LineListModel:updateSessionLED - Index=3
+5073 DEB Apr 13 10:36:53.857862 (4386-4619) JAVA-cprLedSet: Set led data, key_index = 104, key_led_status = 1, key_led_color = 1
+5074 DEB Apr 13 10:36:53.859066 (4386-4619) JAVA-CallUiEventThread|cip.callui.LineListModel:updateSessionLED - Index=4
+5075 DEB Apr 13 10:36:53.859115 (4386-4619) JAVA-cprLedSet: Set led data, key_index = 105, key_led_status = 1, key_led_color = 1
+5076 DEB Apr 13 10:36:53.862475 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+5077 DEB Apr 13 10:36:53.862542 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+5078 DEB Apr 13 10:36:53.862568 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+5079 DEB Apr 13 10:36:53.862652 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+5080 DEB Apr 13 10:36:53.862696 (4386-4581) JAVA-SIPCC-SIP_SUB: sipSPIAddRouteHeadersToSubNot: Route info not available; will not add Route header.
+5081 DEB Apr 13 10:36:53.862745 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[755] 
+5082 NOT Apr 13 10:36:53.862797 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:SUBSCRI: <sip:***@10.79.57.147> :1000 SUBSCRIBE::ac7e8ab6-04fb1315-69c0bd9e-5d732188@10.79.57.215
+5083 DEB Apr 13 10:36:53.862913 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<755>, message=
+5084 DEB Apr 13 10:36:53.863230 (4386-4581) JAVA-sipio-sent---> SUBSCRIBE sip:***@10.79.57.147 SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK6ab0941a^M
+	From: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e942ece9fac-2e847ce2^M
+	To: <sip:***@10.79.57.147>^M
+	Call-ID: ac7e8ab6-04fb1315-69c0bd9e-5d732188@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 1000 SUBSCRIBE^M
+	User-Agent: Cisco-CP8865/14.2.1^M
+	Event: presence^M
+	Accept: application/cpim-pidf+xml^M
+	Expires: 3600^M
+	Max-Forwards: 70^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Allow: ACK,BYE,CANCEL,INVITE,NOTIFY,OPTIONS,REFER,REGISTER,UPDATE,SUBSCRIBE^M
+	Content-Length: 0^M
+	^M
+5085 DEB Apr 13 10:36:53.863272 (4386-4581) JAVA-::End-Of-Sip-Message::
+5086 DEB Apr 13 10:36:53.863296 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Starting reTx timer for 32000 secs
+5087 DEB Apr 13 10:36:53.863420 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SUBSCRIBE sip:***@10.79.57.147 SIP/2.0() --> [10.79.57.147] : 
+5088 DEB Apr 13 10:36:53.863659 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5089 DEB Apr 13 10:36:53.863684 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SUBSCRIBE sip:***@10.79.57.147 SIP/2.0  Cseq:1000 SUBSCRIBE CallId:ac7e8ab6-04fb1315-69c0bd9e-5d732188@10.79.57.215    
+5090 DEB Apr 13 10:36:53.863806 (4386-4581) JAVA-SIPCC-MSG_SEND_REQ: SIPSPISendSubscribe: Sending SUBSCRIBE...
+5091 DEB Apr 13 10:36:53.872593 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+5092 DEB Apr 13 10:36:53.872673 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+5093 DEB Apr 13 10:36:53.872701 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+5094 DEB Apr 13 10:36:53.872786 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+5095 DEB Apr 13 10:36:53.872830 (4386-4581) JAVA-SIPCC-SIP_SUB: sipSPIAddRouteHeadersToSubNot: Route info not available; will not add Route header.
+5096 DEB Apr 13 10:36:53.872879 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[771] 
+5097 NOT Apr 13 10:36:53.872934 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:SUBSCRI: <sip:***@10.79.57.147> :1000 SUBSCRIBE::ac7e8ab6-04fb1316-4c4f9764-50a2d203@10.79.57.215
+5098 DEB Apr 13 10:36:53.873052 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<771>, message=
+5099 DEB Apr 13 10:36:53.873347 (4386-4581) JAVA-sipio-sent---> SUBSCRIBE sip:***@10.79.57.147 SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK216d354e^M
+	From: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e952c6bf981-5a5f5259^M
+	To: <sip:***@10.79.57.147>^M
+	Call-ID: ac7e8ab6-04fb1316-4c4f9764-50a2d203@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 1000 SUBSCRIBE^M
+	User-Agent: Cisco-CP8865/14.2.1^M
+	Event: presence^M
+	Accept: application/cpim-pidf+xml^M
+	Expires: 3600^M
+	Max-Forwards: 70^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Allow: ACK,BYE,CANCEL,INVITE,NOTIFY,OPTIONS,REFER,REGISTER,UPDATE,SUBSCRIBE^M
+	Content-Length: 0^M
+	^M
+5100 DEB Apr 13 10:36:53.873386 (4386-4581) JAVA-::End-Of-Sip-Message::
+5101 DEB Apr 13 10:36:53.873407 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Starting reTx timer for 32000 secs
+5102 DEB Apr 13 10:36:53.873536 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SUBSCRIBE sip:***@10.79.57.147 SIP/2.0() --> [10.79.57.147] : 
+5103 DEB Apr 13 10:36:53.873788 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5104 DEB Apr 13 10:36:53.873814 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SUBSCRIBE sip:***@10.79.57.147 SIP/2.0  Cseq:1000 SUBSCRIBE CallId:ac7e8ab6-04fb1316-4c4f9764-50a2d203@10.79.57.215    
+5105 DEB Apr 13 10:36:53.873943 (4386-4581) JAVA-SIPCC-MSG_SEND_REQ: SIPSPISendSubscribe: Sending SUBSCRIBE...
+5106 DEB Apr 13 10:36:53.875018 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+5107 DEB Apr 13 10:36:53.875076 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+5108 DEB Apr 13 10:36:53.875101 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+5109 DEB Apr 13 10:36:53.875175 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+5110 DEB Apr 13 10:36:53.875218 (4386-4581) JAVA-SIPCC-SIP_SUB: sipSPIAddRouteHeadersToSubNot: Route info not available; will not add Route header.
+5111 DEB Apr 13 10:36:53.875265 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[757] 
+5112 NOT Apr 13 10:36:53.875316 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:SUBSCRI: <sip:***@10.79.57.147> :1000 SUBSCRIBE::ac7e8ab6-04fb1317-1a3c14a2-40fdfccc@10.79.57.215
+5113 DEB Apr 13 10:36:53.875410 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<757>, message=
+5114 DEB Apr 13 10:36:53.875708 (4386-4581) JAVA-sipio-sent---> SUBSCRIBE sip:***@10.79.57.147 SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK4a3dd2f4^M
+	From: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e964d5da0b5-3e7589c1^M
+	To: <sip:***@10.79.57.147>^M
+	Call-ID: ac7e8ab6-04fb1317-1a3c14a2-40fdfccc@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 1000 SUBSCRIBE^M
+	User-Agent: Cisco-CP8865/14.2.1^M
+	Event: presence^M
+	Accept: application/cpim-pidf+xml^M
+	Expires: 3600^M
+	Max-Forwards: 70^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Allow: ACK,BYE,CANCEL,INVITE,NOTIFY,OPTIONS,REFER,REGISTER,UPDATE,SUBSCRIBE^M
+	Content-Length: 0^M
+	^M
+5115 DEB Apr 13 10:36:53.875746 (4386-4581) JAVA-::End-Of-Sip-Message::
+5116 DEB Apr 13 10:36:53.875773 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Starting reTx timer for 32000 secs
+5117 DEB Apr 13 10:36:53.875897 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SUBSCRIBE sip:***@10.79.57.147 SIP/2.0() --> [10.79.57.147] : 
+5118 DEB Apr 13 10:36:53.876087 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5119 DEB Apr 13 10:36:53.876112 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SUBSCRIBE sip:***@10.79.57.147 SIP/2.0  Cseq:1000 SUBSCRIBE CallId:ac7e8ab6-04fb1317-1a3c14a2-40fdfccc@10.79.57.215    
+5120 DEB Apr 13 10:36:53.876219 (4386-4581) JAVA-SIPCC-MSG_SEND_REQ: SIPSPISendSubscribe: Sending SUBSCRIBE...
+5121 DEB Apr 13 10:36:53.878024 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+5122 DEB Apr 13 10:36:53.878075 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+5123 DEB Apr 13 10:36:53.878099 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+5124 DEB Apr 13 10:36:53.878171 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+5125 DEB Apr 13 10:36:53.878212 (4386-4581) JAVA-SIPCC-SIP_SUB: sipSPIAddRouteHeadersToSubNot: Route info not available; will not add Route header.
+5126 DEB Apr 13 10:36:53.878256 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[756] 
+5127 NOT Apr 13 10:36:53.878306 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:SUBSCRI: <sip:***@10.79.57.147> :1000 SUBSCRIBE::ac7e8ab6-04fb1318-2743ffeb-66a427e3@10.79.57.215
+5128 DEB Apr 13 10:36:53.878393 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<756>, message=
+5129 DEB Apr 13 10:36:53.878691 (4386-4581) JAVA-sipio-sent---> SUBSCRIBE sip:***@10.79.57.147 SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK2a2225ad^M
+	From: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9759458d5b-72809814^M
+	To: <sip:***@10.79.57.147>^M
+	Call-ID: ac7e8ab6-04fb1318-2743ffeb-66a427e3@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 1000 SUBSCRIBE^M
+	User-Agent: Cisco-CP8865/14.2.1^M
+	Event: presence^M
+	Accept: application/cpim-pidf+xml^M
+	Expires: 3600^M
+	Max-Forwards: 70^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Allow: ACK,BYE,CANCEL,INVITE,NOTIFY,OPTIONS,REFER,REGISTER,UPDATE,SUBSCRIBE^M
+	Content-Length: 0^M
+	^M
+5130 DEB Apr 13 10:36:53.878729 (4386-4581) JAVA-::End-Of-Sip-Message::
+5131 DEB Apr 13 10:36:53.878750 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Starting reTx timer for 32000 secs
+5132 DEB Apr 13 10:36:53.878860 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SUBSCRIBE sip:***@10.79.57.147 SIP/2.0() --> [10.79.57.147] : 
+5133 DEB Apr 13 10:36:53.879035 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5134 DEB Apr 13 10:36:53.879060 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SUBSCRIBE sip:***@10.79.57.147 SIP/2.0  Cseq:1000 SUBSCRIBE CallId:ac7e8ab6-04fb1318-2743ffeb-66a427e3@10.79.57.215    
+5135 DEB Apr 13 10:36:53.879236 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 0, Bytes Remaining 3674.
+5136 DEB Apr 13 10:36:53.879272 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5137 DEB Apr 13 10:36:53.879450 (4386-4581) JAVA-sipio-recv<--- SIP/2.0 200 OK^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK1778b9e0^M
+	From: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9131829b48-5d062cf7^M
+	To: <sip:***@10.79.57.147>;tag=1169210961^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	Call-ID: ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215^M
+	CSeq: 1000 SUBSCRIBE^M
+	Server: Cisco-CUCM14.0^M
+	Contact: <sip:***@10.79.57.147:5060;transport=tcp>^M
+	Expires: 3600^M
+	Content-Length: 0^M
+	^M
+5138 DEB Apr 13 10:36:53.879485 (4386-4581) JAVA-::End-Of-Sip-Message::
+5139 DEB Apr 13 10:36:53.879507 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> SIP/2.0 200 OK() --> [SIPCC] : 
+5140 NOT Apr 13 10:36:53.879548 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:200 OK
+5141 DEB Apr 13 10:36:53.879676 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5142 DEB Apr 13 10:36:53.879699 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:SIP/2.0 200 OK  Cseq:1000 SUBSCRIBE CallId:ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215    
+5143 DEB Apr 13 10:36:53.879767 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5144 DEB Apr 13 10:36:53.880204 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 758, Bytes Remaining 3075.
+5145 DEB Apr 13 10:36:53.880271 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5146 DEB Apr 13 10:36:53.880852 (4386-4581) JAVA-sipio-recv<--- NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b62606a7d13^M
+	From: <sip:***@10.79.57.147>;tag=1169210961^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9131829b48-5d062cf7^M
+	Call-ID: ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215^M
+	CSeq: 101 NOTIFY^M
+	Max-Forwards: 70^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	User-Agent: Cisco-CUCM14.0^M
+	Event: presence^M
+	Subscription-State: active;expires=3600^M
+	Contact: <sip:***@10.79.57.147:5060;transport=tcp>^M
+	Content-Type: application/pidf+xml^M
+	Content-Length: 758^M
+	^M
+	<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+	<presence xmlns="urn:ietf:params:xml:ns:pidf" entity="sip:***@10.79.57.147" xmlns:e="urn:ietf:params:xml:ns:pidf:status:rpid" xmlns:dm="urn:ietf:params:xml:ns:pidf:data-model" xmlns:ce="urn:cisco:params:xml:ns:pidf:rpid" xmlns:sc="urn:ietf:params:xml:ns:pidf:servcaps">
+	  <dm:person>
+	    <status>
+	    <basic>open</basic>
+	    </status>
+	    <e:activities>
+	      <ce:available/>
+	    </e:activiti
+5147 DEB Apr 13 10:36:53.880875 (4386-4581) JAVA-es>
+	  </dm:person>
+	  <tuple id="cmp-1-378634">
+	    <status>
+	      <basic>open</basic>
+	    </status>
+	    <sc:servcaps>
+	      <sc:audio>true</sc:audio>
+	    </sc:servcaps>
+	    <contact priority="0.8">sip:***@10.79.57.147:5060</contact>
+	    <timestamp>2023-04-13T02:36:51Z</timestamp>
+	  </tuple>
+	</presence>
+	^M
+5148 DEB Apr 13 10:36:53.880914 (4386-4581) JAVA-::End-Of-Sip-Message::
+5149 DEB Apr 13 10:36:53.880946 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0() --> [SIPCC] : 
+5150 NOT Apr 13 10:36:53.880986 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:NOTIFY : <sip:***@10.79.57.147>;tag=1169210961 :101 NOTIFY::ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215
+5151 DEB Apr 13 10:36:53.881162 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5152 DEB Apr 13 10:36:53.881186 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0  Cseq:101 NOTIFY CallId:ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215    
+5153 DEB Apr 13 10:36:53.882660 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5154 DEB Apr 13 10:36:53.882697 (4386-4581) JAVA-SIPCC-SIP_SUB: xmlDecodeEventData: Decode event data: entered,
+5155 DEB Apr 13 10:36:53.883377 (4386-4584) JAVA-[getDeployMode] deploy-mode:1 
+5156 NOT Apr 13 10:36:53.883437 (4386-4584) JAVA-SIPCC-BLF_INFO: notify_ind_cb: SUB 1: BLF 1
+5157 DEB Apr 13 10:36:53.883893 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 758, Bytes Remaining 1718.
+5158 DEB Apr 13 10:36:53.883966 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5159 DEB Apr 13 10:36:53.884536 (4386-4581) JAVA-sipio-recv<--- NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b636b325cf3^M
+	From: <sip:***@10.79.57.147>;tag=1169210961^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9131829b48-5d062cf7^M
+	Call-ID: ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215^M
+	CSeq: 102 NOTIFY^M
+	Max-Forwards: 70^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	User-Agent: Cisco-CUCM14.0^M
+	Event: presence^M
+	Subscription-State: active;expires=3600^M
+	Contact: <sip:***@10.79.57.147:5060;transport=tcp>^M
+	Content-Type: application/pidf+xml^M
+	Content-Length: 758^M
+	^M
+	<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+	<presence xmlns="urn:ietf:params:xml:ns:pidf" entity="sip:***@10.79.57.147" xmlns:e="urn:ietf:params:xml:ns:pidf:status:rpid" xmlns:dm="urn:ietf:params:xml:ns:pidf:data-model" xmlns:ce="urn:cisco:params:xml:ns:pidf:rpid" xmlns:sc="urn:ietf:params:xml:ns:pidf:servcaps">
+	  <dm:person>
+	    <status>
+	    <basic>open</basic>
+	    </status>
+	    <e:activities>
+	      <ce:available/>
+	    </e:activiti
+5160 DEB Apr 13 10:36:53.884559 (4386-4581) JAVA-es>
+	  </dm:person>
+	  <tuple id="cmp-1-378634">
+	    <status>
+	      <basic>open</basic>
+	    </status>
+	    <sc:servcaps>
+	      <sc:audio>true</sc:audio>
+	    </sc:servcaps>
+	    <contact priority="0.8">sip:***@10.79.57.147:5060</contact>
+	    <timestamp>2023-04-13T02:36:51Z</timestamp>
+	  </tuple>
+	</presence>
+	^M
+5161 DEB Apr 13 10:36:53.884594 (4386-4581) JAVA-::End-Of-Sip-Message::
+5162 DEB Apr 13 10:36:53.884624 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0() --> [SIPCC] : 
+5163 NOT Apr 13 10:36:53.884664 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:NOTIFY : <sip:***@10.79.57.147>;tag=1169210961 :102 NOTIFY::ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215
+5164 DEB Apr 13 10:36:53.884855 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5165 DEB Apr 13 10:36:53.884879 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0  Cseq:102 NOTIFY CallId:ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215    
+5166 DEB Apr 13 10:36:53.885278 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5167 DEB Apr 13 10:36:53.885311 (4386-4581) JAVA-SIPCC-SIP_SUB: xmlDecodeEventData: Decode event data: entered,
+5168 DEB Apr 13 10:36:53.885918 (4386-4584) JAVA-[getDeployMode] deploy-mode:1 
+5169 NOT Apr 13 10:36:53.885972 (4386-4584) JAVA-SIPCC-BLF_INFO: notify_ind_cb: SUB 1: BLF 1
+5170 DEB Apr 13 10:36:53.886215 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 0, Bytes Remaining 538.
+5171 DEB Apr 13 10:36:53.886253 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5172 DEB Apr 13 10:36:53.886441 (4386-4581) JAVA-sipio-recv<--- SIP/2.0 200 OK^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK66395021^M
+	From: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e926a0c485e-223128dd^M
+	To: <sip:***@10.79.57.147>;tag=1655196647^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	Call-ID: ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215^M
+	CSeq: 1000 SUBSCRIBE^M
+	Server: Cisco-CUCM14.0^M
+	Contact: <sip:***@10.79.57.147:5060;transport=tcp>^M
+	Expires: 3600^M
+	Content-Length: 0^M
+	^M
+5173 DEB Apr 13 10:36:53.887248 (4386-4581) JAVA-::End-Of-Sip-Message::
+5174 DEB Apr 13 10:36:53.887274 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> SIP/2.0 200 OK() --> [SIPCC] : 
+5175 NOT Apr 13 10:36:53.887318 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:200 OK
+5176 DEB Apr 13 10:36:53.887478 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5177 DEB Apr 13 10:36:53.887501 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:SIP/2.0 200 OK  Cseq:1000 SUBSCRIBE CallId:ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215    
+5178 DEB Apr 13 10:36:53.887569 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5179 DEB Apr 13 10:36:53.888007 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Header line read failure due to RS->EOF
+5180 DEB Apr 13 10:36:53.888038 (4386-4581) JAVA-ccsip_process_network_message: process_network_msg: not complete
+5181 NOT Apr 13 10:36:53.888074 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : SIP Incomplete message.70
+5182 DEB Apr 13 10:36:53.888124 (4386-4581) JAVA-SIPCC-MSG_SEND_RESP: sipSPISendSubscribeNotifyResponse: Sending response 200...
+5183 DEB Apr 13 10:36:53.892637 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+5184 DEB Apr 13 10:36:53.892711 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+5185 DEB Apr 13 10:36:53.892737 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+5186 DEB Apr 13 10:36:53.892809 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+5187 DEB Apr 13 10:36:53.892845 (4386-4581) JAVA-SIP : sipSPISendSubscribeNotifyResponse : Via host: 10.79.57.147, port: 5060, rcvd host: (null)
+5188 DEB Apr 13 10:36:53.892910 (4386-4581) JAVA-SIPCC-SIP_STORE: sipRelDevCoupledMessageStore: Storing for reTx (cseq=101, method=NOTIFY, to_tag=<ac7e8ab604fb8e9131829b48-5d062cf7>)
+5189 DEB Apr 13 10:36:53.892986 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[580] 
+5190 NOT Apr 13 10:36:53.893040 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:200 OK^M: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9131829b48-5d062cf7 :101 NOTIFY::ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215
+5191 DEB Apr 13 10:36:53.893147 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<580>, message=
+5192 DEB Apr 13 10:36:53.893368 (4386-4581) JAVA-sipio-sent---> SIP/2.0 200 OK^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b62606a7d13^M
+	From: <sip:***@10.79.57.147>;tag=1169210961^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9131829b48-5d062cf7^M
+	Call-ID: ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 101 NOTIFY^M
+	Server: Cisco-CP8865/14.2.1^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Content-Length: 0^M
+	^M
+5193 DEB Apr 13 10:36:53.893406 (4386-4581) JAVA-::End-Of-Sip-Message::
+5194 DEB Apr 13 10:36:53.893433 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SIP/2.0 200 OK() --> [10.79.57.147] : 
+5195 DEB Apr 13 10:36:53.893668 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5196 DEB Apr 13 10:36:53.893696 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SIP/2.0 200 OK  Cseq:101 NOTIFY CallId:ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215    
+5197 DEB Apr 13 10:36:53.893931 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 758, Bytes Remaining 4035.
+5198 DEB Apr 13 10:36:53.893999 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5199 DEB Apr 13 10:36:53.894566 (4386-4581) JAVA-sipio-recv<--- NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b64266e4c28^M
+	From: <sip:***@10.79.57.147>;tag=1655196647^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e926a0c485e-223128dd^M
+	Call-ID: ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215^M
+	CSeq: 101 NOTIFY^M
+	Max-Forwards: 70^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	User-Agent: Cisco-CUCM14.0^M
+	Event: presence^M
+	Subscription-State: active;expires=3600^M
+	Contact: <sip:***@10.79.57.147:5060;transport=tcp>^M
+	Content-Type: application/pidf+xml^M
+	Content-Length: 758^M
+	^M
+	<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+	<presence xmlns="urn:ietf:params:xml:ns:pidf" entity="sip:***@10.79.57.147" xmlns:e="urn:ietf:params:xml:ns:pidf:status:rpid" xmlns:dm="urn:ietf:params:xml:ns:pidf:data-model" xmlns:ce="urn:cisco:params:xml:ns:pidf:rpid" xmlns:sc="urn:ietf:params:xml:ns:pidf:servcaps">
+	  <dm:person>
+	    <status>
+	    <basic>open</basic>
+	    </status>
+	    <e:activities>
+	      <ce:available/>
+	    </e:activiti
+5200 DEB Apr 13 10:36:53.894588 (4386-4581) JAVA-es>
+	  </dm:person>
+	  <tuple id="cmp-1-378635">
+	    <status>
+	      <basic>open</basic>
+	    </status>
+	    <sc:servcaps>
+	      <sc:audio>true</sc:audio>
+	    </sc:servcaps>
+	    <contact priority="0.8">sip:***@10.79.57.147:5060</contact>
+	    <timestamp>2023-04-13T02:36:51Z</timestamp>
+	  </tuple>
+	</presence>
+	^M
+5201 DEB Apr 13 10:36:53.894624 (4386-4581) JAVA-::End-Of-Sip-Message::
+5202 DEB Apr 13 10:36:53.894653 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0() --> [SIPCC] : 
+5203 NOT Apr 13 10:36:53.894695 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:NOTIFY : <sip:***@10.79.57.147>;tag=1655196647 :101 NOTIFY::ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215
+5204 DEB Apr 13 10:36:53.894848 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5205 DEB Apr 13 10:36:53.894871 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0  Cseq:101 NOTIFY CallId:ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215    
+5206 DEB Apr 13 10:36:53.895337 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5207 DEB Apr 13 10:36:53.895370 (4386-4581) JAVA-SIPCC-SIP_SUB: xmlDecodeEventData: Decode event data: entered,
+5208 DEB Apr 13 10:36:53.896027 (4386-4584) JAVA-[getDeployMode] deploy-mode:1 
+5209 NOT Apr 13 10:36:53.896095 (4386-4584) JAVA-SIPCC-BLF_INFO: notify_ind_cb: SUB 1: BLF 1
+5210 DEB Apr 13 10:36:53.896443 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 758, Bytes Remaining 2679.
+5211 DEB Apr 13 10:36:53.897284 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5212 DEB Apr 13 10:36:53.897852 (4386-4581) JAVA-sipio-recv<--- NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b6637136b7^M
+	From: <sip:***@10.79.57.147>;tag=1655196647^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e926a0c485e-223128dd^M
+	Call-ID: ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215^M
+	CSeq: 102 NOTIFY^M
+	Max-Forwards: 70^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	User-Agent: Cisco-CUCM14.0^M
+	Event: presence^M
+	Subscription-State: active;expires=3600^M
+	Contact: <sip:***@10.79.57.147:5060;transport=tcp>^M
+	Content-Type: application/pidf+xml^M
+	Content-Length: 758^M
+	^M
+	<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+	<presence xmlns="urn:ietf:params:xml:ns:pidf" entity="sip:***@10.79.57.147" xmlns:e="urn:ietf:params:xml:ns:pidf:status:rpid" xmlns:dm="urn:ietf:params:xml:ns:pidf:data-model" xmlns:ce="urn:cisco:params:xml:ns:pidf:rpid" xmlns:sc="urn:ietf:params:xml:ns:pidf:servcaps">
+	  <dm:person>
+	    <status>
+	    <basic>open</basic>
+	    </status>
+	    <e:activities>
+	      <ce:available/>
+	    </e:activitie
+5213 DEB Apr 13 10:36:53.897874 (4386-4581) JAVA-s>
+	  </dm:person>
+	  <tuple id="cmp-1-378635">
+	    <status>
+	      <basic>open</basic>
+	    </status>
+	    <sc:servcaps>
+	      <sc:audio>true</sc:audio>
+	    </sc:servcaps>
+	    <contact priority="0.8">sip:***@10.79.57.147:5060</contact>
+	    <timestamp>2023-04-13T02:36:51Z</timestamp>
+	  </tuple>
+	</presence>
+	^M
+5214 DEB Apr 13 10:36:53.897908 (4386-4581) JAVA-::End-Of-Sip-Message::
+5215 DEB Apr 13 10:36:53.897940 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0() --> [SIPCC] : 
+5216 NOT Apr 13 10:36:53.897980 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:NOTIFY : <sip:***@10.79.57.147>;tag=1655196647 :102 NOTIFY::ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215
+5217 DEB Apr 13 10:36:53.898166 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5218 DEB Apr 13 10:36:53.898190 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0  Cseq:102 NOTIFY CallId:ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215    
+5219 DEB Apr 13 10:36:53.898622 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5220 DEB Apr 13 10:36:53.898653 (4386-4581) JAVA-SIPCC-SIP_SUB: xmlDecodeEventData: Decode event data: entered,
+5221 DEB Apr 13 10:36:53.899231 (4386-4584) JAVA-[getDeployMode] deploy-mode:1 
+5222 NOT Apr 13 10:36:53.899287 (4386-4584) JAVA-SIPCC-BLF_INFO: notify_ind_cb: SUB 1: BLF 1
+5223 DEB Apr 13 10:36:53.899561 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 0, Bytes Remaining 1562.
+5224 DEB Apr 13 10:36:53.899600 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5225 DEB Apr 13 10:36:53.899774 (4386-4581) JAVA-sipio-recv<--- SIP/2.0 404 Not Found^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK6edd47ce^M
+	From: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9300c18542-137aea9f^M
+	To: <sip:***@10.79.57.147>;tag=1753118900^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	Call-ID: ac7e8ab6-04fb1314-54db2f25-042059a2@10.79.57.215^M
+	CSeq: 1000 SUBSCRIBE^M
+	Server: Cisco-CUCM14.0^M
+	Content-Length: 0^M
+	^M
+5226 DEB Apr 13 10:36:53.899811 (4386-4581) JAVA-::End-Of-Sip-Message::
+5227 DEB Apr 13 10:36:53.899834 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> SIP/2.0 404 Not Found() --> [SIPCC] : 
+5228 NOT Apr 13 10:36:53.899876 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:404 Not: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9300c18542-137aea9f :1000 SUBSCRIBE::ac7e8ab6-04fb1314-54db2f25-042059a2@10.79.57.215
+5229 DEB Apr 13 10:36:53.900040 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5230 DEB Apr 13 10:36:53.900064 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:SIP/2.0 404 Not  Cseq:1000 SUBSCRIBE CallId:ac7e8ab6-04fb1314-54db2f25-042059a2@10.79.57.215    
+5231 DEB Apr 13 10:36:53.900135 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5232 DEB Apr 13 10:36:53.900513 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 0, Bytes Remaining 1008.
+5233 DEB Apr 13 10:36:53.900559 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5234 DEB Apr 13 10:36:53.900796 (4386-4581) JAVA-sipio-recv<--- NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b6720096e3d^M
+	From: <sip:***@10.79.57.215>^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9300c18542-137aea9f^M
+	Call-ID: ac7e8ab6-04fb1314-54db2f25-042059a2@10.79.57.215^M
+	CSeq: 101 NOTIFY^M
+	Max-Forwards: 70^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	User-Agent: Cisco-CUCM14.0^M
+	Event: presence^M
+	Subscription-State: terminated;reason=deactivated^M
+	Contact: <sip:***@10.79.57.147:5060;transport=tcp>^M
+	Content-Length: 0^M
+	^M
+5235 DEB Apr 13 10:36:53.900837 (4386-4581) JAVA-::End-Of-Sip-Message::
+5236 DEB Apr 13 10:36:53.900868 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0() --> [SIPCC] : 
+5237 NOT Apr 13 10:36:53.900912 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:NOTIFY : <sip:***@10.79.57.215> :101 NOTIFY::ac7e8ab6-04fb1314-54db2f25-042059a2@10.79.57.215
+5238 DEB Apr 13 10:36:53.901056 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5239 DEB Apr 13 10:36:53.901085 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0  Cseq:101 NOTIFY CallId:ac7e8ab6-04fb1314-54db2f25-042059a2@10.79.57.215    
+5240 DEB Apr 13 10:36:53.902495 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5241 DEB Apr 13 10:36:53.902659 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 0, Bytes Remaining 651.
+5242 DEB Apr 13 10:36:53.902694 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5243 DEB Apr 13 10:36:53.902842 (4386-4581) JAVA-sipio-recv<--- SIP/2.0 404 Not Found^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK6ab0941a^M
+	From: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e942ece9fac-2e847ce2^M
+	To: <sip:***@10.79.57.147>;tag=20171885^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	Call-ID: ac7e8ab6-04fb1315-69c0bd9e-5d732188@10.79.57.215^M
+	CSeq: 1000 SUBSCRIBE^M
+	Server: Cisco-CUCM14.0^M
+	Content-Length: 0^M
+	^M
+5244 DEB Apr 13 10:36:53.902878 (4386-4581) JAVA-::End-Of-Sip-Message::
+5245 DEB Apr 13 10:36:53.902901 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> SIP/2.0 404 Not Found() --> [SIPCC] : 
+5246 NOT Apr 13 10:36:53.902942 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:404 Not: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e942ece9fac-2e847ce2 :1000 SUBSCRIBE::ac7e8ab6-04fb1315-69c0bd9e-5d732188@10.79.57.215
+5247 DEB Apr 13 10:36:53.903096 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5248 DEB Apr 13 10:36:53.903118 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:SIP/2.0 404 Not  Cseq:1000 SUBSCRIBE CallId:ac7e8ab6-04fb1315-69c0bd9e-5d732188@10.79.57.215    
+5249 DEB Apr 13 10:36:53.903183 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5250 DEB Apr 13 10:36:53.903538 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 0, Bytes Remaining 98.
+5251 DEB Apr 13 10:36:53.903574 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5252 DEB Apr 13 10:36:53.903840 (4386-4581) JAVA-sipio-recv<--- NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b688f20816^M
+	From: <sip:***@10.79.57.215>^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e942ece9fac-2e847ce2^M
+	Call-ID: ac7e8ab6-04fb1315-69c0bd9e-5d732188@10.79.57.215^M
+	CSeq: 101 NOTIFY^M
+	Max-Forwards: 70^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	User-Agent: Cisco-CUCM14.0^M
+	Event: presence^M
+	Subscription-State: terminated;reason=deactivated^M
+	Contact: <sip:***@10.79.57.147:5060;transport=tcp>^M
+	Content-Length: 0^M
+	^M
+5253 DEB Apr 13 10:36:53.903881 (4386-4581) JAVA-::End-Of-Sip-Message::
+5254 DEB Apr 13 10:36:53.903911 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0() --> [SIPCC] : 
+5255 NOT Apr 13 10:36:53.903949 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:NOTIFY : <sip:***@10.79.57.215> :101 NOTIFY::ac7e8ab6-04fb1315-69c0bd9e-5d732188@10.79.57.215
+5256 DEB Apr 13 10:36:53.904093 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5257 DEB Apr 13 10:36:53.904115 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0  Cseq:101 NOTIFY CallId:ac7e8ab6-04fb1315-69c0bd9e-5d732188@10.79.57.215    
+5258 DEB Apr 13 10:36:53.904472 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5259 DEB Apr 13 10:36:53.904594 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Header line read failure due to RS->EOF
+5260 DEB Apr 13 10:36:53.904619 (4386-4581) JAVA-ccsip_process_network_message: process_network_msg: not complete
+5261 NOT Apr 13 10:36:53.904645 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : SIP Incomplete message.71
+5262 DEB Apr 13 10:36:53.904697 (4386-4581) JAVA-SIPCC-MSG_SEND_RESP: sipSPISendSubscribeNotifyResponse: Sending response 200...
+5263 DEB Apr 13 10:36:53.912789 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+5264 DEB Apr 13 10:36:53.912867 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+5265 DEB Apr 13 10:36:53.912893 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+5266 DEB Apr 13 10:36:53.912968 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+5267 DEB Apr 13 10:36:53.913004 (4386-4581) JAVA-SIP : sipSPISendSubscribeNotifyResponse : Via host: 10.79.57.147, port: 5060, rcvd host: (null)
+5268 DEB Apr 13 10:36:53.913071 (4386-4581) JAVA-SIPCC-SIP_STORE: sipRelDevCoupledMessageStore: Storing for reTx (cseq=102, method=NOTIFY, to_tag=<ac7e8ab604fb8e9131829b48-5d062cf7>)
+5269 DEB Apr 13 10:36:53.913147 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[580] 
+5270 NOT Apr 13 10:36:53.913202 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:200 OK^M: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9131829b48-5d062cf7 :102 NOTIFY::ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215
+5271 DEB Apr 13 10:36:53.913247 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<580>, message=
+5272 DEB Apr 13 10:36:53.913467 (4386-4581) JAVA-sipio-sent---> SIP/2.0 200 OK^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b636b325cf3^M
+	From: <sip:***@10.79.57.147>;tag=1169210961^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9131829b48-5d062cf7^M
+	Call-ID: ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 102 NOTIFY^M
+	Server: Cisco-CP8865/14.2.1^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Content-Length: 0^M
+	^M
+5273 DEB Apr 13 10:36:53.913505 (4386-4581) JAVA-::End-Of-Sip-Message::
+5274 DEB Apr 13 10:36:53.913532 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SIP/2.0 200 OK() --> [10.79.57.147] : 
+5275 DEB Apr 13 10:36:53.913817 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5276 DEB Apr 13 10:36:53.913843 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SIP/2.0 200 OK  Cseq:102 NOTIFY CallId:ac7e8ab6-04fb1312-0d5e9a88-37a18d99@10.79.57.215    
+5277 DEB Apr 13 10:36:53.914065 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 0, Bytes Remaining 3759.
+5278 DEB Apr 13 10:36:53.914101 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5279 DEB Apr 13 10:36:53.914279 (4386-4581) JAVA-sipio-recv<--- SIP/2.0 200 OK^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK216d354e^M
+	From: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e952c6bf981-5a5f5259^M
+	To: <sip:***@10.79.57.147>;tag=788398780^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	Call-ID: ac7e8ab6-04fb1316-4c4f9764-50a2d203@10.79.57.215^M
+	CSeq: 1000 SUBSCRIBE^M
+	Server: Cisco-CUCM14.0^M
+	Contact: <sip:***@10.79.57.147:5060;transport=tcp>^M
+	Expires: 3600^M
+	Content-Length: 0^M
+	^M
+5280 DEB Apr 13 10:36:53.914314 (4386-4581) JAVA-::End-Of-Sip-Message::
+5281 DEB Apr 13 10:36:53.914336 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> SIP/2.0 200 OK() --> [SIPCC] : 
+5282 NOT Apr 13 10:36:53.914377 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:200 OK
+5283 DEB Apr 13 10:36:53.914514 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5284 DEB Apr 13 10:36:53.914537 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:SIP/2.0 200 OK  Cseq:1000 SUBSCRIBE CallId:ac7e8ab6-04fb1316-4c4f9764-50a2d203@10.79.57.215    
+5285 DEB Apr 13 10:36:53.914607 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5286 DEB Apr 13 10:36:53.914974 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 754, Bytes Remaining 3147.
+5287 DEB Apr 13 10:36:53.915042 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5288 DEB Apr 13 10:36:53.915611 (4386-4581) JAVA-sipio-recv<--- NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b695b714a13^M
+	From: <sip:***@10.79.57.147>;tag=788398780^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e952c6bf981-5a5f5259^M
+	Call-ID: ac7e8ab6-04fb1316-4c4f9764-50a2d203@10.79.57.215^M
+	CSeq: 101 NOTIFY^M
+	Max-Forwards: 70^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	User-Agent: Cisco-CUCM14.0^M
+	Event: presence^M
+	Subscription-State: active;expires=3600^M
+	Contact: <sip:***@10.79.57.147:5060;transport=tcp>^M
+	Content-Type: application/pidf+xml^M
+	Content-Length: 754^M
+	^M
+	<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+	<presence xmlns="urn:ietf:params:xml:ns:pidf" entity="sip:***@10.79.57.147" xmlns:e="urn:ietf:params:xml:ns:pidf:status:rpid" xmlns:dm="urn:ietf:params:xml:ns:pidf:data-model" xmlns:ce="urn:cisco:params:xml:ns:pidf:rpid" xmlns:sc="urn:ietf:params:xml:ns:pidf:servcaps">
+	  <dm:person>
+	    <status>
+	    <basic>closed</basic>
+	    </status>
+	    <e:activities>
+	    </e:activities>
+	  </dm:person>
+	  
+5289 DEB Apr 13 10:36:53.915635 (4386-4581) JAVA-<tuple id="cmp-1-378638">
+	    <status>
+	      <basic>closed</basic>
+	    </status>
+	    <sc:servcaps>
+	      <sc:audio>true</sc:audio>
+	    </sc:servcaps>
+	    <contact priority="0.8">sip:***@10.79.57.147:5060</contact>
+	    <timestamp>2023-04-13T02:36:51Z</timestamp>
+	  </tuple>
+	</presence>
+	^M
+5290 DEB Apr 13 10:36:53.915669 (4386-4581) JAVA-::End-Of-Sip-Message::
+5291 DEB Apr 13 10:36:53.915699 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0() --> [SIPCC] : 
+5292 NOT Apr 13 10:36:53.915738 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:NOTIFY : <sip:***@10.79.57.147>;tag=788398780 :101 NOTIFY::ac7e8ab6-04fb1316-4c4f9764-50a2d203@10.79.57.215
+5293 DEB Apr 13 10:36:53.915900 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5294 DEB Apr 13 10:36:53.915923 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0  Cseq:101 NOTIFY CallId:ac7e8ab6-04fb1316-4c4f9764-50a2d203@10.79.57.215    
+5295 DEB Apr 13 10:36:53.916308 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5296 DEB Apr 13 10:36:53.916340 (4386-4581) JAVA-SIPCC-SIP_SUB: xmlDecodeEventData: Decode event data: entered,
+5297 DEB Apr 13 10:36:53.917755 (4386-4584) JAVA-[getDeployMode] deploy-mode:1 
+5298 NOT Apr 13 10:36:53.917815 (4386-4584) JAVA-SIPCC-BLF_INFO: notify_ind_cb: SUB 1: BLF 0
+5299 DEB Apr 13 10:36:53.918056 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 0, Bytes Remaining 1972.
+5300 DEB Apr 13 10:36:53.918094 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5301 DEB Apr 13 10:36:53.918275 (4386-4581) JAVA-sipio-recv<--- SIP/2.0 200 OK^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK4a3dd2f4^M
+	From: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e964d5da0b5-3e7589c1^M
+	To: <sip:***@10.79.57.147>;tag=417055380^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	Call-ID: ac7e8ab6-04fb1317-1a3c14a2-40fdfccc@10.79.57.215^M
+	CSeq: 1000 SUBSCRIBE^M
+	Server: Cisco-CUCM14.0^M
+	Contact: <sip:***@10.79.57.147:5060;transport=tcp>^M
+	Expires: 3600^M
+	Content-Length: 0^M
+	^M
+5302 DEB Apr 13 10:36:53.918311 (4386-4581) JAVA-::End-Of-Sip-Message::
+5303 DEB Apr 13 10:36:53.918333 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> SIP/2.0 200 OK() --> [SIPCC] : 
+5304 NOT Apr 13 10:36:53.918375 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:200 OK
+5305 DEB Apr 13 10:36:53.918535 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5306 DEB Apr 13 10:36:53.918559 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:SIP/2.0 200 OK  Cseq:1000 SUBSCRIBE CallId:ac7e8ab6-04fb1317-1a3c14a2-40fdfccc@10.79.57.215    
+5307 DEB Apr 13 10:36:53.918628 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5308 DEB Apr 13 10:36:53.919021 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 740, Bytes Remaining 1375.
+5309 DEB Apr 13 10:36:53.919089 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5310 DEB Apr 13 10:36:53.919644 (4386-4581) JAVA-sipio-recv<--- NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b6ab5fe45c^M
+	From: <sip:***@10.79.57.147>;tag=417055380^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e964d5da0b5-3e7589c1^M
+	Call-ID: ac7e8ab6-04fb1317-1a3c14a2-40fdfccc@10.79.57.215^M
+	CSeq: 101 NOTIFY^M
+	Max-Forwards: 70^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	User-Agent: Cisco-CUCM14.0^M
+	Event: presence^M
+	Subscription-State: active;expires=3600^M
+	Contact: <sip:***@10.79.57.147:5060;transport=tcp>^M
+	Content-Type: application/pidf+xml^M
+	Content-Length: 740^M
+	^M
+	<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+	<presence xmlns="urn:ietf:params:xml:ns:pidf" entity="sip:***@10.79.57.147" xmlns:e="urn:ietf:params:xml:ns:pidf:status:rpid" xmlns:dm="urn:ietf:params:xml:ns:pidf:data-model" xmlns:ce="urn:cisco:params:xml:ns:pidf:rpid" xmlns:sc="urn:ietf:params:xml:ns:pidf:servcaps">
+	  <dm:person>
+	    <status>
+	    <basic>closed</basic>
+	    </status>
+	    <e:activities>
+	    </e:activities>
+	  </dm:person>
+	  <
+5311 DEB Apr 13 10:36:53.919667 (4386-4581) JAVA-tuple id="cmp-1-378639">
+	    <status>
+	      <basic>closed</basic>
+	    </status>
+	    <sc:servcaps>
+	      <sc:audio>true</sc:audio>
+	    </sc:servcaps>
+	    <contact priority="0.8">sip:***@10.79.57.147:5060</contact>
+	    <timestamp>2023-04-13T02:36:51Z</timestamp>
+	  </tuple>
+	</presence>
+	^M
+5312 DEB Apr 13 10:36:53.919701 (4386-4581) JAVA-::End-Of-Sip-Message::
+5313 DEB Apr 13 10:36:53.919732 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0() --> [SIPCC] : 
+5314 NOT Apr 13 10:36:53.919771 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:NOTIFY : <sip:***@10.79.57.147>;tag=417055380 :101 NOTIFY::ac7e8ab6-04fb1317-1a3c14a2-40fdfccc@10.79.57.215
+5315 DEB Apr 13 10:36:53.919923 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5316 DEB Apr 13 10:36:53.919947 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0  Cseq:101 NOTIFY CallId:ac7e8ab6-04fb1317-1a3c14a2-40fdfccc@10.79.57.215    
+5317 DEB Apr 13 10:36:53.920310 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5318 DEB Apr 13 10:36:53.920341 (4386-4581) JAVA-SIPCC-SIP_SUB: xmlDecodeEventData: Decode event data: entered,
+5319 DEB Apr 13 10:36:53.920938 (4386-4584) JAVA-[getDeployMode] deploy-mode:1 
+5320 NOT Apr 13 10:36:53.920991 (4386-4584) JAVA-SIPCC-BLF_INFO: notify_ind_cb: SUB 1: BLF 0
+5321 DEB Apr 13 10:36:53.921194 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Content Length 0, Bytes Remaining 208.
+5322 DEB Apr 13 10:36:53.921232 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5323 DEB Apr 13 10:36:53.921413 (4386-4581) JAVA-sipio-recv<--- SIP/2.0 202 Accepted^M
+	Via: SIP/2.0/TCP 10.79.57.215:49316;branch=z9hG4bK2a2225ad^M
+	From: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9759458d5b-72809814^M
+	To: <sip:***@10.79.57.147>;tag=1959361068^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	Call-ID: ac7e8ab6-04fb1318-2743ffeb-66a427e3@10.79.57.215^M
+	CSeq: 1000 SUBSCRIBE^M
+	Server: Cisco-CUCM14.0^M
+	Contact: <sip:***@10.79.57.147:5060;transport=tcp>^M
+	Expires: 3600^M
+	Content-Length: 0^M
+	^M
+5324 DEB Apr 13 10:36:53.922404 (4386-4581) JAVA-::End-Of-Sip-Message::
+5325 DEB Apr 13 10:36:53.922439 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> SIP/2.0 202 Accepted() --> [SIPCC] : 
+5326 NOT Apr 13 10:36:53.922485 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:202 Acc: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9759458d5b-72809814 :1000 SUBSCRIBE::ac7e8ab6-04fb1318-2743ffeb-66a427e3@10.79.57.215
+5327 DEB Apr 13 10:36:53.922645 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5328 DEB Apr 13 10:36:53.922668 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:SIP/2.0 202 Accepted  Cseq:1000 SUBSCRIBE CallId:ac7e8ab6-04fb1318-2743ffeb-66a427e3@10.79.57.215    
+5329 DEB Apr 13 10:36:53.922738 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5330 DEB Apr 13 10:36:53.923098 (4386-4581) JAVA-SIPCC-HTTPISH: httpish_msg_process_network_msg: Header line read failure due to RS->EOF
+5331 DEB Apr 13 10:36:53.923127 (4386-4581) JAVA-ccsip_process_network_message: process_network_msg: not complete
+5332 NOT Apr 13 10:36:53.923154 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : SIP Incomplete message.72
+5333 DEB Apr 13 10:36:53.923206 (4386-4581) JAVA-SIPCC-MSG_SEND_RESP: sipSPISendSubscribeNotifyResponse: Sending response 200...
+5334 DEB Apr 13 10:36:53.932961 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+5335 DEB Apr 13 10:36:53.933036 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+5336 DEB Apr 13 10:36:53.933063 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+5337 DEB Apr 13 10:36:53.933136 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+5338 DEB Apr 13 10:36:53.933198 (4386-4581) JAVA-SIP : sipSPISendSubscribeNotifyResponse : Via host: 10.79.57.147, port: 5060, rcvd host: (null)
+5339 DEB Apr 13 10:36:53.933267 (4386-4581) JAVA-SIPCC-SIP_STORE: sipRelDevCoupledMessageStore: Storing for reTx (cseq=101, method=NOTIFY, to_tag=<ac7e8ab604fb8e926a0c485e-223128dd>)
+5340 DEB Apr 13 10:36:53.933345 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[580] 
+5341 NOT Apr 13 10:36:53.933402 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:200 OK^M: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e926a0c485e-223128dd :101 NOTIFY::ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215
+5342 DEB Apr 13 10:36:53.933449 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<580>, message=
+5343 DEB Apr 13 10:36:53.933728 (4386-4581) JAVA-sipio-sent---> SIP/2.0 200 OK^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b64266e4c28^M
+	From: <sip:***@10.79.57.147>;tag=1655196647^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e926a0c485e-223128dd^M
+	Call-ID: ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 101 NOTIFY^M
+	Server: Cisco-CP8865/14.2.1^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Content-Length: 0^M
+	^M
+5344 DEB Apr 13 10:36:53.933771 (4386-4581) JAVA-::End-Of-Sip-Message::
+5345 DEB Apr 13 10:36:53.933799 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SIP/2.0 200 OK() --> [10.79.57.147] : 
+5346 DEB Apr 13 10:36:53.934004 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5347 DEB Apr 13 10:36:53.934029 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SIP/2.0 200 OK  Cseq:101 NOTIFY CallId:ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215    
+5348 DEB Apr 13 10:36:53.934078 (4386-4581) JAVA-SIPCC-MSG_SEND_RESP: sipSPISendSubscribeNotifyResponse: Sending response 200...
+5349 DEB Apr 13 10:36:53.934852 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+5350 DEB Apr 13 10:36:53.934904 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+5351 DEB Apr 13 10:36:53.934928 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+5352 DEB Apr 13 10:36:53.934992 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+5353 DEB Apr 13 10:36:53.935027 (4386-4581) JAVA-SIP : sipSPISendSubscribeNotifyResponse : Via host: 10.79.57.147, port: 5060, rcvd host: (null)
+5354 DEB Apr 13 10:36:53.935084 (4386-4581) JAVA-SIPCC-SIP_STORE: sipRelDevCoupledMessageStore: Storing for reTx (cseq=102, method=NOTIFY, to_tag=<ac7e8ab604fb8e926a0c485e-223128dd>)
+5355 DEB Apr 13 10:36:53.935149 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[579] 
+5356 NOT Apr 13 10:36:53.935201 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:200 OK^M: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e926a0c485e-223128dd :102 NOTIFY::ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215
+5357 DEB Apr 13 10:36:53.935241 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<579>, message=
+5358 DEB Apr 13 10:36:53.935457 (4386-4581) JAVA-sipio-sent---> SIP/2.0 200 OK^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b6637136b7^M
+	From: <sip:***@10.79.57.147>;tag=1655196647^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e926a0c485e-223128dd^M
+	Call-ID: ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 102 NOTIFY^M
+	Server: Cisco-CP8865/14.2.1^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Content-Length: 0^M
+	^M
+5359 DEB Apr 13 10:36:53.935494 (4386-4581) JAVA-::End-Of-Sip-Message::
+5360 DEB Apr 13 10:36:53.935521 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SIP/2.0 200 OK() --> [10.79.57.147] : 
+5361 DEB Apr 13 10:36:53.935705 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5362 DEB Apr 13 10:36:53.935736 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SIP/2.0 200 OK  Cseq:102 NOTIFY CallId:ac7e8ab6-04fb1313-448dc1ab-3afb8cc3@10.79.57.215    
+5363 ERR Apr 13 10:36:53.935842 (4386-4581) JAVA-SIP : subsmanager_handle_ev_app_notify_response : no SCB for sub_id=1d4d0006 found
+5364 DEB Apr 13 10:36:53.935866 (4386-4581) JAVA-SIP : SIPTaskProcessListEvent : subsmanager_handle_ev_app_notify_response() returned error.
+5365 ERR Apr 13 10:36:53.935894 (4386-4581) JAVA-SIP : subsmanager_handle_ev_app_subscription_terminated : no SCB for sub_id=1d4d0006 or request id 1101 and eventPackage 5 found
+5366 DEB Apr 13 10:36:53.935913 (4386-4581) JAVA-SIP : SIPTaskProcessListEvent : subsmanager_handle_ev_app_subscription_terminated() returned error.
+5367 ERR Apr 13 10:36:53.935976 (4386-4581) JAVA-SIP : subsmanager_handle_ev_app_notify_response : no SCB for sub_id=1d4e0007 found
+5368 DEB Apr 13 10:36:53.935996 (4386-4581) JAVA-SIP : SIPTaskProcessListEvent : subsmanager_handle_ev_app_notify_response() returned error.
+5369 ERR Apr 13 10:36:53.936017 (4386-4581) JAVA-SIP : subsmanager_handle_ev_app_subscription_terminated : no SCB for sub_id=1d4e0007 or request id 1102 and eventPackage 5 found
+5370 DEB Apr 13 10:36:53.936034 (4386-4581) JAVA-SIP : SIPTaskProcessListEvent : subsmanager_handle_ev_app_subscription_terminated() returned error.
+5371 DEB Apr 13 10:36:53.936234 (4386-4581) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+5372 DEB Apr 13 10:36:53.937248 (4386-4581) JAVA-sipio-recv<--- NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b6b2961df6d^M
+	From: <sip:***@10.79.57.147>;tag=1959361068^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9759458d5b-72809814^M
+	Call-ID: ac7e8ab6-04fb1318-2743ffeb-66a427e3@10.79.57.215^M
+	CSeq: 101 NOTIFY^M
+	Max-Forwards: 70^M
+	Date: Thu, 13 Apr 2023 02:36:51 GMT^M
+	User-Agent: Cisco-CUCM14.0^M
+	Event: presence^M
+	Subscription-State: active;expires=3600^M
+	Contact: <sip:***@10.79.57.147:5060;transport=tcp>^M
+	Content-Length: 0^M
+	^M
+5373 DEB Apr 13 10:36:53.937288 (4386-4581) JAVA-::End-Of-Sip-Message::
+5374 DEB Apr 13 10:36:53.937319 (4386-4581) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0() --> [SIPCC] : 
+5375 NOT Apr 13 10:36:53.937360 (4386-4581) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:NOTIFY : <sip:***@10.79.57.147>;tag=1959361068 :101 NOTIFY::ac7e8ab6-04fb1318-2743ffeb-66a427e3@10.79.57.215
+5376 DEB Apr 13 10:36:53.937503 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5377 DEB Apr 13 10:36:53.937526 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:NOTIFY sip:***@10.79.57.215:49316;transport=tcp SIP/2.0  Cseq:101 NOTIFY CallId:ac7e8ab6-04fb1318-2743ffeb-66a427e3@10.79.57.215    
+5378 DEB Apr 13 10:36:53.937910 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+5379 NOT Apr 13 10:36:53.938018 (4386-4584) JAVA-SIPCC-BLF_INFO: notify_ind_cb: SUB 1: BLF 0
+5380 DEB Apr 13 10:36:53.938300 (4386-4581) JAVA-SIPCC-MSG_SEND_RESP: sipSPISendSubscribeNotifyResponse: Sending response 200...
+5381 DEB Apr 13 10:36:53.939003 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+5382 DEB Apr 13 10:36:53.939051 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+5383 DEB Apr 13 10:36:53.939076 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+5384 DEB Apr 13 10:36:53.939138 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+5385 DEB Apr 13 10:36:53.939173 (4386-4581) JAVA-SIP : sipSPISendSubscribeNotifyResponse : Via host: 10.79.57.147, port: 5060, rcvd host: (null)
+5386 DEB Apr 13 10:36:53.939230 (4386-4581) JAVA-SIPCC-SIP_STORE: sipRelDevCoupledMessageStore: Storing for reTx (cseq=101, method=NOTIFY, to_tag=<ac7e8ab604fb8e952c6bf981-5a5f5259>)
+5387 DEB Apr 13 10:36:53.939297 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[586] 
+5388 NOT Apr 13 10:36:53.939350 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:200 OK^M: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e952c6bf981-5a5f5259 :101 NOTIFY::ac7e8ab6-04fb1316-4c4f9764-50a2d203@10.79.57.215
+5389 DEB Apr 13 10:36:53.939457 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<586>, message=
+5390 DEB Apr 13 10:36:53.939783 (4386-4581) JAVA-sipio-sent---> SIP/2.0 200 OK^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b695b714a13^M
+	From: <sip:***@10.79.57.147>;tag=788398780^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e952c6bf981-5a5f5259^M
+	Call-ID: ac7e8ab6-04fb1316-4c4f9764-50a2d203@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 101 NOTIFY^M
+	Server: Cisco-CP8865/14.2.1^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Content-Length: 0^M
+	^M
+5391 DEB Apr 13 10:36:53.939831 (4386-4581) JAVA-::End-Of-Sip-Message::
+5392 DEB Apr 13 10:36:53.939860 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SIP/2.0 200 OK() --> [10.79.57.147] : 
+5393 DEB Apr 13 10:36:53.940081 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5394 DEB Apr 13 10:36:53.940107 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SIP/2.0 200 OK  Cseq:101 NOTIFY CallId:ac7e8ab6-04fb1316-4c4f9764-50a2d203@10.79.57.215    
+5395 DEB Apr 13 10:36:53.940156 (4386-4581) JAVA-SIPCC-MSG_SEND_RESP: sipSPISendSubscribeNotifyResponse: Sending response 200...
+5396 DEB Apr 13 10:36:53.952503 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+5397 DEB Apr 13 10:36:53.952577 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+5398 DEB Apr 13 10:36:53.952603 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+5399 DEB Apr 13 10:36:53.952677 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+5400 DEB Apr 13 10:36:53.952712 (4386-4581) JAVA-SIP : sipSPISendSubscribeNotifyResponse : Via host: 10.79.57.147, port: 5060, rcvd host: (null)
+5401 DEB Apr 13 10:36:53.952778 (4386-4581) JAVA-SIPCC-SIP_STORE: sipRelDevCoupledMessageStore: Storing for reTx (cseq=101, method=NOTIFY, to_tag=<ac7e8ab604fb8e964d5da0b5-3e7589c1>)
+5402 DEB Apr 13 10:36:53.952856 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[578] 
+5403 NOT Apr 13 10:36:53.952910 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:200 OK^M: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e964d5da0b5-3e7589c1 :101 NOTIFY::ac7e8ab6-04fb1317-1a3c14a2-40fdfccc@10.79.57.215
+5404 DEB Apr 13 10:36:53.953027 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<578>, message=
+5405 DEB Apr 13 10:36:53.953247 (4386-4581) JAVA-sipio-sent---> SIP/2.0 200 OK^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b6ab5fe45c^M
+	From: <sip:***@10.79.57.147>;tag=417055380^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e964d5da0b5-3e7589c1^M
+	Call-ID: ac7e8ab6-04fb1317-1a3c14a2-40fdfccc@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 101 NOTIFY^M
+	Server: Cisco-CP8865/14.2.1^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Content-Length: 0^M
+	^M
+5406 DEB Apr 13 10:36:53.953286 (4386-4581) JAVA-::End-Of-Sip-Message::
+5407 DEB Apr 13 10:36:53.953312 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SIP/2.0 200 OK() --> [10.79.57.147] : 
+5408 DEB Apr 13 10:36:53.953578 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5409 DEB Apr 13 10:36:53.953606 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SIP/2.0 200 OK  Cseq:101 NOTIFY CallId:ac7e8ab6-04fb1317-1a3c14a2-40fdfccc@10.79.57.215    
+5410 DEB Apr 13 10:36:53.953877 (4386-4581) JAVA-SIPCC-MSG_SEND_RESP: sipSPISendSubscribeNotifyResponse: Sending response 200...
+5411 DEB Apr 13 10:36:53.954791 (4386-4581) JAVA-edge_send_get: Length of data read from edge_gateway 64
+5412 DEB Apr 13 10:36:53.954842 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8865_32e096c9-0010-5000-a000-ac7e8ab604fb
+5413 DEB Apr 13 10:36:53.954868 (4386-4581) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: 32e096c900105000a000ac7e8ab604fb remote_uuid: 
+5414 DEB Apr 13 10:36:53.954930 (4386-4581) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPAC7E8AB604FB] to contact header 
+5415 DEB Apr 13 10:36:53.954964 (4386-4581) JAVA-SIP : sipSPISendSubscribeNotifyResponse : Via host: 10.79.57.147, port: 5060, rcvd host: (null)
+5416 DEB Apr 13 10:36:53.955023 (4386-4581) JAVA-SIPCC-SIP_STORE: sipRelDevCoupledMessageStore: Storing for reTx (cseq=101, method=NOTIFY, to_tag=<ac7e8ab604fb8e9759458d5b-72809814>)
+5417 DEB Apr 13 10:36:53.955093 (4386-4581) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[580] 
+5418 NOT Apr 13 10:36:53.955145 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:200 OK^M: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9759458d5b-72809814 :101 NOTIFY::ac7e8ab6-04fb1318-2743ffeb-66a427e3@10.79.57.215
+5419 DEB Apr 13 10:36:53.955244 (4386-4581) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<89>,length=<580>, message=
+5420 DEB Apr 13 10:36:53.955465 (4386-4581) JAVA-sipio-sent---> SIP/2.0 200 OK^M
+	Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK33b6b2961df6d^M
+	From: <sip:***@10.79.57.147>;tag=1959361068^M
+	To: <sip:***@10.79.57.215>;tag=ac7e8ab604fb8e9759458d5b-72809814^M
+	Call-ID: ac7e8ab6-04fb1318-2743ffeb-66a427e3@10.79.57.215^M
+	Session-ID: 32e096c900105000a000ac7e8ab604fb;remote=00000000000000000000000000000000^M
+	Date: Thu, 13 Apr 2023 02:36:53 GMT^M
+	CSeq: 101 NOTIFY^M
+	Server: Cisco-CP8865/14.2.1^M
+	Contact: <sip:***@10.79.57.215:49316;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPAC7E8AB604FB"^M
+	Content-Length: 0^M
+	^M
+5421 DEB Apr 13 10:36:53.955512 (4386-4581) JAVA-::End-Of-Sip-Message::
+5422 DEB Apr 13 10:36:53.955543 (4386-4581) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SIP/2.0 200 OK() --> [10.79.57.147] : 
+5423 DEB Apr 13 10:36:53.955778 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+5424 DEB Apr 13 10:36:53.955810 (4386-4581) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SIP/2.0 200 OK  Cseq:101 NOTIFY CallId:ac7e8ab6-04fb1318-2743ffeb-66a427e3@10.79.57.215    
+5425 DEB Apr 13 10:36:54.117527 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5426 DEB Apr 13 10:36:54.117680 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5427 DEB Apr 13 10:36:54.118324 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5428 DEB Apr 13 10:36:54.118598 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5429 DEB Apr 13 10:36:54.119159 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5430 DEB Apr 13 10:36:54.119268 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5431 DEB Apr 13 10:36:54.119754 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5432 DEB Apr 13 10:36:54.119976 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5433 DEB Apr 13 10:36:54.120636 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5434 DEB Apr 13 10:36:54.120826 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5435 DEB Apr 13 10:36:54.121352 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5436 DEB Apr 13 10:36:54.122534 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5437 DEB Apr 13 10:36:54.122701 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5438 DEB Apr 13 10:36:54.122792 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5439 DEB Apr 13 10:36:54.122917 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5440 DEB Apr 13 10:36:54.123230 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5441 DEB Apr 13 10:36:54.507531 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5442 DEB Apr 13 10:36:54.507616 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5443 DEB Apr 13 10:36:54.510934 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5444 DEB Apr 13 10:36:54.511012 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5445 DEB Apr 13 10:36:54.515055 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5446 DEB Apr 13 10:36:54.515143 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5447 DEB Apr 13 10:36:54.515622 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5448 DEB Apr 13 10:36:54.515673 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5449 DEB Apr 13 10:36:54.516135 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5450 DEB Apr 13 10:36:54.516186 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5451 DEB Apr 13 10:36:54.517392 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5452 DEB Apr 13 10:36:54.517444 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5453 DEB Apr 13 10:36:54.517523 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5454 DEB Apr 13 10:36:54.517566 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 
+5455 DEB Apr 13 10:36:54.517641 (4386-4387) JAVA-CallHistoryItem:setData mCallIsTele=  false 
+5456 DEB Apr 13 10:36:54.517682 (4386-4387) JAVA-CallHistoryItem:setData CallIsTeleRole=  false 

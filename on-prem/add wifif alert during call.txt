@@ -1,0 +1,37 @@
+
+
+
+
+
+trigger:
+    public void performDefaultAction() {
+        debug("performDefaultAction", "performDefaultAction enter");
+
+        Object item = getListItem(index);
+        else if ( item != null && item instanceof ListItemModel) {
+            ListItemModel lim = (ListItemModel)item;
+            SLComponentModel child = createChildModel(lim);
+            if (child != null){
+                addChild(child);
+                openChild(child.getName());
+            }
+        }
+
+
+add:
+		//AbstractAppMenuModel
+    protected void createMenuItems() {
+			iconItem = new IconListItemModel(ListItemType.TYPE_ICONMENUITEM, GUIPageConstants.PAGE_RESTART, index++, PhraseTags.getPhraseText(PhraseTags.RESTART), "", null, GUIIconConstants.ICON_RESTART, false);
+
+
+    protected SLComponentModel createChildModel(ListItemModel item) {
+        SLComponentModel model = null;
+        } else if (item.getId().equals(GUIPageConstants.PAGE_RESTART)) {
+            model = new ResetAlertModel(GUIPageConstants.PAGE_RESTART);
+            
+        private void initializeAlert(String reason) {
+        alertReason = reason;
+        if (SettingsMediatorFactory.getMediator().anActiveCallIsUnderway()) {
+            alertReason = alertUnavailable;
+            alertTitle = PhraseTags.getPhraseText(PhraseTags.RESET_UNAVAILABLE);
+            alertContent = PhraseTags.getPhraseText(PhraseTags.RESET_ALERT_ON_CALL);
