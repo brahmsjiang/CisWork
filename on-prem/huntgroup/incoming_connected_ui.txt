@@ -1,0 +1,78 @@
+
+
+
+    names[SessionLineInfoRole] = "data_sessionLineInfo";
+
+
+new Throwable().printStackTrace();
+try { int i = 1/0;} catch (Exception e) {TraceDefaults.traceInterface.printStackTrace(e);}
+
+
+
+啥都没有:
+6453 INF Feb 24 11:51:51.271377 (8070-8248) JAVA-callui MQThread|cip.callui.ActionableNewCallAlertModel:lajiang updateUILabeldata - preserveString0:1251 preserveString1: preserveString2:
+---returnLabels OK了
+
+只有name:
+1059 INF Feb 24 12:22:10.391991 (12507-12680) JAVA-callui MQThread|cip.callui.SessionItemModel:lajiang returnLabels - [0]: lajiangfor1251
+1063 INF Feb 24 12:22:10.392108 (12507-12680) JAVA-callui MQThread|cip.callui.SessionItemModel:lajiang returnLabels - [1]: 1251
+---returnLabels OK了
+5054 INF Feb 24 11:50:15.580911 (8070-8248) JAVA-callui MQThread|cip.callui.ActionableNewCallAlertModel:lajiang updateUILabeldata - preserveString0:lajiangfor1251 preserveString1:1251 preserveString2:
+
+只有hg:
+7027 INF Feb 24 12:15:29.442266 (12507-12680) JAVA-callui MQThread|cip.callui.SessionItemModel:lajiang returnLabels - [0]: 1251
+7028 INF Feb 24 12:15:29.442312 (12507-12680) JAVA-callui MQThread|cip.callui.SessionItemModel:lajiang returnLabels - [1]: Hunt group: hg-lajiang11111111111111111
+----returnLabels OK了
+7667 INF Feb 24 11:52:16.881161 (8070-8248) JAVA-callui MQThread|cip.callui.ActionableNewCallAlertModel:lajiang updateUILabeldata - preserveString0:1251 preserveString1:Hunt group: hg-lajiang11111111111111111 preserveString2:
+
+有name, 有hg:
+2365 INF Feb 24 12:22:39.102782 (12507-12680) JAVA-callui MQThread|cip.callui.SessionItemModel:lajiang returnLabels - [0]: lajiangfor1251
+2368 INF Feb 24 12:22:39.102822 (12507-12680) JAVA-callui MQThread|cip.callui.SessionItemModel:lajiang returnLabels - [1]: Hunt group: hg-lajiang11111111111111111
+----returnLabels OK了
+《---err, should: preserveString0:lajiangfor1251 preserveString1:1251 preserveString1_5:Hunt group: hg-lajiang11111111111111111 preserveString2:""
+2181 INF Feb 24 11:43:21.593551 (8070-8248) JAVA-|callui MQThreadcip.msui.MediaControl|:cip.callui.ActionableNewCallAlertModelcallState:lajiang updateUILabeldata - 
+preserveString0:lajiangfor1251 preserveString1:1251 preserveString2:Hunt group: hg-lajiang11111111111111111  <---这个处理不对, prevs2应该为空
+
+
+有name, 既有hg, 又有fwd:
+4276 INF Feb 24 12:27:33.744626 (12507-12680) JAVA-callui MQThread|cip.callui.SessionItemModel:lajiang returnLabels - [0]: lajiangfor1251
+4277 INF Feb 24 12:27:33.744715 (12507-12680) JAVA-callui MQThread|cip.callui.SessionItemModel:lajiang returnLabels - [1]: Hunt group: hg-lajiang11111111111111111			<---这个处理不对, [0]name, [1]应该dn, [2]hg, [3]fwd
+4278 INF Feb 24 12:27:33.744746 (12507-12680) JAVA-callui MQThread|cip.callui.SessionItemModel:lajiang returnLabels - [2]: Forwarded from 1187
+----returnLabels OK了
+《---err, preserveString0:lajiangfor1251 preserveString1:1251 preserveString1_5:Hunt group: hg-lajiang11111111111111111 preserveString3:Forwarded from 1187
+9006 INF Feb 24 11:31:12.368106 (8070-8248) JAVA-callui MQThread|cip.callui.ActionableNewCallAlertModel:lajiang updateUILabeldata - preserveString0:lajiangfor1251 preserveString1:Hunt group: hg-lajiang11111111111111111 preserveString2:Forwarded from 1187
+
+
+没有name, 既有hg, 又有fwd:
+5266 INF Feb 24 12:31:11.303878 (12507-12680) JAVA-callui MQThread|cip.callui.SessionItemModel:lajiang returnLabels - [0]: 1251
+5267 INF Feb 24 12:31:11.303911 (12507-12680) JAVA-callui MQThread|cip.callui.SessionItemModel:lajiang returnLabels - [1]: Hunt group: hg-lajiang11111111111111111
+5268 INF Feb 24 12:31:11.303942 (12507-12680) JAVA-callui MQThread|cip.callui.SessionItemModel:lajiang returnLabels - [2]: Forwarded from 1187
+----returnLabels OK了
+《---err, preserveString0:1251 preserveString1:Hunt group: hg-lajiang11111111111111111 preserveString1_5:"" preserveString3:Forwarded from 1187
+6374 INF Feb 24 11:28:55.424742 (8070-8248) JAVA-callui MQThread|cip.callui.ActionableNewCallAlertModel:lajiang updateUILabeldata - 
+preserveString0:1251 preserveString1:Hunt group: hg-lajiang11111111111111111 preserveString2:Forwarded from 1187
+
+
+
+
+
+5092 INF Feb 24 11:23:39.347085 (8070-8248) JAVA-callui MQThread|cip.callui.ActionableNewCallAlertModel:lajiang updateUILabeldata - preserveString0:1251 preserveString1:Hunt group: hg-lajiang11111111111111111 preserveString2:
+5093 ERR Feb 24 11:23:39.347950 (8070-8248) JAVA-11:23:39|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callui.ActionableNewCallAlertModel.updateUILabeldata(Unknown Source)
+                at cip.callui.ActionableNewCallAlertModel.callFeatureChanged(Unknown Source)
+                at cip.callui.CallUiChildManager.sendCallFeatureChangesToChildren(Unknown Source)
+                at cip.callui.CallUiModel.processCallStateChanged(Unknown Source)
+                at cip.callui.AbstractCallUiModel.callFeatureChanged(Unknown Source)
+                at cip.callui.CallUiModel.callFeatureChanged(Unknown Source)
+                at cip.callui.LineListModel$MyCallListener.featureChanged(Unknown Source)
+                at cip.callagent.ICallListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callagent.ICallListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+
+
+

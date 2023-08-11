@@ -1,0 +1,28 @@
+
+
+
+callui
+    protected boolean onApplicationLoad() {
+		    lineKeyManager = LineKeyManager.createInstance(getQueueManager(), getCallUIModel());
+        lineKeyManager.initialize();
+
+
+			public class EnhancedLineKeyHandler extends LineKeyHandler implements IResourceListener, IFeatureListener {
+			    public void initialize() {
+			        featureProxy = (IFeatureListener.Proxy)callUiModel.getApplicationProxy().getQueueManager().createProxy(
+			                new IFeatureListener.Dispatcher(this), IFeatureListener.FAMILY);
+			                
+slappmgr
+    final SLApplicationEnvironment environment = (SLApplicationEnvironment) getEnvironmentInFocus();
+    final IFeatureListener listener = environment.getFeatureListener();
+    
+======
+    protected final boolean onLoad() {
+        ApplicationManager appManager = SystemManager.getApplicationManager();
+
+        featureProxy = (IFeatureListener.Proxy) getQueueManager().createProxy(
+                getGlobalSink(IFeatureListener.FAMILY), IFeatureListener.FAMILY);
+
+        appManager.register(this, inputFocusProxy, featureProxy);
+        
+        

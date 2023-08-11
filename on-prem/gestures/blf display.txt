@@ -1,0 +1,63 @@
+
+
+
+guiapp：
+home qml上面的blf item：
+  SLHomeShortcut {
+  		id: blfSp
+      itemIndex     : model.itemIndex
+      text          : model.labelName
+      featureState  : model.featureState
+      featureID     : model.featureId
+  }
+
+  SLHomeSpeedDial {
+  		id: normalSpd
+      pageId: pageID
+      itemIndex: model.itemIndex
+      text: model.labelName
+  }
+
+    private String getBlfDesc() {
+        switch (dynamicFeatureState) {
+        case DFEAT_STATE_UNKNOWN:
+            return PhraseTags.getPhraseText(PhraseTags.UNREGISTERED);
+        case DFEAT_STATE_BLF_INUSE:
+            return PhraseTags.getPhraseText(PhraseTags.IN_USE);
+        case DFEAT_STATE_BLF_DND:
+            return PhraseTags.getPhraseText(PhraseTags.BLF_DND);
+        case DFEAT_STATE_BLF_ALERTING:
+            return PhraseTags.getPhraseText(PhraseTags.ALERTING);
+        default:
+            return "";
+        }
+    }
+    
+    public ListItemModel(int type, String id, int index, String label, String labelValue, Property property, boolean enabled, boolean editable){
+
+
+如何更新blf:
+log:
+2541 NOT May 24 18:27:25.053808 (6373-6557) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:lajiang - new newFeatureStatNotify label:xxx12588,instance:7,ordinalPosition:6,featureId:1,applicationId:0,state.getId:68,lampState:0,lampColor:0,buttonStimulusId:21,PropertyName:device.callagent.dynamicfeatures.7
+
+    at cip.qt.QtProvider.updateLines(Unknown Source)
+    at cip.callui.AbstractCallUiFullDisplay.updateLine(Unknown Source)
+    at cip.callui.AbstractCallUiFullDisplay.update(Unknown Source)
+    at cip.comp.SLComponentView.update(Unknown Source)
+    at cip.comp.SLComponentModel.notifyUpdateToView(Unknown Source)
+    at cip.callui.AbstractCallUiModel.updateLine(Unknown Source)
+    at cip.callui.AbstractCallUiModel.updateLine(Unknown Source)
+    at cip.callui.LineListModel$MyCallAgentListener.setDynamicFeature(Unknown Source)
+    at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+    at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+    at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+    at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+    at cip.sys.MessageQueueThread.onRun(Unknown Source)
+    at cip.sys.SystemThread.run(Unknown Source)
+    
+4543 DEB May 25 16:42:49.227770 (9672-9672) guiapp-updateLines(): {"lineKeyType":3,"featureState":15,"lineKeyExtraInfo":"","index":6,"labelName":"xxx12588","featureId":21,"selected":false,"desc":"In use"}
+
+
+===>
+应该要调用:
+updateListItem(0);

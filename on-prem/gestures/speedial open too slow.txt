@@ -1,0 +1,164 @@
+1 line:
+4222 NOT Jul 06 11:30:23.403553 (3713-3889) JAVA-favorites MQThread|cip.favorites.Favorites:lajiang== SPEED_DIAL_URI - start
+4224 NOT Jul 06 11:30:23.403626 (3713-3889) JAVA-favorites MQThread|cip.favorites.Favorites:lajiang== SPEED_DIAL_URI - end
+4239 DEB Jul 06 11:30:23.410451 (3673-3673) guiapp-lajiang onModelsChanged start====>
+4240 DEB Jul 06 11:30:23.410535 (3673-3673) guiapp-lajiang onModelsChanged end====>
+4243 DEB Jul 06 11:30:23.412943 (3673-3673) guiapp-lajiang onLoadChanged start
+4244 DEB Jul 06 11:30:23.413003 (3673-3673) guiapp-lajiang onLoadChanged start
+4245 WRN Jul 06 11:30:23.413148 (3673-3673) guiapp-getDataList(): lajiang MenuListFavorites::getDataList start
+4246 WRN Jul 06 11:30:23.413184 (3673-3673) guiapp-getDataList(): lajiang MenuListFavorites::getDataList end
+4247 DEB Jul 06 11:30:23.413239 (3673-3673) guiapp-lajiang onModelsChanged start====>
+4248 DEB Jul 06 11:30:23.413282 (3673-3673) guiapp-lajiang onModelsChanged end====>
+4254 NOT Jul 06 11:30:23.416742 (3713-3889) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== initialize - start
+4255 NOT Jul 06 11:30:23.416842 (3713-3889) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== buildMenu - start
+4256 NOT Jul 06 11:30:23.417008 (3713-3889) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== buildSpeedDialList - start
+4257 NOT Jul 06 11:30:23.417053 (3713-3889) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== buildSpeedDialList - end
+4258 NOT Jul 06 11:30:23.417080 (3713-3889) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== buildMenu - end   <-------
+4260 DEB Jul 06 11:30:23.418302 (3673-3673) guiapp-setPageDataListModel(): lajiang setPageDataListModel start
+4261 WRN Jul 06 11:30:23.418354 (3673-3673) guiapp-execDataListModel(): lajiang execDataListModel start
+4262 WRN Jul 06 11:30:23.418401 (3673-3673) guiapp-execDataListModel(): lajiang convert ended
+4263 WRN Jul 06 11:30:23.418440 (3673-3673) guiapp-execDataListModel(): lajiang func(std::ref(qList) start
+4264 WRN Jul 06 11:30:23.418470 (3673-3673) guiapp-setItems(): lajiang setItems start
+4265 WRN Jul 06 11:30:23.418499 (3673-3673) guiapp-setItems(): lajiang setItems end
+4266 WRN Jul 06 11:30:23.418607 (3673-3673) guiapp-getDataList(): lajiang MenuListFavorites::getDataList start
+4267 WRN Jul 06 11:30:23.418639 (3673-3673) guiapp-getDataList(): lajiang MenuListFavorites::getDataList end
+4268 DEB Jul 06 11:30:23.418731 (3673-3673) guiapp-lajiang onModelsChanged start====>
+4269 DEB Jul 06 11:30:23.418781 (3673-3673) guiapp-lajiang onModelsChanged end====>
+4270 WRN Jul 06 11:30:23.418826 (3673-3673) guiapp-execDataListModel(): lajiang func(std::ref(qList) end
+4271 DEB Jul 06 11:30:23.418862 (3673-3673) guiapp-setPageDataListModel(): lajiang setPageDataListModel end
+4287 NOT Jul 06 11:30:23.424860 (3713-3889) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== initialize - end   <--------
+4292 NOT Jul 06 11:30:23.425176 (3713-3889) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== activate - start
+4309 DEB Jul 06 11:30:23.456499 (3673-3673) guiapp-setPageDataListModel(): lajiang setPageDataListModel start
+4310 WRN Jul 06 11:30:23.456551 (3673-3673) guiapp-execDataListModel(): lajiang execDataListModel start
+4311 WRN Jul 06 11:30:23.456595 (3673-3673) guiapp-execDataListModel(): lajiang convert ended
+4312 WRN Jul 06 11:30:23.456633 (3673-3673) guiapp-execDataListModel(): lajiang func(std::ref(qList) start
+4313 WRN Jul 06 11:30:23.456663 (3673-3673) guiapp-setItems(): lajiang setItems start
+4314 WRN Jul 06 11:30:23.456692 (3673-3673) guiapp-setItems(): lajiang setItems end
+4315 WRN Jul 06 11:30:23.456779 (3673-3673) guiapp-getDataList(): lajiang MenuListFavorites::getDataList start
+4316 WRN Jul 06 11:30:23.456810 (3673-3673) guiapp-getDataList(): lajiang MenuListFavorites::getDataList end
+4317 DEB Jul 06 11:30:23.456896 (3673-3673) guiapp-lajiang onModelsChanged start====>
+4318 DEB Jul 06 11:30:23.456946 (3673-3673) guiapp-lajiang onModelsChanged end====>
+4319 WRN Jul 06 11:30:23.456992 (3673-3673) guiapp-execDataListModel(): lajiang func(std::ref(qList) end
+4320 DEB Jul 06 11:30:23.457026 (3673-3673) guiapp-setPageDataListModel(): lajiang setPageDataListModel end
+
+
+
+
+
+
+
+
+
+64 lines:
+2407 DEB Jul 05 15:36:49.386579 (5977-6135) JAVA-Thread-0|cip.userio.GuiAppClient:invokeGesture - -source:sourceSpeedDial,area:0, type:1
+2410 DEB Jul 05 15:36:49.386954 (5977-6161) JAVA-callui MQThread|cip.callui.CallUiModel:invokeGestureFeature -  source:sourceSpeedDial ,reason:4
+<------100(ms)
+2420 NOT Jul 05 15:36:49.488569 (5977-6177) JAVA-favorites MQThread|cip.favorites.Favorites:lajiang== SPEED_DIAL_URI - start
+2422 NOT Jul 05 15:36:49.488629 (5977-6177) JAVA-favorites MQThread|cip.favorites.Favorites:lajiang== SPEED_DIAL_URI - end
+<------10
+2444 NOT Jul 05 15:36:49.501466 (5977-6177) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== initialize - start
+2445 NOT Jul 05 15:36:49.501565 (5977-6177) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== buildMenu - start
+2446 NOT Jul 05 15:36:49.502394 (5977-6177) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== buildSpeedDialList - start
+<------4
+2456 NOT Jul 05 15:36:49.506978 (5977-6177) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== buildSpeedDialList - end
+2457 NOT Jul 05 15:36:49.507019 (5977-6177) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== buildMenu - end
+<------600
+6660 NOT Jul 05 17:06:27.831555 (3783-3921) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== initialize - end
+6665 NOT Jul 05 17:06:27.832027 (3783-3921) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== activate - start
+
+
+64 line mainly cost:
+4357 NOT Jul 06 10:35:54.650528 (13843-14048) JAVA-favorites MQThread|cip.favorites.Favorites:lajiang== SPEED_DIAL_URI - start
+4358 NOT Jul 06 10:35:54.650675 (13843-14048) JAVA-favorites MQThread|cip.favorites.Favorites:lajiang== SPEED_DIAL_URI - end
+4371 DEB Jul 06 10:35:54.673577 (13893-13893) guiapp-lajiang onModelsChanged start====>
+4372 DEB Jul 06 10:35:54.673687 (13893-13893) guiapp-lajiang onModelsChanged end====>
+4375 DEB Jul 06 10:35:54.680442 (13893-13893) guiapp-lajiang onLoadChanged start
+4376 DEB Jul 06 10:35:54.680543 (13893-13893) guiapp-lajiang onLoadChanged start
+4377 WRN Jul 06 10:35:54.680723 (13893-13893) guiapp-getDataList(): lajiang MenuListFavorites::getDataList start
+4378 WRN Jul 06 10:35:54.680759 (13893-13893) guiapp-getDataList(): lajiang MenuListFavorites::getDataList end
+4379 DEB Jul 06 10:35:54.680824 (13893-13893) guiapp-lajiang onModelsChanged start====>
+4380 DEB Jul 06 10:35:54.680869 (13893-13893) guiapp-lajiang onModelsChanged end====>
+4387 NOT Jul 06 10:35:54.685301 (13843-14048) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== initialize - start
+4388 NOT Jul 06 10:35:54.685658 (13843-14048) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== buildMenu - start
+4389 NOT Jul 06 10:35:54.688099 (13843-14048) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== buildSpeedDialList - start
+4399 NOT Jul 06 10:35:54.693052 (13843-14048) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== buildSpeedDialList - end
+4400 NOT Jul 06 10:35:54.693091 (13843-14048) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== buildMenu - end   <--------
+4402 DEB Jul 06 10:35:54.705593 (13893-13893) guiapp-setPageDataListModel(): lajiang setPageDataListModel start
+4403 WRN Jul 06 10:35:54.705673 (13893-13893) guiapp-execDataListModel(): lajiang execDataListModel start
+4404 WRN Jul 06 10:35:54.707877 (13893-13893) guiapp-execDataListModel(): lajiang convert ended
+4405 WRN Jul 06 10:35:54.707930 (13893-13893) guiapp-execDataListModel(): lajiang func(std::ref(qList) start
+4406 WRN Jul 06 10:35:54.707964 (13893-13893) guiapp-setItems(): lajiang setItems start
+4407 WRN Jul 06 10:35:54.709397 (13893-13893) guiapp-setItems(): lajiang setItems end
+4408 WRN Jul 06 10:35:54.709538 (13893-13893) guiapp-getDataList(): lajiang MenuListFavorites::getDataList start
+4409 WRN Jul 06 10:35:54.710285 (13893-13893) guiapp-getDataList(): lajiang MenuListFavorites::getDataList end
+4410 DEB Jul 06 10:35:54.710421 (13893-13893) guiapp-lajiang onModelsChanged start====>															<------gap
+4417 DEB Jul 06 10:35:55.025530 (13893-13893) guiapp-lajiang onModelsChanged end====>																<------gap
+4418 WRN Jul 06 10:35:55.025655 (13893-13893) guiapp-execDataListModel(): lajiang func(std::ref(qList) end
+4419 DEB Jul 06 10:35:55.026070 (13893-13893) guiapp-setPageDataListModel(): lajiang setPageDataListModel end
+4431 NOT Jul 06 10:35:55.073663 (13843-14048) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== initialize - end   <--------
+4436 NOT Jul 06 10:35:55.074899 (13843-14048) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== activate - start
+4452 DEB Jul 06 10:35:55.120370 (13893-13893) guiapp-setPageDataListModel(): lajiang setPageDataListModel start
+4453 WRN Jul 06 10:35:55.120451 (13893-13893) guiapp-execDataListModel(): lajiang execDataListModel start
+4454 WRN Jul 06 10:35:55.122683 (13893-13893) guiapp-execDataListModel(): lajiang convert ended
+4455 WRN Jul 06 10:35:55.122735 (13893-13893) guiapp-execDataListModel(): lajiang func(std::ref(qList) start
+4456 WRN Jul 06 10:35:55.122767 (13893-13893) guiapp-setItems(): lajiang setItems start
+4457 WRN Jul 06 10:35:55.123467 (13893-13893) guiapp-setItems(): lajiang setItems end
+4458 WRN Jul 06 10:35:55.123679 (13893-13893) guiapp-getDataList(): lajiang MenuListFavorites::getDataList start
+4459 DEB Jul 06 10:35:55.123788 (13893-13893) guiapp-lajiang onModelsChanged start====>
+4460 DEB Jul 06 10:35:55.123906 (13893-13893) guiapp-lajiang onModelsChanged end====>
+4461 WRN Jul 06 10:35:55.123954 (13893-13893) guiapp-execDataListModel(): lajiang func(std::ref(qList) end
+4462 DEB Jul 06 10:35:55.124165 (13893-13893) guiapp-setPageDataListModel(): lajiang setPageDataListModel end
+4478 NOT Jul 06 10:35:55.157514 (13843-14048) JAVA-favorites MQThread|cip.favorites.FavoritesMenuModel:lajiang== activate - end
+
+
+
+
+
+
+
+
+数据源：
+    Q_PROPERTY(PageModelList dataLists READ getDataListModels NOTIFY dataListModelChanged)
+    PageModelList getDataListModels() const { return mpMenuList->getDataList(); }
+
+
+old: 510ms
+7934 WRN Jul 07 13:38:04.271058 (8973-8973) guiapp-MenuListDefault(): lajiang mpDataListModel init
+7936 DEB Jul 07 13:38:04.274781 (8973-8973) guiapp-lajiang onModelsChanged start====>
+7937 DEB Jul 07 13:38:04.274864 (8973-8973) guiapp-lajiang onModelsChanged end====>
+7940 DEB Jul 07 13:38:04.278072 (8973-8973) guiapp-lajiang onLoadChanged start
+7941 DEB Jul 07 13:38:04.278137 (8973-8973) guiapp-lajiang onLoadChanged start
+7942 DEB Jul 07 13:38:04.278353 (8973-8973) guiapp-lajiang onModelsChanged start====>
+7943 DEB Jul 07 13:38:04.278400 (8973-8973) guiapp-lajiang onModelsChanged end====>
+7960 DEB Jul 07 13:38:04.302882 (8973-8973) guiapp-setPageDataListModel(): lajiang setPageDataListModel start
+7961 WRN Jul 07 13:38:04.302969 (8973-8973) guiapp-execDataListModel(): lajiang execDataListModel start
+7962 WRN Jul 07 13:38:04.305817 (8973-8973) guiapp-execDataListModel(): lajiang convert ended
+7963 WRN Jul 07 13:38:04.305870 (8973-8973) guiapp-execDataListModel(): lajiang func(std::ref(qList) start
+7964 WRN Jul 07 13:38:04.305903 (8973-8973) guiapp-setItems(): lajiang setItems start
+7965 WRN Jul 07 13:38:04.307695 (8973-8973) guiapp-setItems(): lajiang setItems end
+7966 DEB Jul 07 13:38:04.308806 (8973-8973) guiapp-lajiang onModelsChanged start====>
+7973 DEB Jul 07 13:38:04.679702 (8973-8973) guiapp-lajiang onModelsChanged end====>
+7974 WRN Jul 07 13:38:04.679833 (8973-8973) guiapp-execDataListModel(): lajiang func(std::ref(qList) end
+7975 DEB Jul 07 13:38:04.680319 (8973-8973) guiapp-setPageDataListModel(): lajiang setPageDataListModel end
+8006 DEB Jul 07 13:38:04.778621 (8973-8973) guiapp-setPageDataListModel(): lajiang setPageDataListModel start
+8007 WRN Jul 07 13:38:04.778702 (8973-8973) guiapp-execDataListModel(): lajiang execDataListModel start
+8008 WRN Jul 07 13:38:04.781391 (8973-8973) guiapp-execDataListModel(): lajiang convert ended
+8009 WRN Jul 07 13:38:04.781437 (8973-8973) guiapp-execDataListModel(): lajiang func(std::ref(qList) start
+8010 WRN Jul 07 13:38:04.781468 (8973-8973) guiapp-setItems(): lajiang setItems start
+8011 WRN Jul 07 13:38:04.782307 (8973-8973) guiapp-setItems(): lajiang setItems end
+8012 DEB Jul 07 13:38:04.782491 (8973-8973) guiapp-lajiang onModelsChanged start====>
+8013 DEB Jul 07 13:38:04.782601 (8973-8973) guiapp-lajiang onModelsChanged end====>
+8014 WRN Jul 07 13:38:04.782650 (8973-8973) guiapp-execDataListModel(): lajiang func(std::ref(qList) end
+8015 DEB Jul 07 13:38:04.782891 (8973-8973) guiapp-setPageDataListModel(): lajiang setPageDataListModel end
+
+
+now: 280ms
+3624 WRN Jul 07 14:23:25.286141 (11079-11079) guiapp-MenuListDefault(): lajiang mpDataListModel init
+3644 DEB Jul 07 14:23:25.334396 (11079-11079) guiapp-setPageDataListModel(): lajiang setPageDataListModel start
+3645 WRN Jul 07 14:23:25.334476 (11079-11079) guiapp-execDataListModel(): lajiang execDataListModel start
+3646 WRN Jul 07 14:23:25.337166 (11079-11079) guiapp-execDataListModel(): lajiang convert ended
+3647 WRN Jul 07 14:23:25.337226 (11079-11079) guiapp-execDataListModel(): lajiang func(std::ref(qList) start
+3648 WRN Jul 07 14:23:25.337259 (11079-11079) guiapp-setItems(): lajiang setItems start
+3649 WRN Jul 07 14:23:25.339070 (11079-11079) guiapp-setItems(): lajiang setItems end
+3656 WRN Jul 07 14:23:25.563902 (11079-11079) guiapp-execDataListModel(): lajiang func(std::ref(qList) end
+3657 DEB Jul 07 14:23:25.564490 (11079-11079) guiapp-setPageDataListModel(): lajiang setPageDataListModel end

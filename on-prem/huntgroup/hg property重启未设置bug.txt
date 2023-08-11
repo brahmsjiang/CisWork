@@ -1,0 +1,103 @@
+
+
+
+1819 INF Mar 27 14:14:27.589263 (5299-5519) JAVA-Thread-9|SipCcEventDispatcher:  - device in service
+<-----
+1822 NOT Mar 27 14:14:27.589334 (5299-5519) JAVA-Thread-9|SipCcAdapter:  - ccReady called...mgmtState=MGMT_REGISTERING(4), deviceEvent:1, nativeSideInitialized:true
+
+1900 NOT Mar 27 14:14:27.591280 (5299-5519) JAVA-Thread-9|cip.sipcc.SipCcAdapter$CcMgmtListener:? - calling initializeLines...
+1901 ERR Mar 27 14:14:27.591310 (5299-5481) JAVA-callagent MQThread|RecordStoreImpl:? -  --> RecordStore:findRecord: id: 3930Message : / by zero
+	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.callui.AbstractCallUiFullDisplay.setLineData(Unknown Source)
+		at cip.callui.AbstractCallUiFullDisplay.update(Unknown Source)
+		at cip.comp.SLComponentView.update(Unknown Source)
+		at cip.comp.SLComponentModel.notifyUpdateToView(Unknown Source)
+		at cip.callui.AbstractCallUiModel.updateLine(Unknown Source)
+		at cip.callui.AbstractCallUiModel.updateLine(Unknown Source)
+		at cip.callui.LineListModel$MyCallAgentListener.unavailable(Unknown Source)
+		at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+		at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+		at cip.sys.MessageQueueThread.onRun(Unknown Source)
+		at cip.sys.SystemThread.run(Unknown Source)
+1903 NOT Mar 27 14:14:27.591366 (5299-5519) JAVA-Thread-9|cip.sipcc.SipCcAdapter$CcMgmtListener:? - initializeLines called...
+1904 DEB Mar 27 14:14:27.591387 (5299-5519) JAVA- InfogetLines before call 
+1905 DEB Mar 27 14:14:27.591404 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 0xf1409c50, CCAPI_DeviceInfo_getLines:  LINES Start 
+1906 DEB Mar 27 14:14:27.591420 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 0xf1409c50, CCAPI_DeviceInfo_getLines:  LINE(1)  handle[0]=1
+1907 DEB Mar 27 14:14:27.591494 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 0xf1409c50, CCAPI_DeviceInfo_getLines:  The rest 107 lines are not lines!!! 
+1908 DEB Mar 27 14:14:27.591512 (5299-5519) JAVA- InfogetLines after call 
+1909 DEB Mar 27 14:14:27.591526 (5299-5519) JAVA- InfogetLines before create arrary 
+1910 DEB Mar 27 14:14:27.591545 (5299-5519) JAVA- InfogetLines after create arrary 
+1911 DEB Mar 27 14:14:27.591564 (5299-5519) JAVA- InfogetLines before return iptr=f52200a8 
+1912 NOT Mar 27 14:14:27.591591 (5299-5519) JAVA-Thread-9|cip.sipcc.SipCcAdapter$CcMgmtListener:? - returned from InfogetLines...
+1913 NOT Mar 27 14:14:27.591625 (5299-5519) JAVA-Thread-9|cip.sipcc.SipCcAdapter$CcMgmtListener:? - lajiang entering line loop...1
+<-----------
+
+1914 NOT Mar 27 14:14:27.591660 (5299-5519) JAVA-Thread-9|cip.sipcc.SipCcAdapter$CcMgmtListener:lajiang -  instidx=0 inst=1 calling getLineInfo.....
+<-----------
+
+1915 DEB Mar 27 14:14:27.591695 (5299-5519) JAVA-SNAPSHOT-CREATE: CCAPI_Line_getLineInfo:  reference pointer=f1417600
+1916 DEB Mar 27 14:14:27.591727 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 1/0, CCAPI_lineInfo_getLineType: returned 9
+1917 DEB Mar 27 14:14:27.591750 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 1/0, CCAPI_lineInfo_getButton: returned 1
+1918 NOT Mar 27 14:14:27.591865 (5299-5519) JAVA-Thread-9|cip.sipcc.SipCcAdapter$CcMgmtListener:? - initializeLine called: ref=-247368192 lineFeature=9 button=1
+1919 DEB Mar 27 14:14:27.591892 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 1/0, CCAPI_lineInfo_getRegState: returned 0
+1920 DEB Mar 27 14:14:27.591914 (5299-5519) JAVA-[[MESSAGE_1.0]]: [PHONE-APP] --> getRegState() --> [SIPCC] : sipcc resp: line 1 is NOT REGISTERED
+1921 DEB Mar 27 14:14:27.591955 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 1/0, CCAPI_lineInfo_getNumber: returned
+1922 DEB Mar 27 14:14:27.591981 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 1/0, CCAPI_lineInfo_getName: returned
+1923 DEB Mar 27 14:14:27.592015 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 1/0, CCAPI_lineInfo_getLabel: returned
+1924 DEB Mar 27 14:14:27.592035 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 1/0, CCAPI_lineInfo_getLabel: returned
+1925 DEB Mar 27 14:14:27.592056 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 1/0, CCAPI_lineInfo_getContact: returned e99f45da-bdff-4da4-be3a-2abc89f2f8a3
+1926 INF Mar 27 14:14:27.592093 (5299-5519) JAVA-Thread-9|SipCcAdapter:  - addCallingLine(): lineContact=e99f45da-bdff-4da4-be3a-2abc89f2f8a3
+1927 DEB Mar 27 14:14:27.592143 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 1/0, CCAPI_lineInfo_getExternalNumber: returned
+1928 DEB Mar 27 14:14:27.592167 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 1/0, CCAPI_lineInfo_getNumber: returned
+1929 DEB Mar 27 14:14:27.592258 (5299-5519) JAVA-SNAPSHOT-RELEASE: CCAPI_Line_releaseLineInfo:  reference pointer=f1417600, ref released
+1930 DEB Mar 27 14:14:27.592281 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 0xf1409c50, CCAPI_DeviceInfo_getFeatures:  FEATURES Start 
+1931 DEB Mar 27 14:14:27.592302 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 0xf1409c50, CCAPI_DeviceInfo_getFeatures:  FEATURE ref[0]=f26556d0
+1932 NOT Mar 27 14:14:27.592340 (5299-5519) JAVA-Thread-9|cip.sipcc.SipCcAdapter$CcMgmtListener:? - returned from InfogetFeatures...
+1933 NOT Mar 27 14:14:27.592371 (5299-5519) JAVA-Thread-9|cip.sipcc.SipCcAdapter$CcMgmtListener:? - entering feature loop...
+1934 NOT Mar 27 14:14:27.592405 (5299-5519) JAVA-Thread-9|cip.sipcc.SipCcAdapter$CcMgmtListener:? -  featidx=0 featinfoRef=-228239664 calling initializeFeature.....
+<--------------
+
+1935 DEB Mar 27 14:14:27.592440 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 0xf26556d0, CCAPI_featureInfo_getFeatureID: returned 139
+1936 DEB Mar 27 14:14:27.592463 (5299-5519) JAVA-SIPCC-SIP_CC_PROV: 0xf26556d0, CCAPI_featureInfo_getButton: returned 2
+1937 NOT Mar 27 14:14:27.592500 (5299-5519) JAVA-Thread-9|cip.sipcc.SipCcAdapter$CcMgmtListener:? - initializeFeature called: ref=-228239664 lineFeature=139 button=2
+<-------------139 is hlog
+
+1938 INF Mar 27 14:14:27.592541 (5299-5519) JAVA-Thread-9 - before sinkMessage
+1939 DEB Mar 27 14:14:27.592639 (5299-5480) JAVA-callagent MQThread|RecordStoreImpl:? -  <-- RecordStore:findRecord: id: 3930 NOT in cache.
+1940 DEB Mar 27 14:14:27.592677 (5299-5480) JAVA-callagent MQThread|RecordStoreImpl:? - -->RecordStoreImple:freeRecord( 3930) offset=146432
+1941 DEB Mar 27 14:14:27.592761 (5299-5480) JAVA-callagent MQThread|RecordStoreImpl:? - <--RecordStoreImple:freeRecord( -1) offset=146432
+	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.callagent.IManagement$Proxy.newFeatureStatNotify(Unknown Source)
+		at cip.callagent.EmbraceCcRouter$SIPUIListener.newFeatureStatNotify(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.initializeFeature(Unknown Source)  <---------
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.initializeLines(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.initializeLinePlane(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.ccReady(Unknown Source)
+		at cip.sipcc.SipCcEventDispatcher.onDeviceEvent(Unknown Source)
+
+2044 WRN Mar 27 14:14:27.595446 (5299-5480) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:lajiang newFeatureStatNotify - label:Hunt group, featureId:4,state:state-455
+
+
+2531 DEB Mar 27 14:14:27.605840 (5299-5481) JAVA-callui MQThread|cip.callui.LineListModel:lajiang createDynamicFeature - position=1 label=Hunt group featureid=4 state=455
+
+=======>  结论
+        case SipCcConstants.DEVICEEVENT_DND :   <——这个dnd event有, 更新property
+        case SipCcConstants.DEVICEEVENT_HLOG :  <——这个hlog event没有, 所有没有更新property
+
+plk更新靠的是这个:
+case SipCcConstants.DEVICEEVENT_STATE :  <——这个每次reset都有, 更新plk
+            switch (serviceState) {
+            case SipCcConstants.DEVICEINFO_STATE_INS:
+                ccMgmt.ccReady(deviceInfoRef, deviceEvent);
+调用栈:
+		at cip.callagent.IManagement$Proxy.newFeatureStatNotify(Unknown Source)
+		at cip.callagent.EmbraceCcRouter$SIPUIListener.newFeatureStatNotify(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.initializeFeature(Unknown Source)  <---------
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.initializeLines(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.initializeLinePlane(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.ccReady(Unknown Source)
+		at cip.sipcc.SipCcEventDispatcher.onDeviceEvent(Unknown Source)

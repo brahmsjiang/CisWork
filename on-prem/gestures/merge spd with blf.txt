@@ -1,0 +1,25 @@
+
+
+4547 NOT May 18 14:39:41.250803 (10342-10526) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:lajiang - new SpeedDialFeature label:SD-12001,instance:3,ordinalPosition:2,speedDialDn:12001,PropertyName:device.callagent.speeddials.3
+4562 NOT May 18 14:39:41.252019 (10342-10526) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:lajiang - new newFeatureStatNotify label:1257label,instance:4,ordinalPosition:3,featureId:1,applicationId:0,state.getId:66,lampState:0,lampColor:0,buttonStimulusId:21,PropertyName:device.callagent.dynamicfeatures.4
+4576 NOT May 18 14:39:41.253076 (10342-10526) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:lajiang - new SpeedDialFeature label:SD-12002,instance:5,ordinalPosition:4,speedDialDn:12002,PropertyName:device.callagent.speeddials.5
+4585 NOT May 18 14:39:41.253692 (10342-10526) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:lajiang - new SpeedDialFeature label:SD-12003,instance:6,ordinalPosition:5,speedDialDn:12003,PropertyName:device.callagent.speeddials.6
+4596 DEB May 18 14:39:41.254391 (10342-10565) JAVA- <-- cprGetLoadID pLoadID: PHONEOS-8875.ba4f436a30-20230518-ba4f436a30dev
+4597 NOT May 18 14:39:41.254416 (10342-10526) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:lajiang - new newFeatureStatNotify label:12588label,instance:7,ordinalPosition:6,featureId:1,applicationId:0,state.getId:66,lampState:0,lampColor:0,buttonStimulusId:21,PropertyName:device.callagent.dynamicfeatures.7
+4601 NOT May 18 14:39:41.254705 (10342-10526) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:lajiang - new SpeedDialFeature label:SD-12004,instance:8,ordinalPosition:7,speedDialDn:12004,PropertyName:device.callagent.speeddials.8
+
+
+
+
+==================
+SpeedDialProperty newSpeedDialProperty = new SpeedDialProperty(instance, ordinalPosition,speedDialFeature);
+SystemManager.getPropertyManager().addProperty(newSpeedDialProperty, pName, true);
+
+Enumeration enumeration = SystemManager.getPropertyManager().getProperties(SpeedDialProperty.PROPERTY_NAME_PATTERN);
+
+
+
+
+    public FavoritesSDItemModel(int index, int lineKeyType, String label, int featureID, Feature feature) {
+
+    public FavoritesSDItemModel(int index, int lineKeyType, String label, int featureID, Feature feature) {

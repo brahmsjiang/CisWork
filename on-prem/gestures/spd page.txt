@@ -1,0 +1,152 @@
+
+Repeater {
+    model: 4
+    delegate: SLHomeSwipePages {
+            swipeview: view
+            models: pageCallUi.pageModelLists[model.index]  《------(IndexedQList<QList<MenuListModel*>>)[model.index] ==> 某一个 QList<MenuListModel*>
+            itemType: model.index
+            delegate: SLHomePlkPage {
+        }
+    }
+}
+
+====》
+class SLPage : public QObject
+{
+    Q_PROPERTY(QList<PageModelList> pageModelLists READ getPageModelLists NOTIFY dataListModelChanged)
+public:
+    QList<PageModelList> getPageModelLists() const { return mpMenuList->getPageModelLists(); }	《------
+    MenuList *mpMenuList; 
+    
+====》
+class MenuListCallUi : public MenuList
+{
+    QList<PageModelList>            dataLists;							《------  QList<QList<MenuListModel*>>
+    IndexedQList<PageModelList>     mPageModelLists;				《------  IndexedQList<QList<MenuListModel*>>
+    IndexedQList<ItemSet>           mItemLists;
+    
+QList<QList<MenuListModel *>> MenuListCallUi::getPageModelLists()
+{
+    dataLists.clear();
+    for (int i = 0; i < mPageModelLists.length(); ++i) {
+			dataLists.append(*(mPageModelLists.at(i)));
+			//// 整个list: dataLists ==> QList<PageModelList> ==> QList<QList<MenuListModel*>>
+			//// 形式每个list元素: QList<MenuListModel*>
+			//// 实际加入list元素: *(mPageModelLists.at(i)) ==> *(IndexedQList<PageModelList>.at(i)) ==> *(mData[index]) ==> *(QList<PageModelList*>[index]) ==> *(PageModelList*) ==> PageModelList
+    }
+    return dataLists;
+}
+
+
+using PageModelList = QList<MenuListModel*>;			//估计PageModelList 代表的是某种list(如lines或spd)的model,  MenuListModel* 是属于这个model的具体某个page的指针 
+class  MenuListModel : public QAbstractListModel
+{
+    QList<ListItem*> mItemList;
+    QHash<int, QByteArray> mRoleNames;
+};
+
+template<typename T, typename Idx = Index<T>>
+class IndexedQList
+{
+    T* at(int const &index)
+    {
+        if (index < 0 || index >= mData.length())
+            return nullptr;
+        return mData[index];
+    }
+    
+    QList<T *> mData;
+};
+
+====》
+void MenuListCallUi::addItemsToPages(int listId, ItemSet::iterator const &from)
+{
+    ItemSet &itemSet = getItemSet(listId);
+    if (from == itemSet.end())
+        return;
+    PageModelList &pageList = getPageList(listId);												//先取出pagelist, 是lines/spds/shortcut等中的一个, 归根结底是 *mPageModelLists[type]
+    MenuListModel *pPage = getPage(listId, indexInList);									//指当前所要加入起始item所在的那个page指针
+    
+    for (int i = pageList.indexOf(pPage); i < pageList.length(); ++i) {		//从刚才的page指针为起点, 往后加入item
+    		MenuListModel &page = *pageList.at(i);														//现在指向哪个page的指针,因为我要去遍历
+        while (itr != itemSet.end() && itemCnt + page.rowCount() < mItemsPerPage) {	//这里是每个page 8个item, 他是这样去添加的
+            if (listId == LIST_ALL_ID) {
+                (*itr)->setParent(&page);
+            }
+            itemLst << *itr++;
+            ++itemCnt;
+        }    	
+        if (itemLst.length() != 0) {
+            page.appendRows(itemLst);																			//把应该属于当前page的item列表一次性加进去
+            itemLst.clear();
+            itemCnt = 0;
+        }
+    
+QA: 这个是哪个listid? 
+PageModelList &MenuListCallUi::getPageList(int listId)
+{
+    PageModelList *pList = mPageModelLists.at(listId);	《------ IndexedQList<PageModelList>.at(i)) ==> PageModelList*
+    if (!pList) {
+        pList = new PageModelList();
+        mPageModelLists.put(pList, listId);
+    }
+    return *pList;
+}
+
+
+
+QA： 把alllist分类是不是这里？
+void MenuListCallUi::classifyNewItems(QVariantList const &lst)
+{
+    ItemSet &listAll = getItemSet(LIST_ALL_ID);
+    ListItemModel tempItem;
+    ListItem *pItem = nullptr;
+    mItemClassifier.clear();
+    int listId = -1;
+    foreach (const QVariant &vItem, lst) {
+        QVariantMap const &vMap = vItem.toMap();
+        int index = vMap[PageConstants::TAG_INDEX].toInt();
+        listId = vMap[PageConstants::TAG_LINE_KEY_TYPE].toInt();			《-----应该这边listId就是画面上的tab
+        tempItem.setData(RoleNames::ItemIndexRole, index, false);
+        ItemSet::iterator itrItem = listAll.find(&tempItem);
+        if (itrItem == listAll.end()) {
+            int type = vMap[PageConstants::TAG_TYPE].toInt();
+            pItem = ListItemFactory::createListItem(type, nullptr);
+        } else {
+            pItem = *itrItem;
+        }
+        pItem->setData(vMap);
+        mItemClassifier.put(listId, pItem);
+    }
+    mItemClassifier.sortAllLists();					《-----mItemClassifier里面有 IndexedQList<QList<ListItem *>> mDataLists，
+    																				这样分类：mDataLists.put(pList, listId);
+}
+
+=========================
+    
+   	models: pageCallUi.pageModelLists[model.index]
+   	
+    Q_PROPERTY(QList<PageModelList> pageModelLists READ getPageModelLists NOTIFY dataListModelChanged)
+		
+		
+		QList<PageModelList>            dataLists;
+		QList<PageModelList> MenuListCallUi::getPageModelLists()
+		{
+		    dataLists.clear();
+		    for (int i = 0; i < mPageModelLists.length(); ++i) {
+		        if (mPageModelLists.at(i))
+		            dataLists.append(*(mPageModelLists.at(i)));
+		        else {
+		            dataLists.append(QList<MenuListModel *>());
+		        }
+		    }
+		    return dataLists;
+		}
+
+--------------------------
+
+
+
+
+
+

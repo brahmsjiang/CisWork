@@ -1,0 +1,122 @@
+
+var BACK = "back"
+
+SLHeaderButton {
+    id: back_button
+    iconNormal: QmlGlobal.getThemeIcon(Icons.iconBack)
+    sendButton: Buttons.BACK
+}
+    
+    
+
+void TouchEventIO::sendButtonClicked(const QString &pageId, const QString &buttonName)
+{
+    if (!isCurrPage(pageId))
+        return;
+    sendMsg("invokeButton", QVariantList() << pageId << buttonName);
+}
+
+void TouchEventIO::sendMsg(const QString& method, const QVariantList& args)
+{
+    DBusWrapper::getInstance()->send(method, args);
+    //mphone will reset backlight timer when it receives a touch/key event,
+    //so we can clear ScreenTouched flag to reduce unnecessary dbus msgs.
+    setScreenTouched(false);
+}
+
+=========================
+
+    public void handle(DBusSignal signal) {
+        try {
+            if(signal instanceof GuiAppService.postKeyEvent) {
+
+            } else if(signal instanceof GuiAppService.invokeButton) {
+                GuiAppService.invokeButton button = (GuiAppService.invokeButton) signal;
+                GuiAppClient.getInstance().invokeButton(button.pageId, button.name);
+                
+
+    public void invokeButton(String pageId, String name) {
+            TouchEvent touchEvent = new TouchEvent(TouchEvent.TOUCH_TARGET_BUTTON, KeyAction.UP, name);
+            getInputManager().getTouchListener().processTouchEvent(pageId, touchEvent);
+    }
+    
+  ......... <-----much detail nedd to confirm
+     
+	protected void invokeTouchFeature(final TouchFeature touchFeature, final int reason) {
+        switch (target) {
+        case TouchEvent.TOUCH_TARGET_BUTTON:
+            String buttonName = touchFeature.getTouchEvent().getName();
+            if (GUITagConstants.CORNERKEY_BACK.equals(buttonName)) {
+                invokeNavBack(Feature.INVOKE_UP);
+                
+                
+  private void invokeNavBack(final int reason) {
+    if (DeviceInputCapabilities.supportsTouch()) {
+        if (reason == Feature.INVOKE_UP) {
+            announceBack();
+            this.featureInvoked(Features.createApplicationFeature(Features.BACK), Feature.INVOKE_DIRECT);
+        }
+    } 
+    
+    
+    public class xxxxxxxxModel extends SLComponentMode {
+    protected void featureInvoked(Feature theFeature, int reason) {
+        if (theFeature.getData().equals(Features.BACK)) {
+            removeMe();
+        }
+    }
+    
+		protected void removeMe() {
+        if (hasParent())
+            getParent().removeChild(this);
+    }
+    
+    public final void removeChild ( SLComponentModel theChild ) {
+        if (theChild != null) {
+            this.preChildRemoved(theChild, true);	//maybe not use
+            theChild.disposeHierarchyControl();
+            processRemoveChild(theChild.getName(), true);
+        }
+    }
+    
+    
+	 	public final void disposeHierarchyControl() {
+	    if (isInitialized) {
+	
+	        // when dispose itself, escape input mode
+	        SLInputProxy inputProxy = SLInputProxy.getInstance(getApplicationProxy().getAppName());
+	        if (inputProxy.isEditing() && inputProxy.getInputWatcher() == this){
+	            inputProxy.escapeInputMode();
+	        }
+	
+	        // when close brightness preview(no KEM) or ringtone(single line)
+	        // their parent model brightnessmenu or ringtonemenu will be removed when childRemoved()
+	        // so set isInitialized to false to avoid the parent menumodel won't be disposed twice
+	        isInitialized = false;
+	        Object[] children = getChildrenObjects();
+	        for (int i = 0; i < children.length; i++) {
+	            SLComponentModel child = (SLComponentModel) children[i];
+	            removeChild(child, false);
+	        }
+
+	        getView().dispose();
+	    }
+    }
+    
+    public final void dispose() {
+       fullDisplay.dispose(closeWindow());
+       if ( closeWindow() ) {
+            model.getApplicationProxy().loseFocusComplete();
+        }
+        onDispose();
+        fullDisplay = null;
+        isOpen = false;
+        isPause = false;
+        isOpenInForeground = false;
+        model.getApplicationProxy().removeFocus(getModel());
+    }
+    
+    
+    
+    
+    

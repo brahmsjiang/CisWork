@@ -1,0 +1,124 @@
+
+
+how to get blur-appcontainer:
+AppManager::AppManager(): mpView(new QQuickView()),
+<===QQuickView: a convenience subclass of QQuickWindow which will automatically load and display a QML scene when given the URL of the main source file. 
+    
+    
+class AppManager : public QObject
+    QQuickView *getView() const { return mpView; }
+    
+
+QQuickView *rootView = AppManager::getInstance()->getView();
+SLPageManager::getInstance(rootView)->initialize();
+    
+    
+SLPageManager::SLPageManager(QQuickView *rootView) : mpRootView(rootView)
+
+
+SLPage *SLPageManager::loadPage(const QString &pageID)
+    if (qmlFile == QML_STATIC) {
+        QQmlContext *rootContext = mpRootView->rootContext();
+        rootContext->setContextProperty("page" + pageID, page);
+        page->setStaticPage(true);
+    } else {
+        page->BindToQml(mpRootView, qmlFile);
+
+                
+                
+                
+bool SLPage::BindToQml(QQuickView *rootView, const QString &qmlFile)
+    QObject * applicationContainer = getContainer(rootView);
+    
+    
+    
+QObject *SLPage::getContainer(QQuickView *rootView)
+{
+    QObject *rootObject = rootView->rootObject();
+<======All visual items in Qt Quick inherit from QQuickItem. Although a QQuickItem instance has no visual appearance, it defines all the attributes that are common across visual items, such as x and y position, width and height, anchoring and key handling support.
+
+    if (!mApplicationContainerBlur) {
+        mApplicationContainerBlur = rootObject->findChild<QObject *>(OBJECT_PAGE_CONTAINER_BLUR);
+    }
+    if (!mApplicationContainer) {
+        mApplicationContainer = rootObject->findChild<QObject *>(OBJECT_PAGE_CONTAINER);
+    }
+    
+
+
+
+    
+how to become static page:
+java:
+init:
+at cip.app.IInputFocusListener$Dispatcher.sinkMessage(Unknown Source)
+at cip.app.Application$Listener.gotFocus(Unknown Source)
+at cip.comp.ComponentApplication.gotFocus(Unknown Source)
+at cip.go4.SLApplication.onGotFocus(Unknown Source)===
+at cip.go4.OverviewModel.activate(Unknown Source)
+at cip.comp.SLComponentModel.addChild(Unknown Source)
+at cip.comp.SLComponentModel.processAddChild(Unknown Source)
+at cip.comp.SLComponentModel.initializeControl(Unknown Source)
+------
+at cip.comp.SLComponentModel.processInitialize(Unknown Source)
+at cip.favorites.FavoritesMenuModel.initialize(Unknown Source)====>抽象到具体model初始化
+------
+at cip.comp.SLComponentView.initialize(Unknown Source)
+at cip.comp.SLFullDisplay.initialize(Unknown Source)
+at cip.comp.SLFullDisplay.fullInitialize(Unknown Source)====>共通处理view
+
+show:
+at cip.app.IInputFocusListener$Dispatcher.sinkMessage(Unknown Source)
+at cip.app.Application$Listener.gotFocus(Unknown Source)
+at cip.comp.ComponentApplication.gotFocus(Unknown Source)===
+at cip.comp.SLComponentModel.openChild(Unknown Source)
+at cip.favorites.FavoritesMenuModel.activate(Unknown Source)
+at cip.favorites.FavoritesMenuModel.activate(Unknown Source)
+at cip.comp.SLComponentModel.activate(Unknown Source)
+at cip.comp.SLComponentModel.openMe(Unknown Source)
+at cip.comp.SLComponentView.processOpen(Unknown Source)
+at cip.comp.SLFullDisplay.open(Unknown Source)
+at cip.comp.SLFullDisplay.fullShow(Unknown Source)
+at cip.app.AppPageManager.showPage(Unknown Source)
+at cip.comp.SLFullDisplay.setVisible(Unknown Source)
+
+
+qt:
+init:
+void GuiAppManager::initPage(const QString &pageID, const QString &callbackToken,
+	void SLPageManager::initPage(const QString &pageID)
+		SLPage *SLPageManager::loadPage(const QString &pageID)
+		    SLPage *page = getPage(pageID);
+		    if (!page) {
+		        page = createPage(pageID);
+		        if (page != nullptr) {
+		            QString qmlFile = getPageQmlFile(page);
+
+show:
+void GuiAppManager::showPage(const QString &pageID, bool isVisible)
+
+
+动态页面使用方法:
+QQmlComponent component(qmlEngine, QUrl::fromLocalFile(qmlFile)); 《----qmlEngine, qmlFile
+m_dynamicQmlObject = component.create(rootContext);《----从qml文件的component获取qobject实例
+QVariant sourcePageProperty = m_dynamicQmlObject->property("sourcePage"); 《---slpage class实例在qml即以sourcepage来使
+    
+class Page : public QObject
+    Q_PROPERTY(QString pageId READ pageId CONSTANT)
+sourcePage.pageId			《---当前slpage实例的里面的pageid属性，即qml使用c++的类和属性
+
+
+静态页面使用方法：
+QQmlContext *rootContext = mpRootView->rootContext();《---返回root context，context是传递数据给qml的基础。context在每个qml里是树形结构。
+rootContext->setContextProperty("page" + pageID, page);《---在最根上的context设置 pageXxx 属性。
+
+pageCallUi.dataListModel 《---pagecallui实例的里面的dataListModel属性，pagecallui是slpage的一个实例
+
+
+
+
+
+
+
+
+    

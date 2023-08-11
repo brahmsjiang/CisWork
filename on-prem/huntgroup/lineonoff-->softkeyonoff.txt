@@ -1,0 +1,441 @@
+
+
+
+
+} else if (feature instanceof CallControlFeature && ((CallControlFeature)feature).getFeatureId() == SkEvents.SK_EV_HLOG) {
+    boolean hlogState = ((BooleanProperty) SystemManager.getPropertyManager().getProperty(SipPropertyNames.HLOG)).getValue();
+    
+    String text = hlogState ? PhraseTags.getPhraseText(PhraseTags.HLOG_LOGOUT) : PhraseTags.getPhraseText(PhraseTags.HLOG_LOGIN);
+    feature.setLabel(hlogState ? PhraseTags.getPhraseText(PhraseTags.HLOG_LOGOUT) : PhraseTags.getPhraseText(PhraseTags.HLOG_LOGIN));
+    TraceDefaults.traceInterface.debug("lajiang===", "updateSoftkeyLabel", "hlogState:" + hlogState + " text:" + text);
+            
+            
+line hg onoff:
+2001 DEB Feb 15 11:37:59.447893 (20664-20923) JAVA-::End-Of-Sip-Message::
+2002 DEB Feb 15 11:37:59.447916 (20664-20923) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> REFER sip:***@10.79.57.208:51125;transport=tcp SIP/2.0() --> [SIPCC] : 
+2003 NOT Feb 15 11:37:59.447947 (20664-20923) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: [Profiling-Stub]REFER s:Cseq 101 REFER:<10.79.57.147:0>:<sip:***@10.79.57.147>;tag=1847697376:c1e9b980-1ee1cadc-b170-93394f0a@10.79.57.147
+2004 DEB Feb 15 11:37:59.448123 (20664-20923) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+2005 DEB Feb 15 11:37:59.448144 (20664-20923) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:REFER sip:***@10.79.57.208:51125;transport=tcp SIP/2.0  Cseq:101 REFER CallId:c1e9b980-1ee1cadc-b170-93394f0a@10.79.57.147    
+2006 DEB Feb 15 11:37:59.448565 (20664-20923) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+2007 DEB Feb 15 11:37:59.448624 (20664-20923) JAVA-SIPCC-SIP_SUB: xmlDecodeEventData: Decode event data: entered,
+2008 NOT Feb 15 11:37:59.448844 (20664-20925) JAVA-SIPCC-RCC_INFO: 0/0, rcc_receive_request: SUB 1048580: REQ=27 
+2009 DEB Feb 15 11:37:59.448991 (20664-20922) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  g_deviceInfo.ins_state=1
+2010 DEB Feb 15 11:37:59.449022 (20664-20922) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  deviceInfo->sis_name=X-cisco-sis-
+2011 DEB Feb 15 11:37:59.449039 (20664-20922) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  reference pointer=f128bac8
+2012 DEB Feb 15 11:37:59.449058 (20664-20922) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  deviceInfo->ins_state=1
+2013 DEB Feb 15 11:37:59.449078 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_deviceEvent: g_deviceInfo.ins_state=1
+2014 NOT Feb 15 11:37:59.449095 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_deviceEvent: event type : HLOG
+2015 DEB Feb 15 11:37:59.449121 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_deviceEvent: ref_count=1 
+2016 DEB Feb 15 11:37:59.449144 (20664-20923) JAVA-SIPCC-MSG_SEND_RESP: sipSPISendSubscribeNotifyResponse: Sending response 200...
+2017 DEB Feb 15 11:37:59.449172 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_deviceEvent: name=SEPDC0B0983EF95 : privacy=0 : hlog=0 : dnd_state=1 : mwi_lamp=0 
+2018 DEB Feb 15 11:37:59.449195 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_deviceEvent: dnd_type=00 : ins_state=01 : cucm_mode=00 : ins_cause=00 
+2019 INF Feb 15 11:37:59.449350 (20664-20922) JAVA-Thread-9|SipCcEventDispatcher:  - onDeviceEvent: deviceEvent=2 deviceId=0 deviceInfoRef=-248988984
+2020 DEB Feb 15 11:37:59.449386 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: 0xf128bac8, CCAPI_DeviceInfo_getHlogState: returned 0
+2021 DEB Feb 15 11:37:59.449437 (20664-20923) JAVA-edge_send_get: Length of data read from edge_gateway 64
+2022 INF Feb 15 11:37:59.449466 (20664-20922) JAVA-Thread-9|SipCcEventDispatcher:  - onDeviceEvent: deviceEvent= DEVICEEVENT_HLOG logStatus=false
+2023 DEB Feb 15 11:37:59.449486 (20664-20923) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8875_eec4762c-0010-5000-a000-dc0b0983ef95
+2024 DEB Feb 15 11:37:59.449506 (20664-20923) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: eec4762c00105000a000dc0b0983ef95 remote_uuid: 
+2025 DEB Feb 15 11:37:59.449560 (20664-20923) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEPDC0B0983EF95] to contact header 
+2026 DEB Feb 15 11:37:59.449597 (20664-20923) JAVA-SIP : sipSPISendSubscribeNotifyResponse : Via host: 10.79.57.147, port: 5060, rcvd host: (null)
+2027 DEB Feb 15 11:37:59.449632 (20664-20923) JAVA-SIPCC-SIP_STORE: sipRelDevCoupledMessageStore: Storing for reTx (cseq=101, method=REFER, to_tag=<dc0b0983ef9500126c908ade-0ff74340>)
+2028 DEB Feb 15 11:37:59.449668 (20664-20923) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[567] 
+2029 NOT Feb 15 11:37:59.449738 (20664-20923) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: [Profiling-Stub]200 OK^M:Cseq 101 REFER:<10.79.57.147:5060>:<sip:***@10.79.57.208>;tag=dc0b0983ef9500126c908ade-0ff74340:c1e9b980-1ee1cadc-b170-93394f0a@10.79.57.147
+2030 DEB Feb 15 11:37:59.449779 (20664-20886) JAVA-callui MQThread|Appframe:ALERT StartNotification - 
+2031 NOT Feb 15 11:37:59.449857 (20664-20891) JAVA-configmgr MQThread|cip.cfg.Config:  - [propertyChanged()] propName:"device.settings.config.sipprofile.sipcallfeatures.hlog"
+2032 DEB Feb 15 11:37:59.449894 (20664-20923) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<64>,length=<567>, message=
+2033 DEB Feb 15 11:37:59.449920 (20664-20922) JAVA-Thread-9|RecordStoreImpl:? - Setting record id=222 numBytes=89 file=_cip_properties.db
+2034 DEB Feb 15 11:37:59.449955 (20664-20922) JAVA-Thread-9|RecordStoreImpl:? -  --> RecordStore:findRecord: id: 222
+2035 DEB Feb 15 11:37:59.449983 (20664-20923) JAVA-sipio-sent---> SIP/2.0 200 OK^M
+        Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK15b7774251e71^M
+        From: <sip:***@10.79.57.147>;tag=1847697376^M
+        To: <sip:***@10.79.57.208>;tag=dc0b0983ef9500126c908ade-0ff74340^M
+        Call-ID: c1e9b980-1ee1cadc-b170-93394f0a@10.79.57.147^M
+        Session-ID: eec4762c00105000a000dc0b0983ef95;remote=00000000000000000000000000000000^M
+        Date: Wed, 15 Feb 2023 02:37:59 GMT^M
+        CSeq: 101 REFER^M
+        Server: Cisco-CP8875^M
+        Contact: <sip:***@10.79.57.208:51125;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEPDC0B0983EF95"^M
+        Content-Length: 0^M
+        ^M
+2036 DEB Feb 15 11:37:59.450008 (20664-20922) JAVA-Thread-9|RecordStoreImpl:? -  <-- RecordStore:findRecord: id: 222 in cache.
+2037 DEB Feb 15 11:37:59.450031 (20664-20923) JAVA-::End-Of-Sip-Message::
+2038 DEB Feb 15 11:37:59.450053 (20664-20923) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SIP/2.0 200 OK() --> [10.79.57.147] : 
+2039 DEB Feb 15 11:37:59.450202 (20664-20923) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+2040 DEB Feb 15 11:37:59.450226 (20664-20923) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SIP/2.0 200 OK  Cseq:101 REFER CallId:c1e9b980-1ee1cadc-b170-93394f0a@10.79.57.147    
+2041 DEB Feb 15 11:37:59.450337 (20664-20922) JAVA-Thread-9|cip.sipcc.SipCcAdapter$CcMgmtListener:  - needMwiPrompt(): MWI status=[B@c443c8
+2042 DEB Feb 15 11:37:59.450369 (20664-20922) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  g_deviceInfo.ins_state=1
+2043 DEB Feb 15 11:37:59.450393 (20664-20922) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  deviceInfo->sis_name=X-cisco-sis-
+2044 DEB Feb 15 11:37:59.450412 (20664-20922) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  reference pointer=f128c5e0
+2045 DEB Feb 15 11:37:59.450430 (20664-20922) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  deviceInfo->ins_state=1
+2046 DEB Feb 15 11:37:59.450453 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: 0xf128c5e0, CCAPI_DeviceInfo_getLines:  LINES Start 
+2047 DEB Feb 15 11:37:59.450475 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: 0xf128c5e0, CCAPI_DeviceInfo_getLines:  LINE(1)  handle[0]=1
+2048 DEB Feb 15 11:37:59.450499 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: 0xf128c5e0, CCAPI_DeviceInfo_getLines:  The rest 15 lines are not lines!!! 
+2049 DEB Feb 15 11:37:59.450533 (20664-20922) JAVA-SNAPSHOT-RELEASE: CCAPI_Device_releaseDeviceInfo:  reference pointer=f128c5e0
+2050 INF Feb 15 11:37:59.450694 (20664-20922) JAVA-Thread-9|cip.sipcc.SipCcAdapter$CcMgmtListener:  - needMwiPrompt(): promptReqd=false
+2051 DEB Feb 15 11:37:59.450749 (20664-20922) JAVA-Thread-9|cip.sipcc.SipCcAdapter$CcMgmtListener:  - getCfwdAllNum:fwdAllNumber=
+2052 WRN Feb 15 11:37:59.450802 (20664-20922) JAVA-Thread-9|PhraseTags:? - phrase id 57 is not translated
+2053 DEB Feb 15 11:37:59.450890 (20664-20922) JAVA-Thread-9|lajiang===:? - ID_NEW_FEATURE_STAT_NOTIFY
+2054 ERR Feb 15 11:37:59.451531 (20664-20922) JAVA-11:37:59|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callagent.IManagement$Proxy.newFeatureStatNotify(Unknown Source)
+                at cip.callagent.EmbraceCcRouter$SIPUIListener.newFeatureStatNotify(Unknown Source)
+                at cip.sipcc.SipCcAdapter$CcMgmtListener.updatePLKState(Unknown Source)
+                at cip.sipcc.SipCcAdapter$CcMgmtListener.setHLOG(Unknown Source)
+                at cip.sipcc.SipCcAdapter$CcMgmtListener.updateHLogStatus(Unknown Source)
+                at cip.sipcc.SipCcEventDispatcher.onDeviceEvent(Unknown Source)
+2055 DEB Feb 15 11:37:59.451625 (20664-20922) JAVA-SNAPSHOT-RELEASE: CCAPI_Device_releaseDeviceInfo:  reference pointer=f128bac8
+2056 DEB Feb 15 11:37:59.451654 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_featureEvent: button=3 : contact= : featureOptionMask=0 : feature_id=139 : name= 
+2057 DEB Feb 15 11:37:59.451674 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_featureEvent: retrievalPrefix= : speedDialNumber=  speedDialIndex=0
+2058 DEB Feb 15 11:37:59.451709 (20664-20885) JAVA-callagent MQThread|lajiang===:? - sink ID_SET_DYNAMIC_FEATURE
+2059 INF Feb 15 11:37:59.451750 (20664-20922) JAVA-Thread-9|SipCcEventDispatcher:  - onFeatureEvent: deviceEvent=2 device=0 featureInfoRef=-233981348
+2060 INF Feb 15 11:37:59.451780 (20664-20922) JAVA-Thread-9|SipCcEventDispatcher:  - onFeatureEvent: Unknown Event or not processed in this interface
+2061 ERR Feb 15 11:37:59.452265 (20664-20885) JAVA-11:37:59|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callagent.ICallAgentListener$Proxy.setDynamicFeature(Unknown Source)
+                at cip.callagent.CallAgent$MyListeners.newFeatureStatNotify(Unknown Source)
+                at cip.callagent.IManagement$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callagent.IManagement$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2062 DEB Feb 15 11:37:59.454147 (20664-20886) JAVA-callui MQThread|cip.callui.LineListModel:notifyDisplay2 - notifyDisplayText: You have successfully logged out of the hunt group, timeout: 5
+2063 DEB Feb 15 11:37:59.454267 (20664-20886) JAVA-callui MQThread|cip.callui.LineListModel:statusDisplay - statusText: 
+2064 DEB Feb 15 11:37:59.454341 (20664-20886) JAVA-callui MQThread|cip.callui.LineListModel:lajiang setDynamicFeature - : setDynamicFeature, position=2 label=Hunt group featureid=4 ButtonStimulusId=139
+2065 ERR Feb 15 11:37:59.454894 (20664-20886) JAVA-11:37:59|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callui.LineListModel$MyCallAgentListener.setDynamicFeature(Unknown Source)
+                at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+
+
+=========================================================
+line dnd onoff:
+
+2756 WRN Feb 15 11:43:03.345343 (20709-20709) guiapp-[Profiling-Stub] notifyListItemClicked(): page: CallUi widgetType: ListItem
+2757 DEB Feb 15 11:43:03.348958 (20664-20865) JAVA-Thread-3|cip.dbus.GuiAppDBusSignalHandler:? - --Begin to handle() signal/event from GuiApp--
+2758 DEB Feb 15 11:43:03.349033 (20664-20865) JAVA-Thread-3|cip.userio.GuiAppClient:? - invokeListItem method was called.
+2759 DEB Feb 15 11:43:03.349215 (20664-20873) JAVA-appmgr MQThread|cip.app.SLApplicationManager:? - processTouchEvent: CallUi: target=1
+2760 NOT Feb 15 11:43:03.349376 (20664-20886) JAVA-callui MQThread|cip.callui.OverviewModel:detect key - model:CallUi
+2761 DEB Feb 15 11:43:03.349463 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiModel:? - invokeTouchFeature target: 1
+2762 DEB Feb 15 11:43:03.349526 (20664-20886) JAVA-callui MQThread|cip.callui.EnhancedLineMode: - EnhancedLineMode.processLineKey: 2
+2763 DEB Feb 15 11:43:03.349848 (20664-20885) JAVA-callagent MQThread|cip.callagent.CallAgent:? - The isRegisted is: true
+2764 NOT Feb 15 11:43:03.349908 (20664-20885) JAVA-callagent MQThread|cip.sipcc.SipCcAdapter$CcMgmtListener:  - mgmtState=MGMT_REGTD(5)
+2765 INF Feb 15 11:43:03.349957 (20664-20885) JAVA-callagent MQThread|cip.sipcc.SipCcAdapter$SipCcListeners:  - featureInvoked():Case3 feature=cip.callagent.DynamicFeature@6dd756 reason=0
+2766 NOT Feb 15 11:43:03.350036 (20664-20885) JAVA-callagent MQThread|cip.sipcc.SipCcAdapter$SipCcListeners: - featureInvoked():Case3, not consult embracecc, feature: cip.callagent.DynamicFeature@6dd756, featureID: 6, lineFeature: 130, lineFeatureID: 130
+2767 INF Feb 15 11:43:03.350091 (20664-20885) JAVA-callagent MQThread|SipCcFeatureAction:  - ccSkAction():  call=0 line=0 feature=DND eventID =69 parknumber=
+2768 NOT Feb 15 11:43:03.350214 (20664-20926) JAVA-SIPCC-CC_API: 0/0, cc_int_feature: SUBMGR -> GSM: DND_SET_RINGER      
+2769 DEB Feb 15 11:43:03.350290 (20664-20925) JAVA-SIPCC-GSM: gsm_process_msg: cmd= 0xad
+2770 DEB Feb 15 11:43:03.350323 (20664-20922) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  g_deviceInfo.ins_state=1
+2771 NOT Feb 15 11:43:03.350351 (20664-20925) JAVA-SIPCC-DCSM: dcsm_process_event: DCSM 0   :(DCSM_READY:FEAT:DND_SET_RINGER)
+2772 DEB Feb 15 11:43:03.350379 (20664-20922) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  deviceInfo->sis_name=X-cisco-sis-
+2773 DEB Feb 15 11:43:03.350398 (20664-20922) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  reference pointer=f1294308
+2774 DEB Feb 15 11:43:03.350419 (20664-20922) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  deviceInfo->ins_state=1
+2775 DEB Feb 15 11:43:03.350435 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_deviceEvent: g_deviceInfo.ins_state=1
+2776 NOT Feb 15 11:43:03.350453 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_deviceEvent: event type : DND
+2777 DEB Feb 15 11:43:03.350469 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_deviceEvent: ref_count=1 
+2778 DEB Feb 15 11:43:03.350486 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_deviceEvent: name=SEPDC0B0983EF95 : privacy=0 : hlog=0 : dnd_state=0 : mwi_lamp=0 
+2779 DEB Feb 15 11:43:03.350508 (20664-20925) JAVA-SIPCC-GSM: gsm_process_msg: Message Processed: 0xad
+2780 DEB Feb 15 11:43:03.350534 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_deviceEvent: dnd_type=00 : ins_state=01 : cucm_mode=00 : ins_cause=00 
+2781 NOT Feb 15 11:43:03.350550 (20664-20923) JAVA-ccsip_messaging: sipSPIAddContactHeader: CFGID_DEVICE_NAME = SEPDC0B0983EF95
+2782 NOT Feb 15 11:43:03.350583 (20664-20923) JAVA-ccsip_messaging: sipSPIAddContactHeader: ccb->call_mode = 0, display_name =
+2783 INF Feb 15 11:43:03.350608 (20664-20922) JAVA-Thread-9|SipCcEventDispatcher:  - onDeviceEvent: deviceEvent=8 deviceId=0 deviceInfoRef=-248954104
+2784 DEB Feb 15 11:43:03.350636 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: 0xf1294308, CCAPI_DeviceInfo_getDNDState: returned 0
+2785 DEB Feb 15 11:43:03.350662 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: 0xf1294308, CCAPI_DeviceInfo_getDNDType: returned 00
+2786 DEB Feb 15 11:43:03.350684 (20664-20923) JAVA-VCM : vcmIsICESupported : mediaTraversalMode(1)=Standard.
+2787 INF Feb 15 11:43:03.350705 (20664-20922) JAVA-Thread-9|SipCcEventDispatcher:  - onDeviceEvent: deviceEvent= DEVICEEVENT_DND dndState=false dndReject=false
+2788 DEB Feb 15 11:43:03.350730 (20664-20923) JAVA-PLAT : MED_API : platGetLocalIPAddr :Hi,It contains IPV6_INTEGRATION
+2789 DEB Feb 15 11:43:03.350753 (20664-20923) JAVA-SIPCC-SIP_TRANS: sip_get_local_ip_addr: dst_addr: [2001:4860:4860:0:0:0:0:8888]
+2790 DEB Feb 15 11:43:03.350770 (20664-20923) JAVA-SIPCC-SIP_TRANS: sip_get_local_ip_addr: [IPv6] src_addr not found
+2791 DEB Feb 15 11:43:03.350931 (20664-20915) JAVA-sipcc MQThread| SipCcAdapter :  - DND control property changed...
+2792 DEB Feb 15 11:43:03.350974 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiModel:propertyChanged - DND control property changed...
+2793 DEB Feb 15 11:43:03.351008 (20664-20922) JAVA-Thread-9|RecordStoreImpl:? - Setting record id=219 numBytes=95 file=_cip_properties.db
+2794 DEB Feb 15 11:43:03.351034 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.SipCcAdapter$CcMgmtListener:  - needMwiPrompt(): MWI status=[B@c443c8
+2795 DEB Feb 15 11:43:03.351069 (20664-20915) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  g_deviceInfo.ins_state=1
+2796 DEB Feb 15 11:43:03.351093 (20664-20915) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  deviceInfo->sis_name=X-cisco-sis-
+2797 DEB Feb 15 11:43:03.351109 (20664-20915) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  reference pointer=f128b350
+2798 NOT Feb 15 11:43:03.351125 (20664-20891) JAVA-configmgr MQThread|cip.cfg.Config:  - [propertyChanged()] propName:"device.settings.config.sipprofile.sipcallfeatures.dndcontrol"
+2799 DEB Feb 15 11:43:03.351151 (20664-20915) JAVA-SNAPSHOT-CREATE: CCAPI_Device_getDeviceInfo:  deviceInfo->ins_state=1
+2800 DEB Feb 15 11:43:03.351177 (20664-20886) JAVA-callui MQThread|cip.msui.MediaControl:? - AUDIO_PATH_SPEAKER_OUT
+2801 DEB Feb 15 11:43:03.351303 (20664-20886) JAVA-callui MQThread|cip.msui.MediaControl:? - set rtp default volume: audioPath=AUDIO_PATH_SPEAKER_OUT curDefaultHeadset=HEADSET_WIRED_ANALOG outputVolume=7
+2802 DEB Feb 15 11:43:03.351411 (20664-20922) JAVA-Thread-9|RecordStoreImpl:? -  --> RecordStore:findRecord: id: 219
+2803 DEB Feb 15 11:43:03.351485 (20664-20922) JAVA-Thread-9|RecordStoreImpl:? -  <-- RecordStore:findRecord: id: 219 in cache.
+2804 DEB Feb 15 11:43:03.351801 (20664-20922) JAVA-Thread-9|lajiang===:? - ID_NEW_FEATURE_STAT_NOTIFY
+2805 ERR Feb 15 11:43:03.352531 (20664-20922) JAVA-11:43:03|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callagent.IManagement$Proxy.newFeatureStatNotify(Unknown Source)
+                at cip.callagent.EmbraceCcRouter$SIPUIListener.newFeatureStatNotify(Unknown Source)
+                at cip.sipcc.SipCcAdapter$CcMgmtListener.addDND(Unknown Source)
+                at cip.sipcc.SipCcAdapter$CcMgmtListener.setDND(Unknown Source)
+                at cip.sipcc.SipCcEventDispatcher.onDeviceEvent(Unknown Source)
+2806 DEB Feb 15 11:43:03.352830 (20664-20915) JAVA-SIPCC-SIP_CC_PROV: 0xf128b350, CCAPI_DeviceInfo_getLines:  LINES Start 
+2807 DEB Feb 15 11:43:03.352873 (20664-20915) JAVA-SIPCC-SIP_CC_PROV: 0xf128b350, CCAPI_DeviceInfo_getLines:  LINE(1)  handle[0]=1
+2808 DEB Feb 15 11:43:03.352895 (20664-20915) JAVA-SIPCC-SIP_CC_PROV: 0xf128b350, CCAPI_DeviceInfo_getLines:  The rest 15 lines are not lines!!! 
+2809 DEB Feb 15 11:43:03.352953 (20664-20915) JAVA-SNAPSHOT-RELEASE: CCAPI_Device_releaseDeviceInfo:  reference pointer=f128b350
+2810 INF Feb 15 11:43:03.353205 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.SipCcAdapter$CcMgmtListener:  - needMwiPrompt(): promptReqd=false
+2811 DEB Feb 15 11:43:03.353260 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.SipCcAdapter$CcMgmtListener:  - getCfwdAllNum:fwdAllNumber=
+2812 INF Feb 15 11:43:03.353391 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang14
+2813 INF Feb 15 11:43:03.353441 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:0 SK_CALLS
+2814 INF Feb 15 11:43:03.353514 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:1 SK_DIR
+2815 INF Feb 15 11:43:03.353554 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:2 SK_SETTINGS
+2816 INF Feb 15 11:43:03.353583 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:3 
+2817 INF Feb 15 11:43:03.353653 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:4 SK_CFWD
+2818 INF Feb 15 11:43:03.353702 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:5 SK_HLOG
+2819 INF Feb 15 11:43:03.353749 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:6 SK_RECENTS
+2820 INF Feb 15 11:43:03.353778 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:7 SK_REDIAL
+2821 INF Feb 15 11:43:03.353833 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:8 SK_MEETME
+2822 INF Feb 15 11:43:03.353879 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:9 null
+2823 INF Feb 15 11:43:03.353906 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:10 null
+2824 INF Feb 15 11:43:03.353932 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:11 null
+2825 INF Feb 15 11:43:03.353965 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:12 null
+2826 INF Feb 15 11:43:03.354041 (20664-20915) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:13 null
+2827 DEB Feb 15 11:43:03.354074 (20664-20915) JAVA-sipcc MQThread|lajiang==sinkMessage:? - ID_SELECT_FEATURE_SET
+2828 DEB Feb 15 11:43:03.354429 (20664-20885) JAVA-callagent MQThread|lajiang===:? - sink ID_SET_DYNAMIC_FEATURE
+2829 ERR Feb 15 11:43:03.354930 (20664-20885) JAVA-11:43:03|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callagent.ICallAgentListener$Proxy.setDynamicFeature(Unknown Source)
+                at cip.callagent.CallAgent$MyListeners.newFeatureStatNotify(Unknown Source)
+                at cip.callagent.IManagement$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callagent.IManagement$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2830 ERR Feb 15 11:43:03.355001 (20664-20915) JAVA-11:43:03|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callagent.ICallAgentListener$Proxy.setDynamicFeature(Unknown Source)
+                at cip.callagent.CallAgent$MyListeners.newFeatureStatNotify(Unknown Source)
+                at cip.callagent.IManagement$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callagent.IManagement$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+        Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callagent.ICallControl$Proxy.selectFeatureSet(Unknown Source)
+                at cip.callagent.EmbraceCcRouter$SIPUIListener.selectFeatureSet(Unknown Source)
+                at cip.sipcc.FeatureKeyHandler.selectFeatureKeySet(Unknown Source)
+                at cip.sipcc.SipCcAdapter$CcMgmtListener.showHomeKeySet(Unknown Source)
+                at cip.sipcc.SipCcAdapter$CcMgmtListener.
+2831 ERR Feb 15 11:43:03.355031 (20664-20915) JAVA-access$900(Unknown Source)
+                at cip.sipcc.SipCcAdapter.propertyChanged(Unknown Source)
+                at cip.props.IPropertyListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.props.IPropertyListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2832 DEB Feb 15 11:43:03.355139 (20664-20885) JAVA-callagent MQThread|lajiang===sink ID_FEATURE_SELECT2:? - 
+2833 DEB Feb 15 11:43:03.355192 (20664-20922) JAVA-SNAPSHOT-RELEASE: CCAPI_Device_releaseDeviceInfo:  reference pointer=f1294308
+2834 DEB Feb 15 11:43:03.355216 (20664-20923) JAVA-edge_send_get: Length of data read from edge_gateway 64
+2835 DEB Feb 15 11:43:03.355259 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_featureEvent: button=2 : contact= : featureOptionMask=0 : feature_id=130 : name= 
+2836 DEB Feb 15 11:43:03.355281 (20664-20922) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_featureEvent: retrievalPrefix= : speedDialNumber=  speedDialIndex=0
+2837 DEB Feb 15 11:43:03.355343 (20664-20923) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8875_eec4762c-0010-5000-a000-dc0b0983ef95
+2838 DEB Feb 15 11:43:03.355374 (20664-20923) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: eec4762c00105000a000dc0b0983ef95 remote_uuid: 
+2839 DEB Feb 15 11:43:03.355765 (20664-20923) JAVA-SIPCC-SIP_SUB: xmlEncodeEventData: Encode event data: entered,
+2840 NOT Feb 15 11:43:03.355842 (20664-20923) JAVA-SIPCC-SIP_REG: xmlEncodeEventData: returned content after encoding:
+        <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+        <presence xmlns="urn:ietf:params:xml:ns:pidf" xmlns:dm="urn:ietf:params:xml:ns:pidf:data-model" xmlns:e="urn:ietf:params:xml:ns:pidf:status:rpid" xmlns:ce="urn:cisco:params:xml:ns:pidf:rpid" xmlns:sc="urn:ietf:params:xml:ns:pidf:servcaps" entity="sip:dc0b0983ef95">
+        <tuple id="1"> <status> <basic>open</basic> </status> </tuple>
+        <dm:person><e:activities><ce:available/></e:activities> </dm:person>
+        </presence>
+2841 ERR Feb 15 11:43:03.355885 (20664-20885) JAVA-11:43:03|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callagent.ICallAgentListener$Proxy.selectFeatureSet(Unknown Source)
+                at cip.callagent.CallAgent.featuresChanged(Unknown Source)
+                at cip.callagent.CallAgent$MyListeners.selectFeatureSet(Unknown Source)
+                at cip.callagent.ICallControl$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callagent.ICallControl$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2842 DEB Feb 15 11:43:03.355954 (20664-20923) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[1304] 
+2843 NOT Feb 15 11:43:03.356064 (20664-20923) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: [Profiling-Stub]PUBLISH:Cseq 2 PUBLISH:<10.79.57.147:5060>:<sip:***@10.79.57.147>:dc0b0983-ef950003-5839ef84-5b5d063f@10.79.57.208
+2844 DEB Feb 15 11:43:03.356464 (20664-20923) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<64>,length=<1304>, message=
+2845 DEB Feb 15 11:43:03.356716 (20664-20923) JAVA-sipio-sent---> PUBLISH sip:***@10.79.57.147 SIP/2.0^M
+        Via: SIP/2.0/TCP 10.79.57.208:51125;branch=z9hG4bK4ded6ce5^M
+        To: <sip:***@10.79.57.147>^M
+        From: <sip:***@10.79.57.147>;tag=dc0b0983ef950016297d347a-71202e26^M
+        Call-ID: dc0b0983-ef950003-5839ef84-5b5d063f@10.79.57.208^M
+        Contact: <sip:***@10.79.57.208:51125;transport=tcp>;+sip.instance="<urn:uuid:00000000-0000-0000-0000-dc0b0983ef95>";+u.sip!devicename.ccm.cisco.com="SEPDC0B0983EF95";+u.sip!model.ccm.cisco.com="36336";video^M
+        Session-ID: eec4762c00105000a000dc0b0983ef95;remote=00000000000000000000000000000000^M
+        CSeq: 2 PUBLISH^M
+        User-Agent: Cisco-CP8875^M
+        Event: presence^M
+        SIP-If-Match: 1346985401^M
+        Expires: 2147483647^M
+        Max-Forwards: 70^M
+        Content-Length: 465^M
+        Content-Type: application/pidf+xml^M
+        Content-Disposition: session;handling=required^M
+        ^M
+        <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+        <presence xmlns="urn:ietf:params:xml:ns:pidf" xmlns:dm="urn:ietf:params:xml:ns:pidf:data-model" xmlns:e="urn:ietf:params:xml:ns:pidf:status:rpid" xmlns:ce="urn:cisco:params:x
+2846 DEB Feb 15 11:43:03.356743 (20664-20923) JAVA-ml:ns:pidf:rpid" xmlns:sc="urn:ietf:params:xml:ns:pidf:servcaps" entity="sip:dc0b0983ef95">
+        <tuple id="1"> <status> <basic>open</basic> </status> </tuple>
+        <dm:person><e:activities><ce:available/></e:activities> </dm:person>
+        </presence>
+2847 DEB Feb 15 11:43:03.356771 (20664-20923) JAVA-::End-Of-Sip-Message::
+2848 DEB Feb 15 11:43:03.356792 (20664-20923) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Starting reTx timer for 32000 secs
+2849 DEB Feb 15 11:43:03.357055 (20664-20923) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> PUBLISH sip:***@10.79.57.147 SIP/2.0() --> [10.79.57.147] : 
+2850 DEB Feb 15 11:43:03.357532 (20664-20923) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+2851 DEB Feb 15 11:43:03.357553 (20664-20923) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:PUBLISH sip:***@10.79.57.147 SIP/2.0  Cseq:2 PUBLISH CallId:dc0b0983-ef950003-5839ef84-5b5d063f@10.79.57.208    
+2852 DEB Feb 15 11:43:03.357926 (20664-20923) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+2853 DEB Feb 15 11:43:03.358021 (20664-20923) JAVA-sipio-recv<--- SIP/2.0 200 OK^M
+        Via: SIP/2.0/TCP 10.79.57.208:51125;branch=z9hG4bK4ded6ce5^M
+        From: <sip:***@10.79.57.147>;tag=dc0b0983ef950016297d347a-71202e26^M
+        To: <sip:***@10.79.57.147>;tag=118261788^M
+        Date: Wed, 15 Feb 2023 02:43:04 GMT^M
+        Call-ID: dc0b0983-ef950003-5839ef84-5b5d063f@10.79.57.208^M
+        CSeq: 2 PUBLISH^M
+        Expires: 2147483647^M
+        SIP-ETag: 453014619^M
+        Content-Length: 0^M
+        ^M
+2854 DEB Feb 15 11:43:03.358051 (20664-20923) JAVA-::End-Of-Sip-Message::
+2855 DEB Feb 15 11:43:03.358069 (20664-20923) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> SIP/2.0 200 OK() --> [SIPCC] : 
+2856 NOT Feb 15 11:43:03.358100 (20664-20923) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: [Profiling-Stub]200 OK:Cseq 2 PUBLISH:<10.79.57.147:0>:<sip:***@10.79.57.147>;tag=dc0b0983ef950016297d347a-71202e26:dc0b0983-ef950003-5839ef84-5b5d063f@10.79.57.208
+2857 DEB Feb 15 11:43:03.358246 (20664-20923) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+2858 DEB Feb 15 11:43:03.358269 (20664-20923) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:SIP/2.0 200 OK  Cseq:2 PUBLISH CallId:dc0b0983-ef950003-5839ef84-5b5d063f@10.79.57.208    
+2859 DEB Feb 15 11:43:03.358383 (20664-20923) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+2860 DEB Feb 15 11:43:03.358657 (20664-20886) JAVA-|callui MQThread|cip.callui.CallUiModel:updateHeader() - activeFilter:1
+2861 INF Feb 15 11:43:03.358686 (20664-20922) JAVA-|callui MQThread|cip.callui.CallUiModel:updateHeader() - activeFilter:1SipCcEventDispatcher:  - onFeatureEvent: deviceEvent=8 device=0 featureInfoRef=-233981384
+2862 INF Feb 15 11:43:03.358732 (20664-20922) JAVA-Thread-9|SipCcEventDispatcher:  - onFeatureEvent: Unknown Event or not processed in this interface
+2863 DEB Feb 15 11:43:03.358790 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiFullDisplay:setHeaderPrompt - regStatePrompt:"Phone is registering"
+2864 DEB Feb 15 11:43:03.358855 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiFullDisplay:setHeaderPrompt - header-2nd-line-prompt is changed to empty
+2865 DEB Feb 15 11:43:03.358894 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiFullDisplay:setHeaderPrompt - header-1st-line-prompt is changed to "Phone is registering"
+2866 DEB Feb 15 11:43:03.358950 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiFullDisplay:setHeaderPrompt - to set header prompt:"Phone is registering"
+2867 DEB Feb 15 11:43:03.361725 (20664-20886) JAVA-callui MQThread|lajiang===:EnhancedLineMode - getFeatures
+2868 DEB Feb 15 11:43:03.361859 (20664-20886) JAVA-callui MQThread|lajiang===:getDeviceFeatureSet - getFeatures
+2869 DEB Feb 15 11:43:03.362135 (20664-20886) JAVA-callui MQThread|lajiang===:updateSoftkeyLabel - dndState:false text:DND
+2870 ERR Feb 15 11:43:03.363176 (20664-20886) JAVA-11:43:03|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callui.AbstractCallUiModel.updateSoftkeyLabel(Unknown Source)
+                at cip.callui.AbstractCallUiModel.maskSoftKeys(Unknown Source)
+                at cip.callui.EnhancedLineMode.getFeatures(Unknown Source)
+                at cip.callui.CallUiModel.getFeatures(Unknown Source)
+                at cip.callui.AbstractCallUiModel.refreshSoftkeys(Unknown Source)
+                at cip.callui.AbstractCallUiModel.propertyChanged(Unknown Source)
+                at cip.callui.CallUiModel.propertyChanged(Unknown Source)
+                at cip.props.IPropertyListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.props.IPropertyListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2871 DEB Feb 15 11:43:03.363346 (20664-20886) JAVA-callui MQThread|lajiang===:updateSoftkeyLabel - hlogState:false text:Hunt group login
+2872 DEB Feb 15 11:43:03.363520 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang=== - setDynamicFeatures1()
+2873 ERR Feb 15 11:43:03.363994 (20664-20886) JAVA-11:43:03|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.comp.SLComponentModel.setDynamicFeatures(Unknown Source)
+                at cip.callui.AbstractCallUiModel.refreshSoftkeys(Unknown Source)
+                at cip.callui.AbstractCallUiModel.propertyChanged(Unknown Source)
+                at cip.callui.CallUiModel.propertyChanged(Unknown Source)
+                at cip.props.IPropertyListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.props.IPropertyListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2874 DEB Feb 15 11:43:03.364047 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiFullDisplay:update - field:11
+2875 NOT Feb 15 11:43:03.369844 (20709-20709) guiapp-setPageSoftkeys(): CallUi json: [{"skIndex":0,"skLabel":"Call","skFeature":"SK_CALLS"},{"skIndex":1,"skLabel":"Contacts","skFeature":"SK_DIR"},{"skIndex":2,"skLabel":"Settings","skFeature":"SK_SETTINGS"},{"skIndex":3,"skLabel":"DND","skFeature":"SK_DND"},{"skIndex":4,"skLabel":"Hunt group login","skFeature":"SK_HLOG"},{"skIndex":5,"skLabel":"Recents","skFeature":"SK_RECENTS"},{"skIndex":6,"skLabel":"Redial","skFeature":"SK_REDIAL"}]
+2876 WRN Feb 15 11:43:03.370129 (20709-20709) guiapp-[Profiling-Stub] setSoftKeyData(): featureIndex: SK_DND
+2877 NOT Feb 15 11:43:03.370168 (20709-20709) guiapp-setSoftKeyData(): signal-send: sigRequestFinished() emitted
+2878 DEB Feb 15 11:43:03.374079 (20664-20886) JAVA-callui MQThread|cip.callui.LineListModel:lajiang setDynamicFeature - : setDynamicFeature, position=1 label=Do not disturb featureid=6 ButtonStimulusId=130
+2879 ERR Feb 15 11:43:03.374733 (20664-20886) JAVA-11:43:03|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callui.LineListModel$MyCallAgentListener.setDynamicFeature(Unknown Source)
+                at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2880 ERR Feb 15 11:43:03.374824 (20664-20886) JAVA-[API]LED ID error (72)
+2881 ERR Feb 15 11:43:03.374845 (20664-20886) JAVA-IO_JNI| !!! cprLedSet() return failed!
+2882 DEB Feb 15 11:43:03.375071 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiFullDisplay:updateLine -  size: 0
+2883 DEB Feb 15 11:43:03.383759 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiFullDisplay:updateBadgeCount: - 0
+2884 DEB Feb 15 11:43:03.386971 (20664-20886) JAVA-callui MQThread|cip.callui.LineListModel:statusDisplay - statusText: 
+2885 DEB Feb 15 11:43:03.387063 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang selectFeatureSet() - The length of featureSet is 14
+2886 ERR Feb 15 11:43:03.387731 (20664-20886) JAVA-11:43:03|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callui.AbstractCallUiModel.selectFeatureSet(Unknown Source)
+                at cip.callui.LineListModel$MyCallAgentListener.selectFeatureSet(Unknown Source)
+                at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2887 DEB Feb 15 11:43:03.387807 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang~~ -  getFeatureId69
+2888 DEB Feb 15 11:43:03.387839 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang~~ -  getFeatureId5
+2889 DEB Feb 15 11:43:03.387875 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang~~ -  getFeatureId35
+2890 DEB Feb 15 11:43:03.387911 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang~~ -  getFeatureId1
+2891 DEB Feb 15 11:43:03.387942 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang~~ -  getFeatureId16
+2892 DEB Feb 15 11:43:03.388000 (20664-20886) JAVA-callui MQThread|lajiang===:EnhancedLineMode - getFeatures
+2893 DEB Feb 15 11:43:03.388065 (20664-20886) JAVA-callui MQThread|lajiang===:getDeviceFeatureSet - getFeatures
+2894 DEB Feb 15 11:43:03.388163 (20664-20886) JAVA-callui MQThread|lajiang===:updateSoftkeyLabel - dndState:false text:DND
+2895 ERR Feb 15 11:43:03.388664 (20664-20886) JAVA-11:43:03|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callui.AbstractCallUiModel.updateSoftkeyLabel(Unknown Source)
+                at cip.callui.AbstractCallUiModel.maskSoftKeys(Unknown Source)
+                at cip.callui.EnhancedLineMode.getFeatures(Unknown Source)
+                at cip.callui.CallUiModel.getFeatures(Unknown Source)
+                at cip.callui.AbstractCallUiModel.selectFeatureSet(Unknown Source)
+                at cip.callui.LineListModel$MyCallAgentListener.selectFeatureSet(Unknown Source)
+                at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2896 DEB Feb 15 11:43:03.388770 (20664-20886) JAVA-callui MQThread|lajiang===:updateSoftkeyLabel - hlogState:false text:Hunt group login
+2897 DEB Feb 15 11:43:03.388881 (20664-20886) JAVA-callui MQThread|lajiang===:updateSoftkeyLabel - dndState:false text:DND
+2898 ERR Feb 15 11:43:03.389276 (20664-20886) JAVA-11:43:03|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callui.AbstractCallUiModel.updateSoftkeyLabel(Unknown Source)
+                at cip.callui.AbstractCallUiModel.maskSoftKeys(Unknown Source)
+                at cip.callui.AbstractCallUiModel.selectFeatureSet(Unknown Source)
+                at cip.callui.LineListModel$MyCallAgentListener.selectFeatureSet(Unknown Source)
+                at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2899 DEB Feb 15 11:43:03.389350 (20664-20886) JAVA-callui MQThread|lajiang===:updateSoftkeyLabel - hlogState:false text:Hunt group login
+2900 DEB Feb 15 11:43:03.389437 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang=== - setDynamicFeatures1()
+2901 ERR Feb 15 11:43:03.389815 (20664-20886) JAVA-11:43:03|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.comp.SLComponentModel.setDynamicFeatures(Unknown Source)
+                at cip.callui.AbstractCallUiModel.selectFeatureSet(Unknown Source)
+                at cip.callui.LineListModel$MyCallAgentListener.selectFeatureSet(Unknown Source)
+                at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2902 DEB Feb 15 11:43:03.389864 (20664-20886) JAVA-callui MQThread|cip.callui.CallUiFullDisplay:update - field:11
+2903 NOT Feb 15 11:43:03.392027 (20709-20709) guiapp-setPageSoftkeys(): CallUi json: [{"skIndex":0,"skLabel":"Call","skFeature":"SK_CALLS"},{"skIndex":1,"skLabel":"Contacts","skFeature":"SK_DIR"},{"skIndex":2,"skLabel":"Settings","skFeature":"SK_SETTINGS"},{"skIndex":3,"skLabel":"DND","skFeature":"SK_DND"},{"skIndex":4,"skLabel":"Hunt group login","skFeature":"SK_HLOG"},{"skIndex":5,"skLabel":"Recents","skFeature":"SK_RECENTS"},{"skIndex":6,"skLabel":"Redial","skFeature":"SK_REDIAL"}]

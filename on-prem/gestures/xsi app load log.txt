@@ -1,0 +1,35 @@
+
+
+
+
+
+featureProxy = (IFeatureListener.Proxy)getApplicationProxy().getQueueManager().createProxy (
+        new IFeatureListener.Dispatcher (this), IFeatureListener.FAMILY);
+
+if (!appList.isEmpty()) {
+    ApplicationDataIF[] serviceList = (ApplicationDataIF []) appList.toArray(new ApplicationDataIF[0]);
+    XsiFeature= new UriFeature[serviceList.length];
+
+    for (int i=0; i < serviceList.length; i++) {
+        if (serviceList[i] != null) {
+            XsiFeature[i] = new UriFeature(serviceList[i].getDisplayName(), true, Feature.STATE_NORMAL, serviceList[i], -1, ((XsiAppData)serviceList[i]).getUrl());
+            XsiFeature[i].setSkFeatureId(SkFeatureIDs.SK_SERVICES);
+            ((UriFeature)XsiFeature[i]).setListener(featureProxy);
+        }
+    }
+}
+
+8277 WRN Apr 25 10:45:39.074434 (14970-14970) guiapp-[Profiling-Stub] sendSoftkeyClicked(): page: CallUi featureIndex: 7
+8278 DEB Apr 25 10:45:39.077559 (14920-15075) JAVA-Thread-0|cip.dbus.GuiAppDBusSignalHandler:? - --Begin to handle() signal/event from GuiApp--
+8279 DEB Apr 25 10:45:39.077682 (14920-15075) JAVA-Thread-0|cip.userio.GuiAppClient:? - invokeSoftKey method was called.
+8280 ERR Apr 25 10:45:39.077862 (14920-15075) JAVA-Thread-0|cip.app.AppFrameSoftkeyBar:? - invokeSoftKey baby pic, type=0 index=7
+8281 NOT Apr 25 10:45:39.078028 (14920-15075) JAVA-Thread-0|cip.app.UriFeature:lajiang - invoke, reason:2
+8282 ERR Apr 25 10:45:39.078084 (14920-15075) JAVA-Thread-0|cip.app.AppFrameSoftkeyBar:? - invokeSoftKey baby pic, type=1 index=7
+8283 NOT Apr 25 10:45:39.078172 (14920-15075) JAVA-Thread-0|cip.app.UriFeature:lajiang - invoke, reason:4
+8284 NOT Apr 25 10:45:39.078291 (14920-15075) JAVA-Thread-0|cip.app.UriFeature:lajiang - onInvoke, reason:4
+8285 DEB Apr 25 10:45:39.079805 (14920-15109) JAVA-callui MQThread|cip.app.XsiAppData:? - original uri: http://10.74.63.170/ASP/pic.png
+8286 WRN Apr 25 10:45:39.079862 (14920-15109) JAVA-callui MQThread|cip.app.XsiAppData:? - Check if #DEVICENAME# or #EMCC# is present in the URL
+8287 WRN Apr 25 10:45:39.079910 (14920-15109) JAVA-callui MQThread|cip.app.XsiAppData:? - Check if #MODEL# or #PROTOCOL# is present in the URL
+
+
+

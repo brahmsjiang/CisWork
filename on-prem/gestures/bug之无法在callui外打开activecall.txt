@@ -1,0 +1,54 @@
+
+如果点击home再点击setting：
+4282 DEB Jun 26 16:27:25.354436 (10278-10463) JAVA-callui MQThread|cip.callui.CallUiModel:openCall - singleCallModel null
+4283 DEB Jun 26 16:27:25.354583 (10278-10463) JAVA-callui MQThread|cip.callui.SingleCallModel:initializeControl - isInitialized:false
+4284 DEB Jun 26 16:27:25.354615 (10278-10463) JAVA-callui MQThread|cip.comp.SLComponentView:initialize - enter
+4291 DEB Jun 26 16:27:25.388064 (10278-10463) JAVA-callui MQThread|cip.comp.SLComponentView:initialize - exit
+4301 DEB Jun 26 16:27:25.398862 (10278-10463) JAVA-callui MQThread|cip.callui.CallUiModel:openChild - open child SingleCall enter
+4302 DEB Jun 26 16:27:25.398970 (10278-10463) JAVA-callui MQThread|cip.callui.SingleCallModel:activate - activate enter
+4303 DEB Jun 26 16:27:25.399016 (10278-10463) JAVA-callui MQThread|cip.callui.SingleCallModel:openMe - openMe enter
+4304 DEB Jun 26 16:27:25.399087 (10278-10463) JAVA-callui MQThread|cip.comp.SLComponentView:processOpen - enter isOpen:false, isPause:false
+4305 DEB Jun 26 16:27:25.399138 (10278-10463) JAVA-callui MQThread|cip.callui.SingleCallFullDisplay:open - inForeground:false, isInitialized:true
+4306 ERR Jun 26 16:27:25.400041 (10278-10463) JAVA-04:27:25pm|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.comp.SLFullDisplay.open(Unknown Source)
+                at cip.comp.SLComponentView.processOpen(Unknown Source)
+                at cip.comp.SLComponentModel.openMe(Unknown Source)
+                at cip.comp.SLComponentModel.activate(Unknown Source)
+                at cip.comp.SLComponentModel.openChild(Unknown Source)
+                at cip.callui.CallUiChildManager.createSingleCallWindow(Unknown Source)
+                at cip.callui.CallUiChildManager.openSingleCall(Unknown Source)
+                at cip.callui.AbstractCallUiModel.openCall(Unknown Source)
+                at cip.callui.AbstractCallUiModel.openActiveCallWindow(Unknown Source)
+                at cip.callui.LineKeyHandler.processLineKeyEvent(Unknown Source)
+                at cip.callui.EnhancedLineKeyHandler.featureInvoked(Unknown Source)
+                at cip.app.IFeatureListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.app.IFeatureListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source
+4307 ERR Jun 26 16:27:25.400079 (10278-10463) JAVA-)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+
+===》当前app焦点不是focus的焦点：
+        public void processTouchEvent(String pageId, cip.userio.TouchEvent event) {
+            debug("processTouchEvent: " + pageId + ": target=" + event.getTarget());
+            Feature feature = new TouchFeature(event);
+            if(event.getTarget() == TouchEvent.TOUCH_TARGET_ALERT) {
+                feature.setInvocationFlags(Feature.INVOKE_DOWN | Feature.INVOKE_UP | Feature.INVOKE_RELEASE);
+            }
+            touchKey(pageId, event.getKeyAction(), feature);
+        }
+        
+
+
+如果直接点击setting：
+7734 DEB Jun 26 16:28:56.773789 (10278-10463) JAVA-callui MQThread|cip.callui.CallUiModel:openCall - singleCallModel not null
+
+
+rootcause：
+public void doLineKey(int keyValue, KeyAction keyAction) {
+        //Only the down event can make the call ui in focus.
+        //Other events like up and repeat need to pass to localspeeddial handler
+        if (keyAction.equals(KeyAction.DOWN)

@@ -1,0 +1,298 @@
+
+try { int i = 1/0;} catch (Exception e) {TraceDefaults.traceInterface.printStackTrace(e);}
+
+
+
+
+4840 DEB Feb 09 19:28:40.562936 (9067-9277) JAVA-Thread-11|lajiang===:? - ID_NEW_FEATURE_STAT_NOTIFY
+4841 ERR Feb 09 19:28:40.564090 (9067-9277) JAVA-19:28:40|Message : / by zero
+	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.callagent.IManagement$Proxy.newFeatureStatNotify(Unknown Source)
+		at cip.callagent.EmbraceCcRouter$SIPUIListener.newFeatureStatNotify(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.addDND(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.setDND(Unknown Source)
+		at cip.sipcc.SipCcEventDispatcher.onDeviceEvent(Unknown Source)
+
+
+8927 DEB Feb 09 19:18:56.210237 (7242-7414) JAVA-callagent MQThread|lajiang===:? - sink ID_SET_DYNAMIC_FEATURE
+	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.callagent.ICallAgentListener$Proxy.setDynamicFeature(Unknown Source)
+		at cip.callagent.CallAgent$MyListeners.newFeatureStatNotify(Unknown Source)
+		at cip.callagent.IManagement$Dispatcher.sinkMessage(Unknown Source)
+		at cip.callagent.IManagement$Dispatcher.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+		at cip.sys.MessageQueueThread.onRun(Unknown Source)
+		at cip.sys.SystemThread.run(Unknown Source)
+
+
+
+3605 DEB Feb 09 19:11:32.954503 (5638-5811) JAVA-callui MQThread|cip.callui.LineListModel:lajiang setDynamicFeature - : setDynamicFeature, position=1 label=Do not disturb featureid=6
+s	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.callui.LineListModel$MyCallAgentListener.setDynamicFeature(Unknown Source)
+		at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+		at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+		at cip.sys.MessageQueueThread.onRun(Unknown S
+		
+		
+
+
+3243 DEB Feb 09 18:43:50.534828 (31846-32019) JAVA-callui MQThread|lajiang===:? - All lines
+3244 ERR Feb 09 18:43:50.535444 (31846-32019) JAVA-18:43:50|Message : / by zero
+	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.callui.LineItemModel.makeJsonObject(Unknown Source)
+		at cip.callui.AbstractCallUiFullDisplay.setLineData(Unknown Source)   <-----
+		at cip.callui.AbstractCallUiFullDisplay.update(Unknown Source)
+		at cip.comp.SLComponentView.update(Unknown Source)
+		at cip.comp.SLComponentModel.notifyUpdateToView(Unknown Source)
+		at cip.callui.AbstractCallUiModel.inService(Unknown Source)
+		at cip.callui.AbstractCallUiModel.propertyChanged(Unknown Source)
+		at cip.callui.CallUiModel.propertyChanged(Unknown Source)
+		at cip.props.IPropertyListener$Dispatcher.sinkMessage(Unknown Source)
+		at cip.props.IPropertyListener$Dispatcher.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+		at cip.sys.MessageQueueThread.onRun(Unknown Source)
+		at cip.sys.SystemThread.run(Unknown Source)
+		
+		
+		
+		
+========================
+softkey add:
+
+        if (isDeviceFeature(feature)) {
+            deviceList.add(feature);
+        } else if (isDeviceAndLineFeature(feature)) {
+            deviceList.add(feature);
+            idleList.add(feature);
+        } else {
+            idleList.add(feature);
+        }
+       
+
+
+
+5675 DEB Feb 13 15:31:34.026151 (22707-22920) JAVA-Thread-8|lajiang==sinkMessage:? - ID_SELECT_FEATURE_SET
+5676 ERR Feb 13 15:31:34.027012 (22707-22920) JAVA-15:31:34|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callagent.ICallControl$Proxy.selectFeatureSet(Unknown Source)	//case Proxy.ID_SELECT_FEATURE_SET的proxy
+                at cip.callagent.EmbraceCcRouter$SIPUIListener.selectFeatureSet(Unknown Source)	
+                at cip.sipcc.FeatureKeyHandler.selectFeatureKeySet(Unknown Source)		//line429 or 487
+                at cip.sipcc.SipCcAdapter$CcMgmtListener.showHomeKeySet(Unknown Source)
+                at cip.sipcc.SipCcAdapter$CcMgmtListener.lineNotify(Unknown Source)
+                at cip.sipcc.SipCcEventDispatcher.onLineEvent(Unknown Source)
+                
+                
+9299 DEB Feb 13 12:13:25.020504 (6861-7035) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:? - callagent inService(1,2)
+9300 DEB Feb 13 12:13:25.020554 (6861-7035) JAVA-callagent MQThread|lajiang===sink ID_FEATURE_SELECT2:? - 
+9306 ERR Feb 13 12:13:25.021284 (6861-7035) JAVA-Thread-8|cip.callui.CallUiFullDisplay:setHeaderPrompt - regStatePrompt:"Phone is registering"Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callagent.ICallAgentListener$Proxy.selectFeatureSet(Unknown Source)	
+                at cip.callagent.CallAgent.featuresChanged(Unknown Source)
+                at cip.callagent.CallAgent.cleanupCcConnection(Unknown Source)
+                at cip.callagent.CallAgent.access$2500(Unknown Source)
+                at cip.callagent.CallAgent$MyListeners.inService(Unknown Source)
+                at cip.callagent.IManagement$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callagent.IManagement$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+
+
+9459 DEB Feb 13 12:13:25.036194 (6861-7035) JAVA-callagent MQThread|lajiang===sink ID_FEATURE_SELECT2:? - 
+9472 ERR Feb 13 12:13:25.036914 (6861-7035) JAVA-Thread-8|cip.sipcc.SipCcAdapter$CcMgmtListener:  - getCfwdAllNum:fwdAllNumber=Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callagent.ICallAgentListener$Proxy.selectFeatureSet(Unknown Source)
+                at cip.callagent.CallAgent.featuresChanged(Unknown Source)
+                at cip.callagent.CallAgent$MyListeners.selectFeatureSet(Unknown Source) 《=====这里应该是featureset的出处
+                at cip.callagent.ICallControl$Dispatcher.sinkMessage(Unknown Source)	//case Proxy.ID_SELECT_FEATURE_SET, 这时dispatcher, 继续找proxy
+                at cip.callagent.ICallControl$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+
+=================getfeatureID==================
+9533 ERR Feb 10 17:48:16.062037 (18258-18433) JAVA-17:48:16|Message : / by zero
+	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.callui.AbstractCallUiModel.cacheIdleFeatureSet(Unknown Source)
+		at cip.callui.AbstractCallUiModel.selectFeatureSet(Unknown Source)
+		at cip.callui.LineListModel$MyCallAgentListener.selectFeatureSet(Unknown Source)
+		at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+		at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+		at cip.sys.MessageQueueThread.onRun(Unknown Source)
+		at cip.sys.SystemThread.run(Unknown Source)
+9682 DEB Feb 13 12:13:25.068987 (6861-7036) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang~~ -  getFeatureId69 <========
+
+9863 DEB Feb 13 12:13:25.140947 (6861-7036) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang=== - setDynamicFeatures1()
+9864 ERR Feb 13 12:13:25.141789 (6861-7036) JAVA-12:13:25|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.comp.SLComponentModel.setDynamicFeatures(Unknown Source)
+                at cip.callui.AbstractCallUiModel.inService(Unknown Source)
+                at cip.callui.AbstractCallUiModel.propertyChanged(Unknown Source)
+                at cip.callui.CallUiModel.propertyChanged(Unknown Source)
+                at cip.props.IPropertyListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.props.IPropertyListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+9865 DEB Feb 13 12:13:25.141887 (6861-7036) JAVA-callui MQThread|cip.callui.CallUiFullDisplay:update - field:11
+9866 NOT Feb 13 12:13:25.144686 (6906-6906) guiapp-setPageSoftkeys(): CallUi json: [{"skIndex":0,"skLabel":"Call","skFeature":"SK_CALLS"},{"skIndex":1,"skLabel":"Contacts","skFeature":"SK_DIR"},{"skIndex":2,"skLabel":"Settings","skFeature":"SK_SETTINGS"},{"skIndex":3,"skLabel":"DND","skFeature":"SK_DND"},{"skIndex":4,"skLabel":"Recents","skFeature":"SK_RECENTS"},{"skIndex":5,"skLabel":"Redial","skFeature":"SK_REDIAL"}]
+
+
+9922 DEB Feb 13 12:13:25.416662 (6861-7036) JAVA-callui MQThread|lajiang===:EnhancedLineMode - getFeatures
+9923 DEB Feb 13 12:13:25.416737 (6861-7036) JAVA-callui MQThread|lajiang===:getDeviceFeatureSet - getFeatures <=====getDeviceFeatureSet
+9924 DEB Feb 13 12:13:25.416995 (6861-7036) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang=== - setDynamicFeatures1()
+9925 ERR Feb 13 12:13:25.417787 (6861-7036) JAVA-12:13:25|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.comp.SLComponentModel.setDynamicFeatures(Unknown Source)
+                at cip.callui.AbstractCallUiModel.refreshSoftkeys(Unknown Source)
+                at cip.callui.EnhancedLineMode.filterList(Unknown Source)
+                at cip.callui.AbstractCallUiModel.propertyChanged(Unknown Source)
+                at cip.callui.CallUiModel.propertyChanged(Unknown Source)
+                at cip.props.IPropertyListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.props.IPropertyListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+9926 DEB Feb 13 12:13:25.417859 (6861-7036) JAVA-callui MQThread|cip.callui.CallUiFullDisplay:update - field:11
+9927 NOT Feb 13 12:13:25.419874 (6906-6906) guiapp-setPageSoftkeys(): CallUi json: [{"skIndex":0,"skLabel":"Call","skFeature":"SK_CALLS"},{"skIndex":1,"skLabel":"Contacts","skFeature":"SK_DIR"},{"skIndex":2,"skLabel":"Settings","skFeature":"SK_SETTINGS"},{"skIndex":3,"skLabel":"DND","skFeature":"SK_DND"},{"skIndex":4,"skLabel":"Recents","skFeature":"SK_RECENTS"},{"skIndex":5,"skLabel":"Redial","skFeature":"SK_REDIAL"}]
+9928 DEB Feb 13 12:13:25.429351 (6861-7036) JAVA-callui MQThread|lajiang===:EnhancedLineMode - getFeatures
+9929 DEB Feb 13 12:13:25.429525 (6861-7036) JAVA-callui MQThread|lajiang===:getDeviceFeatureSet - getFeatures
+9930 DEB Feb 13 12:13:25.429804 (6861-7036) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang=== - setDynamicFeatures1()
+9931 ERR Feb 13 12:13:25.430717 (6861-7036) JAVA-12:13:25|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.comp.SLComponentModel.setDynamicFeatures(Unknown Source)
+                at cip.callui.AbstractCallUiModel.refreshSoftkeys(Unknown Source)
+                at cip.callui.EnhancedLineMode.filterList(Unknown Source)
+                at cip.callui.AbstractCallUiModel.missedCallUpdate(Unknown Source)
+                at cip.callhist.ICallHistoryListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callhist.ICallHistoryListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+0722 DEB Feb 13 14:59:54.153792 (19020-19195) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang~~ -  getFeatureId69
+0723 DEB Feb 13 14:59:54.153836 (19020-19195) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang~~ -  getFeatureId5
+0724 DEB Feb 13 14:59:54.153885 (19020-19195) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang~~ -  getFeatureId1
+0725 DEB Feb 13 14:59:54.153914 (19020-19195) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang~~ -  getFeatureId16
+===>   public final static int SK_EV_HLOG = 35; 这个没有哦!!
+
+那么这些featureID是哪里过来的呢?
+
+
+
+7171 DEB Feb 13 17:06:19.516002 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():numdefs=53 numsets=1 skverstamp=null
+7172 DEB Feb 13 17:06:19.516150 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=1 label=Redial helpID=301 keyID=Redial tag=1 pos=1tagIdx101
+7173 DEB Feb 13 17:06:19.516238 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=2 label=New call helpID=302 keyID=NewCall tag=2 pos=2tagIdx102
+7174 DEB Feb 13 17:06:19.516320 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=3 label=Hold helpID=303 keyID=Hold tag=3 pos=3tagIdx103
+7175 DEB Feb 13 17:06:19.516382 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=4 label=Transfer helpID=304 keyID=Transfer tag=4 pos=4tagIdx104
+.....
+7215 NOT Feb 13 17:06:19.518499 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile(): ignoring unknown sk def, evID=22keyID=QRT
+7216 DEB Feb 13 17:06:19.518553 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=35 label=Private helpID=369 keyID=HLOG tag=54 pos=31tagIdx154
+7217 NOT Feb 13 17:06:19.518593 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile(): ignoring unknown sk def, evID=35keyID=HLOG
+《----------
+
+
+7218 DEB Feb 13 17:06:19.518647 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=10000 label=Cancel helpID=369 keyID=Cancel tag=586 pos=32tagIdx174
+7219 DEB Feb 13 17:06:19.518719 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=10001 label=Swap helpID=369 keyID=Swap tag=1472 pos=33tagIdx292
+7220 DEB Feb 13 17:06:19.518799 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=30 label=Show Detail helpID=369 keyID=Showdetail tag=79 pos=34tagIdx179
+.....
+7323 NOT Feb 13 17:06:19.542725 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile(): ignoring unknown sk def, evID=33keyID=VidMode
+7324 DEB Feb 13 17:06:19.542780 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=34 label=Other pickup helpID=334 keyID=oPickup tag=91 pos=26tagIdx191
+7325 NOT Feb 13 17:06:19.542817 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile(): ignoring unknown sk def, evID=34keyID=oPickup
+7326 DEB Feb 13 17:06:19.542876 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=35 label=Hunt group helpID=335 keyID=HLog tag=92 pos=27tagIdx192
+《------------
+7327 NOT Feb 13 17:06:19.542914 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile(): ignoring unknown sk def, evID=35keyID=HLog
+《------------ignore!!
+
+
+
+7328 DEB Feb 13 17:06:19.542973 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=69 label=Do not disturb helpID=369 keyID=DND tag=63 pos=28tagIdx163
+《--------------ok!!,  dnd==69
+
+
+7329 DEB Feb 13 17:06:19.543041 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=74 label=Record helpID=374 keyID=Record tag=7747 pos=29tagIdx67
+7330 NOT Feb 13 17:06:19.543078 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile(): ignoring unknown sk def, evID=74keyID=Record
+7331 DEB Feb 13 17:06:19.543136 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=76 label=%s calling %s helpID=376 keyID=Move tag=7767 pos=30tagIdx87
+7332 NOT Feb 13 17:06:19.543168 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile(): ignoring unknown sk def, evID=76keyID=Move
+7333 DEB Feb 13 17:06:19.543226 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=81 label=One or more calls are available for pickup on extension %s helpID=382 keyID=Recents tag=7768 pos=31tagIdx88
+7334 DEB Feb 13 17:06:19.543286 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=82 label=Pickup on extension %s helpID=383 keyID=Favorites tag=7769 pos=32tagIdx89
+7335 NOT Feb 13 17:06:19.543328 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile(): ignoring unknown sk def, evID=82keyID=Favorites
+7336 WRN Feb 13 17:06:19.543372 (12725-12932) JAVA-sipcc MQThread|PhraseTags:? - phrase id 90 is not translated
+7337 DEB Feb 13 17:06:19.543409 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=83 label=??? helpID=384 keyID=Contacts tag=7770 pos=33tagIdx90
+7338 WRN Feb 13 17:06:19.543455 (12725-12932) JAVA-sipcc MQThread|PhraseTags:? - phrase id 91 is not translated
+7339 DEB Feb 13 17:06:19.543496 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=84 label=??? helpID=385 keyID=Messages tag=7771 pos=34tagIdx91
+7340 NOT Feb 13 17:06:19.543531 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile(): ignoring unknown sk def, evID=84keyID=Messages
+7341 WRN Feb 13 17:06:19.543575 (12725-12932) JAVA-sipcc MQThread|PhraseTags:? - phrase id 92 is not translated
+7342 DEB Feb 13 17:06:19.543611 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=85 label=??? helpID=386 keyID=Settings tag=7772 pos=35tagIdx92
+7343 NOT Feb 13 17:06:19.543651 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile(): ignoring unknown sk def, evID=85keyID=Settings
+7344 WRN Feb 13 17:06:19.543695 (12725-12932) JAVA-sipcc MQThread|PhraseTags:? - phrase id 93 is not translated
+7345 DEB Feb 13 17:06:19.543732 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - eventID=86 label=??? helpID=387 keyID=Apps tag=7773 pos=36tagIdx93
+7346 WRN Feb 13 17:06:19.543829 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=CallBackFrom Set No=36
+7347 WRN Feb 13 17:06:19.543869 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=HLogFrom Set No=36
+7348 WRN Feb 13 17:06:19.543908 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=MessagesFrom Set No=36
+7349 WRN Feb 13 17:06:19.543942 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=GPickUpFrom Set No=36
+7350 WRN Feb 13 17:06:19.543986 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=oPickupFrom Set No=36
+7351 WRN Feb 13 17:06:19.544020 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=PickUpFrom Set No=36
+7352 WRN Feb 13 17:06:19.544090 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=ParkFrom Set No=36
+7353 WRN Feb 13 17:06:19.544133 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=ConfListFrom Set No=36
+7354 WRN Feb 13 17:06:19.544167 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=SelectFrom Set No=36
+7355 WRN Feb 13 17:06:19.544200 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=JoinFrom Set No=36
+7356 WRN Feb 13 17:06:19.544236 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=DirTrfrFrom Set No=36
+7357 WRN Feb 13 17:06:19.544296 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=VidModeFrom Set No=36
+7358 WRN Feb 13 17:06:19.544331 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=MCIDFrom Set No=36
+7359 WRN Feb 13 17:06:19.544365 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=MoveFrom Set No=36
+7360 WRN Feb 13 17:06:19.544400 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=HLogFrom Set No=36
+7361 WRN Feb 13 17:06:19.544444 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=RecordFrom Set No=36
+7362 WRN Feb 13 17:06:19.544510 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=DirTrfrFrom Set No=36
+7363 WRN Feb 13 17:06:19.544544 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=SelectFrom Set No=36
+7364 WRN Feb 13 17:06:19.544582 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=JoinFrom Set No=36
+7365 WRN Feb 13 17:06:19.544680 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=PickUpFrom Set No=36
+7366 WRN Feb 13 17:06:19.544715 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=GPickUpFrom Set No=36
+7367 WRN Feb 13 17:06:19.544863 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=CallBackFrom Set No=36
+7368 WRN Feb 13 17:06:19.544954 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=FavoritesFrom Set No=36
+7369 WRN Feb 13 17:06:19.544993 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=MessagesFrom Set No=36
+7370 WRN Feb 13 17:06:19.545031 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=SettingsFrom Set No=36
+7371 WRN Feb 13 17:06:19.545065 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=BargeFrom Set No=36
+7372 WRN Feb 13 17:06:19.545103 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=cBargeFrom Set No=36
+7373 DEB Feb 13 17:06:19.545204 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - activeSet changed to Downloaded set
+7374 DEB Feb 13 17:06:19.545867 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:Spam detection: - no flag call sk in connected set
+7375 INF Feb 13 17:06:19.551580 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang14
+7376 INF Feb 13 17:06:19.551672 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:0 SK_CALLS
+7377 INF Feb 13 17:06:19.551741 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:1 SK_DIR
+7378 INF Feb 13 17:06:19.551780 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:2 SK_SETTINGS
+7379 INF Feb 13 17:06:19.551811 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:3 
+7380 INF Feb 13 17:06:19.551862 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:4 SK_CFWD
+7381 INF Feb 13 17:06:19.551911 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:5 SK_RECENTS
+7382 INF Feb 13 17:06:19.551947 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:6 SK_REDIAL
+7383 INF Feb 13 17:06:19.551995 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:7 SK_MEETME
+7384 INF Feb 13 17:06:19.552061 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:8 null
+7385 INF Feb 13 17:06:19.552092 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:9 null
+7386 INF Feb 13 17:06:19.552126 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:10 null
+7387 INF Feb 13 17:06:19.552155 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:11 null
+7388 INF Feb 13 17:06:19.552184 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:12 null
+7389 INF Feb 13 17:06:19.552212 (12725-12932) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - lajiang getSkFeatureId, i:13 null
+7390 DEB Feb 13 17:06:19.552358 (12725-12932) JAVA-sipcc MQThread|lajiang==sinkMessage:? - ID_SELECT_FEATURE_SET

@@ -1,0 +1,91 @@
+
+
+
+DirectoryApp:
+public class DirectoryApp: extends LaunchMenuApp  implements IPropertyListener {
+public abstract class LaunchMenuApp extends SLApplication {
+public abstract class SLApplication extends ComponentApplication {
+
+
+通过ISLAppFeatureListener(SLApplication.java)组装,在线程go4和DirectoryApp建立关系:
+featureListenerProxy = (ISLAppFeatureListener.Proxy)getQueueManager().createProxy (new ISLAppFeatureListener.Dispatcher (myListener), ISLAppFeatureListener.FAMILY );
+SLApplicationFeature feature = getApplicationFeature();
+feature.setListener(featureListenerProxy);
+-----
+at cip.app.ApplicationFeature.onInvoke(Unknown Source)
+at cip.app.Feature.invoke(Unknown Source)
+at cip.go4.Go4Manager.directories(Unknown Source)												<-----Go4Manager.directories
+at cip.userio.IGo4ButtonListener$Dispatcher.sinkMessage(Unknown Source)
+-----
+at cip.contacts.DirectoryApp.featureInvoked(Unknown Source)		<--------!!!!!!DirectoryApp.featureInvoked
+at cip.go4.SLApplication$MyListener.featureInvoked(Unknown Source)	<--------!!!SLApplication$MyListener.featureInvoked, 应该favorites也是
+at cip.app.ISLAppFeatureListener$Dispatcher.sinkMessage(Unknown Source)
+at cip.app.ISLAppFeatureListener$Dispatcher.sinkMessage(Unknown Source)		<-----///ISLAppFeatureListener$Dispatcher
+
+
+
+
+===========Favorites:
+public class Favorites extends SLApplication implements IUriListener{
+应该同DirectoryApp一样,在线程go4和DirectoryApp建立关系
+
+
+
+======================================================
+6576 INF Apr 24 17:59:02.031016 (4386-4526) JAVA-NativeUserInput|cip.userio.InputManager:? - Received Navigation: 2
+6577 NOT Apr 24 17:59:02.031261 invalid event: No such file or directory
+6578 NOT Apr 24 17:59:02.031448 (4386-4541) JAVA-callui MQThread|cip.callui.OverviewModel:detect key - model:CallUi
+6579 INF Apr 24 17:59:02.031625 (4386-4541) JAVA-callui MQThread|UriRegistry:? - URI search successful. Internal:SpeedDial
+6580 INF Apr 24 17:59:02.031670 (4386-4541) JAVA-callui MQThread|UriRegistry:executeUri - Executing Internal:SpeedDial.
+
+
+inputmgr侧:                  
+    protected Feature getNavigationFeature (
+        final NavigationKey key,
+        final boolean createIfDefault ) {
+
+        final int index = ((Integer)navigationKeyMap.get ( key )).intValue ();
+                result = DEFAULT_NAVIGATION_FEATURES[index];								//DEFAULT_NAVIGATION_FEATURES!!
+
+	private void navKey(
+	  if (environment != null) {
+	      final Feature feature = environment.getNavigationFeature(key,false);
+	
+	      if (feature instanceof ApplicationFeature) {
+	          final IFeatureListener listener =
+	                  environment.getFeatureListener();
+	          ( (ApplicationFeature) feature).setListener(listener);
+	      }
+	      feature.invoke(
+	              feature.getInvokeReason(translatedAction)
+	              );
+	
+	  }
+  
+  
+uri_invoke侧:
+public void featureInvoked ( final Feature feature, final int reason ) {				//SLComponent.java
+    } else if ( feature.getClass() == NavigationFeature.class ) {
+            invokeNavigationFeature (feature, reason);
+                    
+protected void invokeNavigationFeature (final Feature feature, final int reason) {
+
+    public void processNavigationKey( NavigationKey key ) {
+        else if ( key == NavigationKey.DOWN ) {        // parasoft-suppress PB "Enum"
+        	fullDisplay.next();
+        	
+    protected void next() {
+        if(showList()) {
+            if(model.isPhoneIdle()) {
+                if(callUiHelper.getCustomSupportTag().indexOf("CSCvp86347") >= 0) {
+                    model.openOnHookDialing(null);
+                } else {
+                    UriRegistry.executeUri(cip.go4.Uris.SPEED_DIAL_URI);
+                    
+uri_invoke侧:
+    public void uriFired(String uri, PendingElement element) {
+        if ( uri.startsWith(cip.go4.Uris.SPEED_DIAL_URI) ) {
+            feature.invoke();
+                    
+                    
+                    

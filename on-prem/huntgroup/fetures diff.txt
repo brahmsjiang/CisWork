@@ -1,0 +1,8 @@
+
+
+
+calllist:
+(callhist)
+bigeasy cannot distinguish huntgroup and normal
+bbb can.
+

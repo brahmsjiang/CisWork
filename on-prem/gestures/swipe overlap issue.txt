@@ -1,0 +1,76 @@
+
+
+
+加1页, 2页没有问题
+加3页就有问题
+
+
+
+对比正常:
+    SwipeView {
+        id: view
+        objectName: "swipe_view_plk"
+        clip: true
+        interactive: fullScreen
+        currentIndex: 0
+        width: fullScreen? Skin.PLK_AREA_CONTENT_WIDTH : Skin.PLK_ITEM_WIDTH - 1
+        height: Skin.PLK_AREA_CONTENT_HEIGHT
+        background: null
+
+        anchors {top: filterBar.bottom; left: parent.left; leftMargin: fullScreen ? Skin.VIEW_MARGIN : Skin.MARGIN_X_SMALL}
+        Component.onCompleted: {
+            contentItem.highlightMoveDuration = 0;
+        }
+    }
+
+    Repeater {
+        id: pageLists
+        objectName: "home_plk_pages"
+        model: 4
+        delegate: SLHomeSwipePages {
+            swipeview: view
+            models: pageCallUi.pageModelLists[model.index]
+            itemType: model.index
+            delegate: SLHomePlkPage {}
+
+            Component.onCompleted: {
+                if (filterBar.currentIndex === model.index) {
+                    load = true;
+                }
+            }
+        }
+    }
+    
+    onFullScreenChanged: {
+        if (!fullScreen) {
+            filterBar.currentIndex = pageCallUi.defaultTab;
+            view.currentIndex = 0;
+        } else {
+            filterBar.currentIndex = 0;
+            view.currentIndex = 0;
+        }
+    }
+
+    GridView {
+        id: gridView
+        objectName: "obj_gridview"
+        flow: GridView.TopToBottom
+        cellWidth: Skin.PLK_CELL_WIDTH
+        cellHeight: Skin.PLK_ITEM_HEIGHT
+        height: Skin.PLK_AREA_CONTENT_HEIGHT
+        width: Skin.PLK_AREA_CONTENT_WIDTH
+        interactive: false
+
+        anchors {top: parent.top; left: parent.left}
+        delegate: Item {
+            width: Skin.PLK_CELL_WIDTH
+            height: Skin.PLK_ITEM_HEIGHT
+            SLHomePlkLoader {
+                anchors.left: parent.left
+                anchors.top: parent.top
+                type: model.lineKeyType
+            }
+        }
+    }
+    
+    

@@ -1,0 +1,34 @@
+
+
+
+createLine:
+            LineItemModel line = new LineItemModel(position, LineItemModel.LINEKEYTYPE_LINE, lineFeature.getLabel(), lineFeature.getDn(),
+                    StatePriority.STATE_ONHOOK, lineFeature, lineFeature.getLineType(), lineCommandSink, lineEventProxy);
+                    
+createspeeddial:
+            LineItemModel speedDial = new LineItemModel(position, sdLabel, sdDestination, feature, false);
+
+setSpeedFeature:
+           speedDial = new LineItemModel(instance - 1, sdLabel, sdDestination, feature, false);
+
+updateLocalSpeedDialLine:
+	         lineItem = new LineItemModel(instance -1 , sdLabel, sdDestination, feature, true);
+
+createDynamicFeature:
+					LineItemModel dynamicFeatureItem = new LineItemModel(position, LineItemModel.LINEKEYTYPE_DFEATURE, LineItemModel.DFEATURE_SPECIFIC, dynamicFeature.getLabel(),
+							dynamicFeature.getState(), feature, dynamicFeature.getButtonStimulusId());   <-----------
+							
+							
+setDynamicFeature:
+          dynamicFeatureItem = new LineItemModel(instance - 1, LineItemModel.LINEKEYTYPE_DFEATURE, LineItemModel.DFEATURE_SPECIFIC, dynamicFeature.getLabel(),
+        			dynamicFeature.getState(), feature, dynamicFeature.getButtonStimulusId());		
+        			
+        			
+createUriFeature:
+          LineItemModel uriFeatureItem = new LineItemModel(position, LineItemModel.LINEKEYTYPE_DFEATURE, LineItemModel.DFEATURE_URI, uriFeature.getLabel(),
+        			uriFeature.getState(), uriFeature, SipCcConstants.FEATURE_SERVICES);
+
+setUriFeature:
+          uriItem = new LineItemModel(instance - 1, LineItemModel.LINEKEYTYPE_DFEATURE, LineItemModel.DFEATURE_URI, uriFeature.getLabel(),
+          		uriFeature.getState(), uriFeature, SipCcConstants.FEATURE_SERVICES);
+					

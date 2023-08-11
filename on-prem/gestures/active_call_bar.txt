@@ -1,0 +1,227 @@
+
+
+
+how to opencall screen?
+log:
+3637 ERR Jun 19 16:43:31.539500 (1262-1461) JAVA-04:43:31pm|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.app.IFeatureListener$Proxy.featureInvoked(Unknown Source)					<===========environment.getFeatureListener();
+                at cip.app.ApplicationFeature.onInvoke(Unknown Source)
+                at cip.app.Feature.invoke(Unknown Source)																	feature.invoke(Feature.getInvokeReason(keyAction));
+                at cip.app.SLApplicationManager$Listener.touchKey(Unknown Source)								????
+                at cip.app.SLApplicationManager$Listener.processTouchEvent(Unknown Source)
+                at cip.userio.ITouchListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.userio.ITouchListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+3638 NOT Jun 19 16:43:31.539639 (1262-1476) JAVA-callui MQThread|cip.callui.OverviewModel:detect key - model:CallUi
+3639 DEB Jun 19 16:43:31.540411 (1262-1476) JAVA-callui MQThread|cip.callui.CallUiModel:? - invokeTouchFeature target: 1
+3640 DEB Jun 19 16:43:31.540644 (1262-1476) JAVA-callui MQThread|cip.callui.EnhancedLineMode: - EnhancedLineMode.processLineKey: 1
+3641 DEB Jun 19 16:43:31.541136 (1262-1476) JAVA-callui MQThread|ObservedCallList:  - getHuronPagingCall NOT found
+3642 DEB Jun 19 16:43:31.541402 (1262-1476) JAVA-callui MQThread|cip.callui.EnhancedLineKeyHandler: - enter processLineKeyEvent()
+3643 DEB Jun 19 16:43:31.541570 (1262-1476) JAVA-callui MQThread|cip.callui.EnhancedLineKeyHandler: - about to invoke lineResource feature= cip.callagent.LineFeature@37e161
+3644 NOT Jun 19 16:43:31.541640 (1262-1476) JAVA-callui MQThread|cip.app.IFeatureListener$Proxy:lajiang - before ID_FEATURE_INVOKED
+3645 ERR Jun 19 16:43:31.542646 (1262-1476) JAVA-04:43:31pm|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.app.IFeatureListener$Proxy.featureInvoked(Unknown Source)					<=======
+                at cip.callui.LineKeyManager.featureInvoked(Unknown Source)
+                at cip.callui.EnhancedLineKeyHandler.processLineKeyEvent(Unknown Source)
+                at cip.callui.LineKeyManager.doLineKey(Unknown Source)
+                at cip.callui.EnhancedLineMode.processLineKey(Unknown Source)
+                at cip.callui.LineKeyManager.processLineKeyInternal(Unknown Source)
+                at cip.callui.LineKeyManager.processLineKey(Unknown Source)								???? linekey的入口应该是这里哦
+                at cip.callui.AbstractCallUiModel.invokeTouchFeature(Unknown Source)				《-----为啥这里调用的是AbstractCallUiModel？
+                at cip.comp.SLComponentModel$MyFeatureListener.featureInvoked(Unknown Source)
+                at cip.app.IFeatureListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.app.IFeatureListener$Dispatcher.sinkMessage(Unknown Source)					<===========
+                at cip.comp.SLComponentModel.inputEvent(Unknown Source)
+                at cip.comp.SLTaskModel.sinkMessage(Unknown Source)
+                at cip.comp.ComponentApplication$1.sinkMessage(Unknown Source)
+                at cip.sys.Messag
+
+-----------------------
+								at cip.callui.SingleCallModel.setContents(Unknown Source)
+								at cip.callui.SingleCallModel.initialize(Unknown Source)
+								at cip.comp.SLComponentModel.processInitialize(Unknown Source)
+								at cip.comp.SLComponentModel.initializeControl(Unknown Source)
+								at cip.comp.SLComponentModel.processAddChild(Unknown Source)
+								at cip.comp.SLComponentModel.addChild(Unknown Source)
+								at cip.callui.CallUiChildManager.createSingleCallWindow(Unknown Source)
+								at cip.callui.CallUiChildManager.openSingleCall(Unknown Source)
+								at cip.callui.AbstractCallUiModel.openCall(Unknown Source)					<------------
+								at cip.callui.EnhancedLineKeyHandler.featureInvoked(Unknown Source)
+								at cip.app.IFeatureListener$Dispatcher.sinkMessage(Unknown Source)
+								at cip.app.IFeatureListener$Dispatcher.sinkMessage(Unknown Source)					<=======
+								at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+								at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+								at cip.sys.MessageQueueThread.onRun(Unknow
+		
+		
+func===========:
+        public void processTouchEvent(String pageId, cip.userio.TouchEvent event) {
+            debug("processTouchEvent: " + pageId + ": target=" + event.getTarget());
+            Feature feature = new TouchFeature(event);											<------这个feature叫做 touchfeature， 我们叫gesturefeature
+            if(event.getTarget() == TouchEvent.TOUCH_TARGET_ALERT) {
+                feature.setInvocationFlags(Feature.INVOKE_DOWN | Feature.INVOKE_UP | Feature.INVOKE_RELEASE);
+            }
+            touchKey(pageId, event.getKeyAction(), feature);
+        }
+        
+        private void touchKey(final String pageId, final cip.userio.KeyAction keyAction, final Feature feature) {
+            if (keyAction == null) {
+                warn("touchKey", getDescriptiveName() + "keyAction is null");
+            } else {
+                final SLApplicationEnvironment environment = (SLApplicationEnvironment) getEnvironmentInFocus();
+                String focusPageId = SystemManager.getApplicationManager().getFocusPageId();
+
+                if (environment != null &&
+                    (pageId.equals(focusPageId) || GUIPageConstants.PAGE_CONTEXT_MENU.equals(focusPageId) || pageId.startsWith(GUIPageConstants.PAGE_XSI_PREFIX))) {
+                    if (feature instanceof ApplicationFeature) {
+                        final IFeatureListener listener = environment.getFeatureListener();
+                        ( (ApplicationFeature) feature).setListener(listener);
+                    }
+
+                    feature.invoke(Feature.getInvokeReason(keyAction));											<------把哪个feature找出来应该就可以了
+                } else {
+                    warn("touchKey", "receive event with mismatch pagId:" + pageId + ", current pageId:" + focusPageId);
+                }
+            }
+        }
+        
+        
+        
+        
+
+
+
+
+如何获取当前session？
+            SessionItemModel session = CallUi.getCallUIModel().getSelectedSession();
+
+            // if current selected session window is open, call openCall() in case the session is changed between
+            // audio/video call.
+            if (session != null && CallUi.getCallUIModel().getCallUiChildManager().isCallSessionWindowExists(session)) {  《-----
+            
+            
+            
+            BooleanProperty alwaysUsePrimeLineVmail = (BooleanProperty)propertyManager.getProperty(SipPropertyNames.USE_PRIME_LINE_VOICE_MAIL);
+            
+            PropertyHelper.commitBooleanProperty( SipPropertyNames.USE_PRIME_LINE, profile.alwaysUsePrimeLine);
+            
+            if (SystemManager.getPropertyManager().propertyExists(SipPropertyNames.USE_PRIME_LINE_VOICE_MAIL)) {
+            
+====》    protected boolean childRemoved(String childName) {   点击home或者go4button没有work
+
+
+
+
+
+
+      SingleCallModel singleCallModel = (SingleCallModel) getChild(GUIPageConstants.PAGE_SINGLE_CALL);
+      if (singleCallModel != null) {
+          if (singleCallModel.getSessionItem() != session) {
+              if (getCallUiChildManager().isWindowOnTop(singleCallModel)) {
+                  selectSessionItem(session);
+              }
+
+              singleCallModel.updateSession(session);
+          }
+
+          return;
+      }
+      
+                    
+mpp是怎么做的：
+static void CStatus_renderCallInfo()
+    if (pCall) {
+        pDeviceCallInfo->m_bHasActiveCallBar = true;
+        CEnv *pCardEnv = Card_getCardEnv(pCurrentCard);
+        if (pCardEnv) {
+            char * refID = pCardEnv->getString(pCardEnv, "refID");
+            if (refID) {
+                if (CS_isEqual(refID, pCall->refID)) {
+                    if (CS_isEqual(pCurrentCard, CARD_NAME_VIDEO_SESSION) ||
+                        CS_isEqual(pCurrentCard, CARD_NAME_CALL_SINGLE)) {
+                        pDeviceCallInfo->m_bHasActiveCallBar = false;
+                    }
+                } else {
+                    if (CS_isEqual(pCurrentCard, CARD_NAME_CALL_SINGLE)) {
+                        pDeviceCallInfo->m_bActiveCallBarGreen = true;
+                    }
+                }
+            }
+        }
+        
+        
+获取时间：
+property string uiCallDuration: pageCallUi.activeItem ? pageCallUi.activeItem.getData("duration") : ""
+"duration"====》abstractCallUiFullDisplay, obj.put(GUITagConstants.TAG_CALL_DURATION
+        cip.util.List items = model.getList().get();
+        // only update call sessions
+        int size = model.filteredCallSessionSize();
+        if (size > 0) {
+            JSONArray sessionArr = new JSONArray();
+            for (int i = 0; i < size; i++) {
+                SessionItemModel sessionModel = (SessionItemModel) items.get(i);
+                
+                
+                
+
+SessionItemModel topSession = findHighestPrioritySession(filteredSessionMap, isIntercom);
+topSessionInfo.getDuration(false)
+
+=========
+
+    Call connectedCall = CallAgent.getInstance().getConnectedCall();
+    if (connectedCall != null) {
+        int lineInstance = connectedCall.getCallHandle().getLineInstance();
+        
+                        
+                        
+                        
+                        
+        LineItemModel itemModel = (LineItemModel) callUiModel.getLine(lineInstance);
+
+        if (itemModel.isIntercomLine()) {
+            SessionItemModel session = itemModel.getSelectedSession();
+            if (session != null && DeviceInputCapabilities.supportsTouch()) {
+                callUiModel.openCall(session, true);
+            } else {
+                super.processLineKeyEvent(lineInstance, reason == Feature.INVOKE_UP ? KeyAction.UP : KeyAction.DOWN);
+            }
+            return;
+        }
+
+
+video--->audio(pause)
+2731 DEB Jun 27 11:58:26.415393 (9226-9411) JAVA-callui MQThread|cip.video.VideoFullScreenModel:lajiang callFeatureChanged - CONNECTED
+4643 DEB Jun 27 11:58:30.903266 (9226-9411) JAVA-callui MQThread|cip.video.VideoFullScreenModel:lajiang callFeatureChanged - becomeNotConnected
+4988 NOT Jun 27 11:58:31.174437 (9226-9411) JAVA-callui MQThread|cip.callui.SingleCallModel:lajiang callFeatureChanged - callNumber:1 sessionItem.getCallNumber1 state:10
+4989 NOT Jun 27 11:58:31.174520 (9226-9411) JAVA-callui MQThread|cip.callui.SingleCallModel:lajiang callFeatureChanged - CONNECTED
+5011 NOT Jun 27 11:58:31.196399 (9226-9411) JAVA-callui MQThread|cip.callui.SingleCallModel:lajiang callFeatureChanged - callNumber:1 sessionItem.getCallNumber1 state:10
+5012 NOT Jun 27 11:58:31.196436 (9226-9411) JAVA-callui MQThread|cip.callui.SingleCallModel:lajiang callFeatureChanged - CONNECTED
+5034 NOT Jun 27 11:58:31.217048 (9226-9411) JAVA-callui MQThread|cip.callui.SingleCallModel:lajiang callFeatureChanged - callNumber:1 sessionItem.getCallNumber1 state:10
+5035 NOT Jun 27 11:58:31.217083 (9226-9411) JAVA-callui MQThread|cip.callui.SingleCallModel:lajiang callFeatureChanged - CONNECTED
+
+
+audio-->video(play)
+5976 NOT Jun 27 11:58:39.227903 (9226-9411) JAVA-callui MQThread|cip.callui.SingleCallModel:lajiang callFeatureChanged - callNumber:1 sessionItem.getCallNumber1 state:10
+5978 NOT Jun 27 11:58:39.227954 (9226-9411) JAVA-callui MQThread|cip.callui.SingleCallModel:lajiang callFeatureChanged - CONNECTED
+6102 NOT Jun 27 11:58:39.249377 (9226-9411) JAVA-callui MQThread|cip.callui.SingleCallModel:lajiang callFeatureChanged - callNumber:1 sessionItem.getCallNumber1 state:10
+6103 NOT Jun 27 11:58:39.249438 (9226-9411) JAVA-callui MQThread|cip.callui.SingleCallModel:lajiang callFeatureChanged - CONNECTED
+6131 NOT Jun 27 11:58:39.268873 (9226-9411) JAVA-callui MQThread|cip.callui.SingleCallModel:lajiang callFeatureChanged - callNumber:1 sessionItem.getCallNumber1 state:10
+6132 NOT Jun 27 11:58:39.268913 (9226-9411) JAVA-callui MQThread|cip.callui.SingleCallModel:lajiang callFeatureChanged - CONNECTED
+6641 NOT Jun 27 11:58:39.528370 (9226-9411) JAVA-callui MQThread|cip.callui.SingleCallModel:lajiang callFeatureChanged - callNumber:1 sessionItem.getCallNumber1 state:7
+6642 NOT Jun 27 11:58:39.528445 (9226-9411) JAVA-callui MQThread|cip.callui.SingleCallModel:lajiang callFeatureChanged - becomeConnected
+6805 DEB Jun 27 11:58:39.767815 (9226-9411) JAVA-callui MQThread|cip.video.VideoFullScreenModel:lajiang callFeatureChanged - CONNECTED
+6965 DEB Jun 27 11:58:39.938492 (9226-9411) JAVA-callui MQThread|cip.video.VideoFullScreenModel:lajiang callFeatureChanged - CONNECTED
+
+
+
+
+
+

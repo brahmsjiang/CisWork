@@ -1,0 +1,86 @@
+
+
+1. incoming call display (for name and number of hunt group)
+2. history record display
+3. Hunt group logout notification   ???
+4. softkey / plk
+5. hunt group queue status display
+6. CSCvu95763, US37906 Distinguish the hunt group call and the normal call from the call history
+7. CSCvv08203, US37907: Record as received calls for all numbers in one hunt group in broadcast algorithm
+8. CSCvh15590, Add support for hunt group login/logout notification in SRST mode  ???
+9. locale support
+
+
+
+sipstack:		
+typedef struct
+{
+    char              *cls_name;
+    int                idx;
+    cjni_method_info_t methods[CJNI_MAX_METHODS]; /* methods to be cached */
+} cjni_class_info_t;
+
+cjni_class_info_t sip_env_classes[] = {
+...
+    {"cip/sipcc/SipCcEventDispatcher", CID_SipCcEventDispatcher, {
+        {"onCallEvent", MID_SipCcEventDispatcher_onCallEvent, "(III)V", 1},
+        {"onLineEvent", MID_SipCcEventDispatcher_onLineEvent, "(III)V", 1},
+				...
+        {(char *)0L, -1, (char *)0L, 0},
+        }
+    },
+...
+}
+
+//sipstack--->java
+void CCAPI_LineListener_onLineEvent(ccapi_line_event_e line_event, cc_lineid_t line, cc_lineinfo_ref_t lineInfo)
+{
+  retVal = cjni_get_mid((int)CID_SipCcEventDispatcher, (int)MID_SipCcEventDispatcher_onLineEvent, env, &mid, &cls, NULL);
+	(*env)->CallStaticVoidMethod(env, cls, mid, c2j(TYPE_LINEEVENT, line_event), line, lineInfo);
+}
+
+//sipstack--->java
+void CCAPI_CallListener_onCallEvent(ccapi_call_event_e event, cc_call_handle_t handle, cc_callinfo_ref_t info){
+  retVal = cjni_get_mid((int)CID_SipCcEventDispatcher, (int)MID_SipCcEventDispatcher_onCallEvent, env, &mid, &cls, NULL);
+  (*env)->CallStaticVoidMethod(env, cls, mid, c2j(TYPE_CALLEVENT, event), handle, info);
+}
+
+
+Java:
+package cip.sipcc;
+public class SipCcEventDispatcher {
+
+    public static void onLineEvent(int lineEvent, int line, int lineInfo) {
+        switch (lineEvent) {
+        case SipCcConstants.LINEEVENT_HUNTGROUP_STATUS:
+        	//java---->sipstack
+        	boolean statusDisplay = NativeCCAPILineInfoJni.CCAPIlineInfoisShowHuntGroupStatus(lineInfo);
+        	
+        	cc_boolean CCAPI_lineInfo_isShowHuntGroupStatus(cc_lineinfo_ref_t line)
+						void *snapshotRefFindhash(void * data_key) 
+						void *findhash(hash_table_interface_t *hash, unsigned int key)
+
+		public static void onCallEvent(int callEvent, int call, int callInfo) {
+        case SipCcConstants.CALLEVENT_CALLINFO :
+            static void updateCallInfo (ObservedCall ocall, int callInfo, boolean sendCallInfo) {
+
+sipstack:
+//java--->sipstack
+JNIEXPORT jboolean JNICALL Java_cip_sipcc_NativeCCAPILineInfoJni_CCAPIlineInfoisShowHuntGroupStatus
+  (JNIEnv *jenv, jclass cls, jint handle)
+{
+  return CCAPI_lineInfo_isShowHuntGroupStatus((cc_lineinfo_ref_t)handle);
+}
+
+Java:
+package cip.callui:
+public void createLine(int position, LineFeature lineFeature, Feature messageFeature, ILine lineCommandSink) {
+	LineItemModel line = new LineItemModel(position, LineItemModel.LINEKEYTYPE_LINE, lineFeature.getLabel(), lineFeature.getDn(), StatePriority.STATE_ONHOOK, lineFeature, lineFeature.getLineType(), lineCommandSink, lineEventProxy);
+	line.setHuntGroupStatus(hgProperty.isShowHuntGroupStatus());
+							
+							
+public String[] getSessionLabels(boolean isNewCallAlert) {
+	CallPartyId huntPilotPartyId = callFeature.getHuntPilotParty();
+
+
+============================

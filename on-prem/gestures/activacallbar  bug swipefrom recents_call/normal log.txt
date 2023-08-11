@@ -1,0 +1,189 @@
+
+
+
+
+2250 ERR Jun 28 12:11:55.870251 (18508-18681) JAVA-12:11:55pm|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.app.IFeatureListener$Proxy.featureInvoked(Unknown Source)
+                at cip.app.ApplicationFeature.onInvoke(Unknown Source)
+                at cip.app.Feature.invoke(Unknown Source)
+                at cip.app.SLApplicationManager$Listener.processGestureEvent(Unknown Source)
+                at cip.userio.IGestureListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.userio.IGestureListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2251 NOT Jun 28 12:11:55.870356 (18508-18742) JAVA-Cisco/Directory MQThread|cip.go4.OverviewModel:detect key - model:DirSearchList
+2252 DEB Jun 28 12:11:55.870434 (18508-18742) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:invokeGestureFeature -  source:sourceActiveCallBar ,reason:4
+2253 DEB Jun 28 12:11:55.870520 (18508-18742) JAVA-Cisco/Directory MQThread|cip.callui.EnhancedLineMode: - EnhancedLineMode.processLineKey: 1
+2254 INF Jun 28 12:11:55.870581 (18508-18742) JAVA-Cisco/Directory MQThread|cip.callui.CallUi:lajiang - this:"Call UI"/callui(15) ApplicationInFocus:"Contacts"/Cisco/Directory(39)
+2255 DEB Jun 28 12:11:55.870715 (18508-18682) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] oldEnvironment:"Contacts"/Cisco/Directory(39) Environment, newEnvironment:"Call UI"/callui(15) Environment, inFocusEnvironment:"Contacts"/Cisco/Directory(39) Environment, focusType:1, actionCode:ApplicationAction - Raise
+2256 DEB Jun 28 12:11:55.870752 (18508-18742) JAVA-Cisco/Directory MQThread|ObservedCallList:  - getHuronPagingCall NOT found
+2257 DEB Jun 28 12:11:55.870785 (18508-18682) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] => [logAppManagerVars] inFocusEnvironment:"Contacts"/Cisco/Directory(39) Environment, loweringEnvironment:null, raisingEnvironment:"Contacts"/Cisco/Directory(39) Environment
+2258 DEB Jun 28 12:11:55.870816 (18508-18742) JAVA-Cisco/Directory MQThread|cip.callui.EnhancedLineKeyHandler: - enter processLineKeyEvent()
+2259 INF Jun 28 12:11:55.870840 (18508-18682) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] new lowering environment: "Contacts"/Cisco/Directory(39) Environment
+2260 DEB Jun 28 12:11:55.870870 (18508-18742) JAVA-Cisco/Directory MQThread|cip.callui.EnhancedLineKeyHandler: - about to invoke lineResource feature= cip.callagent.LineFeature@3d10eb
+2261 DEB Jun 28 12:11:55.870911 (18508-18742) JAVA-Cisco/Directory MQThread|cip.app.IFeatureListener$Proxy:lajiang - before ID_FEATURE_INVOKED
+2262 INF Jun 28 12:11:55.870934 (18508-18694) JAVA-callui MQThread|cip.callui.CallUi:? - gettingFocus
+2263 ERR Jun 28 12:11:55.871630 (18508-18742) JAVA-12:11:55pm|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.app.IFeatureListener$Proxy.featureInvoked(Unknown Source)
+                at cip.callui.LineKeyManager.featureInvoked(Unknown Source)
+                at cip.callui.EnhancedLineKeyHandler.processLineKeyEvent(Unknown Source)
+                at cip.callui.LineKeyManager.doLineKey(Unknown Source)
+                at cip.callui.EnhancedLineMode.processLineKey(Unknown Source)
+                at cip.callui.LineKeyManager.processLineKeyInternal(Unknown Source)
+                at cip.callui.LineKeyManager.processLineKey(Unknown Source)
+                at cip.comp.SLComponentModel.invokeGestureFeature(Unknown Source)
+                at cip.comp.SLComponentModel$MyFeatureListener.featureInvoked(Unknown Source)
+                at cip.app.IFeatureListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.app.IFeatureListener$Dispatcher.sinkMessage(Unknown Source)  《-----IFeatureListener
+                at cip.comp.SLComponentModel.inputEvent(Unknown Source)
+                at cip.comp.SLTaskModel.sinkMessage(Unknown Source)
+                at cip.comp.ComponentApplication$1.sinkMessage(Unknown Source)
+                at cip.sys.MessageQu
+2264 ERR Jun 28 12:11:55.871659 (18508-18742) JAVA-eueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2265 DEB Jun 28 12:11:55.871739 (18508-18742) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryApp:lostFocus - requestToLoseFocus:false, closeAppOnRequestToLoseFocus:false
+2266 DEB Jun 28 12:11:55.871767 (18508-18694) JAVA-callui MQThread|cip.callui.EnhancedLineKeyHandler:featureInvoked - default handling line key event for line 1 reason:32				《------bug的话，这句没有哦！！！！
+2267 DEB Jun 28 12:11:55.871799 (18508-18742) JAVA-Cisco/Directory MQThread|cip.comp.SLInputEngine:lajiang escapeInputMode - ==! escapeInputMode
+2268 DEB Jun 28 12:11:55.871906 (18508-18694) JAVA-callui MQThread|cip.callui.CallUiModel:openCall - isAudioCall
+2269 DEB Jun 28 12:11:55.871945 (18508-18694) JAVA-callui MQThread|cip.callui.CallUiModel:openCall - singleCallModel null
+2270 DEB Jun 28 12:11:55.872127 (18508-18694) JAVA-callui MQThread|cip.callui.SingleCallModel:initializeControl - isInitialized:false
+2271 DEB Jun 28 12:11:55.872168 (18508-18694) JAVA-callui MQThread|cip.comp.SLComponentView:initialize - enter
+2272 ERR Jun 28 12:11:55.872274 (18508-18742) JAVA-callui MQThread|cip.comp.SLComponentView:initialize - enterMessage : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.comp.SLInputEngine.escapeInputMode(Unknown Source)
+                at cip.comp.SLInputProxy.escapeInputMode(Unknown Source)
+                at cip.comp.SLComponentModel.pauseMe(Unknown Source)
+                at cip.comp.SLComponentView.pauseApp(Unknown Source)
+                at cip.comp.SLTaskModel.pauseApp(Unknown Source)
+                at cip.go4.SLApplication.onLostFocus(Unknown Source)
+                at cip.comp.ComponentApplication.lostFocus(Unknown Source)
+                at cip.app.Application$Listener.lostFocus(Unknown Source)
+                at cip.app.IInputFocusListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.app.IInputFocusListener$Dispatcher.sinkMessage(Unknown Source)  《-----IInputFocusListener ==》escapeInputMode ！！！！！！
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2273 DEB Jun 28 12:11:55.872330 (18508-18742) JAVA-Cisco/Directory MQThread|cip.comp.SLComponentView:lajiang - before fullDisplay.pauseApp
+2274 INF Jun 28 12:11:55.872415 (18508-18742) JAVA-Cisco/Directory MQThread|cip.app.SLApplicationManager:? - [yield]: focus changing from "Contacts"/Cisco/Directory(39) Environment to "Call UI"/callui(15) Environment
+2275 DEB Jun 28 12:11:55.872457 (18508-18742) JAVA-Cisco/Directory MQThread|cip.app.IInputFocusListener$Proxy:lajiang - before ID_GOT_FOCUS
+2276 ERR Jun 28 12:11:55.872938 (18508-18742) JAVA-12:11:55pm|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.app.IInputFocusListener$Proxy.gotFocus(Unknown Source)
+                at cip.app.ApplicationManager.focusYielded(Unknown Source)
+                at cip.app.Application.yieldFocus(Unknown Source)
+                at cip.comp.ComponentApplication.loseFocusComplete(Unknown Source)
+                at cip.comp.SLTaskModel$ApplicationProxy.loseFocusComplete(Unknown Source)
+                at cip.comp.SLTaskView.pauseMe(Unknown Source)
+                at cip.comp.SLComponentView.pauseApp(Unknown Source)
+                at cip.comp.SLTaskModel.pauseApp(Unknown Source)
+                at cip.go4.SLApplication.onLostFocus(Unknown Source)
+                at cip.comp.ComponentApplication.lostFocus(Unknown Source)
+                at cip.app.Application$Listener.lostFocus(Unknown Source)
+                at cip.app.IInputFocusListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.app.IInputFocusListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueu
+2277 ERR Jun 28 12:11:55.872967 (18508-18742) JAVA-eThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2278 NOT Jun 28 12:11:55.873613 (18558-18558) guiapp-initPage(): SingleCall initPage json: 
+2279 DEB Jun 28 12:11:55.873914 (18558-18558) guiapp-getPageQmlFile(): qmlFile: qml/pages/SingleCall.qml
+2280 DEB Jun 28 12:11:55.887652 (18558-18558) guiapp-getDisplayedSoftkeys(): Empty size: 0
+2281 DEB Jun 28 12:11:55.887822 (18558-18558) guiapp-getCollapsedSoftkeys(): Empty size: 0
+2282 DEB Jun 28 12:11:55.903570 (18558-18558) guiapp-getDisplayedSoftkeys(): SingleCall size: 0
+2283 DEB Jun 28 12:11:55.903751 (18558-18558) guiapp-getCollapsedSoftkeys(): SingleCall size: 0
+2284 DEB Jun 28 12:11:55.906480 (18508-18694) JAVA-callui MQThread|cip.comp.SLComponentView:initialize - exit
+2285 NOT Jun 28 12:11:55.908982 (18558-18558) guiapp-setPageSoftkeys(): SingleCall json: [{"skIndex":2,"skLabel":"Hold","skFeature":"SK_HOLD","skEnabled":true},{"skIndex":3,"skLabel":"DND","skFeature":"SK_DND","skEnabled":true},{"skIndex":4,"skLabel":"End call","skFeature":"SK_ECALL","skEnabled":true},{"skIndex":5,"skLabel":"Conference","skFeature":"SK_CONF","skEnabled":true}]
+2286 DEB Jun 28 12:11:55.909206 (18558-18558) guiapp-placeHolder(): create new place holder softkey
+2287 DEB Jun 28 12:11:55.909274 (18558-18558) guiapp-placeHolder(): create new place holder softkey
+2288 DEB Jun 28 12:11:55.909326 (18558-18558) guiapp-placeHolder(): create new place holder softkey
+2289 DEB Jun 28 12:11:55.909365 (18558-18558) guiapp-placeHolder(): create new place holder softkey
+2290 DEB Jun 28 12:11:55.909404 (18558-18558) guiapp-placeHolder(): create new place holder softkey
+2291 DEB Jun 28 12:11:55.909534 (18558-18558) guiapp-getDisplayedSoftkeys(): SingleCall size: 4
+2292 DEB Jun 28 12:11:55.915083 (18558-18558) guiapp-getCollapsedSoftkeys(): SingleCall size: 1
+2293 DEB Jun 28 12:11:55.915323 (18558-18558) guiapp-mppScreenDump(): UI screen dump not enable
+2294 DEB Jun 28 12:11:55.916349 (18508-18694) JAVA-callui MQThread|cip.callui.CallUiModel:openChild - open child SingleCall enter
+2295 DEB Jun 28 12:11:55.916436 (18508-18694) JAVA-callui MQThread|cip.callui.SingleCallModel:activate - activate enter
+2296 DEB Jun 28 12:11:55.916553 (18508-18694) JAVA-callui MQThread|cip.callui.SingleCallModel:openMe - openMe enter
+2297 INF Jun 28 12:11:55.916607 (18508-18681) JAVA-appmgr MQThread|cip.app.AppFrameSoftkeyBar:? - showSoftkeyBar true
+2298 DEB Jun 28 12:11:55.916640 (18508-18694) JAVA-callui MQThread|cip.comp.SLComponentView:processOpen - enter isOpen:false, isPause:false
+2299 INF Jun 28 12:11:55.916701 (18508-18694) JAVA-callui MQThread|cip.callui.CallUi:lajiang - this:"Call UI"/callui(15) ApplicationInFocus:"Call UI"/callui(15)
+2300 DEB Jun 28 12:11:55.916734 (18508-18694) JAVA-callui MQThread|cip.comp.SLComponentView:processOpen - before open, par:true
+2301 INF Jun 28 12:11:55.916773 (18508-18694) JAVA-callui MQThread|cip.callui.CallUi:lajiang - this:"Call UI"/callui(15) ApplicationInFocus:"Call UI"/callui(15)
+2302 DEB Jun 28 12:11:55.916810 (18508-18694) JAVA-callui MQThread|cip.callui.SingleCallFullDisplay:open - inForeground:true, isInitialized:true
+2303 ERR Jun 28 12:11:55.917576 (18508-18694) JAVA-12:11:55pm|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.comp.SLFullDisplay.open(Unknown Source)
+                at cip.comp.SLComponentView.processOpen(Unknown Source)
+                at cip.comp.SLComponentModel.openMe(Unknown Source)
+                at cip.comp.SLComponentModel.activate(Unknown Source)
+                at cip.comp.SLComponentModel.openChild(Unknown Source)
+                at cip.callui.CallUiChildManager.createSingleCallWindow(Unknown Source)
+                at cip.callui.CallUiChildManager.openSingleCall(Unknown Source)
+                at cip.callui.AbstractCallUiModel.openCall(Unknown Source)
+                at cip.callui.AbstractCallUiModel.openActiveCallWindow(Unknown Source)
+                at cip.callui.LineKeyHandler.processLineKeyEvent(Unknown Source)
+                at cip.callui.EnhancedLineKeyHandler.featureInvoked(Unknown Source)   《------没有走到这里IFeatureListener===》EnhancedLineKeyHandler
+                at cip.app.IFeatureListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.app.IFeatureListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source
+2304 ERR Jun 28 12:11:55.917631 (18508-18694) JAVA-)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+2305 DEB Jun 28 12:11:55.939503 (18558-18558) guiapp-setPageState(): SingleCall pageState: -1
+2306 DEB Jun 28 12:11:55.954342 (18558-18558) guiapp-setPageCornerKeys(): SingleCall json: {"bottomleft":"","topleft":"back","topright":"","right":[]}
+2307 DEB Jun 28 12:11:55.955461 (18508-18694) JAVA-callui MQThread|cip.callui.SingleCallFullDisplay:open - inForeground:true, to set data
+2308 DEB Jun 28 12:11:55.955871 (18508-18694) JAVA-callui MQThread|QtProvider:setPageSessionModel - pageID: SingleCall, session mode: [{"callId":1,"videoDirection":0,"callPreserved":false,"dn":"","avatar":"","type":13,"secure":false,"callCountOnThisLine":1,"callState":2,"callType":4,"duration":"04:06","parkInfo":"","callName":"Private","hg":"","status":""}]
+2309 DEB Jun 28 12:11:55.957183 (18558-18558) guiapp-setPageSessionModel(): SingleCall json: [{"callId":1,"videoDirection":0,"callPreserved":false,"dn":"","avatar":"","type":13,"secure":false,"callCountOnThisLine":1,"callState":2,"callType":4,"duration":"04:06","parkInfo":"","callName":"Private","hg":"","status":""}]
+2310 NOT Jun 28 12:11:55.959250 (18508-18694) JAVA-callui MQThread|cip.callui.CallUiModel:lajiang updateActiveCallBarInfo - enter
+2311 WRN Jun 28 12:11:55.968373 (18558-18558) guiapp-[Profiling-Stub] showPage(): SingleCall isVisible: true
+2312 WRN Jun 28 12:11:55.968451 (18558-18558) guiapp-[Profiling-Stub] setVisible(): SingleCall isVisible: true
+2313 DEB Jun 28 12:11:55.969912 (18558-18558) guiapp-notifyFocusChanged(): SingleCall_QMLTYPE_239(0x306ad08, name=SingleCall, parent=0x26e5530, geometry=0,0 1024x600) is focused , index: -1
+2314 DEB Jun 28 12:11:55.970156 (18558-18558) guiapp-mppScreenDump(): UI screen dump not enable
+2315 WRN Jun 28 12:11:55.985081 (18558-18558) guiapp-[Profiling-Stub] showPage(): DirSearchList isVisible: false
+2316 WRN Jun 28 12:11:55.985167 (18558-18558) guiapp-[Profiling-Stub] setVisible(): DirSearchList isVisible: false
+2317 DEB Jun 28 12:11:55.986642 (18558-18558) guiapp-mppScreenDump(): UI screen dump not enable
+2318 DEB Jun 28 12:11:55.990302 (18508-18694) JAVA-callui MQThread|cip.callui.SingleCallModel:activated - activated entry:0 enter
+2319 DEB Jun 28 12:11:55.994887 (18558-18558) guiapp-setPageCallbackToken(): SingleCall json: 1687925515990
+2320 DEB Jun 28 12:11:55.995974 (18508-18694) JAVA-callui MQThread|cip.callui.SingleCallModel:activated - activated entry:0 exit
+2321 DEB Jun 28 12:11:55.996080 (18508-18694) JAVA-callui MQThread|cip.comp.SLComponentView:processOpen - exit
+2322 DEB Jun 28 12:11:55.996120 (18508-18694) JAVA-callui MQThread|cip.comp.SLComponentView:processChildOpened - enter
+2323 DEB Jun 28 12:11:55.996160 (18508-18694) JAVA-callui MQThread|cip.comp.SLComponentView:onChildOpened - to hide
+2324 DEB Jun 28 12:11:55.996191 (18508-18694) JAVA-callui MQThread|cip.comp.SLComponentView:processChildOpened - exit
+2325 DEB Jun 28 12:11:55.996226 (18508-18694) JAVA-callui MQThread|cip.callui.CallUiModel:childOpened - childOpened child:SingleCall
+2326 DEB Jun 28 12:11:55.996312 (18508-18694) JAVA-callui MQThread|cip.callui.SingleCallModel:openMe - openMe exit
+2327 DEB Jun 28 12:11:55.996341 (18508-18694) JAVA-callui MQThread|cip.callui.SingleCallModel:activate - activate exit
+2328 DEB Jun 28 12:11:55.996372 (18508-18694) JAVA-callui MQThread|cip.callui.CallUiModel:openChild - open child SingleCall exit
+2329 INF Jun 28 12:11:55.996560 (18508-18694) JAVA-callui MQThread|cip.callui.CallUi:lajiang - this:"Call UI"/callui(15) ApplicationInFocus:"Call UI"/callui(15)
+2330 DEB Jun 28 12:11:55.996606 (18508-18694) JAVA-callui MQThread|cip.callui.SingleCallFullDisplay:open - inForeground:true, isInitialized:true
+2331 ERR Jun 28 12:11:55.998074 (18508-18694) JAVA-12:11:55pm|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.comp.SLFullDisplay.open(Unknown Source)
+                at cip.comp.SLFullDisplay.openWindow(Unknown Source)
+                at cip.comp.SLFullDisplay.resumeApp(Unknown Source)
+                at cip.comp.SLComponentView.resumeApp(Unknown Source)
+                at cip.comp.SLTaskModel.resumeApp(Unknown Source)
+                at cip.callui.CallUi.onGotFocus(Unknown Source)
+                at cip.comp.ComponentApplication.gotFocus(Unknown Source)
+                at cip.callui.CallUi.gotFocus(Unknown Source)
+                at cip.app.Application$Listener.gotFocus(Unknown Source)
+                at cip.app.IInputFocusListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.app.IInputFocusListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)

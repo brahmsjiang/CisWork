@@ -1,0 +1,76 @@
+
+
+ok(single-->setting-->activecallbar):
+4296 DEB Jul 07 18:20:54.271003 (13575-13763) JAVA-callui MQThread|cip.callui.LineKeyManager:doLineKey - lajiang, before requestAppFocus
+4299 DEB Jul 07 18:20:54.271202 (13575-13763) JAVA-callui MQThread|cip.callui.LineKeyManager:doLineKey - lajiang processLineKeyEvent
+4302 NOT Jul 07 18:20:54.271302 (13575-13763) JAVA-callui MQThread|cip.callui.LineKeyManager:lajiang featureInvoked - before featureListener.featureInvoked
+4303 DEB Jul 07 18:20:54.271363 (13575-13763) JAVA-callui MQThread|cip.callui.EnhancedLineKeyHandler:featureInvoked - default handling line key event for line 1
+4312 DEB Jul 07 18:20:54.311122 (13622-13622) guiapp-notifyFocusChanged(): SingleCall_QMLTYPE_242(0x3375fb0, name=SingleCall, parent=0x2b17d88, geometry=0,0 1024x600) is focused , index: -1
+
+
+
+
+
+
+
+4376 DEB Jul 07 18:20:57.965387 (13575-13751) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] oldEnvironment:"Call UI"/callui(15) Environment, newEnvironment:"SettingsMenu"/settingsmenu(24) Environment, inFocusEnvironment:"Call UI"/callui(15) Environment, focusType:1, actionCode:ApplicationAction - Raise
+4377 DEB Jul 07 18:20:57.965456 (13575-13751) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] => [logAppManagerVars] inFocusEnvironment:"Call UI"/callui(15) Environment, loweringEnvironment:null, raisingEnvironment:"Call UI"/callui(15) Environment
+4379 INF Jul 07 18:20:57.965652 (13575-13776) JAVA-settingsmenu MQThread|cip.settingsmenu.SettingsMenu:? - gettingFocus
+4380 DEB Jul 07 18:20:57.965684 (13575-13763) JAVA-callui MQThread|cip.callui.CallUi:lostFocus - requestToLoseFocus:false, closeAppOnRequestToLoseFocus:false
+4381 INF Jul 07 18:20:57.965803 (13575-13763) JAVA-callui MQThread|cip.app.SLApplicationManager:? - [yield]: focus changing from "Call UI"/callui(15) Environment to "SettingsMenu"/settingsmenu(24) Environment
+4428 DEB Jul 07 18:20:58.166558 (13622-13622) guiapp-notifyFocusChanged(): AbstractSettingsPage_QMLTYPE_367(0x36fd858, name=Settings, parent=0x2b17d88, geometry=0,0 1024x600) is focused , index: -1
+4448 INF Jul 07 18:20:58.182866 (13575-13776) JAVA-settingsmenu MQThread|cip.settingsmenu.SettingsMenu:? - gotFocus
+
+
+
+4493 DEB Jul 07 18:21:02.324236 (13575-13776) JAVA-settingsmenu MQThread|cip.callui.LineKeyManager:doLineKey - lajiang, before requestAppFocus
+4494 DEB Jul 07 18:21:02.324276 (13575-13776) JAVA-settingsmenu MQThread|cip.callui.LineKeyManager:doLineKey - lajiang, now requestAppFocus
+4496 DEB Jul 07 18:21:02.324413 (13575-13751) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] oldEnvironment:"SettingsMenu"/settingsmenu(24) Environment, newEnvironment:"Call UI"/callui(15) Environment, inFocusEnvironment:"SettingsMenu"/settingsmenu(24) Environment, focusType:1, actionCode:ApplicationAction - Raise
+4498 DEB Jul 07 18:21:02.324494 (13575-13751) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] => [logAppManagerVars] inFocusEnvironment:"SettingsMenu"/settingsmenu(24) Environment, loweringEnvironment:null, raisingEnvironment:"SettingsMenu"/settingsmenu(24) Environment
+4499 DEB Jul 07 18:21:02.324516 (13575-13776) JAVA-settingsmenu MQThread|cip.callui.LineKeyManager:doLineKey - lajiang processLineKeyEvent
+4503 NOT Jul 07 18:21:02.324663 (13575-13776) JAVA-settingsmenu MQThread|cip.callui.LineKeyManager:lajiang featureInvoked - before featureListener.featureInvoked
+4504 INF Jul 07 18:21:02.324690 (13575-13763) JAVA-callui MQThread|cip.callui.CallUi:? - gettingFocus
+4505 DEB Jul 07 18:21:02.324739 (13575-13776) JAVA-settingsmenu MQThread|cip.settingsmenu.SettingsMenu:lostFocus - requestToLoseFocus:false, closeAppOnRequestToLoseFocus:false
+4506 DEB Jul 07 18:21:02.324766 (13575-13763) JAVA-callui MQThread|cip.callui.EnhancedLineKeyHandler:featureInvoked - default handling line key event for line 1
+
+4507 INF Jul 07 18:21:02.324829 (13575-13776) JAVA-settingsmenu MQThread|cip.app.SLApplicationManager:? - [yield]: focus changing from "SettingsMenu"/settingsmenu(24) Environment to "Call UI"/callui(15) Environment
+4520 DEB Jul 07 18:21:02.330115 (13622-13622) guiapp-notifyFocusChanged(): SingleCall_QMLTYPE_242(0x3375fb0, name=SingleCall, parent=0x2b17d88, geometry=0,0 1024x600) is focused , index: -1
+4526 INF Jul 07 18:21:02.340811 (13575-13763) JAVA-callui MQThread|cip.callui.CallUi:? - gotFocus
+
+
+
+==========
+
+
+ng(favorites-->setting-->activecallbar):
+1183 NOT Jul 07 18:17:03.096671 (3487-3498) CDP-cdpRcvPkt(): deviceId is switch_lajiang
+1229 DEB Jul 07 18:17:07.057404 (13575-13751) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] oldEnvironment:"Call UI"/callui(15) Environment, newEnvironment:"Favorites"/favorites(27) Environment, inFocusEnvironment:"Call UI"/callui(15) Environment, focusType:1, actionCode:ApplicationAction - Raise
+1230 DEB Jul 07 18:17:07.057469 (13575-13751) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] => [logAppManagerVars] inFocusEnvironment:"Call UI"/callui(15) Environment, loweringEnvironment:null, raisingEnvironment:"Call UI"/callui(15) Environment
+1232 INF Jul 07 18:17:07.058859 (13575-13779) JAVA-favorites MQThread|cip.favorites.Favorites:? - gettingFocus
+1233 DEB Jul 07 18:17:07.058925 (13575-13763) JAVA-callui MQThread|cip.callui.CallUi:lostFocus - requestToLoseFocus:false, closeAppOnRequestToLoseFocus:false
+1234 INF Jul 07 18:17:07.059034 (13575-13763) JAVA-callui MQThread|cip.app.SLApplicationManager:? - [yield]: focus changing from "Call UI"/callui(15) Environment to "Favorites"/favorites(27) Environment
+1245 DEB Jul 07 18:17:07.070015 (13622-13622) guiapp-notifyFocusChanged(): Favorites_QMLTYPE_334(0x353afe0, name=FavoritesList, parent=0x2b286c8, geometry=0,0 1024x200) is focused , index: -1
+
+
+1312 INF Jul 07 18:17:07.517916 (13575-13779) JAVA-favorites MQThread|cip.favorites.Favorites:? - gotFocus
+1333 DEB Jul 07 18:17:10.589541 (13575-13751) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] oldEnvironment:"Favorites"/favorites(27) Environment, newEnvironment:"SettingsMenu"/settingsmenu(24) Environment, inFocusEnvironment:"Favorites"/favorites(27) Environment, focusType:1, actionCode:ApplicationAction - Raise
+1335 DEB Jul 07 18:17:10.589648 (13575-13751) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] => [logAppManagerVars] inFocusEnvironment:"Favorites"/favorites(27) Environment, loweringEnvironment:null, raisingEnvironment:"Favorites"/favorites(27) Environment
+1339 INF Jul 07 18:17:10.589775 (13575-13776) JAVA-settingsmenu MQThread|cip.settingsmenu.SettingsMenu:? - gettingFocus
+1340 DEB Jul 07 18:17:10.589852 (13575-13779) JAVA-favorites MQThread|cip.favorites.Favorites:lostFocus - requestToLoseFocus:false, closeAppOnRequestToLoseFocus:false
+1341 INF Jul 07 18:17:10.589946 (13575-13779) JAVA-favorites MQThread|cip.app.SLApplicationManager:? - [yield]: focus changing from "Favorites"/favorites(27) Environment to "SettingsMenu"/settingsmenu(24) Environment
+1397 DEB Jul 07 18:17:10.798972 (13622-13622) guiapp-notifyFocusChanged(): AbstractSettingsPage_QMLTYPE_367(0x360a428, name=Settings, parent=0x2b17d88, geometry=0,0 1024x600) is focused , index: -1
+1413 INF Jul 07 18:17:10.860153 (13575-13776) JAVA-settingsmenu MQThread|cip.settingsmenu.SettingsMenu:? - gotFocus
+
+1440 DEB Jul 07 18:17:13.981010 (13575-13776) JAVA-settingsmenu MQThread|cip.callui.LineKeyManager:doLineKey - lajiang, before requestAppFocus
+1441 DEB Jul 07 18:17:13.981048 (13575-13776) JAVA-settingsmenu MQThread|cip.callui.LineKeyManager:doLineKey - lajiang, now requestAppFocus
+1443 DEB Jul 07 18:17:13.981188 (13575-13751) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] oldEnvironment:"SettingsMenu"/settingsmenu(24) Environment, newEnvironment:"Call UI"/callui(15) Environment, inFocusEnvironment:"SettingsMenu"/settingsmenu(24) Environment, focusType:1, actionCode:ApplicationAction - Raise
+1444 DEB Jul 07 18:17:13.981253 (13575-13751) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] => [logAppManagerVars] inFocusEnvironment:"SettingsMenu"/settingsmenu(24) Environment, loweringEnvironment:null, raisingEnvironment:"SettingsMenu"/settingsmenu(24) Environment
+1446 INF Jul 07 18:17:13.981391 (13575-13763) JAVA-callui MQThread|cip.callui.CallUi:? - gettingFocus
+1448 DEB Jul 07 18:17:13.981476 (13575-13776) JAVA-settingsmenu MQThread|cip.callui.LineKeyManager:doLineKey - lajiang processLineKeyEvent
+1451 NOT Jul 07 18:17:13.981621 (13575-13776) JAVA-settingsmenu MQThread|cip.callui.LineKeyManager:lajiang featureInvoked - before featureListener.featureInvoked
+1452 DEB Jul 07 18:17:13.981706 (13575-13776) JAVA-settingsmenu MQThread|cip.settingsmenu.SettingsMenu:lostFocus - requestToLoseFocus:false, closeAppOnRequestToLoseFocus:false
+1453 INF Jul 07 18:17:13.981790 (13575-13776) JAVA-settingsmenu MQThread|cip.app.SLApplicationManager:? - [yield]: focus changing from "SettingsMenu"/settingsmenu(24) Environment to "Call UI"/callui(15) Environment
+1469 INF Jul 07 18:17:14.000894 (13575-13763) JAVA-callui MQThread|cip.callui.CallUi:? - gotFocus
+
+
+
