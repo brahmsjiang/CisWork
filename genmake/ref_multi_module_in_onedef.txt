@@ -1,0 +1,520 @@
+p = program('ms', on_target='usr/sbin/ms')
+
+# Notes: following setting provide debug symbols in GDB
+#p.dontstrip()
+#p.cflag('-g')
+#p.cxxflag('-g')
+
+p.library(
+    'openssl',
+    'libsrtp',
+    'libplatform',
+    'libioapi',
+    'libcisco',
+    'libdl',
+    'libcrashhandler',
+)
+
+if p.get_build_env('feature_wlan'):
+    p.library(
+        'libwlanapi',
+        'libipmcclient',
+        'libipmcutil',
+    )
+
+if p.get_build_env('bumblebee'):
+    p.library(
+        'dvf2300-video-libs',
+        'dvf2300-audio-libs',
+        'dvf2300-platform-libs',
+        'video-render-client',
+    )
+
+# TODO: what is a better way?
+p.define('__PROGNAME=\\\"ms\\\"')
+p.define('ARM_CORE')
+# TODO remove this legacy macro
+p.define('_ROUNDTABLE')
+
+p.source(
+    'ms-core',
+    'media-metrics',
+    'mscmdlopts',
+    'cameramgr',
+    'parammgr',
+    'mslcproxy',
+    'portmgr',
+    'base-linux',
+    'mari-rsfec',
+    'ringbuffer',
+    'rtcpmgr',
+    'tipmuxmgr',
+    'selectmgr',
+    'fileplayer',
+    'sessionmgr',
+    'sockmgr',
+    'sglist',
+    'rtpgroupsession',
+    'rtpsession',
+    'rtppacket',
+    'video-bandwidthtable',
+    'video-platforminfo',
+    'polyphasefir',
+    'h264utils',
+    'tsem',
+    'iirbiquad',
+    'audio-platforminfo',
+)
+
+if p.get_build_env('feature_video'):
+    p.source(
+        'pacingmgr',
+        'video-resolution',
+    )
+
+if p.get_build_env('feature_mari'):
+    p.source(
+        'marilib',
+        'fmt',
+        'libciscolog',
+    )
+
+l = library('ms-core', static=True)
+
+# TODO separate these into modules
+commonincdir = (
+    'synergy-lite/src',
+    'synergy-lite/plat/include',
+    'common/rpc',
+    'synergy/src/video',
+    'synergy/src/dchain',
+    'synergy/src/hfu',
+    'synergy/src/hfu/omxil',
+    'synergy/src/util',
+    'synergy/lib/libcomxil',
+    'synergy/lib/tipmux_interface',
+    'synergy/rtpmgr/inc',
+    'synergy/rtpmgr/util/ctsvad',
+    'synergy/rtpmgr/hal/inc',
+)
+l.incdir(*commonincdir)
+
+l.depend_on(
+    'libms',
+    'wildcard-api',
+    'ms-misc-api',
+    'ms-server-headers-api',
+    'libcisco',
+    'sys-api',
+    'apps-api',
+    'libplatform',
+    'libioapi',
+    'wlan-api',
+    'libice',
+    'libcrashhandler',
+    'media-metrics',
+    'base-linux',
+    'marilib',
+    'mari-rsfec',
+    'cameramgr',
+    'pacingmgr',
+    'mscmdlopts',
+    'parammgr',
+    'portmgr',
+    'rtcpmgr',
+    'ringbuffer',
+    'tipmuxmgr',
+    'selectmgr',
+    'sessionmgr',
+    'sockmgr',
+    'sglist',
+    'rtpgroupsession',
+    'rtpsession',
+    'rtppacket',
+    'video-bandwidthtable',
+    'mslcproxy',
+    'base-linux',
+    'polyphasefir',
+    'iirbiquad',
+    'h264utils',
+    'omx-audio-api',
+    'audio-componets-api',
+    'audio-componets-common-api',
+    'OMX.CISCO.AUDIO.base',
+    'libCISCO.AUDIO.alsa',
+    'cisco-omx-core-api',
+    'synergy-source-headers-api',
+    'audio-platforminfo',
+    'video-platforminfo',
+)
+if l.get_build_env('bumblebee'):
+    l.depend_on(
+        'camera-stream-api',
+        'bumblebee-speech-omx-api',
+        'bumblebee-video-headers-api',
+        'video-render-client',
+    )
+
+#l.define('ARM_CORE')
+#l.define('FEATURE_FIPS')
+#l.define('CISCO_VIDEO_ENABLED')
+if l.get_build_env('bumblebee'):
+    l.define('DSPG_OMX')
+    l.define('__LINARO_SDK__')
+    l.define('VIDEO_BW_MGR')
+    l.define('ISAC_SUPPORT')
+
+if l.get_build_env('feature_48k_audio'):
+    l.define('AUDIOCLK_48000')
+
+if not l.release():
+    l.define('ENABLE_GDB')
+
+# TODO: Fix all warnings and stop ignoring
+l.warnings(
+    'not-on-discarded-qualifiers',
+    'not-on-sign-compare',
+    'not-on-missing-field-initializers',
+    'not-on-missing-prototypes',
+    'not-on-missing-declarations',
+    'not-on-strict-prototypes',
+    'not-on-unused-result',
+    'not-on-unused-variable',
+    'not-on-format-security',
+    'not-on-unused-function',
+    'not-on-set-but-not-used',
+    'not-on-incompatible-pointer-types',
+    'not-on-implicit-function',
+    'not-on-unused-parameter',
+    'not-on-pointer-sign',
+)
+
+omx_client = l.module('omx_client')
+omx_client.source(
+    'synergy/src/aomxclientapi.c',
+    'synergy/src/aomxclientapiExt.c',
+    'synergy/src/aomxclientapi_cb.c',
+    'synergy/src/aomxcomp.c',
+    'synergy/src/aomxcomp_callback.c',
+    'synergy/src/aomxcomp_decoder.c',
+    'synergy/src/aomxcomp_encoder.c',
+    'synergy/src/aomxcomp_ring.c',
+    'synergy/src/aomxcomp_sink.c',
+    'synergy/src/aomxcomp_source.c',
+    'synergy/src/aomxcomp_tone.c',
+    'synergy/src/aomxcomp_vocoder.c',
+)
+if l.get_build_env('bumblebee'):
+    omx_client.source(
+        '../hw/omx/audio/synergy-lite/DVF2300/speech_omx/common/vocoderConf.c',
+    )
+
+extaudio = l.module('extaudio')
+extaudio.source(
+    'synergy/src/extAudioServer.c',
+)
+
+audio_path = l.module('audio_path')
+audio_path.source(
+   'synergy/src/apath.c',
+   'synergy-lite/src/voltableringer.c',
+)
+if l.get_build_env('line-in-line-out-audio'):
+    audio_path.source(
+        'synergy-lite/src/extaudio.c',
+    )
+else:
+    audio_path.source(
+        'synergy/src/exaudiopathControl.c',
+    )
+
+client_mgr = l.module('client_mgr')
+client_mgr.source(
+   'synergy/src/callbackmgr.c',
+   'synergy/src/clientmgr.c',
+)
+
+daisy_chain = l.module('daisy_chain')
+daisy_chain.source(
+    'synergy/src/stubs/dchainmgr.c',
+    'synergy/src/dchainsession.c',
+    'synergy/src/dchain/aomxcomp_dchainSink.c',
+    'synergy/src/dchain/aomxcomp_dchainSource.c',
+)
+if l.get_build_env('feature_daisy_chain'):
+    daisy_chain.source(
+        'synergy/src/dchainmgr.c',
+    )
+else:
+    daisy_chain.source(
+        'synergy/src/stubs/dchainmgr.c',
+    )
+
+# TODO looks odd here, which are shareing code with libms
+ms_lib = l.module('ms_lib')
+ms_lib.source(
+    '../client/lib/ms/demux.c',
+    '../client/lib/ms/dumpusul.c',
+    '../client/lib/ms/mqportal.c',
+)
+
+rpc = l.module('rpc')
+rpc.source(
+    'common/rpc/_doorext.c',
+    'common/rpc/_math.c',
+    'common/rpc/_ms.c',
+    'common/rpc/_msdispatcher.c',
+    'common/rpc/_mshandler.c',
+    'common/rpc/doorserve.c',
+)
+
+dsp_mgr = l.module('dsp_mgr')
+dsp_mgr.source(
+    'synergy/src/dspfeedback.c',
+    'synergy/src/dspmgr.c',
+)
+
+filters = l.module('dsp_lib')
+filters.source(
+    'synergy/src/vad.c',
+)
+
+transport = l.module('transport')
+transport.source(
+    'synergy/src/netportproxymgr.c',
+    #'synergy/src/rtplb.c',
+    'synergy/src/rtpmgr.c',
+    'synergy/src/rtpsndrcv.c',
+    'synergy/src/stunmgr.c',
+    'synergy/src/stunturntransport.c',
+)
+
+session_stream = l.module('session_stream')
+session_stream.source(
+    'synergy/src/presentationAudio.c',
+    'synergy/src/streamconnect.c',
+    'synergy/src/streammgr.c',
+)
+
+utils = l.module('utils')
+utils.source(
+    'synergy/src/platMalloc.c',
+    'synergy/src/util/code2str.c',
+    'synergy/src/queue.c',
+    'synergy/src/utilities.c',
+)
+
+hfu = l.module('hfu')
+hfu.source(
+    'synergy/src/hfu/hfubridge.c',
+    'synergy/src/hfu/hfusession.c',
+    'synergy/src/extabridge.c',
+    'synergy/src/hfu/hfubt.cpp',
+    'synergy/src/hfu/hfubt_load.cpp',
+    'synergy/src/extaalsa.cpp',
+    'synergy/src/hfu/omxil/aomxcomp_hfuSink.c',
+    'synergy/src/hfu/omxil/aomxcomp_hfuSource.c',
+)
+
+tone = l.module('tone')
+tone.source(
+    'synergy/src/pacifytonedata.c',
+    'synergy/src/tonebeeptgn.c',
+    'synergy/src/tonecore.c',
+    'synergy/src/tonedtmfque.c',
+    'synergy/src/toneperiodic.c',
+    'synergy/src/tonerfc2833.c',
+    'synergy/src/tonesession.c',
+    'synergy/src/tonetables.c',
+    'synergy/src/tonetgn.c',
+    'synergy/src/dsptone.c',
+)
+
+srtp = l.module('srtp')
+srtp.source(
+    'synergy/src/srtpif.c',
+)
+
+misc_mgr = l.module('misc_mgr')
+misc_mgr.source(
+    'synergy/src/ledmgr.c',
+    'synergy/src/dspxmgr.c',
+    'synergy/src/featuremgr.c',
+    'synergy/src/headsetmgr.c',
+    'synergy/src/statsmgr.c',
+    'synergy-lite/src/ledmgr_sl.c',
+)
+if l.get_build_env('feature_wlan'):
+    misc_mgr.source(
+        'synergy/src/wlanmgr.c',
+    )
+
+rtpmgr_jitterbuffer = l.module('rtpmgr_jitterbuffer')
+rtpmgr_jitterbuffer.source(
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBuffer.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferCalcPacketJitter.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferExtractMediaFrames.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferExtractionStats.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferFrameSizeIsac.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferGetFrame.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferGetMediaFrame.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferInsertMediaFrames.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferPacketSizeAACLD.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferPacketSizeG7222.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferPacketSizeOpus.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferQueueMediaFrames.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferSelectFrameSize.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferStartReceive.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferStopReceive.c',
+    'synergy/rtpmgr/jitterbuffer/mgrJitterBufferStorePacket.c',
+)
+
+rtpmgr_vqmetrics = l.module('rtpmgr_vqmetrics')
+rtpmgr_vqmetrics.source(
+    'synergy/rtpmgr/vq/vqmetrics.c',
+)
+
+rtpmgr_hal = l.module('rtpmgr_hal')
+rtpmgr_hal.source(
+    'synergy/rtpmgr/hal/halclk.c',
+    'synergy/rtpmgr/hal/halthread.c',
+)
+
+rtpmgr_rtp = l.module('rtpmgr_rtp')
+rtpmgr_rtp.source(
+    'synergy/rtpmgr/rtp/mgrRfc2833.c',
+    'synergy/rtpmgr/rtp/mgrRtpExtractRtpHeader.c',
+    'synergy/rtpmgr/rtp/mgrRtpFlushPacket.c',
+    'synergy/rtpmgr/rtp/mgrRtpPacket.c',
+    'synergy/rtpmgr/rtp/mgrRtpProcessPacket.c',
+    'synergy/rtpmgr/rtp/mgrRtpReceive.c',
+    'synergy/rtpmgr/rtp/mgrRtpSendDtmfPacket.c',
+    'synergy/rtpmgr/rtp/mgrRtpSendMediaFrame.c',
+    'synergy/rtpmgr/rtp/mgrRtpSendPacket.c',
+    'synergy/rtpmgr/rtp/mgrRtpTransmit.c',
+    'synergy/rtpmgr/rtp/mgrRtpTransmitStart.c',
+    'synergy/rtpmgr/rtp/mgrRtpTransmitStop.c',
+    'synergy/rtpmgr/rtp/rtpCheck.c',
+)
+
+rtpmgr_channel = l.module('rtpmgr_channel')
+rtpmgr_jitterbuffer.source(
+    'synergy/rtpmgr/mgrReceiveChannel.c',
+    'synergy/rtpmgr/mgrReceiveManager.c',
+    'synergy/rtpmgr/mgrTransmitChannel.c',
+    'synergy/rtpmgr/mgrTransmitManager.c',
+)
+
+# TODO check where ctsvad needed
+rtpmgr_util = l.module('rtpmgr_util')
+rtpmgr_util.source(
+    'synergy/rtpmgr/util/energycts.c',
+    'synergy/rtpmgr/util/energyrfc6465.c',
+    'synergy/rtpmgr/util/linkedList.c',
+    'synergy/rtpmgr/util/mgrPacketManager.c',
+    'synergy/rtpmgr/util/mgrPacketManagerBuffer.c',
+    'synergy/rtpmgr/util/mgrPacketManagerClock.c',
+    'synergy/rtpmgr/util/mgrPacketManagerCodec.c',
+    'synergy/rtpmgr/util/tty.c',
+    'synergy/rtpmgr/util/ctsvad/nfvad_EstimateNF_n_ComputeVadmetrics.c',
+    'synergy/rtpmgr/util/ctsvad/nfvad_EstimateNoiseFloor.c',
+    'synergy/rtpmgr/util/ctsvad/nfvad_FindSqrt.c',
+    'synergy/rtpmgr/util/ctsvad/nfvad_SqrtLookup.c',
+    'synergy/rtpmgr/util/ctsvad/nfvad_aa_vadmetrics.c',
+    'synergy/rtpmgr/util/ctsvad/nfvad_audioAddIn_vutils.c',
+)
+
+#TODO separate FIPS as library/module for all apps to link
+fips = l.module('fips')
+fips.source(
+    'synergy-lite/src/fipscheck.c',
+)
+
+codec_table = l.module('codec_table')
+codec_table.source(
+    'synergy-lite/src/dspResourceCostTable_sl.c',
+)
+
+plat_audio = l.module('plat_audio')
+if l.get_build_env('bumblebee'):
+    plat_audio.source(
+        'synergy-lite/plat/DVF2300/plat_audio.c',
+    )
+else:
+    plat_audio.source(
+        'synergy-lite/plat/common/plat_audio.c',
+    )
+
+video = l.module('video')
+video.source(
+    'synergy/src/capsmgr.c',
+    'synergy/src/capturesession.c',
+    'synergy/src/contentmgr.c',
+    'synergy/src/contentpreviewsession.c',
+    'synergy/src/resmgr.c',
+    'synergy/src/resmgr_vbm.c',
+    'synergy/src/video.c',
+    'synergy/src/video_mute.c',
+    'synergy/src/video_pfu.c',
+    'synergy/src/videobandwidthmgr.c',
+    'synergy/src/vbm_mari.c',
+)
+
+if l.get_build_env('feature_video'):
+    video.source(
+        'synergy-lite/src/cameraapi.c',
+    )
+else:
+    video.source(
+        'synergy-lite/src/videoapistub.cpp',
+        'synergy-lite/src/cameraSLHALwrapper.cpp',
+        'synergy-lite/src/video_platform_stub.c',
+        'synergy/src/stubs/pacingmgr.cpp',
+    )
+
+if l.get_build_env('bumblebee'):
+    video.source(
+        'camera/src/v4l2camera.c',
+        'synergy-lite/src/videoapi_dvf2300.c',
+        'synergy-lite/src/DVF2300/omx_video_pipeline.c',
+        'synergy-lite/src/DVF2300/omx_video_buffers.c',
+        'synergy-lite/src/DVF2300/omx_avc_utils.c',
+        'synergy-lite/src/DVF2300/selfview_rendering.c',
+        'synergy-lite/src/DVF2300/remote_video_rendering.c',
+        'synergy-lite/src/DVF2300/dspg_mem_utils.cpp',
+    )
+
+if l.get_build_env('bigeasyvideo'):
+    video.source(
+        'synergy-lite/src/videoapi.c',
+        'synergy-lite/src/BRCM/vcp_pipeline.c',
+    )
+
+video_stub = l.module('video_stub')
+video_stub.source(
+    'synergy-lite/src/videocontentapistub.cpp',
+    'synergy-lite/src/videosurfacestub.c',
+)
+
+# TODO cleanup these code
+ms_stub = l.module('ms_stub')
+ms_stub.source(
+    'synergy/src/stubs/tonepsession.c',
+    'synergy/src/stubs/version.c',
+    'synergy/src/stubs/diag.c',
+    'synergy/src/stubs/apath.c',
+    'synergy/src/stubs/msbt.c',
+    'synergy/src/ms_stubs.c',
+)
+
+main = l.module('main')
+main.source(
+    'synergy/src/main_ms.c',
+    'synergy/src/main_ms_entry.c',
+    'synergy/src/mssdoor.c',
+    'synergy/src/timer1shot.c',
+    'synergy/src/msapi.c',
+    'synergy/src/msjindo.c',
+    'synergy/src/msjindo_cmds.c',
+    'synergy/src/osif.c',
+)

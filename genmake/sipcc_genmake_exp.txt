@@ -1,0 +1,360 @@
+import sys
+sys.path.append('functional/protocols/sipcc')
+import cucmGit
+
+l = library('libsipcc', static=True)
+l.implements('callcontroller')
+l.set_build_env('dontstrip', True)
+l.set_build_env('debug')
+l.optimize('-O0')
+
+repo_sipcc = git(cucmGit.sipcc_repo, cucmGit.sipcc_ref)
+repo_cpr = git(cucmGit.cpr_repo, cucmGit.cpr_ref)
+
+sipccsrc = repo_sipcc.srcdir(l)
+cprsrc = repo_cpr.srcdir(l)
+
+# TODO: Fix all warnings and stop ignoring
+l.warnings(
+    'not-on-discarded-qualifiers',
+    'not-ignored-qualifiers',
+    'not-on-sign-compare',
+    'not-on-missing-field-initializers',
+    'not-on-type-limits',
+    'not-on-missing-prototypes',
+    'not-on-missing-declarations',
+    'not-on-strict-prototypes',
+    'not-on-unused-result',
+    'implicit-function-is-not-error',
+    'not-on-unused-variable',
+    'not-on-format-security',
+    'not-on-unused-function',
+    'not-on-implicit-fallthrough',
+    'not-on-int-to-pointer',
+    'not-on-pointer-to-int',
+    'not-on-format-truncation',
+    'not-on-duplicated-branches',
+    'not-on-pointer-compare',
+    'not-on-cast-function-type',
+    'not-on-sizeof-pointer-memaccess',
+    'not-on-stringop-overflow',
+    'not-on-duplicated-cond',
+)
+
+if not l.get_build_env('module_test'):
+    l.warnings('not-on-pointer-compare')
+
+l.apidir(sipccsrc + '/include')
+l.apidir(sipccsrc + '/core/includes')
+l.apidir(sipccsrc + '/core/utils')
+l.apidir(cprsrc + '/include')
+
+l.depend_on(
+    'webexregistration',
+    'networkstatusreporter-client-cpp',
+    'networkstatusreporter',
+    'pubsub-client-cpp',
+    'pubsub',
+    'pubsub-events',
+    'platforminfo-api',
+    'libxml2',
+    'safec',
+    'log_cpp',
+    'executor',
+    'sipccmedia',
+    'ccmediaclient',
+    'cucmsecurity-client-cpp',
+    'cucmsecurity',
+    'cucmconfigmanager-client-cpp',
+    'cucmconfigmanager',
+    'boostsystem',
+    'boost',
+    'libopensslcpp',
+    'libtams',
+    'upgrademanager-client-cpp',
+)
+
+l.incdir(cprsrc + '/include')
+l.incdir(cprsrc + '/linux/include')
+l.incdir(sipccsrc + '/include')
+l.incdir(sipccsrc + '/core/sipstack/h')
+l.incdir(sipccsrc + '/core/gsm/h')
+l.incdir(sipccsrc + '/core/sdp')
+l.incdir(sipccsrc + '/core/api')
+l.incdir(sipccsrc + '/core/ccapp')
+l.incdir(sipccsrc + '/core/utils')
+l.incdir(sipccsrc + '/core/common')
+l.incdir(sipccsrc + '/core/ccapi')
+l.incdir(sipccsrc + '/core/ccapi/config')
+l.incdir(sipccsrc + '/core/includes')
+l.incdir(sipccsrc + '/plat/sl')
+l.incdir(sipccsrc + '/plat/common')
+l.incdir(sipccsrc + '/core/ccapp/config')
+
+l.define('CPR_API_LINUX')
+l.define('CPR_MEMORY_LITTLE_ENDIAN')
+l.define('CPR_MEMORY_UNALIGNED')
+l.define('DISABLE_MEM_MGMT')
+l.define('FT_SHARED_LINE_CALL_LOG')
+l.define('INT_DEF_CONFLICT')
+l.define('JINDO_DEBUG_SUPPORTED')
+l.define('NO_SOCKET_POLLING')
+l.define('SDP_CPR')
+l.define('SIP_FIXME')
+l.define('STUBBED_OUT')
+l.define('USE_TIMER_SELECT_BASED')
+l.define('_REENTRANT')
+l.define('_SYNERGYLITE_')
+l.define('__GSI_SERVICEABILITY')
+l.define('__HL_API__')
+l.define('__LIBXML2__')
+l.define('__ROUND_TABLE__')
+l.define('__FT_RTCP_FEEDBACK__')
+l.define('_CONF_ROSTER_')
+#l.define('ECC_SRTP_CRYPTO_HMACSHA1_80_UNENC_SRTCP')
+l.define('FT_SRTP_CRYPTO_HMACSHA1_80_UNENC_SRTCP')
+l.define('FIPS_SIG_BYPASS_CPR')
+l.define('FT_NO_ALERT_NAME_IN_PLACED_CALLS_HISTORY')
+l.define('JAPAN_RING_LOCALE')
+l.define('NON_ANDROID')
+l.define('UPDATE_AUDIO_CODEC_ALLOWED')
+l.define('_PINGPONG_KEEPALIVE')
+l.define('FEATURE_HFU')
+l.define('FT_DIAL_RULES')
+l.define('G729B_ENABLED')
+l.define('__FT_URI_DIALING__')
+l.define('_bigeasy_')
+if l.get_build_env('platform') == 'sda845':
+    l.define('SIPCC_OVERRIDE_THREAD_STACK_SIZE=131072')
+
+
+sip = l.module('sipcc-sip')
+sip.source(
+    sipccsrc + '/core/sipstack/ccsip_callinfo.c',
+    sipccsrc + '/core/sipstack/ccsip_cc.c',
+    sipccsrc + '/core/sipstack/ccsip_common_util.c',
+    sipccsrc + '/core/sipstack/ccsip_core.c',
+    sipccsrc + '/core/sipstack/ccsip_debug.c',
+    sipccsrc + '/core/sipstack/ccsip_dialogmgr.c',
+    sipccsrc + '/core/sipstack/ccsip_info.c',
+    sipccsrc + '/core/sipstack/ccsip_messaging.c',
+    sipccsrc + '/core/sipstack/ccsip_platform.c',
+    sipccsrc + '/core/sipstack/ccsip_platform_tcp.c',
+    sipccsrc + '/core/sipstack/ccsip_platform_timers.c',
+    sipccsrc + '/core/sipstack/ccsip_platform_tls.c',
+    sipccsrc + '/core/sipstack/ccsip_platform_udp.c',
+    sipccsrc + '/core/sipstack/ccsip_pmh.c',
+    sipccsrc + '/core/sipstack/ccsip_publish.c',
+    sipccsrc + '/core/sipstack/ccsip_rcc.c',
+    sipccsrc + '/core/sipstack/ccsip_register.c',
+    sipccsrc + '/core/sipstack/ccsip_reldev.c',
+    sipccsrc + '/core/sipstack/ccsip_sdp.c',
+    sipccsrc + '/core/sipstack/ccsip_spi_utils.c',
+    sipccsrc + '/core/sipstack/ccsip_subsmanager.c',
+    sipccsrc + '/core/sipstack/ccsip_task.c',
+    sipccsrc + '/core/sipstack/httpish.c',
+    sipccsrc + '/core/sipstack/pmhutils.c',
+    sipccsrc + '/core/sipstack/sip_common_edge.c',
+    sipccsrc + '/core/sipstack/sip_common_regmgr.c',
+    sipccsrc + '/core/sipstack/sip_common_transport.c',
+    sipccsrc + '/core/sipstack/sip_csps_transport.c',
+    sipccsrc + '/core/sipstack/sip_dns_mgr.c',
+    sipccsrc + '/core/sipstack/sip_emcc_regmgr.c',
+    sipccsrc + '/core/sipstack/sip_interface_regmgr.c',
+    sipccsrc + '/core/sipstack/sip_platform_task.c',
+)
+
+common = l.module('sipcc-common')
+common.source(
+    sipccsrc + '/core/common/debugger.c',
+    sipccsrc + '/core/common/edge_config.c',
+    sipccsrc + '/core/common/libxml_parser.c',
+    sipccsrc + '/core/common/logger.c',
+    sipccsrc + '/core/common/misc.c',
+    sipccsrc + '/core/common/plat.c',
+    sipccsrc + '/core/common/resource_manager.c',
+    sipccsrc + '/core/common/sip_socket_api.c',
+    sipccsrc + '/core/common/subscription_handler.c',
+    sipccsrc + '/core/common/text_strings.c',
+    sipccsrc + '/core/common/ui.c',
+    sipccsrc + '/core/common/vcm_util.c',
+    sipccsrc + '/core/common/xml_util.c',
+)
+
+gsm = l.module('sipcc-gsm')
+gsm.source(
+    sipccsrc + '/core/gsm/ccapi.c',
+    sipccsrc + '/core/gsm/ccapi_strings.c',
+    sipccsrc + '/core/gsm/dcsm.c',
+    sipccsrc + '/core/gsm/fim.c',
+    sipccsrc + '/core/gsm/fsmb2bcnf.c',
+    sipccsrc + '/core/gsm/fsm.c',
+    sipccsrc + '/core/gsm/fsmcac.c',
+    sipccsrc + '/core/gsm/fsmcnf.c',
+    sipccsrc + '/core/gsm/fsmdef.c',
+    sipccsrc + '/core/gsm/fsmicom.c',
+    sipccsrc + '/core/gsm/fsmrelay.c',
+    sipccsrc + '/core/gsm/fsmshr.c',
+    sipccsrc + '/core/gsm/fsmxfr.c',
+    sipccsrc + '/core/gsm/gsm.c',
+    sipccsrc + '/core/gsm/gsm_sdp.c',
+    sipccsrc + '/core/gsm/gsm_sdp_crypto.c',
+    sipccsrc + '/core/gsm/lsm.c',
+    sipccsrc + '/core/gsm/media_cap_tbl.c',
+    sipccsrc + '/core/gsm/sm_api.c',
+    sipccsrc + '/core/gsm/sm.c',
+    sipccsrc + '/core/gsm/subapi.c',
+)
+
+sdp = l.module('sipcc-sdp')
+sdp.source(
+    sipccsrc + '/core/sdp/ccsdp.c',
+    sipccsrc + '/core/sdp/sdp_access.c',
+    sipccsrc + '/core/sdp/sdp_attr_access.c',
+    sipccsrc + '/core/sdp/sdp_attr.c',
+    sipccsrc + '/core/sdp/sdp_base64.c',
+    sipccsrc + '/core/sdp/sdp_config.c',
+    sipccsrc + '/core/sdp/sdp_main.c',
+    sipccsrc + '/core/sdp/sdp_services_unix.c',
+    sipccsrc + '/core/sdp/sdp_token.c',
+    sipccsrc + '/core/sdp/sdp_utils.c',
+)
+
+submgr = l.module('sipcc-submgr')
+submgr.source(
+    sipccsrc + '/core/submgr/configapp.c',
+    sipccsrc + '/core/submgr/dialplan.c',
+    sipccsrc + '/core/submgr/dialplanint.c',
+    sipccsrc + '/core/submgr/dnd_api.c',
+    sipccsrc + '/core/submgr/kpml_common_util.c',
+    sipccsrc + '/core/submgr/kpmlmap.c',
+    sipccsrc + '/core/submgr/pres_sub_not_handler.c',
+    sipccsrc + '/core/submgr/publish_int.c',
+    sipccsrc + '/core/submgr/rccapp.c',
+    sipccsrc + '/core/submgr/submgr_task.c',
+)
+
+api = l.module('sipcc-api')
+api.source(
+    sipccsrc + '/core/api/ccapi_blf.c',
+    sipccsrc + '/core/api/ccapi_call.c',
+    sipccsrc + '/core/api/ccapi_call_info.c',
+    sipccsrc + '/core/api/ccapi_calllog.c',
+    sipccsrc + '/core/api/ccapi_config.c',
+    sipccsrc + '/core/api/ccapi_conf_roster.c',
+    sipccsrc + '/core/api/ccapi_device.c',
+    sipccsrc + '/core/api/ccapi_device_info.c',
+    sipccsrc + '/core/api/ccapi_feature_info.c',
+    sipccsrc + '/core/api/ccapi_line.c',
+    sipccsrc + '/core/api/ccapi_line_info.c',
+    sipccsrc + '/core/api/ccapi_service.c',
+    sipccsrc + '/core/api/cc_blf.c',
+    sipccsrc + '/core/api/cc_call_feature.c',
+    sipccsrc + '/core/api/cc_config.c',
+    sipccsrc + '/core/api/cc_device_feature.c',
+    sipccsrc + '/core/api/cc_info.c',
+    sipccsrc + '/core/api/cc_service.c',
+    sipccsrc + '/core/api/cc_xsi_feature.c',
+    sipccsrc + '/core/api/init.c',
+    sipccsrc + '/core/api/thread_mgr.c',
+)
+
+ccapp = l.module('sipcc-ccapp')
+ccapp.source(
+    sipccsrc + '/core/ccapp/app_dial_rules.c',
+    sipccsrc + '/core/ccapp/call_logger.c',
+    sipccsrc + '/core/ccapp/capability_set.c',
+    sipccsrc + '/core/ccapp/cast_callbacks.c',
+    sipccsrc + '/core/ccapp/cc_alarm.c',
+    sipccsrc + '/core/ccapp/ccapi_snapshot.c',
+    sipccsrc + '/core/ccapp/ccapp_task.c',
+    sipccsrc + '/core/ccapp/cc_device_manager.c',
+    sipccsrc + '/core/ccapp/ccprovider.c',
+    sipccsrc + '/core/ccapp/conf_roster.c',
+    sipccsrc + '/core/ccapp/sessionHash.c',
+    sipccsrc + '/core/ccapp/snapshotRefHash.c',
+    sipccsrc + '/core/ccapp/config/cfgfile_utils.c',
+    sipccsrc + '/core/ccapp/config/cfgtable_utils.c',
+    sipccsrc + '/core/ccapp/config/config_parser.c',
+    sipccsrc + '/core/ccapp/config/config_table.c',
+)
+
+utils = l.module('sipcc-utils')
+utils.source(
+    sipccsrc + '/core/utils/digcalc.c',
+    sipccsrc + '/core/utils/hashTable.c',
+    sipccsrc + '/core/utils/md5.c',
+    sipccsrc + '/core/utils/singly_link_list.c',
+    sipccsrc + '/core/utils/sll_lite.c',
+    sipccsrc + '/core/utils/string_lib.c',
+    sipccsrc + '/core/utils/util_ios_queue.c',
+    sipccsrc + '/core/utils/util_parse.c',
+    sipccsrc + '/core/utils/util_string.c',
+)
+
+pcommon = l.module('sipcc-pcommon')
+pcommon.source(
+    sipccsrc + '/plat/common/ci.c',
+    sipccsrc + '/plat/common/dns_utils.c',
+    sipccsrc + '/plat/common/ccmetrics_stub.c',
+)
+
+pnovum = l.module('sipcc-pnovum')
+
+pnovum.depend_on(
+    'networkstatusreporter',
+    'executor',
+    'boostsystem',
+    'boost',
+    'timemanagement-client-cpp',
+    'upgrademanager-client-cpp',
+    'cucmconfigmanager',
+    'cucmsecurity',
+)
+
+pnovum.source(
+    sipccsrc + '/plat/linuxtest/cast.c',
+    sipccsrc + '/plat/linuxtest/ccAlarm.c',
+    sipccsrc + '/plat/novum/stub.c',
+    sipccsrc + '/plat/novum/config_api.c',
+    'plat/platform_api.cpp',
+    'plat/ccapi_call_listener.cpp',
+    'plat/ccapi_device_listener.cpp',
+    'plat/ccapi_line_listener.c',
+    'plat/ccapi_blf_listener.c',
+    'plat/plat_sec_api.cpp',
+)
+
+cpr = l.module('sipcc-cpr-linux')
+cpr.source(
+    cprsrc + '/linux/cpr_linux_assert.c',
+    cprsrc + '/linux/cpr_linux_chunk.c',
+    cprsrc + '/linux/cpr_linux_dlmalloc.c',
+    cprsrc + '/linux/cpr_linux_errno.c',
+    cprsrc + '/linux/cpr_linux_init.c',
+    cprsrc + '/linux/cpr_linux_ipc.c',
+    cprsrc + '/linux/cpr_linux_locks.c',
+    cprsrc + '/linux/cpr_linux_memory.c',
+    cprsrc + '/linux/cpr_linux_rand.c',
+    cprsrc + '/linux/cpr_linux_socket.c',
+    cprsrc + '/linux/cpr_linux_stdio.c',
+    cprsrc + '/linux/cpr_linux_stdlib.c',
+    cprsrc + '/linux/cpr_linux_string.c',
+    cprsrc + '/linux/cpr_linux_threads.c',
+    cprsrc + '/linux/cpr_linux_timers_using_select.c',
+)
+
+sipccmain = l.module('sipcc-main')
+sipccmain.depend_on(
+    'executor',
+    'networkstatusreporter',
+    'cucmconfigmanager-client-cpp',
+    'cucmconfigmanager',
+    'boostsystem',
+    'boost'
+)
+sipccmain.source(
+    'src/controllerimpl.cpp',
+    'src/factoryimpl.cpp',
+    'src/floorcontroller.cpp',
+)

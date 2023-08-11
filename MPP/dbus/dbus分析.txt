@@ -1,0 +1,187 @@
+参考:
+https://thebigdoc.readthedocs.io/en/latest/dbus/dbus.html 以及 QT文档
+
+DBUS_ADAPTORS += $$(ROOTDIR)/qtapp/qt5/idl/com.cisco.GuiAppService.xml
+dbus适配器, 即指代busname, 其实就是bus dameon的一个引用
+
+
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node name="/com/cisco/GuiAppService">					<===node是应用程序关注的一个对象,dbus接收到消息便发往此对象, GuiAppService就是其他进程和qmlapp进行IPC的对象
+  <interface name="com.cisco.GuiAppService">		<===每个对象支持一个/多个接口，接口是一组方法和信号，接口定义一个对象实体的类型
+  
+    <signal name="invokeListItem">							<===adaptor端(gui)使用, adaptor端想调用proxy端的函数，需要将这个目的函数在XML文件声明为signal类型
+      <arg name="pageId" type="s"/>
+      <arg name="index" type="i"/>
+      <arg name="keyType" type="i"/>
+      <arg name="widgetType" type="i"/>
+    </signal>
+    
+    <method name="deletePageDataListItems"> <===proxy端得进程中创建了一个XXproxy的实例，通过该实例去调用adaptor端对应实例的相应函数，类似于:XXproxy.getversion()
+      <arg name="pageID" type="s" direction="in"/>
+      <arg name="jsonDataSet" type="s" direction="in"/>
+    </method>
+
+
+
+deletePageDataListItems被说明Mphone调用了,
+说明
+=====》Mphone 是Proxy端, 代表远程对象(remote object), client端
+=====》qmlapp 是adaptor端, 代表本地对象, server端(谁控制xml谁就是控制端)
+
+
+
+---------------
+qml---》mphone
+MPhone(proxy端)需要实现proxy的signal handler, 供给qmlapp(adaptor端)来使用:
+virtual void invokeSoftKey(const std::string& pageId, const int32_t& index, const int32_t& keyType, const std::string& callbackToken) = 0;
+qmlapp:
+void TouchEventIO::notifyListItemClicked(const QString &pageId, const int &index, const int &keyType, const int &widgetType)
+	QDBusConnection ref = QDBusConnection::systemBus();	//ref就是dbus
+	template <typename T> void TouchEventIO::postEvent(const QString &pageId, const QDBusMessage &msg, T *dbus)
+		bool QDBusConnection::send(const QDBusMessage &message) const
+		
+mphone:
+void MphoneGuiAppClient::invokeSoftKey(const std::string& pageId, const int32_t& index, const int32_t& keyType, const std::string& callbackToken)
+	void CQtClient_invokeSoftKey(char *pageId, int index, int keyType, char *callbackToken)
+		static void postTouchEvent(void *param, void *lparam)
+			int PW_postEvent(PWindow * pWindow, SEvent * pEvent)
+		
+		
+---------------
+mphone---》qml
+class GuiAppManager : public QObject
+{
+    Q_OBJECT
+public:
+		Q_INVOKABLE void deletePageDataListItems(const QString &pageID, const QString &jsonDataSet);
+}
+为啥这样就能用? 因为
+http://sites.cuteqt.com/cuteqt/Home/qtblog/shi-yongqdbusxml2cpp-gong-ju-jian-hua-ni-deqtdbus-ying-yong-she-ji
+
+==========
+dbus      3144     1  0 Jan28 ?        00:35:29 /bin/dbus-daemon --config-file=/etc/dbus-1/system-default.conf --print-pid --print-address
+root      3163     1  0 Jan28 ?        00:00:00 //bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+root      3170     1  0 Jan28 ?        00:00:20 /usr/sbin/dbus_manager
+root      8120     1  0 Jan28 ?        01:08:01 /usr/sbin/guiapp
+root      8144     1  0 Jan28 ?        00:55:25 /usr/mbin/mphone Application_BootupLogo
+
+
+# ps -T -p 8120
+  PID  SPID TTY          TIME CMD
+ 8120  8120 ?        00:47:26 guiapp
+ 8120  8210 ?        00:00:16 mali-mem-purge
+ 8120  8211 ?        00:00:00 mali-utility-wo
+ 8120  8212 ?        00:00:00 mali-utility-wo
+ 8120  8213 ?        00:00:00 mali-utility-wo
+ 8120  8214 ?        00:00:00 mali-utility-wo
+ 8120  8215 ?        00:00:12 mali-cmar-backe
+ 8120  8216 ?        00:00:44 mali-hist-dump
+ 8120  8217 ?        00:00:00 QEvdevTouchScre
+ 8120  8218 ?        00:00:00 QQmlThread
+ 8120  8222 ?        00:17:30 QDBusConnection	《-----
+ 8120  8225 ?        00:01:49 QSGRenderThread
+ 8120  8320 ?        00:00:00 FileInfoThread
+ 
+# ps -T -p 8144
+  PID  SPID TTY          TIME CMD
+ 8144  8144 ?        00:42:15 mphone
+ 8144  8174 ?        00:00:00 mphone
+ 8144  8228 ?        00:10:57 MphoneDbusDispa	《-----
+ 8144  8229 ?        00:00:00 CCiscoProc_proc
+ 8144  8290 ?        00:00:00 mphone
+ 8144  8294 ?        00:00:00 mphone
+ 8144  8295 ?        00:01:06 CBGPic_download
+ 8144  8296 ?        00:01:06 CBGLogo_downloa
+ 
+
+=======================
+# pstree
+init-+
+     |-2*[dbus-daemon]							《-----dbus-daemon: D-Bus的后台进程，作为D-Bus的消息中转枢纽，分成system和session。一般脚本使用dbus-launch来启动dbus-daemon
+     |-dbus_manager									《-----Start dbus_manager to monitor Dbus daemon
+     |-guiapp-+-{FileInfoThread}
+     |        |-{QDBusConnectio}		《-----QDBusConnection. D-Bus connections are created using the connectToBus(), which opens a connection to the server daemon and does the initial handshaking, associating that connection with a name. 
+     |        |-{QEvdevTouchScr}
+     |        |-{QQmlThread}
+     |        |-{QSGRenderThrea}
+     |        |-{mali-cmar-back}
+     |        |-{mali-hist-dump}
+     |        |-{mali-mem-purge}
+     |        `-4*[{mali-utility-w}]
+
+     |-mphone-+-{CBGLogo_downlo}
+     |        |-{CBGPic_downloa}
+     |        |-{CCiscoProc_pro}
+     |        |-{MphoneDbusDisp}		《-----dbus_threads_init(), Initializes threads. 
+     |        `-3*[{mphone}]
+     
+     |-spr_voip-+-{AEventThread}
+     |          |-{AUDIO_WB}
+			...........
+     |          |-{OALSIGNAL}
+     |          |-{VoiceDbusDispa}	《-----mphone起线程run("MphoneDbusDispatcher"), 并调用BusDispatcher::enter()进入loop
+     |          |-8*[{WorkerHttpServ}]
+     |          `-{ms_usbevtThrea}
+
+
+    
+
+======》qt起线程分析:
+==by qdbusxml2cpp==
+class GuiAppServiceAdaptor: public QDBusAbstractAdaptor
+{
+    Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "com.cisco.GuiAppService")
+    Q_CLASSINFO("D-Bus Introspection", ""
+"  <interface name=\"com.cisco.GuiAppService\">\n"
+"    <signal name=\"invokeSoftKey\">\n"
+"      <arg type=\"s\" name=\"pageId\"/>\n"
+"      <arg type=\"i\" name=\"index\"/>\n"
+"      <arg type=\"i\" name=\"keyType\"/>\n"
+"      <arg type=\"s\" name=\"callbackToken\"/>\n"
+"    <method name=\"checkFont\">\n"
+"      <arg direction=\"out\" type=\"b\"/>\n"
+"      <arg direction=\"in\" type=\"s\" name=\"fontFile\"/>\n"
+"    </method>\n"
+
+
+new GuiAppServiceAdaptor(pGuiAppMgr); // create an adaptor instance
+==qtbase==
+    QDBusAdaptorConnector *connector = qDBusCreateAdaptorConnector(obj);
+    	QDBusAdaptorConnector *connector = qDBusFindAdaptorConnector(obj);
+    	
+    QMetaObject::invokeMethod(connector, "polish", Qt::QueuedConnection);
+
+    
+QDBusConnection::systemBus().registerObject("/com/cisco/GuiAppService", pGuiAppMgr)
+==qtbase==
+	QDBusConnection(_q_manager()->busConnection(SystemBus));
+		return defaultBuses[type] = connectToBus(type, name, suspendedDelivery);
+			o->moveToThread(qApp->thread());    // qApp was checked in the caller						---》应该是这里起线程
+
+
+
+======》mphone起线程分析:
+read_pipe->_handler(read_pipe->_data, buffer, nbytes);
+
+
+
+
+
+
+
+========================================> dbus源码分析:
+
+
+  n_ready = _dbus_pollable_set_poll (loop->pollable_set, ready_fds, _DBUS_N_ELEMENTS (ready_fds), timeout);
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+
+编译librpcutil, librpcutil1, 需要依赖libsecurity-secure-api
+libsecurity-secure-api还要依赖libcisco.so, libdataEncryption.so等等
+
+librpcutil:
+是so, 工具链是arm-gcc8-cortex-a53-solib-cxx-strip
+不需要显示指定libcisco.so, libdataEncryption.so等等
+
+librpcutil1:
+是elf/.out, 工具链是arm-gcc8-cortex-a53-final-linker-cxx-strip
+要显示指定libcisco.so, libdataEncryption.so等所有依赖的二级so, 否则报warnging+error:
+...
+/home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/../lib/gcc/arm-cisco-linux-gnueabihf/8.3.0/../../../../arm-cisco-linux-gnueabihf/bin/ld: warning: libcisco.so, needed by _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.so, not found (try using -rpath or -rpath-link)
+...
+/home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/../lib/gcc/arm-cisco-linux-gnueabihf/8.3.0/../../../../arm-cisco-linux-gnueabihf/bin/ld: _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.so: undefined reference to `getPrintVerbose'
+...
+
+
+
+下面是取自ninja文件:
+=================================================
+rule arm-gcc8-cortex-a53-final-linker-cxx-strip
+  description = ${buildtext}LD $out
+  command = /home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/arm-cisco-linux-gnueabihf-g++ @$out.rsp $switches -o $out && $
+        /home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/arm-cisco-linux-gnueabihf-strip -g $out
+  rspfile = $out.rsp
+  rspfile_content = $sources
+  
+build _build/bumblebee/rootfs/librpcutil1/infra/apps/quark/cmdproxy/librpcutil/librpcutil1: arm-gcc8-cortex-a53-final-linker-cxx-strip _build/bumblebee/rootfs/librpcutil1/infra/apps/quark/cmdproxy/librpcutil/librpcutil.c.o _build/bumblebee/rootfs/librpcutil1/infra/apps/quark/cmdproxy/librpcutil/xthread.c.o _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.so _build/bumblebee/rootfs/libhandyiron-seccommon/infra/lib/security_handyiron/libhandyiron-seccommon.so |  || 
+  buildtext = [/bumblebee/rootfs/librpcutil1] 
+  
+  sources = _build/bumblebee/rootfs/librpcutil1/infra/apps/quark/cmdproxy/librpcutil/librpcutil.c.o _build/bumblebee/rootfs/librpcutil1/infra/apps/quark/cmdproxy/librpcutil/xthread.c.o -L_build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security -l:libsecurity-secure-api.so -Wl,-rpath-link,/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -L_build/bumblebee/rootfs/libhandyiron-seccommon/infra/lib/security_handyiron -l:libhandyiron-seccommon.so -L/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -lssl -lcrypto -ldl
+  
+  switches = -fstack-protector-all -Wl,-z,noexecstack -Wl,-z,defs -rdynamic -pie -Wl,-z,relro,-z,now -lrt -lstdc++fs -pthread -Xlinker -
+  
+  Map=_build/bumblebee/rootfs/librpcutil1/infra/apps/quark/cmdproxy/librpcutil/librpcutil1.map
+  
+=================================================
+rule arm-gcc8-cortex-a53-solib-cxx-strip
+  description = ${buildtext}SOLIB $out
+  command = /home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/arm-cisco-linux-gnueabihf-g++ -shared $switches -o $out $prefix $sources $postfix $oslibs $extlibs && $
+        /home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/arm-cisco-linux-gnueabihf-strip -g $out
+        
+build _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/librpcutil.so: arm-gcc8-cortex-a53-solib-cxx-strip _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/librpcutil.c.o _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/xthread.c.o _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.so _build/bumblebee/rootfs/libhandyiron-seccommon/infra/lib/security_handyiron/libhandyiron-seccommon.so |  || 
+  buildtext = [/bumblebee/rootfs/librpcutil] 
+  switches = -pthread -fstack-protector-all -Wl,-z,noexecstack -Wl,-z,defs -fPIC -Wl,-soname,librpcutil.so
+  prefix = -Wl,-whole-archive
+  postfix = -Wl,-no-whole-archive
+  sources = 
+  _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/librpcutil.c.o  _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/xthread.c.o -L_build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security -l:libsecurity-secure-api.so -Wl,-rpath-link,/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -L_build/bumblebee/rootfs/libhandyiron-seccommon/infra/lib/security_handyiron -l:libhandyiron-seccommon.so
+  
+  oslibs = -L/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -Wl,-rpath-link,/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -lssl -lcrypto -ldl
+  extlibs = 
+  
+  
+  
+  
+  
+=====》librpcutil.so去掉了-rpath选项也可以编译成功:
+build _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/librpcutil.so: arm-gcc8-cortex-a53-solib-cxx-strip _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/librpcutil.c.o _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/platform_linux.c.o _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/rpchelper.c.o _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/rpcmsg.c.o _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/xdebug.c.o _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/xlist.c.o _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/xthread.c.o _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.so _build/bumblebee/rootfs/libhandyiron-seccommon/infra/lib/security_handyiron/libhandyiron-seccommon.so _build/bumblebee/rootfs/libplatform/infra/lib/libplatform.so _build/bumblebee/rootfs/libsecurity-platform-abstraction/infra/lib/security/libsecurity-platform-abstraction.so |  || 
+  buildtext = [/bumblebee/rootfs/librpcutil] 
+  switches = -pthread -fstack-protector-all -Wl,-z,noexecstack -Wl,-z,defs -fPIC -Wl,-soname,librpcutil.so
+  prefix = -Wl,-whole-archive
+  postfix = -Wl,-no-whole-archive
+  sources = _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/librpcutil.c.o _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/platform_linux.c.o _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/rpchelper.c.o _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/rpcmsg.c.o _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/xdebug.c.o _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/xlist.c.o _build/bumblebee/rootfs/librpcutil/infra/apps/quark/cmdproxy/librpcutil/xthread.c.o -L_build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security -l:libsecurity-secure-api.so  -L_build/bumblebee/rootfs/libhandyiron-seccommon/infra/lib/security_handyiron -l:libhandyiron-seccommon.so -L_build/bumblebee/rootfs/libplatform/infra/lib -l:libplatform.so -L_build/bumblebee/rootfs/libsecurity-platform-abstraction/infra/lib/security -l:libsecurity-platform-abstraction.so
+  oslibs = -L/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib  -lssl -lcrypto -ldl
+  extlibs = 
+  
+  
+=====》说明so现在不依赖-rpath, 是不是因为对source的处理? $prefix $sources $postfix
+

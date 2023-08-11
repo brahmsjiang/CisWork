@@ -1,0 +1,128 @@
+
+
+
+
+
+
+
+    function selectDelegate(type) {
+           switch(type) {
+               case ListItemType.TextItem://0
+               case ListItemType.MenuItem://1
+               case ListItemType.ValueMenuItem://9
+               case ListItemType.RadioButtonItem:
+                   return nLabelValueIconDelegate  
+               case ListItemType.InputTextItem://2
+                   return nInputTextField;
+               case ListItemType.IconMenuItem://15
+                   return nIconLabelIconDelegate;
+               case ListItemType.IconToggleItem://18
+                   return nLabelSwitchDelegate;
+               case ListItemType.NoteItem://20
+                   return nNoteDelegate;
+               case ListItemType.SubSectionItem: //30
+                   return nIconLabelDelegate
+           }
+       }
+       
+       就是
+       nLabelValueIconDelegate
+       	NLabelValueIcon《===修改前是这个哦~~~~
+       	
+       nIconLabelIconDelegate
+       	NIconLabelIcon 《===感觉只能用这个
+       	
+       nIconLabelDelegate
+       	NIconLabel《===
+       
+                   
+                   
+-----------------------------------------
+void GuiAppManager::setPageDataListModel(const QString &pageID, const QString &jsonDataSet)
+{
+    cDebug(app()) << pageID << "json:" << jsonDataSet;
+    NPageManager::getInstance()->setPageDataListModel(pageID, jsonDataSet);
+
+    
+c语言里面: CBTable_defineSpec ???
+-----------------------------------------
+4181 DEB Nov 23 10:50:46.946790 (25618-25618) guiapp-initPage(): Settings initPage json: 
+4189 DEB Nov 23 10:50:47.028519 (25618-25618) guiapp-[truncated] setPageDataListModel(): Settings json:
+
+{"id":"0","index":0,"type":9,"labelName":"About this device","value":"Update available","enabled":true,"editable":false,"nextPage":true},
+{"id":"1","index":1,"type":1,"labelName":"Issues and diagnostics","value":"","enabled":true,"editable":false,"nextPage":true},
+{"id":"2","index":2,"type":30,"labelName":"language and region","value":"","enabled":true,"editable":false,"nextPage":false},
+{"id":"3","index":3,"type":1,"labelName":"Time settings","value":"","enabled":true,"editable":false,"nextPage":true},
+{"id":"4","index":4,"type":9,"labelName":"Language","value":"English-US","enabled":true,"editable":false,"nextPage":true},
+{"id":"5","index":5,"type":30,"labelName":"Audio","value":"","enabled":true,"editable":false,"nextPage":false},
+{"id":"6","index":6,"type":1,"labelName":"Bluetooth","value":"","enabled":true,"editable":false,"nextPage":true},
+{"id":"7","index":7,"type":9,"labelName":"Ringtone and volume","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},
+{"id":"8","index"
+
+
+-----------------------------------------
+wifi
+{"type":15,"labelName":"gulian_test","index":65535,"enabled":true,"editable":false,"value":"check_green","iconValue":"secure","desc":"0","nextPage":false}
+
+-----------------------------------------
+解析string.xml
+<phrase i="L_ABOUT_THIS_DEVICE" t="About this device"/>
+
+
+        CStringRepo *repo = (CStringRepo *) CStringRepo_new();
+        repo->serializeString(repo, string_path);
+
+
+
+
+
+
+
+
+
+//pagemodel.qml
+Rectangle {
+    id: page_model
+    objectName: "page_model"
+
+    property NPage sourcePage : npageEmpty										<==sourcePage?????
+    property variant pageDataList: sourcePage.dataListModel		<==pageDataList
+    
+    
+//AbstractPage.qml
+PageModel {
+    id: abstractPage
+    property Component dataComponent
+    
+
+//AbstractSettingPage.qml
+AbstractPage {
+    id: applications_menu
+    dataComponent: NSettingsList {
+        color           : applications_menu.color
+        listModel       : pageDataList												<==pageDataList
+        listDelegate    : NAbstractSettingsDelegate {
+        	// displayIndex: sourcePage.showIndex
+        }
+        
+        
+        
+        
+ListItem *ListItemFactory::createListItem(int const &type)
+	ListItem *ListItemFactory::createListItemObject(const int &type)
+	{
+	    switch (type) {
+	    case ListItemType::IconMenuItem:
+	    case ListItemType::IconToggleItem:
+	        return new IconListItemModel();
+	        
+	        
+	        
+	        
+	        
+        type = vMap[PageConstants::TAG_TYPE].toInt();
+        int type = qData[PageConstants::TAG_TYPE].toInt();
+        int type = qData[PageConstants::TAG_TYPE].toInt();
+
+
+==================

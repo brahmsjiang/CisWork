@@ -1,0 +1,10 @@
+
+
+
+
+synbase/sipcc/include/cc_constants.h
+typedef const char *cc_string_t;
+
+
+synbase/cpr/include/cpr_types.h
+typedef const char *string_t;

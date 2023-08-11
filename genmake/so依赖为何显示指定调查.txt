@@ -1,0 +1,173 @@
+
+
+
+solid:
+
+rule arm-gcc8-cortex-a53-solib-cxx-debug
+  description = ${buildtext}SOLIB $out
+  command = /home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/arm-cisco-linux-gnueabihf-g++ -shared $switches -o $out $prefix $sources $postfix $oslibs $extlibs && $
+        rm -f $out.debug && $
+        /home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/arm-cisco-linux-gnueabihf-objcopy --only-keep-debug $out $out.debug && $
+        /home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/arm-cisco-linux-gnueabihf-strip -g $out && $
+        (cd $target_dirname && /home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/arm-cisco-linux-gnueabihf-objcopy --add-gnu-debuglink=$target_basename.debug $target_basename)				//4550
+
+-------
+final-linker:
+
+rule arm-gcc8-cortex-a53-final-linker-cxx-debug
+  description = ${buildtext}LD $out
+  command = /home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/arm-cisco-linux-gnueabihf-g++ @$out.rsp $switches -o $out && $
+        rm -f $out.debug && $
+        /home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/arm-cisco-linux-gnueabihf-objcopy --only-keep-debug $out $out.debug && $
+        /home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/arm-cisco-linux-gnueabihf-strip -g $out && $
+        (cd $target_dirname && /home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/arm-cisco-linux-gnueabihf-objcopy --add-gnu-debuglink=$target_basename.debug $target_basename)
+  rspfile = $out.rsp
+  rspfile_content = $sources				//7379
+  
+
+编译so, lib依赖不全(OK):
+
+build _build/bumblebee/rootfs/libsecurity-misc/infra/lib/security/libsecurity-misc.so: arm-gcc8-cortex-a53-solib-cxx-debug _build/bumblebee/rootfs/libsecurity-misc/infra/lib/security/libsecurity-misc.a _build/bumblebee/rootfs/libsecurity-platform-abstraction/infra/lib/security/libsecurity-platform-abstraction.so |  || 
+  buildtext = [/bumblebee/rootfs/libsecurity-misc] 
+  switches = -pthread -fstack-protector-all -Wl,-z,noexecstack -Wl,-z,defs -fPIC -Wl,-soname,libsecmisc.so
+  prefix = -Wl,-whole-archive
+  postfix = -Wl,-no-whole-archive
+  sources = _build/bumblebee/rootfs/libsecurity-misc/infra/lib/security/libsecurity-misc.a -L_build/bumblebee/rootfs/libsecurity-platform-abstraction/infra/lib/security -l:libsecurity-platform-abstraction.so -Wl,-rpath-link,/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib
+  oslibs = -L/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -Wl,-rpath-link,/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -lssl -lcrypto -ldl
+  extlibs = 
+  target_dirname = _build/bumblebee/rootfs/libsecurity-misc/infra/lib/security
+  target_basename = libsecurity-misc.so				//13051
+
+build _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.so: arm-gcc8-cortex-a53-solib-cxx-debug _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.a _build/bumblebee/rootfs/libcisco/infra/lib/cisco/libcisco.so _build/bumblebee/rootfs/libplatform/infra/lib/libplatform.so _build/bumblebee/rootfs/libsecurity-misc/infra/lib/security/libsecurity-misc.so _build/bumblebee/rootfs/libhandyiron-fileauth/infra/lib/security_handyiron/libhandyiron-fileauth.so _build/bumblebee/rootfs/libsecurity-platform-abstraction/infra/lib/security/libsecurity-platform-abstraction.so _build/bumblebee/rootfs/libsecurity-data-encryption/infra/lib/security/libsecurity-data-encryption.so _build/bumblebee/rootfs/libtamsstorage/infra/lib/tamsstorage/libtamsstorage.so |  || 
+  buildtext = [/bumblebee/rootfs/libsecurity-secure-api] 
+  switches = -pthread -fstack-protector-all -Wl,-z,noexecstack -Wl,-z,defs -fPIC -Wl,-soname,libsecureapi.so
+  prefix = -Wl,-whole-archive
+  postfix = -Wl,-no-whole-archive
+  sources = _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.a
+  -L_build/bumblebee/rootfs/libcisco/infra/lib/cisco -l:libcisco.so
+  -Wl,-rpath-link,/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib
+  -L_build/bumblebee/rootfs/libplatform/infra/lib -l:libplatform.so
+  -L_build/bumblebee/rootfs/libsecurity-misc/infra/lib/security -l:libsecurity-misc.so		<---------- -l:libsecurity-misc.so
+  -L_build/bumblebee/rootfs/libhandyiron-fileauth/infra/lib/security_handyiron -l:libhandyiron-fileauth.so -L_build/bumblebee/rootfs/libsecurity-platform-abstraction/infra/lib/security -l:libsecurity-platform-abstraction.so -L_build/bumblebee/rootfs/libsecurity-data-encryption/infra/lib/security -l:libsecurity-data-encryption.so -L_build/bumblebee/rootfs/libtamsstorage/infra/lib/tamsstorage -l:libtamsstorage.so
+  oslibs = -L/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -Wl,-rpath-link,/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -lssl -lcrypto -ldl -lctame -ltamc -ltamc_common -ltamc_linux_platform -ltam_common -ltamd_common -ltam_linux_common -ltamm -ltamm_common
+  extlibs = 
+  target_dirname = _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security
+  target_basename = libsecurity-secure-api.so				//13204
+
+build _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc.so: arm-gcc8-cortex-a53-solib-cxx-debug _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_api.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cfg.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cmd.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_tun.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_url.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cert.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cstp.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_dtls.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_main.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_login.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_mcapi.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_utils.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_command.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_connect.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_control.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_http_resp.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_ssl_utils.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnApiVpncServer.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_compression.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_proto_handler.c.o _build/bumblebee/rootfs/libvpnApi/infra/services/vpn/lib/vpn_api/libvpnApi.so _build/bumblebee/rootfs/libvpnPlatform/infra/services/vpn/lib/vpnPlatform/libvpnPlatform.so _build/bumblebee/rootfs/libcisco/infra/lib/cisco/libcisco.so _build/bumblebee/rootfs/libplatform/infra/lib/libplatform.so _build/bumblebee/rootfs/libcrashhandler/infra/lib/crashhandler/libcrashhandler.so
+_build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.so		<----------依赖libsecurity-secure-api.so
+_build/bumblebee/rootfs/libsecurity-platform-abstraction/infra/lib/security/libsecurity-platform-abstraction.so
+_build/bumblebee/rootfs/libhandyiron-seccommon/infra/lib/security_handyiron/libhandyiron-seccommon.so _build/bumblebee/rootfs/libhandyiron-fileauth/infra/lib/security_handyiron/libhandyiron-fileauth.so _build/bumblebee/rootfs/libsecurity-data-encryption/infra/lib/security/libsecurity-data-encryption.so _build/bumblebee/rootfs/libtamsstorage/infra/lib/tamsstorage/libtamsstorage.so _build/bumblebee/rootfs/libnetsd/infra/lib/netsd/libnetsd.so _build/bumblebee/rootfs/libwlanapi/infra/apps/wireless/wlan/libwlanapi/libwlanapi.so _build/bumblebee/rootfs/libsecstor/infra/lib/bumblebee/sec_stor/libsecstor.so _build/bumblebee/rootfs/libipmcutil/infra/apps/wireless/ipmc/util/libipmcutil.so _build/bumblebee/rootfs/libipmcclient/infra/apps/wireless/ipmc/ipmc/libipmcclient.so |  || 
+  buildtext = [/bumblebee/rootfs/vpnc] 
+  switches = -pthread -fstack-protector-all -Wl,-z,noexecstack -Wl,-z,defs -fPIC -Wl,-soname,libvpnc.so
+  prefix = -Wl,-whole-archive
+  postfix = -Wl,-no-whole-archive
+  sources = _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_api.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cfg.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cmd.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_tun.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_url.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cert.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cstp.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_dtls.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_main.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_login.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_mcapi.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_utils.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_command.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_connect.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_control.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_http_resp.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_ssl_utils.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnApiVpncServer.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_compression.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_proto_handler.c.o -L_build/bumblebee/rootfs/libvpnApi/infra/services/vpn/lib/vpn_api -l:libvpnApi.so -Wl,-rpath-link,/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -L_build/bumblebee/rootfs/libvpnPlatform/infra/services/vpn/lib/vpnPlatform -l:libvpnPlatform.so -L_build/bumblebee/rootfs/libcisco/infra/lib/cisco -l:libcisco.so -L_build/bumblebee/rootfs/libplatform/infra/lib -l:libplatform.so -L_build/bumblebee/rootfs/libcrashhandler/infra/lib/crashhandler -l:libcrashhandler.so
+  -L_build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security -l:libsecurity-secure-api.so		<---------- -l:libsecurity-secure-api.so
+  -L_build/bumblebee/rootfs/libsecurity-platform-abstraction/infra/lib/security -l:libsecurity-platform-abstraction.so -L_build/bumblebee/rootfs/libhandyiron-seccommon/infra/lib/security_handyiron -l:libhandyiron-seccommon.so -L_build/bumblebee/rootfs/libhandyiron-fileauth/infra/lib/security_handyiron -l:libhandyiron-fileauth.so -L_build/bumblebee/rootfs/libsecurity-data-encryption/infra/lib/security -l:libsecurity-data-encryption.so -L_build/bumblebee/rootfs/libtamsstorage/infra/lib/tamsstorage -l:libtamsstorage.so -L_build/bumblebee/rootfs/libnetsd/infra/lib/netsd -l:libnetsd.so -L_build/bumblebee/rootfs/libwlanapi/infra/apps/wireless/wlan/libwlanapi -l:libwlanapi.so -L_build/bumblebee/rootfs/libsecstor/infra/lib/bumblebee/sec_stor -l:libsecstor.so -L_build/bumblebee/rootfs/libipmcutil/infra/apps/wireless/ipmc/util -l:libipmcutil.so -L_build/bumblebee/rootfs/libipmcclient/infra/apps/wireless/ipmc/ipmc -l:libipmcclient.so
+  oslibs = -L/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -Wl,-rpath-link,/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -lssl -lcrypto -ldl
+  extlibs = 
+  target_dirname = _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc
+  target_basename = vpnc.so																			//29596
+
+
+
+----------------------------------------------------------  
+----------------------------------------------------------  
+编译prag, lib依赖不全(NG):
+  
+build _build/bumblebee/rootfs/libsecurity-misc/infra/lib/security/libsecurity-misc.so: arm-gcc8-cortex-a53-solib-cxx-debug _build/bumblebee/rootfs/libsecurity-misc/infra/lib/security/libsecurity-misc.a _build/bumblebee/rootfs/libsecurity-platform-abstraction/infra/lib/security/libsecurity-platform-abstraction.so |  || 
+  buildtext = [/bumblebee/rootfs/libsecurity-misc] 
+  switches = -pthread -fstack-protector-all -Wl,-z,noexecstack -Wl,-z,defs -fPIC -Wl,-soname,libsecmisc.so
+  prefix = -Wl,-whole-archive
+  postfix = -Wl,-no-whole-archive
+  sources = _build/bumblebee/rootfs/libsecurity-misc/infra/lib/security/libsecurity-misc.a -L_build/bumblebee/rootfs/libsecurity-platform-abstraction/infra/lib/security -l:libsecurity-platform-abstraction.so -Wl,-rpath-link,/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib
+  oslibs = -L/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -Wl,-rpath-link,/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -lssl -lcrypto -ldl
+  extlibs = 
+  target_dirname = _build/bumblebee/rootfs/libsecurity-misc/infra/lib/security
+  target_basename = libsecurity-misc.so				//13051
+  
+build _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.so: arm-gcc8-cortex-a53-solib-cxx-debug _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.a _build/bumblebee/rootfs/libcisco/infra/lib/cisco/libcisco.so _build/bumblebee/rootfs/libplatform/infra/lib/libplatform.so _build/bumblebee/rootfs/libsecurity-misc/infra/lib/security/libsecurity-misc.so		<---------- _build libsecurity-misc.so
+_build/bumblebee/rootfs/libhandyiron-fileauth/infra/lib/security_handyiron/libhandyiron-fileauth.so _build/bumblebee/rootfs/libsecurity-platform-abstraction/infra/lib/security/libsecurity-platform-abstraction.so _build/bumblebee/rootfs/libsecurity-data-encryption/infra/lib/security/libsecurity-data-encryption.so _build/bumblebee/rootfs/libtamsstorage/infra/lib/tamsstorage/libtamsstorage.so |  || 
+  buildtext = [/bumblebee/rootfs/libsecurity-secure-api] 
+  switches = -pthread -fstack-protector-all -Wl,-z,noexecstack -Wl,-z,defs -fPIC -Wl,-soname,libsecureapi.so
+  prefix = -Wl,-whole-archive
+  postfix = -Wl,-no-whole-archive
+  sources = _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.a -L_build/bumblebee/rootfs/libcisco/infra/lib/cisco -l:libcisco.so -Wl,-rpath-link,/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -L_build/bumblebee/rootfs/libplatform/infra/lib -l:libplatform.so
+  -L_build/bumblebee/rootfs/libsecurity-misc/infra/lib/security -l:libsecurity-misc.so		<---------- -l:libsecurity-misc.so
+  -L_build/bumblebee/rootfs/libhandyiron-fileauth/infra/lib/security_handyiron -l:libhandyiron-fileauth.so -L_build/bumblebee/rootfs/libsecurity-platform-abstraction/infra/lib/security -l:libsecurity-platform-abstraction.so -L_build/bumblebee/rootfs/libsecurity-data-encryption/infra/lib/security -l:libsecurity-data-encryption.so -L_build/bumblebee/rootfs/libtamsstorage/infra/lib/tamsstorage -l:libtamsstorage.so
+  oslibs = -L/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -Wl,-rpath-link,/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -lssl -lcrypto -ldl -lctame -ltamc -ltamc_common -ltamc_linux_platform -ltam_common -ltamd_common -ltam_linux_common -ltamm -ltamm_common
+  extlibs = 
+  target_dirname = _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security
+  target_basename = libsecurity-secure-api.so				//13204
+  
+build _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc: arm-gcc8-cortex-a53-final-linker-cxx-debug _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_api.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cfg.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cmd.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_tun.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_url.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cert.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cstp.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_dtls.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_main.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_login.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_mcapi.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_utils.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_command.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_connect.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_control.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_http_resp.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_ssl_utils.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnApiVpncServer.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_compression.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_proto_handler.c.o _build/bumblebee/rootfs/libvpnApi/infra/services/vpn/lib/vpn_api/libvpnApi.so _build/bumblebee/rootfs/libvpnPlatform/infra/services/vpn/lib/vpnPlatform/libvpnPlatform.so _build/bumblebee/rootfs/libcisco/infra/lib/cisco/libcisco.so _build/bumblebee/rootfs/libplatform/infra/lib/libplatform.so _build/bumblebee/rootfs/libcrashhandler/infra/lib/crashhandler/libcrashhandler.so
+_build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.so		<----------依赖libsecurity-secure-api.so
+_build/bumblebee/rootfs/libsecurity-platform-abstraction/infra/lib/security/libsecurity-platform-abstraction.so
+_build/bumblebee/rootfs/libhandyiron-seccommon/infra/lib/security_handyiron/libhandyiron-seccommon.so _build/bumblebee/rootfs/libhandyiron-fileauth/infra/lib/security_handyiron/libhandyiron-fileauth.so _build/bumblebee/rootfs/libsecurity-data-encryption/infra/lib/security/libsecurity-data-encryption.so _build/bumblebee/rootfs/libtamsstorage/infra/lib/tamsstorage/libtamsstorage.so _build/bumblebee/rootfs/libnetsd/infra/lib/netsd/libnetsd.so _build/bumblebee/rootfs/libwlanapi/infra/apps/wireless/wlan/libwlanapi/libwlanapi.so _build/bumblebee/rootfs/libsecstor/infra/lib/bumblebee/sec_stor/libsecstor.so _build/bumblebee/rootfs/libipmcutil/infra/apps/wireless/ipmc/util/libipmcutil.so _build/bumblebee/rootfs/libipmcclient/infra/apps/wireless/ipmc/ipmc/libipmcclient.so |  || 
+  buildtext = [/bumblebee/rootfs/vpnc] 
+  sources = _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_api.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cfg.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cmd.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_tun.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_url.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cert.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_cstp.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_dtls.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_main.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_login.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_mcapi.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_utils.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_command.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_connect.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_control.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_http_resp.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_ssl_utils.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnApiVpncServer.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_compression.c.o _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc_proto_handler.c.o -L_build/bumblebee/rootfs/libvpnApi/infra/services/vpn/lib/vpn_api
+  -l:libvpnApi.so -Wl,-rpath-link,/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -L_build/bumblebee/rootfs/libvpnPlatform/infra/services/vpn/lib/vpnPlatform -l:libvpnPlatform.so -L_build/bumblebee/rootfs/libcisco/infra/lib/cisco -l:libcisco.so -L_build/bumblebee/rootfs/libplatform/infra/lib -l:libplatform.so -L_build/bumblebee/rootfs/libcrashhandler/infra/lib/crashhandler -l:libcrashhandler.so
+  -L_build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security -l:libsecurity-secure-api.so		<---------- -l:libsecurity-secure-api.so
+  -L_build/bumblebee/rootfs/libsecurity-platform-abstraction/infra/lib/security -l:libsecurity-platform-abstraction.so -L_build/bumblebee/rootfs/libhandyiron-seccommon/infra/lib/security_handyiron -l:libhandyiron-seccommon.so -L_build/bumblebee/rootfs/libhandyiron-fileauth/infra/lib/security_handyiron -l:libhandyiron-fileauth.so -L/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220602-f111b981efa/lib -lssl -lcrypto -ldl -L_build/bumblebee/rootfs/libsecurity-data-encryption/infra/lib/security -l:libsecurity-data-encryption.so -L_build/bumblebee/rootfs/libtamsstorage/infra/lib/tamsstorage -l:libtamsstorage.so -L_build/bumblebee/rootfs/libnetsd/infra/lib/netsd -l:libnetsd.so -L_build/bumblebee/rootfs/libwlanapi/infra/apps/wireless/wlan/libwlanapi -l:libwlanapi.so -L_build/bumblebee/rootfs/libsecstor/infra/lib/bumblebee/sec_stor -l:libsecstor.so -L_build/bumblebee/rootfs/libipmcutil/infra/apps/wireless/ipmc/util -l:libipmcutil.so -L_build/bumblebee/rootfs/libipmcclient/infra/apps/wireless/ipmc/ipmc -l:libipmcclient.so
+  switches = -fstack-protector-all -Wl,-z,noexecstack -Wl,-z,defs -rdynamic -pie -Wl,-z,relro,-z,now -lrt -lstdc++fs -pthread -Xlinker -Map=_build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc/vpnc.map
+  target_dirname = _build/bumblebee/rootfs/vpnc/infra/services/vpn/vpnc
+  target_basename = vpnc															//29529
+
+=====
+/home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/../lib/gcc/arm-cisco-linux-gnueabihf/8.3.0/../../../../arm-cisco-linux-gnueabihf/bin/ld: warning: libsecmisc.so, needed by _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.so, not found (try using -rpath or -rpath-link)
+/home/lajiang/.genmake/artifactory/toolchain/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf/bin/../lib/gcc/arm-cisco-linux-gnueabihf/8.3.0/../../../../arm-cisco-linux-gnueabihf/bin/ld: _build/bumblebee/rootfs/libsecurity-secure-api/infra/lib/security/libsecurity-secure-api.so: undefined reference to `rawPrint'
+
+    l.library(
+        'libcisco',
+        'libplatform',
+        'openssl',
+        'libsecurity-misc',
+        'libhandyiron-fileauth',
+        'libsecurity-platform-abstraction',
+        'libsecurity-data-encryption',
+        'libtamsstorage',
+        'ciscotamservices',
+    )
+    
+    
+    
+
+对于elf:
+lajiang, DynamicLib, _get_linker_flags self._target: libsecurity-misc.so
+lajiang, callstack========>
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/build.py", line 661, in <module>
+    if main(sys.argv):  # type: ignore
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/build.py", line 589, in main
+    build.stage3()
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/gmlib.py", line 1628, in stage3
+    get_top_object()._stage3(self._config)
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/genmake/topobject.py", line 181, in _stage3
+    self._child._stage3(config)
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/genmake/package.py", line 248, in _stage3
+    super(Package, self)._stage3(config)
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/genmake/build_object.py", line 540, in _stage3
+    bo._stage3(config)
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/genmake/package.py", line 248, in _stage3
+    super(Package, self)._stage3(config)
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/genmake/build_object.py", line 540, in _stage3
+    bo._stage3(config)
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/genmake/build_object.py", line 553, in _stage3
+    build_commands = self._get_build_commands(config)
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/genmake/build_object.py", line 335, in _get_build_commands
+    return toolchain.execute(self, config)
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/genmake/builder.py", line 54, in execute
+    bcmd = self._execfunc(bo, config)
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/toolchains/gcc.py", line 1435, in final_linker
+    bc.add_parameter('sources', ' '.join(sources))
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/genmake/build_object.py", line 786, in _get_linker_flags
+    yield from remove_duplicates(all_linker_flags, remove_dup_L_or_rpath)
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/genmake/utilities.py", line 40, in remove_duplicates
+    for it in items:
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/genmake/dynamic_lib.py", line 87, in _get_linker_flags
+    def_utils._callstack()
+File "/home/lajiang/Workspace/bumblebee/sl-main/build/genmake/genmake/def_utils.py", line 14, in _callstack
+    for line in traceback.format_stack():
+<========callstack
+
+

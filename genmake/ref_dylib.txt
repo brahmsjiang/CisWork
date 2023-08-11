@@ -1,0 +1,36 @@
+l = library('libwebex-locus-client', dynamic=True, on_target='usr/lib/libwebex_locus_client.so')
+l.soname('libwebex_locus_client.so')
+
+l.library(
+    'libdbus-c++',
+    'libdbushelper',
+    'libdbus',
+    'libciscolog',
+    'fmt',
+    'ttjson',
+    'ttoslinux',
+    'libttc',
+)
+
+m = l.module('module_webex_locus_client')
+
+m.apidir('api')
+
+m.depend_on(
+    'libciscolog',
+    'fmt',
+    'libdbus-c++',
+    'libdbushelper',
+    'webex-locus-api',
+)
+
+m.source(
+    'src/WebexLocusClientFactory.cpp',
+    'src/WebexLocusClientImpl.cpp',
+    'src/WebexLocusClientWrapper.cpp',
+)
+
+# TODO: fix warnings of sl-main's code
+m.warnings(
+    'Warnings are OK.  Never ever add this to a file.',
+)

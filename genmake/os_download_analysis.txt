@@ -1,0 +1,85 @@
+
+
+build/genmake.def:78:mm.module('libwebsockets', path='os/libwebsockets')
+build/toolchains.gradle:36:    libwebsocketsDir = file("${toolchainDir}/libwebsockets")
+infra/thirdparty/libwebsockets/build.gradle:8:def webSocketsSrc = file('libwebsockets-3.1')
+infra/thirdparty/libwebsockets/build.gradle:102:                outputFile = file("${outputDir}/lib/libwebsockets.so")
+infra/thirdparty/libwebsockets/libwebsockets-3.1/changelog:39:   [threadpool docs](https://libwebsockets.org/git/libwebsockets/tree/lib/misc/threadpool)
+
+...
+infra/thirdparty/libwebsockets/libwebsockets-2.1.0/doc/html/md_README.build.html:193:<p>To enable cross-compiling <b>libwebsockets</b> using CMake you need to create a "Toolchain file" that you supply to CMake when generating your build files. CMake will then use the cross compilers and build paths specified in this file to look for dependencies and such.</p>
+infra/thirdparty/libwebsockets/libwebsockets-2.1.0/doc/html/group__timeout.html:7:<title>libwebsockets: Connection timeouts</title>
+...
+infra/thirdparty/libwebsockets/libwebsockets-2.1.0/appveyor.yml:20:  - appveyor DownloadFile https://libwebsockets.org:444/win-libuv.zip
+infra/thirdparty/libwebsockets/libwebsockets-2.1.0/appveyor.yml:25:  - appveyor DownloadFile https://libwebsockets.org:444/Win32OpenSSL-1_0_2h.exe
+infra/thirdparty/libwebsockets/libwebsockets-2.1.0/appveyor.yml:27:  - appveyor DownloadFile https://libwebsockets.org:444/nsis-3.0rc1-setup.exe
+infra/thirdparty/libwebsockets/libwebsockets-2.1.0/appveyor.yml:29:  - appveyor DownloadFile https://libwebsockets.org:444/sqlite-dll-win32-x86-3130000.zip
+infra/thirdparty/libwebsockets/libwebsockets-2.1.0/appveyor.yml:45:#  - makensis -DVERSION=%APPVEYOR_BUILD_VERSION% libwebsockets.nsi
+infra/thirdparty/libwebsockets/libwebsockets-2.1.0/appveyor.yml:50:    path: 'win32port/libwebsockets-*-install.exe'
+infra/child_settings.gradle:156:    'thirdparty:libwebsockets',
+Binary file .git/index matches
+product/bumblebee/common/rootfs/genmake.def:115:    {'name': 'libwebsockets', 'type': 'module'},
+product/module-test/genmake.def:277:    {'name': 'libwebsockets', 'type': 'module'},
+Binary file _build/bumblebee/rootfs/spr-voip/spa_3pcc/voice/spr-voip matches
+_build/bumblebee/rootfs/spr-voip/spa_3pcc/voice/spr-voip.map:4005:LOAD /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220505-77c60ff69ba/lib/libwebsockets.so
+_build/bumblebee/rootfs/product/bumblebee/common/rootfs/rootfs.tmp/lib/cmake/libwebsockets/LibwebsocketsTargets-release.cmake:13:  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/libwebsockets.a"
+_build/bumblebee/rootfs/product/bumblebee/common/rootfs/rootfs.tmp/lib/cmake/libwebsockets/LibwebsocketsTargets-release.cmake:17:list(APPEND _IMPORT_CHECK_FILES_FOR_websockets "${_IMPORT_PREFIX}/lib/libwebsockets.a" )
+_build/bumblebee/rootfs/product/bumblebee/common/rootfs/rootfs.tmp/lib/cmake/libwebsockets/LibwebsocketsTargets-release.cmake:23:  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/libwebsockets.so"
+_build/bumblebee/rootfs/product/bumblebee/common/rootfs/rootfs.tmp/lib/cmake/libwebsockets/LibwebsocketsTargets-release.cmake:28:list(APPEND _IMPORT_CHECK_FILES_FOR_websockets_shared "${_IMPORT_PREFIX}/lib/libwebsockets.so" )
+Binary file _build/bumblebee/rootfs/product/bumblebee/common/rootfs/rootfs.tmp/lib/libwebsockets.so matches
+_build/bumblebee/rootfs/product/bumblebee/common/rootfs/rootfs.tmp/share/libwebsockets-test-server/test.html:20:   <a href="https://libwebsockets.org">
+...
+_build/bumblebee/product/bumblebee/complete/genmake.deps:703:os/libwebsockets/genmake.def
+_build/bumblebee/product/bumblebee/complete/build.ninja:1444:build _build/bumblebee/rootfs/os/libwebsockets/api/libwebsockets.h: copy /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220505-77c60ff69ba/include/libwebsockets.h |  || 
+...
+_build/bumblebee/product/bumblebee/complete/build.ninja:1588:build _build/bumblebee/rootfs/os/libwebsockets/api/libwebsockets/abstract/smtp.h: copy /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220505-77c60ff69ba/include/libwebsockets/abstract/smtp.h |  || 
+...
+...
+Binary file _build/bumblebee/product/bumblebee/complete/.ninja_deps matches
+_build/bumblebee/product/bumblebee/complete/.ninja_log:870:27050	27055	1652164227914351362	_build/bumblebee/rootfs/os/libwebsockets/api/libwebsockets/lws-genhash.h	6155ee5f86ec2486
+...
+_build/bumblebee/product/bumblebee/complete/.ninja_log:5824:27091	27096	1652164227958351362	_build/bumblebee/rootfs/os/libwebsockets/api/libwebsockets/lws-ring.h	841f0584d0266e9b
+_build/bumblebee/product/bumblebee/complete/.ninja_log:5928:27030	27033	1652164227894351363	_build/bumblebee/rootfs/os/libwebsockets/api/libwebsockets/lws-jwe.h	c9cbb4999b5a424b
+
+
+os/libwebsockets/genmake.def:1:m = module('libwebsockets')
+os/libwebsockets/genmake.def:4:    'libwebsockets.h',
+os/libwebsockets/genmake.def:9:m.os_header_dirs('libwebsockets')
+
+
+
+
+ask: 下载.genmake/artifactory
+lajiang@liajiang-lnx:~/.genmake/artifactory$ ls
+releases  sources  synlite2-thirdparty  toolchain
+lajiang@liajiang-lnx:~/.genmake/artifactory/releases/bumblebee/os$ ls
+20220505-77c60ff69ba  20220505-77c60ff69ba.tar.gz  20220505-77c60ff69ba.tar.gz.md5
+ans: 
+用户启动脚本 build/docker/artifactory_daemon.sh,
+不仅起docker, 而且创建 ${HOME}/.genmake/artifactory等目录, 并启动脚本==>
+build/lib/lys-utils/daemon/sl2_cache_daemon --socket=$LYS_UTILS_CACHE_SOCKET --local-path=$DAEMON_CACHE_DIR -v <&- >/dev/null 2>&1 &
+
+当前思路:
+ask: sl2_cache_daemon如何下载os
+ask: make_rpm.sh到底是怎么被调用的,我想知道 sl2_cache_daemon.service到底有没有用; 因为service应该需要被copy到/usr/lib下给systemd管理起来, 来被管理
+
+lajiang@liajiang-lnx:~/Workspace/bumblebee/sl-main/build/lib/lys-utils/daemon$ ls -al
+total 32
+-rwxr-xr-x 1 lajiang lajiang 7262 12\u6708 30 14:32 cisco_cache_daemon
+-rw-r--r-- 1 lajiang lajiang  484 12\u6708 30 14:32 cisco_cache_daemon.service
+-rw-rw-r-- 1 lajiang lajiang 5873 11\u6708 17  2021 cisco_cache_daemon.spec
+lrwxrwxrwx 1 lajiang lajiang   12 11\u6708 17  2021 lys_utils -> ../lys_utils
+-rwxrwxr-x 1 lajiang lajiang  420 11\u6708 17  2021 make_rpm.sh
+lrwxrwxrwx 1 lajiang lajiang   18 12\u6708 30 14:32 sl2_cache_daemon -> cisco_cache_daemon
+lrwxrwxrwx 1 lajiang lajiang   26 12\u6708 30 14:32 sl2_cache_daemon.service -> cisco_cache_daemon.service
+
+调用sl2_cache_daemon.service的地方:
+build/lib/lys-utils/install.sh	==》没有log
+cisco_cache_daemon.spec
+
+
+
+
+
+
+

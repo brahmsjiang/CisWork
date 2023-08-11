@@ -1,0 +1,204 @@
+
+lajiang@e6eceb4c6903:~/Workspace/bumblebee/minimal_genmake$ ./build/build --generate-debug -t minimal -v --debug
+
+./build/build: line 15: ./build/git/install-hooks: No such file or directory
+WARNING:lys_utils.python_env:$LYS_UTILS_PYTHON_ENV_DISABLE is set. Aborting.
+INFO:gmlib:Using base object directory _build
+DEBUG:gm.system_cache:LocalCacheManager(None, False)
+INFO:gmlib:Using local cache located at /home/lajiang/.genmake/artifactory
+DEBUG:gmlib:Compiling with debug information
+DEBUG:gmlib:Verbose building
+
+INFO:build:Stage 0: Reading top def file [0.000]
+enter read_def_file: build/genmake.def , filter: None
+enter read_def_file: product/minimal/complete/genmake.def , filter: /minimal
+INFO:gm.package:zhihong package, set objpath /minimal
+INFO:gm.build_object:zhihong, name: /minimal, objpath: minimal, self.path: product/minimal/complete
+add_child:  /minimal to TopObject
+DEBUG:gm.system_cache:Setting cache_file: _build/minimal/product/minimal/complete/system-cache.json
+DEBUG:gm.system_cache:Need sync due to missing _build/minimal/product/minimal/complete/system-cache.json
+INFO:gmlib:System cache requires regeneration of makefile
+
+INFO:build:Stage 1: Reading other def files [0.003]
+enter read_def_file: functional/apps/main/genmake.def , filter: /minimal/main:program			##分析package minimal依赖, 根据source定义, 然后在顶层main program的path是'functional/apps/main'
+INFO:gm.collection:zhihong collection, set objpath /minimal/main
+INFO:gm.build_object:zhihong, name: /minimal/main, objpath: minimal/main, self.path: functional/apps/main
+_build_objects from genmake.def: /minimal/main program
+add_child:  /minimal/main to /minimal:package 				##parent是 /minimal:package, 每次解析玩当前def,把当前(child)加到所属parent的child列表中
+enter read_def_file: functional/libs/mymodulewrapper/genmake.def , filter: /minimal/mymodulewrapper:module ##继续遍历_stage1dict, 来自minimal/complete
+_build_objects from genmake.def: /minimal/mymodulewrapper module
+add_child:  /minimal/mymodulewrapper to /minimal:package
+enter read_def_file: functional/libs/mymodule/genmake.def , filter: /minimal/mymodule:module
+_build_objects from genmake.def: /minimal/mymodule module
+add_child:  /minimal/mymodule to /minimal:package
+enter read_def_file: functional/libs/mydlib/genmake.def , filter: /minimal/libmydlib:library
+INFO:gm.collection:zhihong collection, set objpath /minimal/libmydlib
+INFO:gm.build_object:zhihong, name: /minimal/libmydlib, objpath: minimal/libmydlib, self.path: functional/libs/mydlib
+_build_objects from genmake.def: /minimal/libmydlib library
+add_child:  /minimal/libmydlib to /minimal:package
+enter read_def_file: functional/libs/thirdparty/genmake.def , filter: /minimal/thirdparty:library
+INFO:gm.collection:zhihong collection, set objpath /minimal/thirdparty
+INFO:gm.build_object:zhihong, name: /minimal/thirdparty, objpath: minimal/thirdparty, self.path: functional/libs/thirdparty	##library
+DEBUG:lys_utils.git_cache.minimal_genmake_3rdparty:Updating /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git <= git@sqbu-github.cisco.com:Skywalker/minimal_genmake_3rdparty.git to get ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b
+DEBUG:lys_utils.git:Running 'git rev-parse --quiet --verify buildstate/_build_git-worktrees_git@sqbu-github.cisco.com_Skywalker_minimal_genmake_3rdparty.git_ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b/ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b^{commit}' in /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git
+DEBUG:lys_utils.git_cache.minimal_genmake_3rdparty:Before: ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b == None.
+INFO:lys_utils.git_cache.minimal_genmake_3rdparty:Clone from git@sqbu-github.cisco.com:Skywalker/minimal_genmake_3rdparty.git into /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git
+DEBUG:lys_utils.git:Running 'git clone --mirror git@sqbu-github.cisco.com:Skywalker/minimal_genmake_3rdparty.git /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git'
+Cloning into bare repository '/home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git'...
+remote: Enumerating objects: 16, done.
+remote: Total 16 (delta 0), reused 0 (delta 0), pack-reused 16
+Receiving objects: 100% (16/16), done.
+Resolving deltas: 100% (1/1), done.
+DEBUG:lys_utils.git:Running 'git rev-parse --quiet --verify ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b^{commit}' in /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git
+DEBUG:lys_utils.git:Running 'git rev-parse --quiet --verify ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b^{object}' in /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git
+DEBUG:lys_utils.git_cache.minimal_genmake_3rdparty:After: ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b == ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b.
+INFO:lys_utils.git_cache.minimal_genmake_3rdparty:ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b changed upstream: None -> ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b
+DEBUG:lys_utils.git:Running 'git rev-parse --quiet --verify ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b^{commit}' in /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git
+DEBUG:lys_utils.git:Running 'git rev-parse --quiet --verify ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b^{object}' in /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git
+DEBUG:lys_utils.git_cache.minimal_genmake_3rdparty:Found read-only checkout of ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b @ _build/git-worktrees/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git/ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b
+DEBUG:lys_utils.git_cache.minimal_genmake_3rdparty:Storing build state (buildstate/_build_git-worktrees_git@sqbu-github.cisco.com_Skywalker_minimal_genmake_3rdparty.git_ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b/ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b = ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b) in /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git
+DEBUG:lys_utils.git:Running 'git rev-parse --quiet --verify ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b^{commit}' in /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git
+DEBUG:lys_utils.git:Running 'git rev-parse --quiet --verify ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b^{object}' in /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git
+DEBUG:lys_utils.git:Running 'git update-ref buildstate/_build_git-worktrees_git@sqbu-github.cisco.com_Skywalker_minimal_genmake_3rdparty.git_ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b/ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b' in /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git
+DEBUG:lys_utils.git:Running 'git rev-parse --quiet --verify --symbolic-full-name ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b' in /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git
+DEBUG:lys_utils.git:Running 'git rev-parse --quiet --verify ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b' in /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git
+DEBUG:lys_utils.git:Running 'git rev-parse --quiet --verify ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b^{object}' in /home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git
+_build_objects from genmake.def: /minimal/thirdparty library
+add_child:  /minimal/thirdparty to /minimal:package
+enter read_def_file: platform/platform/genmake.def , filter: /minimal/platform:module
+_build_objects from genmake.def: /minimal/platform module
+add_child:  /minimal/platform to /minimal:package
+enter read_def_file: platform/platform/minimal/genmake.def , filter: /minimal/platform-minimal:module
+_build_objects from genmake.def: /minimal/platform-minimal module
+add_child:  /minimal/platform-minimal to /minimal:package
+enter read_def_file: product/minimal/common/os/genmake.def , filter: /minimal/os:module
+DEBUG:gm.system_cache:Register: releases/bumblebee/os/20210908-f39afb37246
+INFO:gm.build_object:zhihong, name: /minimal/os-files, objpath: minimal, self.path: product/minimal/common/os
+_build_objects from genmake.def: /minimal/os module
+add_child:  /minimal/os to /minimal:package
+enter read_def_file: product/minimal/common/os/genmake.def , filter: /minimal/os-files:module
+DEBUG:gm.system_cache:Register: releases/bumblebee/os/20210908-f39afb37246
+INFO:gm.build_object:zhihong, name: /minimal/os-files, objpath: minimal, self.path: product/minimal/common/os
+_build_objects from genmake.def: /minimal/os module
+_build_objects from genmake.def: /minimal/os-files module
+add_child:  /minimal/os-files to /minimal:package
+enter read_def_file: os/safe_lib/genmake.def , filter: /minimal/safe_lib:module
+INFO:gm.build_object:zhihong, name: /minimal/safe_lib, objpath: minimal, self.path: os/safe_lib
+_build_objects from genmake.def: /minimal/safe_lib module
+add_child:  /minimal/safe_lib to /minimal:package																			##完成遍历_stage1dict, 来自minimal/complet
+DEBUG:gm.system_cache:Register: toolchain/pkgextract-x86_64-linux-3
+DEBUG:gm.system_cache:Register: toolchain/host-gcc-10.1.1-x86_64-linux-1
+INFO:gm.build_object:zhihong, name: /minimal/main/cfg/main.c.o, objpath: minimal/main, self.path: functional/apps/main
+INFO:gm.build_object:zhihong, name: /minimal/mymodulewrapper/src/mymodulewrapper.c.o, objpath: minimal, self.path: functional/libs/mymodulewrapper
+INFO:gm.build_object:zhihong, name: /minimal/mymodule/src/mymodule.c.o, objpath: minimal, self.path: functional/libs/mymodule
+INFO:gm.build_object:zhihong, name: /minimal/libmydlib/main_dlib/src/mydlib.c.o, objpath: minimal/libmydlib, self.path: functional/libs/mydlib
+INFO:gm.build_object:zhihong, name: /minimal/thirdparty/main_thirdparty/../../../_build/git-worktrees/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git/ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b/src/thirdparty.c.o, objpath: minimal/thirdparty, self.path: functional/libs/thirdparty
+INFO:gm.build_object:zhihong, name: /minimal/platform-minimal/platform.c.o, objpath: minimal, self.path: platform/platform/minimal
+DEBUG:gm.system_cache:Sync requested
+DEBUG:gm.system_cache:Syncing releases/bumblebee/os/20210908-f39afb37246 with force=False
+INFO:lys_utils.cache_client:Rsyncing https://engci-maven.cisco.com/artifactory/releases/bumblebee/os/20210908-f39afb37246 -> /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246...
+DEBUG:gm.system_cache:Syncing toolchain/host-gcc-10.1.1-x86_64-linux-1 with force=False
+INFO:lys_utils.cache_client:Rsyncing https://engci-maven.cisco.com/artifactory/toolchain/host-gcc-10.1.1-x86_64-linux-1 -> /home/lajiang/.genmake/artifactory/toolchain/host-gcc-10.1.1-x86_64-linux-1...
+DEBUG:gm.system_cache:Syncing toolchain/pkgextract-x86_64-linux-3 with force=False
+INFO:lys_utils.cache_client:Rsyncing https://engci-maven.cisco.com/artifactory/toolchain/pkgextract-x86_64-linux-3 -> /home/lajiang/.genmake/artifactory/toolchain/pkgextract-x86_64-linux-3...
+
+
+INFO:build:Stage 2: Populating the environment [187.083]
+INFO:gm.collection:zhihong, name /minimal/main, modules: {'cfg': /minimal/main/cfg:module}, addons: []
+INFO:gm.collection:zhihong, name /minimal/main/cfg, modules: {}, addons: []
+INFO:gm.collection:zhihong, name /minimal/mymodulewrapper, modules: {}, addons: []
+INFO:gm.collection:zhihong, name /minimal/mymodule, modules: {}, addons: []
+INFO:gm.collection:zhihong, name /minimal/libmydlib, modules: {'main_dlib': /minimal/libmydlib/main_dlib:module}, addons: []
+INFO:gm.collection:zhihong, name /minimal/libmydlib/main_dlib, modules: {}, addons: []
+INFO:gm.collection:zhihong, name /minimal/thirdparty, modules: {'main_thirdparty': /minimal/thirdparty/main_thirdparty:module}, addons: []
+INFO:gm.collection:zhihong, name /minimal/thirdparty/main_thirdparty, modules: {}, addons: []
+INFO:gm.collection:zhihong, name /minimal/platform, modules: {}, addons: []
+INFO:gm.collection:zhihong, name /minimal/platform-minimal, modules: {}, addons: []
+INFO:gm.collection:zhihong, name /minimal/os, modules: {}, addons: []
+INFO:gm.collection:zhihong, name /minimal/os-files, modules: {}, addons: []
+INFO:gm.collection:zhihong, name /minimal/safe_lib, modules: {}, addons: []
+INFO:gm.module:zhihong, osincdirs ${}
+
+INFO:gm.module:zhihong, boname: $/minimal/safe_lib/safe_mem_lib.h, source: $/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/safe_mem_lib.h, dest: $_build/minimal/os/safe_lib/api/safe_mem_lib.h
+INFO:gm.module:zhihong, osincdirs ${}
+
+INFO:gm.module:zhihong, boname: $/minimal/safe_lib/safe_str_lib.h, source: $/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/safe_str_lib.h, dest: $_build/minimal/os/safe_lib/api/safe_str_lib.h
+INFO:gm.module:zhihong, osincdirs ${}
+
+INFO:gm.module:zhihong, boname: $/minimal/safe_lib/mem_primitives_lib.h, source: $/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/mem_primitives_lib.h, dest: $_build/minimal/os/safe_lib/api/mem_primitives_lib.h
+INFO:gm.module:zhihong, osincdirs ${}
+
+INFO:gm.module:zhihong, boname: $/minimal/safe_lib/safe_limits.h, source: $/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/safe_limits.h, dest: $_build/minimal/os/safe_lib/api/safe_limits.h
+INFO:gm.module:zhihong, osincdirs ${}
+
+INFO:gm.module:zhihong, boname: $/minimal/safe_lib/safe_string.h, source: $/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/safe_string.h, dest: $_build/minimal/os/safe_lib/api/safe_string.h
+INFO:gm.module:zhihong, osincdirs ${}
+
+INFO:gm.module:zhihong, boname: $/minimal/safe_lib/safe_lib_errno.h, source: $/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/safe_lib_errno.h, dest: $_build/minimal/os/safe_lib/api/safe_lib_errno.h
+INFO:gm.module:zhihong, osincdirs ${}
+
+INFO:gm.module:zhihong, boname: $/minimal/safe_lib/safe_types.h, source: $/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/safe_types.h, dest: $_build/minimal/os/safe_lib/api/safe_types.h
+INFO:gm.module:zhihong, osincdirs ${}
+
+INFO:gm.module:zhihong, boname: $/minimal/safe_lib/safe_lib.h, source: $/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/safe_lib.h, dest: $_build/minimal/os/safe_lib/api/safe_lib.h
+INFO:gm.module:zhihong, osincdirs ${}
+
+INFO:gm.module:zhihong, boname: $/minimal/safe_lib/stdlib.h, source: $/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/stdlib.h, dest: $_build/minimal/os/safe_lib/api/stdlib.h
+INFO:gm.module:zhihong, osincdirs ${}
+
+INFO:gm.module:zhihong, boname: $/minimal/safe_lib/string.h, source: $/home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/string.h, dest: $_build/minimal/os/safe_lib/api/string.h
+
+INFO:build:Stage 3: Generating rules [187.125]
+DEBUG:gm.toolchain.package:Adding from source /minimal/main
+DEBUG:gm.toolchain.package:Adding from source /minimal/mymodulewrapper
+DEBUG:gm.toolchain.package:Adding from source /minimal/mymodule
+DEBUG:gm.toolchain.package:Adding from source /minimal/libmydlib
+DEBUG:gm.toolchain.package:Adding from source /minimal/thirdparty
+DEBUG:gm.toolchain.package:Adding from source /minimal/platform
+DEBUG:gm.toolchain.package:Adding from source /minimal/platform-minimal
+DEBUG:gm.toolchain.package:Adding from source /minimal/os
+DEBUG:gm.toolchain.package:Adding from source /minimal/os-files
+DEBUG:gm.toolchain.package:Adding from source /minimal/safe_lib
+INFO:gm.toolchain.package:zhihong, lsttool ['./build/autogen/lsttool.py', '_build/minimal/main/functional/apps/main/main', '_build/minimal/libmydlib/functional/libs/mydlib/libmydlib.so', '_build/minimal/thirdparty/functional/libs/thirdparty/thirdparty.so', '_build/minimal/product/minimal/common/os/Image']
+DEBUG:gm.system_cache:Sync requested
+
+INFO:build:Stage 4: Writing build file [187.160]
+DEBUG:gmlib:Using backend build file: _build/minimal/product/minimal/complete/build.ninja
+INFO:build:zhihong: 
+
+INFO:build:Stage 5: Calling build backend [187.161]
+DEBUG:gmlib:Calling ninja with: ['./bin/ninja', '-w', 'dupbuild=err', '-j', '4', '--tokenpool-master', '-v', '-f', Path('_build/minimal/product/minimal/complete/build.ninja')]
+Cloning into bare repository '/home/lajiang/Workspace/bumblebee/minimal_genmake/_build/git-cache/git@sqbu-github.cisco.com/SL/ninja.git'...
+remote: Enumerating objects: 11705, done.
+remote: Total 11705 (delta 0), reused 0 (delta 0), pack-reused 11705
+Receiving objects: 100% (11705/11705), 2.86 MiB | 2.01 MiB/s, done.
+Resolving deltas: 100% (8459/8459), done.
+Cloning into bare repository 'bin/_build/ninja/.git'...
+done.
+HEAD is now at c265036 Merge branch 'cisco/master' into cisco/tokenpool-master
+ninja: simulating GNU make jobserver.
+[  4%] ${GCCPREFIX}/home/lajiang/.genmake/artifactory/toolchain/host-gcc-10.1.1-x86_64-linux-1/bin/gcc -D_GNU_SOURCE -isystem platform/compiler/glibc -DNO_STACK_USAGE_CHECKING -DBOOST_USER_CONFIG=\"tt/boost_native_config.hpp\" -D_GLIBCXX_ASSERTIONS=1 ${GCCOTHERSWITCHES} ${GCCCOLORSWITCHES} -Wall -Wextra -Wno-unknown-pragmas -Werror -Wno-unused-parameter -Wno-maybe-uninitialized -Wformat-security -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wduplicated-branches -Wduplicated-cond -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-all -pthread -g -fPIC -D__STDC_LIMIT_MACROS -iquote functional/libs/mymodulewrapper -iquote functional/libs/mymodulewrapper/api -iquote functional/libs/mymodule/api -isystem /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include -MD -MF _build/minimal/functional/libs/mymodulewrapper/src/mymodulewrapper.c.o.d -MT _build/minimal/functional/libs/mymodulewrapper/src/mymodulewrapper.c.o -c -o _build/minimal/functional/libs/mymodulewrapper/src/mymodulewrapper.c.o functional/libs/mymodulewrapper/src/mymodulewrapper.c
+[  8%] ${GCCPREFIX}/home/lajiang/.genmake/artifactory/toolchain/host-gcc-10.1.1-x86_64-linux-1/bin/gcc -D_GNU_SOURCE -isystem platform/compiler/glibc -DNO_STACK_USAGE_CHECKING -DBOOST_USER_CONFIG=\"tt/boost_native_config.hpp\" -D_GLIBCXX_ASSERTIONS=1 ${GCCOTHERSWITCHES} ${GCCCOLORSWITCHES} -Wall -Wextra -Wno-unknown-pragmas -Werror -Wno-unused-parameter -Wno-maybe-uninitialized -Wformat-security -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wduplicated-branches -Wduplicated-cond -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-all -pthread -g -fPIC -fPIC -D__STDC_LIMIT_MACROS -iquote functional/libs/mydlib -iquote functional/libs/mydlib/api -isystem /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include -MD -MF _build/minimal/libmydlib/functional/libs/mydlib/src/mydlib.c.o.d -MT _build/minimal/libmydlib/functional/libs/mydlib/src/mydlib.c.o -c -o _build/minimal/libmydlib/functional/libs/mydlib/src/mydlib.c.o functional/libs/mydlib/src/mydlib.c
+[ 13%] ${GCCPREFIX}/home/lajiang/.genmake/artifactory/toolchain/host-gcc-10.1.1-x86_64-linux-1/bin/gcc -D_GNU_SOURCE -isystem platform/compiler/glibc -DNO_STACK_USAGE_CHECKING -DBOOST_USER_CONFIG=\"tt/boost_native_config.hpp\" -D_GLIBCXX_ASSERTIONS=1 ${GCCOTHERSWITCHES} ${GCCCOLORSWITCHES} -Wall -Wextra -Wno-unknown-pragmas -Werror -Wno-unused-parameter -Wno-maybe-uninitialized -Wformat-security -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wduplicated-branches -Wduplicated-cond -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-all -pthread -g -fPIC -D__STDC_LIMIT_MACROS -iquote functional/libs/mymodule -iquote functional/libs/mymodule/api -isystem /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include -MD -MF _build/minimal/functional/libs/mymodule/src/mymodule.c.o.d -MT _build/minimal/functional/libs/mymodule/src/mymodule.c.o -c -o _build/minimal/functional/libs/mymodule/src/mymodule.c.o functional/libs/mymodule/src/mymodule.c
+[ 17%] ${GCCPREFIX}/home/lajiang/.genmake/artifactory/toolchain/host-gcc-10.1.1-x86_64-linux-1/bin/gcc -D_GNU_SOURCE -isystem platform/compiler/glibc -DNO_STACK_USAGE_CHECKING -DBOOST_USER_CONFIG=\"tt/boost_native_config.hpp\" -D_GLIBCXX_ASSERTIONS=1 ${GCCOTHERSWITCHES} ${GCCCOLORSWITCHES} -Wall -Wextra -Wno-unknown-pragmas -Werror -Wno-unused-parameter -Wno-maybe-uninitialized -Wformat-security -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wduplicated-branches -Wduplicated-cond -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-all -pthread -g -fPIC -fPIC -D__STDC_LIMIT_MACROS -iquote functional/libs/thirdparty -iquote _build/git-worktrees/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git/ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b/api -isystem /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include -MD -MF '_build/minimal/thirdparty/functional/libs/thirdparty/dotdot/dotdot/dotdot/_build/git-worktrees/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git/ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b/src/thirdparty.c.o'.d -MT '_build/minimal/thirdparty/functional/libs/thirdparty/dotdot/dotdot/dotdot/_build/git-worktrees/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git/ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b/src/thirdparty.c.o' -c -o '_build/minimal/thirdparty/functional/libs/thirdparty/dotdot/dotdot/dotdot/_build/git-worktrees/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git/ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b/src/thirdparty.c.o' '_build/git-worktrees/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git/ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b/src/thirdparty.c'
+[ 21%] ${GCCPREFIX}/home/lajiang/.genmake/artifactory/toolchain/host-gcc-10.1.1-x86_64-linux-1/bin/gcc -D_GNU_SOURCE -isystem platform/compiler/glibc -DNO_STACK_USAGE_CHECKING -DBOOST_USER_CONFIG=\"tt/boost_native_config.hpp\" -D_GLIBCXX_ASSERTIONS=1 ${GCCOTHERSWITCHES} ${GCCCOLORSWITCHES} -Wall -Wextra -Wno-unknown-pragmas -Werror -Wno-unused-parameter -Wno-maybe-uninitialized -Wformat-security -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wduplicated-branches -Wduplicated-cond -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-all -pthread -g -fPIC -D__STDC_LIMIT_MACROS -iquote platform/platform/minimal -iquote platform/platform/api -isystem /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include -MD -MF _build/minimal/platform/platform/minimal/platform.c.o.d -MT _build/minimal/platform/platform/minimal/platform.c.o -c -o _build/minimal/platform/platform/minimal/platform.c.o platform/platform/minimal/platform.c
+[ 26%] rm -f _build/minimal/os/safe_lib/api/safe_mem_lib.h && cp -f --preserve=mode /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/safe_mem_lib.h _build/minimal/os/safe_lib/api/safe_mem_lib.h
+[ 30%] rm -f _build/minimal/os/safe_lib/api/mem_primitives_lib.h && cp -f --preserve=mode /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/mem_primitives_lib.h _build/minimal/os/safe_lib/api/mem_primitives_lib.h
+[ 34%] rm -f _build/minimal/os/safe_lib/api/safe_str_lib.h && cp -f --preserve=mode /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/safe_str_lib.h _build/minimal/os/safe_lib/api/safe_str_lib.h
+[ 39%] rm -f _build/minimal/os/safe_lib/api/safe_limits.h && cp -f --preserve=mode /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/safe_limits.h _build/minimal/os/safe_lib/api/safe_limits.h
+[ 43%] rm -f _build/minimal/os/safe_lib/api/safe_string.h && cp -f --preserve=mode /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/safe_string.h _build/minimal/os/safe_lib/api/safe_string.h
+[ 47%] rm -f _build/minimal/product/minimal/common/os/Image && cp -f --preserve=mode /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/Image _build/minimal/product/minimal/common/os/Image
+[ 52%] rm -f _build/minimal/os/safe_lib/api/safe_lib_errno.h && cp -f --preserve=mode /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/safe_lib_errno.h _build/minimal/os/safe_lib/api/safe_lib_errno.h
+[ 56%] rm -f _build/minimal/os/safe_lib/api/safe_types.h && cp -f --preserve=mode /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/safe_types.h _build/minimal/os/safe_lib/api/safe_types.h
+[ 60%] rm -f _build/minimal/os/safe_lib/api/safe_lib.h && cp -f --preserve=mode /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/safe_lib.h _build/minimal/os/safe_lib/api/safe_lib.h
+[ 65%] rm -f _build/minimal/os/safe_lib/api/string.h && cp -f --preserve=mode /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/string.h _build/minimal/os/safe_lib/api/string.h
+[ 69%] rm -f _build/minimal/os/safe_lib/api/stdlib.h && cp -f --preserve=mode /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include/stdlib.h _build/minimal/os/safe_lib/api/stdlib.h
+[ 73%] ${GCCPREFIX}/home/lajiang/.genmake/artifactory/toolchain/host-gcc-10.1.1-x86_64-linux-1/bin/gcc -D_GNU_SOURCE -isystem platform/compiler/glibc -DNO_STACK_USAGE_CHECKING -DBOOST_USER_CONFIG=\"tt/boost_native_config.hpp\" -D_GLIBCXX_ASSERTIONS=1 ${GCCOTHERSWITCHES} ${GCCCOLORSWITCHES} -Wall -Wextra -Wno-unknown-pragmas -Werror -Wno-unused-parameter -Wno-maybe-uninitialized -Wformat-security -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wduplicated-branches -Wduplicated-cond -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-all -pthread -g -fPIC -D__STDC_LIMIT_MACROS -iquote functional/apps/main -iquote functional/libs/mymodulewrapper/api -iquote functional/libs/mydlib/api -iquote platform/platform/api -iquote _build/git-worktrees/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git/ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b/api -isystem _build/minimal/os/safe_lib/api -isystem /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20210908-f39afb37246/include -MD -MF _build/minimal/main/functional/apps/main/main.c.o.d -MT _build/minimal/main/functional/apps/main/main.c.o -c -o _build/minimal/main/functional/apps/main/main.c.o functional/apps/main/main.c
+[ 78%] /home/lajiang/.genmake/artifactory/toolchain/host-gcc-10.1.1-x86_64-linux-1/bin/g++ -shared -pthread -fstack-protector-all -Wl,-z,noexecstack -Wl,-z,undefs -fPIC -Wl,-soname,libthirdparty.so -o _build/minimal/thirdparty/functional/libs/thirdparty/thirdparty.so -Wl,-whole-archive _build/minimal/thirdparty/functional/libs/thirdparty/dotdot/dotdot/dotdot/_build/git-worktrees/git@sqbu-github.cisco.com/Skywalker/minimal_genmake_3rdparty.git/ebeb80ca5f8c48ac2a603182faf2b2b2ee627d3b/src/thirdparty.c.o -Wl,-no-whole-archive   && rm -f _build/minimal/thirdparty/functional/libs/thirdparty/thirdparty.so.debug && objcopy --only-keep-debug _build/minimal/thirdparty/functional/libs/thirdparty/thirdparty.so _build/minimal/thirdparty/functional/libs/thirdparty/thirdparty.so.debug && strip -g _build/minimal/thirdparty/functional/libs/thirdparty/thirdparty.so && (cd _build/minimal/thirdparty/functional/libs/thirdparty && objcopy --add-gnu-debuglink=thirdparty.so.debug thirdparty.so)
+[ 82%] /home/lajiang/.genmake/artifactory/toolchain/host-gcc-10.1.1-x86_64-linux-1/bin/g++ -shared -pthread -fstack-protector-all -Wl,-z,noexecstack -Wl,-z,undefs -fPIC -Wl,-soname,libmydlib.so -o _build/minimal/libmydlib/functional/libs/mydlib/libmydlib.so -Wl,-whole-archive _build/minimal/libmydlib/functional/libs/mydlib/src/mydlib.c.o -Wl,-no-whole-archive   && rm -f _build/minimal/libmydlib/functional/libs/mydlib/libmydlib.so.debug && objcopy --only-keep-debug _build/minimal/libmydlib/functional/libs/mydlib/libmydlib.so _build/minimal/libmydlib/functional/libs/mydlib/libmydlib.so.debug && strip -g _build/minimal/libmydlib/functional/libs/mydlib/libmydlib.so && (cd _build/minimal/libmydlib/functional/libs/mydlib && objcopy --add-gnu-debuglink=libmydlib.so.debug libmydlib.so)
+[ 86%] /home/lajiang/.genmake/artifactory/toolchain/host-gcc-10.1.1-x86_64-linux-1/bin/g++ @_build/minimal/main/functional/apps/main/main.rsp -fstack-protector-all -Wl,-z,noexecstack -Wl,-z,undefs -rdynamic -pie -Wl,-z,relro,-z,now -lrt -pthread -Xlinker -Map=_build/minimal/main/functional/apps/main/main.map -o _build/minimal/main/functional/apps/main/main && rm -f _build/minimal/main/functional/apps/main/main.debug && objcopy --only-keep-debug _build/minimal/main/functional/apps/main/main _build/minimal/main/functional/apps/main/main.debug && strip -g _build/minimal/main/functional/apps/main/main && (cd _build/minimal/main/functional/apps/main && objcopy --add-gnu-debuglink=main.debug main)
+[ 91%] chmod +x _build/minimal/product/minimal/complete/swpkg.lst.rsp && _build/minimal/product/minimal/complete/swpkg.lst.rsp
+[ 95%] if [ -d _build/minimal/product/minimal/complete/minimal ]; then find _build/minimal/product/minimal/complete/minimal -type d -exec chmod u+rwx {} ";"; fi && rm -rf _build/minimal/product/minimal/complete/minimal && if ! ./build/autogen/dirutil.py -q -o _build/minimal/product/minimal/complete/minimal -i _build/minimal/product/minimal/complete/swpkg.lst; then rm -rf _build/minimal/product/minimal/complete/minimal; false; fi
+[100%] rm -rf _build/minimal/product/minimal/complete/minimal.tar && tar -c -f _build/minimal/product/minimal/complete/minimal.tar -C _build/minimal/product/minimal/complete/minimal . ; if [ $? -gt 1 ] ; then exit 2; fi
+DEBUG:gm.system_cache:Cache daemon detected, skipping standalone cleanup
+INFO:build:Done [225.545]

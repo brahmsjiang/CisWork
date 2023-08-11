@@ -1,0 +1,57 @@
+
+
+settmask -p guiapp
+settmask -p guiapp -b7
+
+
+umount -l /usr/mbin/mphone; rm /tmp/mphone; cp /usr/mbin/mphone /tmp/mphone; mount --bind /tmp/mphone /usr/mbin/mphone; mount; cd /tmp/
+
+ls -al /tmp/mphone /usr/mbin/mphone
+
+umount -l /usr/sbin/guiapp; rm /tmp/guiapp; cp /usr/sbin/guiapp  /tmp/guiapp; mount --bind /tmp/guiapp /usr/sbin/guiapp; mount; cd /tmp/
+
+ls -al /tmp/guiapp  /usr/sbin/guiapp
+
+umount -l /usr/sbin/spr_voip; rm /tmp/sprvoip; cp /usr/sbin/spr_voip /tmp/sprvoip; mount --bind /tmp/sprvoip /usr/sbin/spr_voip; mount; cd /tmp/
+cp _build/bumblebee/rootfs/spr-voip/spa_3pcc/voice/spr-voip _build/bumblebee/rootfs/spr-voip/spa_3pcc/voice/sprvoip; scp -r _build/bumblebee/rootfs/spr-voip/spa_3pcc/voice/sprvoip auto@10.79.57.183:/home/auto/tftpboot
+
+ls -al /tmp/sprvoip /usr/sbin/spr_voip
+
+
+umount -l /usr/sbin/ms; rm /tmp/ms; cp /usr/sbin/ms /tmp/ms; mount --bind /tmp/ms /usr/sbin/ms;mount; cd /tmp/
+ls -al /tmp/ms /usr/sbin/ms
+
+
+
+tftp -r mphone -g 10.79.57.183
+
+
+
+sdump | grep -v "ms\|guiapp\|mphone"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

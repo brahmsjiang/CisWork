@@ -1,0 +1,84 @@
+
+
+
+
+
+
+lib library: 'dbusHeaders'																						//grad	dbusHeaders(NativeLibrarySpec) {
+lib project: ':lib:crashhandler', library: 'crashhandler'							//grad	crashhandler(NativeLibrarySpec) {		||	//genm	l = library('libcrashhandler', dynamic = True, on_target='usr/lib/libcrashhandler.so')
+lib project: ':lib:cisco', library: 'cisco'														//grad 	cisco(NativeLibrarySpec) {  ||	//genm	l = library('libcisco', dynamic=True, on_target="usr/lib/libcisco.so")
+lib project: ':lib', library: 'platform'															//genm	l = library('libplatform', dynamic=True, on_target="usr/lib/libplatform.so")
+lib project: ':include', library: 'infraHeaders', linkage: 'api'			//grad	infraHeaders(NativeLibrarySpec) {
+																																			//===>a header only library for infra/include/
+             
+
+
+
+
+m = module('openssl')
+l = library('libedge', dynamic=True, on_target="usr/lib/libedge.so")
+m = module('zlib')
+
+i = module('apps-api')		i.apidir('api', system=True)								//===>a header only library for infra/include/apps
+l = library('libcisco', dynamic=True, on_target="usr/lib/libcisco.so")
+l = library('libplatform', dynamic=True, on_target="usr/lib/libplatform.so")
+--------------------
+                lib project: ':lib:cisco:crypto_libs', library: 'crypto'
+                lib project: ':lib:cisco:crypto_libs', library: 'ssl'
+                lib project: ':services:edge_gateway', library: 'edge'						//l.library
+                lib project: ':lib:zlib-1.2.8', library: 'z'											//l.library
+                lib project: ':include', library: 'infraHeaders', linkage: 'api'
+-------------------
+								l.library(																						//collection(base cls)depend on other local lib
+								    'openssl',
+								    'libedge',
+								    'zlib',
+								)
+								m.depend_on(																					//module depend on other module
+								    'apps-api',
+								    'libcisco',
+								    'libplatform',
+								)
+								
+
+
+
+hi  请教下, 
+   //class Module
+    def depend_on(self, *list):
+        """Make this module depend on (an)other module(s).  This means we get
+        the other module(s)'s API directory in our include path.
+        """
+        
+    //class library
+    def library(self, *names, late=False):
+        """Link with library 'name'.  This function is used for "local"
+        libraries, while the extlib function is for libraries we don't
+        compile ourselves (part of the toolchain, etc).
+        """   
+
+一般module会用depend_on,   library就用library
+这两者依赖的lib有啥区别, 讲究嘛? 如果构建一个library动态库, 我看他们先library了一些库, 然后通过module去包含源文件, module又depend了一些库. 这个没搞懂
+
+
+m.depend_on(
+    'libedge',
+    'libcisco',
+    'libplatform',
+    'apps-api',
+
+
+    #'native-headers-api',
+    'cisco-api',
+    'cpr-api',
+    'sipcc-api',
+    'sipcc-core-api',
+    'sipcc-core-gsm-api',
+    'sipcc-core-sipstack-api',
+    'core-utils',
+    'core-ccapp',
+    'core-common',
+    'core-api',
+    'core-sdp',
+    'plat-sl',
+)
