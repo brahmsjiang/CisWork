@@ -1,0 +1,967 @@
+normal:
+1468 DEB Feb 16 02:20:51.550929 (24474-24474) mphone-[MwSelect]: input detected on an fd. rc=1 nMaxFd=6
+1480 DEB Feb 16 02:20:56.524621 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:2
+1481 DEB Feb 16 02:20:56.524777 (24474-24474) mphone-[MwSelect]: input detected on an fd. rc=1 nMaxFd=6
+1482 NOT Feb 16 02:20:56.524829 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=2>
+1483 NOT Feb 16 02:20:56.524884 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=2>
+1484 DEB Feb 16 02:20:56.525007 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+1485 DEB Feb 16 02:20:56.525028 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 3, ringerVolumeTemp = 2
+1486 INF Feb 16 02:20:56.525078 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+1487 NOT Feb 16 02:20:56.525125 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+1488 DEB Feb 16 02:20:56.525154 (24474-24474) mphone-total-Length = 50
+1494 INF Feb 16 02:20:56.599148 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+1495 DEB Feb 16 02:20:56.599197 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 2, ringerVolumeTemp = 2
+1496 INF Feb 16 02:20:56.599253 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+1497 NOT Feb 16 02:20:56.599301 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+1498 DEB Feb 16 02:20:56.599328 (24474-24474) mphone-total-Length = 50
+1503 INF Feb 16 02:20:56.641419 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+1504 DEB Feb 16 02:20:56.641473 (24474-24474) mphone-setVolume: type=2, volume=2
+1505 NOT Feb 16 02:20:56.641506 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+1506 DEB Feb 16 02:20:56.641524 (24474-24474) mphone-argv[1]=(2), 
+1507 DEB Feb 16 02:20:56.641539 (24474-24474) mphone-argv[2]=(2), 
+1508 DEB Feb 16 02:20:56.641552 (24474-24474) mphone-argv[3]=(0), 
+1509 NOT Feb 16 02:20:56.641652 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+1510 DEB Feb 16 02:20:56.641671 (24474-24474) mphone-argv[1]=(2), 
+1511 DEB Feb 16 02:20:56.641686 (24474-24474) mphone-argv[2]=(10), 
+1512 DEB Feb 16 02:20:56.641699 (24474-24474) mphone-argv[3]=(0), 
+1514 NOT Feb 16 02:20:56.641874 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":2,"isRinger":true}
+1517 DEB Feb 16 02:20:56.644484 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 2
+1518 DEB Feb 16 02:20:56.645402 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"2","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""}
+1522 DEB Feb 16 02:20:56.650256 (24474-24474) mphone-[MwSelect]: input detected on an fd. rc=1 nMaxFd=6
+
+
+-----------------
+abnormal:
+
+1646 deb feb 16 02:21:42.940536 (24474-24559) mphone- cqtclient_invokeslidervaluechanged: ringtoneandvolume:1
+1647 DEB Feb 16 02:21:42.940687 (24474-24474) mphone-[MwSelect]: input detected on an fd. rc=1 nMaxFd=6
+1648 NOT Feb 16 02:21:42.940734 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+1649 NOT Feb 16 02:21:42.940754 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+1650 DEB Feb 16 02:21:42.940928 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+1651 DEB Feb 16 02:21:42.940949 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 2, ringerVolumeTemp = 1
+1652 INF Feb 16 02:21:42.940997 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+1653 NOT Feb 16 02:21:42.941042 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+1654 DEB Feb 16 02:21:42.941067 (24474-24474) mphone-total-Length = 50
+1655 DEB Feb 16 02:21:42.946728 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+1660 INF Feb 16 02:21:43.015062 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+1661 DEB Feb 16 02:21:43.015106 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+1662 INF Feb 16 02:21:43.015163 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+1663 NOT Feb 16 02:21:43.015210 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+1664 DEB Feb 16 02:21:43.015236 (24474-24474) mphone-total-Length = 50
+1669 INF Feb 16 02:21:43.057352 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+1670 DEB Feb 16 02:21:43.057396 (24474-24474) mphone-setVolume: type=2, volume=1
+1671 NOT Feb 16 02:21:43.057430 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+1672 DEB Feb 16 02:21:43.057449 (24474-24474) mphone-argv[1]=(2), 
+1673 DEB Feb 16 02:21:43.057463 (24474-24474) mphone-argv[2]=(1), 
+1674 DEB Feb 16 02:21:43.057476 (24474-24474) mphone-argv[3]=(0), 
+1675 NOT Feb 16 02:21:43.057568 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+1676 DEB Feb 16 02:21:43.057587 (24474-24474) mphone-argv[1]=(2), 
+1677 DEB Feb 16 02:21:43.057603 (24474-24474) mphone-argv[2]=(10), 
+1678 DEB Feb 16 02:21:43.057617 (24474-24474) mphone-argv[3]=(0), 
+1682 NOT Feb 16 02:21:43.057794 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+1719 DEB Feb 16 02:21:43.060307 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+1720 DEB Feb 16 02:21:43.061231 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""}
+1729 NOT Feb 16 02:21:43.065486 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+1730 NOT Feb 16 02:21:43.065529 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+1731 DEB Feb 16 02:21:43.065641 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+1732 DEB Feb 16 02:21:43.065662 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+1733 INF Feb 16 02:21:43.065711 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+1734 NOT Feb 16 02:21:43.065759 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+1735 DEB Feb 16 02:21:43.065785 (24474-24474) mphone-total-Length = 50
+1755 DEB Feb 16 02:21:43.163337 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+1800 INF Feb 16 02:21:43.459933 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+1801 DEB Feb 16 02:21:43.459980 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+1802 INF Feb 16 02:21:43.460038 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+1803 NOT Feb 16 02:21:43.460086 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+1804 DEB Feb 16 02:21:43.460112 (24474-24474) mphone-total-Length = 50
+1809 INF Feb 16 02:21:43.460469 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+1810 DEB Feb 16 02:21:43.460495 (24474-24474) mphone-setVolume: type=2, volume=0
+1811 NOT Feb 16 02:21:43.460523 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+1812 DEB Feb 16 02:21:43.460541 (24474-24474) mphone-argv[1]=(2), 
+1813 DEB Feb 16 02:21:43.460555 (24474-24474) mphone-argv[2]=(0), 
+1814 DEB Feb 16 02:21:43.460568 (24474-24474) mphone-argv[3]=(0), 
+1815 NOT Feb 16 02:21:43.460651 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+1816 DEB Feb 16 02:21:43.460670 (24474-24474) mphone-argv[1]=(2), 
+1817 DEB Feb 16 02:21:43.460684 (24474-24474) mphone-argv[2]=(10), 
+1818 DEB Feb 16 02:21:43.460697 (24474-24474) mphone-argv[3]=(0), 
+1821 NOT Feb 16 02:21:43.460887 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+1827 DEB Feb 16 02:21:43.463530 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+1828 DEB Feb 16 02:21:43.464402 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""}
+1832 DEB Feb 16 02:21:43.467025 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+1833 NOT Feb 16 02:21:43.468003 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+1834 NOT Feb 16 02:21:43.468029 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+1835 DEB Feb 16 02:21:43.468134 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+1836 DEB Feb 16 02:21:43.468157 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+1837 INF Feb 16 02:21:43.468210 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+1838 NOT Feb 16 02:21:43.468256 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+1839 DEB Feb 16 02:21:43.468282 (24474-24474) mphone-total-Length = 50
+1851 INF Feb 16 02:21:43.538852 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+1852 DEB Feb 16 02:21:43.538894 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+1853 INF Feb 16 02:21:43.538954 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+1854 NOT Feb 16 02:21:43.539002 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+1855 DEB Feb 16 02:21:43.539029 (24474-24474) mphone-total-Length = 50
+1865 INF Feb 16 02:21:43.581328 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+1866 DEB Feb 16 02:21:43.581373 (24474-24474) mphone-setVolume: type=2, volume=1
+1867 NOT Feb 16 02:21:43.581406 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+1868 DEB Feb 16 02:21:43.581425 (24474-24474) mphone-argv[1]=(2), 
+1869 DEB Feb 16 02:21:43.581439 (24474-24474) mphone-argv[2]=(1), 
+1870 DEB Feb 16 02:21:43.581451 (24474-24474) mphone-argv[3]=(1), 
+1871 NOT Feb 16 02:21:43.581542 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+1872 DEB Feb 16 02:21:43.581561 (24474-24474) mphone-argv[1]=(2), 
+1873 DEB Feb 16 02:21:43.581575 (24474-24474) mphone-argv[2]=(10), 
+1874 DEB Feb 16 02:21:43.581588 (24474-24474) mphone-argv[3]=(0), 
+1878 NOT Feb 16 02:21:43.581762 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+1883 DEB Feb 16 02:21:43.583936 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+1884 DEB Feb 16 02:21:43.584811 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""}
+1888 DEB Feb 16 02:21:43.587246 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+1889 NOT Feb 16 02:21:43.587904 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+1890 NOT Feb 16 02:21:43.587925 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+1891 DEB Feb 16 02:21:43.588018 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+1892 DEB Feb 16 02:21:43.588040 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+1893 INF Feb 16 02:21:43.588087 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+1894 NOT Feb 16 02:21:43.588125 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+1895 DEB Feb 16 02:21:43.588150 (24474-24474) mphone-total-Length = 50
+1900 INF Feb 16 02:21:43.658238 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+1901 DEB Feb 16 02:21:43.658283 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+1902 INF Feb 16 02:21:43.658342 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+1903 NOT Feb 16 02:21:43.658390 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+1904 DEB Feb 16 02:21:43.658415 (24474-24474) mphone-total-Length = 50
+1909 INF Feb 16 02:21:43.701153 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+1910 DEB Feb 16 02:21:43.701189 (24474-24474) mphone-setVolume: type=2, volume=0
+1911 NOT Feb 16 02:21:43.701220 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+1912 DEB Feb 16 02:21:43.701241 (24474-24474) mphone-argv[1]=(2), 
+1913 DEB Feb 16 02:21:43.701256 (24474-24474) mphone-argv[2]=(0), 
+1914 DEB Feb 16 02:21:43.701268 (24474-24474) mphone-argv[3]=(0), 
+1915 NOT Feb 16 02:21:43.701353 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+1916 DEB Feb 16 02:21:43.701373 (24474-24474) mphone-argv[1]=(2), 
+1917 DEB Feb 16 02:21:43.701387 (24474-24474) mphone-argv[2]=(10), 
+1918 DEB Feb 16 02:21:43.701400 (24474-24474) mphone-argv[3]=(0), 
+1922 NOT Feb 16 02:21:43.701579 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+1927 DEB Feb 16 02:21:43.704128 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+1928 DEB Feb 16 02:21:43.705276 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""}
+1932 DEB Feb 16 02:21:43.707649 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+1933 NOT Feb 16 02:21:43.708641 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+1934 NOT Feb 16 02:21:43.708666 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+1935 DEB Feb 16 02:21:43.708825 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+1936 DEB Feb 16 02:21:43.708890 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+1937 INF Feb 16 02:21:43.708941 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+1938 NOT Feb 16 02:21:43.708990 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+1939 DEB Feb 16 02:21:43.709015 (24474-24474) mphone-total-Length = 50
+1944 INF Feb 16 02:21:43.782684 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+1945 DEB Feb 16 02:21:43.782728 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+1946 INF Feb 16 02:21:43.782782 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+1947 NOT Feb 16 02:21:43.782829 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+1948 DEB Feb 16 02:21:43.782855 (24474-24474) mphone-total-Length = 50
+1953 INF Feb 16 02:21:43.825212 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+1954 DEB Feb 16 02:21:43.825250 (24474-24474) mphone-setVolume: type=2, volume=1
+1955 NOT Feb 16 02:21:43.825281 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+1956 DEB Feb 16 02:21:43.825300 (24474-24474) mphone-argv[1]=(2), 
+1957 DEB Feb 16 02:21:43.825314 (24474-24474) mphone-argv[2]=(1), 
+1958 DEB Feb 16 02:21:43.825328 (24474-24474) mphone-argv[3]=(1), 
+1959 NOT Feb 16 02:21:43.825430 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+1960 DEB Feb 16 02:21:43.825450 (24474-24474) mphone-argv[1]=(2), 
+1961 DEB Feb 16 02:21:43.825464 (24474-24474) mphone-argv[2]=(10), 
+1962 DEB Feb 16 02:21:43.825477 (24474-24474) mphone-argv[3]=(0), 
+1966 NOT Feb 16 02:21:43.825654 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+1971 DEB Feb 16 02:21:43.827879 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+1972 DEB Feb 16 02:21:43.828748 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""}
+1976 DEB Feb 16 02:21:43.831012 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+1977 NOT Feb 16 02:21:43.831674 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+1978 NOT Feb 16 02:21:43.831698 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+1979 DEB Feb 16 02:21:43.831792 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+1980 DEB Feb 16 02:21:43.831814 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+1981 INF Feb 16 02:21:43.831862 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+1982 NOT Feb 16 02:21:43.831899 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+1983 DEB Feb 16 02:21:43.831924 (24474-24474) mphone-total-Length = 50
+1988 INF Feb 16 02:21:43.902069 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+1989 DEB Feb 16 02:21:43.902112 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+1990 INF Feb 16 02:21:43.902179 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+1991 NOT Feb 16 02:21:43.902226 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+1992 DEB Feb 16 02:21:43.902252 (24474-24474) mphone-total-Length = 50
+1997 INF Feb 16 02:21:43.945154 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+1998 DEB Feb 16 02:21:43.945188 (24474-24474) mphone-setVolume: type=2, volume=0
+1999 NOT Feb 16 02:21:43.945219 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2000 DEB Feb 16 02:21:43.945238 (24474-24474) mphone-argv[1]=(2), 
+2001 DEB Feb 16 02:21:43.945252 (24474-24474) mphone-argv[2]=(0), 
+2002 DEB Feb 16 02:21:43.945265 (24474-24474) mphone-argv[3]=(0), 
+2003 NOT Feb 16 02:21:43.945352 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2004 DEB Feb 16 02:21:43.945373 (24474-24474) mphone-argv[1]=(2), 
+2005 DEB Feb 16 02:21:43.945387 (24474-24474) mphone-argv[2]=(10), 
+2006 DEB Feb 16 02:21:43.945401 (24474-24474) mphone-argv[3]=(0), 
+2009 NOT Feb 16 02:21:43.945580 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+2015 DEB Feb 16 02:21:43.947854 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+2016 DEB Feb 16 02:21:43.948725 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2017 NOT Feb 16 02:21:43.948775 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2019 NOT Feb 16 02:21:43.950995 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2020 DEB Feb 16 02:21:43.951040 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+2021 NOT Feb 16 02:21:43.951710 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+2022 NOT Feb 16 02:21:43.951731 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+2023 DEB Feb 16 02:21:43.951824 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2024 DEB Feb 16 02:21:43.951848 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+2025 INF Feb 16 02:21:43.951897 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2026 NOT Feb 16 02:21:43.951941 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2027 DEB Feb 16 02:21:43.951965 (24474-24474) mphone-total-Length = 50
+2032 INF Feb 16 02:21:44.021937 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2033 DEB Feb 16 02:21:44.021982 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+2034 INF Feb 16 02:21:44.022039 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2035 NOT Feb 16 02:21:44.022086 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2036 DEB Feb 16 02:21:44.022110 (24474-24474) mphone-total-Length = 50
+2041 INF Feb 16 02:21:44.065158 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2042 DEB Feb 16 02:21:44.065196 (24474-24474) mphone-setVolume: type=2, volume=1
+2043 NOT Feb 16 02:21:44.065227 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2044 DEB Feb 16 02:21:44.065245 (24474-24474) mphone-argv[1]=(2), 
+2045 DEB Feb 16 02:21:44.065263 (24474-24474) mphone-argv[2]=(1), 
+2046 DEB Feb 16 02:21:44.065276 (24474-24474) mphone-argv[3]=(1), 
+2047 NOT Feb 16 02:21:44.065370 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2048 DEB Feb 16 02:21:44.065389 (24474-24474) mphone-argv[1]=(2), 
+2049 DEB Feb 16 02:21:44.065404 (24474-24474) mphone-argv[2]=(10), 
+2050 DEB Feb 16 02:21:44.065417 (24474-24474) mphone-argv[3]=(0), 
+2052 NOT Feb 16 02:21:44.065593 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+2059 DEB Feb 16 02:21:44.067905 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+2060 DEB Feb 16 02:21:44.068775 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2061 NOT Feb 16 02:21:44.068825 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2063 NOT Feb 16 02:21:44.071005 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2064 DEB Feb 16 02:21:44.071055 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+2065 NOT Feb 16 02:21:44.071701 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+2066 NOT Feb 16 02:21:44.071721 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+2067 DEB Feb 16 02:21:44.071811 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2068 DEB Feb 16 02:21:44.071833 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+2069 INF Feb 16 02:21:44.071886 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2070 NOT Feb 16 02:21:44.071923 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2071 DEB Feb 16 02:21:44.071948 (24474-24474) mphone-total-Length = 50
+2076 INF Feb 16 02:21:44.142751 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2077 DEB Feb 16 02:21:44.142795 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+2078 INF Feb 16 02:21:44.142853 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2079 NOT Feb 16 02:21:44.142899 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2080 DEB Feb 16 02:21:44.142926 (24474-24474) mphone-total-Length = 50
+2085 INF Feb 16 02:21:44.185344 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2086 DEB Feb 16 02:21:44.185398 (24474-24474) mphone-setVolume: type=2, volume=0
+2087 NOT Feb 16 02:21:44.185432 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2088 DEB Feb 16 02:21:44.185453 (24474-24474) mphone-argv[1]=(2), 
+2089 DEB Feb 16 02:21:44.185467 (24474-24474) mphone-argv[2]=(0), 
+2090 DEB Feb 16 02:21:44.185480 (24474-24474) mphone-argv[3]=(0), 
+2091 NOT Feb 16 02:21:44.185568 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2092 DEB Feb 16 02:21:44.185587 (24474-24474) mphone-argv[1]=(2), 
+2093 DEB Feb 16 02:21:44.185601 (24474-24474) mphone-argv[2]=(10), 
+2094 DEB Feb 16 02:21:44.185614 (24474-24474) mphone-argv[3]=(0), 
+2097 NOT Feb 16 02:21:44.185795 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+2103 DEB Feb 16 02:21:44.188098 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+2104 DEB Feb 16 02:21:44.189015 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2105 NOT Feb 16 02:21:44.189064 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2107 NOT Feb 16 02:21:44.191224 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2108 DEB Feb 16 02:21:44.191270 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+2109 NOT Feb 16 02:21:44.191908 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+2110 NOT Feb 16 02:21:44.191928 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+2111 DEB Feb 16 02:21:44.192019 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2112 DEB Feb 16 02:21:44.192041 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+2113 INF Feb 16 02:21:44.192089 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2114 NOT Feb 16 02:21:44.192125 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2115 DEB Feb 16 02:21:44.192149 (24474-24474) mphone-total-Length = 50
+2120 INF Feb 16 02:21:44.262536 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2121 DEB Feb 16 02:21:44.262579 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+2122 INF Feb 16 02:21:44.262637 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2123 NOT Feb 16 02:21:44.262684 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2124 DEB Feb 16 02:21:44.262711 (24474-24474) mphone-total-Length = 50
+2129 INF Feb 16 02:21:44.305238 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2130 DEB Feb 16 02:21:44.305281 (24474-24474) mphone-setVolume: type=2, volume=1
+2131 NOT Feb 16 02:21:44.305314 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2132 DEB Feb 16 02:21:44.305332 (24474-24474) mphone-argv[1]=(2), 
+2133 DEB Feb 16 02:21:44.305346 (24474-24474) mphone-argv[2]=(1), 
+2134 DEB Feb 16 02:21:44.305372 (24474-24474) mphone-argv[3]=(1), 
+2135 NOT Feb 16 02:21:44.305463 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2136 DEB Feb 16 02:21:44.305483 (24474-24474) mphone-argv[1]=(2), 
+2137 DEB Feb 16 02:21:44.305497 (24474-24474) mphone-argv[2]=(10), 
+2138 DEB Feb 16 02:21:44.305510 (24474-24474) mphone-argv[3]=(0), 
+2142 NOT Feb 16 02:21:44.305686 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+2147 DEB Feb 16 02:21:44.307944 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+2148 DEB Feb 16 02:21:44.308824 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2149 NOT Feb 16 02:21:44.308909 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2151 NOT Feb 16 02:21:44.311083 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2152 DEB Feb 16 02:21:44.311128 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+2153 NOT Feb 16 02:21:44.311779 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+2154 NOT Feb 16 02:21:44.311801 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+2155 DEB Feb 16 02:21:44.311892 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2156 DEB Feb 16 02:21:44.311915 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+2157 INF Feb 16 02:21:44.311969 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2158 NOT Feb 16 02:21:44.312007 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2159 DEB Feb 16 02:21:44.312032 (24474-24474) mphone-total-Length = 50
+2164 INF Feb 16 02:21:44.392956 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2165 DEB Feb 16 02:21:44.393076 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+2166 INF Feb 16 02:21:44.393137 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2167 NOT Feb 16 02:21:44.393184 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2168 DEB Feb 16 02:21:44.393209 (24474-24474) mphone-total-Length = 50
+2173 INF Feb 16 02:21:44.437167 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2174 DEB Feb 16 02:21:44.437203 (24474-24474) mphone-setVolume: type=2, volume=0
+2175 NOT Feb 16 02:21:44.437231 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2176 DEB Feb 16 02:21:44.437249 (24474-24474) mphone-argv[1]=(2), 
+2177 DEB Feb 16 02:21:44.437263 (24474-24474) mphone-argv[2]=(0), 
+2178 DEB Feb 16 02:21:44.437275 (24474-24474) mphone-argv[3]=(0), 
+2179 NOT Feb 16 02:21:44.437346 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2180 DEB Feb 16 02:21:44.437364 (24474-24474) mphone-argv[1]=(2), 
+2181 DEB Feb 16 02:21:44.437377 (24474-24474) mphone-argv[2]=(10), 
+2182 DEB Feb 16 02:21:44.437390 (24474-24474) mphone-argv[3]=(0), 
+2184 NOT Feb 16 02:21:44.437564 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+2191 DEB Feb 16 02:21:44.439897 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+2192 DEB Feb 16 02:21:44.440762 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2193 NOT Feb 16 02:21:44.440817 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2195 NOT Feb 16 02:21:44.443027 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2196 DEB Feb 16 02:21:44.443070 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+2197 NOT Feb 16 02:21:44.443732 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+2198 NOT Feb 16 02:21:44.443753 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+2199 DEB Feb 16 02:21:44.443845 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2200 DEB Feb 16 02:21:44.443867 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+2201 INF Feb 16 02:21:44.443914 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2202 NOT Feb 16 02:21:44.443952 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2203 DEB Feb 16 02:21:44.443977 (24474-24474) mphone-total-Length = 50
+2209 INF Feb 16 02:21:44.514391 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2210 DEB Feb 16 02:21:44.514434 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+2211 INF Feb 16 02:21:44.514492 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2212 NOT Feb 16 02:21:44.514538 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2213 DEB Feb 16 02:21:44.514564 (24474-24474) mphone-total-Length = 50
+2218 INF Feb 16 02:21:44.557184 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2219 DEB Feb 16 02:21:44.557222 (24474-24474) mphone-setVolume: type=2, volume=1
+2220 NOT Feb 16 02:21:44.557254 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2221 DEB Feb 16 02:21:44.557273 (24474-24474) mphone-argv[1]=(2), 
+2222 DEB Feb 16 02:21:44.557286 (24474-24474) mphone-argv[2]=(1), 
+2223 DEB Feb 16 02:21:44.557299 (24474-24474) mphone-argv[3]=(1), 
+2224 NOT Feb 16 02:21:44.557370 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2225 DEB Feb 16 02:21:44.557388 (24474-24474) mphone-argv[1]=(2), 
+2226 DEB Feb 16 02:21:44.557402 (24474-24474) mphone-argv[2]=(10), 
+2227 DEB Feb 16 02:21:44.557422 (24474-24474) mphone-argv[3]=(0), 
+2229 NOT Feb 16 02:21:44.557582 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+2236 DEB Feb 16 02:21:44.559928 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+2237 DEB Feb 16 02:21:44.560798 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2238 NOT Feb 16 02:21:44.560889 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2240 NOT Feb 16 02:21:44.563049 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2241 DEB Feb 16 02:21:44.563094 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+2242 NOT Feb 16 02:21:44.563746 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+2243 NOT Feb 16 02:21:44.563767 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+2244 DEB Feb 16 02:21:44.563863 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2245 DEB Feb 16 02:21:44.563886 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+2246 INF Feb 16 02:21:44.563933 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2247 NOT Feb 16 02:21:44.563970 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2248 DEB Feb 16 02:21:44.563995 (24474-24474) mphone-total-Length = 50
+2253 INF Feb 16 02:21:44.634036 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2254 DEB Feb 16 02:21:44.634080 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+2255 INF Feb 16 02:21:44.634137 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2256 NOT Feb 16 02:21:44.634184 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2257 DEB Feb 16 02:21:44.634211 (24474-24474) mphone-total-Length = 50
+2262 INF Feb 16 02:21:44.677171 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2263 DEB Feb 16 02:21:44.677209 (24474-24474) mphone-setVolume: type=2, volume=0
+2264 NOT Feb 16 02:21:44.677239 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2265 DEB Feb 16 02:21:44.677257 (24474-24474) mphone-argv[1]=(2), 
+2266 DEB Feb 16 02:21:44.677271 (24474-24474) mphone-argv[2]=(0), 
+2267 DEB Feb 16 02:21:44.677284 (24474-24474) mphone-argv[3]=(0), 
+2268 NOT Feb 16 02:21:44.677354 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2269 DEB Feb 16 02:21:44.677373 (24474-24474) mphone-argv[1]=(2), 
+2270 DEB Feb 16 02:21:44.677388 (24474-24474) mphone-argv[2]=(10), 
+2271 DEB Feb 16 02:21:44.677401 (24474-24474) mphone-argv[3]=(0), 
+2273 NOT Feb 16 02:21:44.677557 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+2280 DEB Feb 16 02:21:44.679878 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+2281 DEB Feb 16 02:21:44.680751 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2282 NOT Feb 16 02:21:44.680799 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2284 NOT Feb 16 02:21:44.682978 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2285 DEB Feb 16 02:21:44.683020 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+2286 NOT Feb 16 02:21:44.683685 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+2287 NOT Feb 16 02:21:44.683707 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+2288 DEB Feb 16 02:21:44.683798 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2289 DEB Feb 16 02:21:44.683820 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+2290 INF Feb 16 02:21:44.683869 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2291 NOT Feb 16 02:21:44.683904 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2292 DEB Feb 16 02:21:44.683932 (24474-24474) mphone-total-Length = 50
+2297 INF Feb 16 02:21:44.754478 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2298 DEB Feb 16 02:21:44.754523 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+2299 INF Feb 16 02:21:44.754580 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2300 NOT Feb 16 02:21:44.754628 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2301 DEB Feb 16 02:21:44.754652 (24474-24474) mphone-total-Length = 50
+2306 INF Feb 16 02:21:44.797204 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2307 DEB Feb 16 02:21:44.797246 (24474-24474) mphone-setVolume: type=2, volume=1
+2308 NOT Feb 16 02:21:44.797279 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2309 DEB Feb 16 02:21:44.797297 (24474-24474) mphone-argv[1]=(2), 
+2310 DEB Feb 16 02:21:44.797311 (24474-24474) mphone-argv[2]=(1), 
+2311 DEB Feb 16 02:21:44.797325 (24474-24474) mphone-argv[3]=(1), 
+2312 NOT Feb 16 02:21:44.797394 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2313 DEB Feb 16 02:21:44.797412 (24474-24474) mphone-argv[1]=(2), 
+2314 DEB Feb 16 02:21:44.797427 (24474-24474) mphone-argv[2]=(10), 
+2315 DEB Feb 16 02:21:44.797440 (24474-24474) mphone-argv[3]=(0), 
+2317 NOT Feb 16 02:21:44.797596 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+2324 DEB Feb 16 02:21:44.799882 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+2325 DEB Feb 16 02:21:44.800765 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2326 NOT Feb 16 02:21:44.800814 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2328 NOT Feb 16 02:21:44.803025 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2329 DEB Feb 16 02:21:44.803066 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+2330 NOT Feb 16 02:21:44.803753 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+2331 NOT Feb 16 02:21:44.803774 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+2332 DEB Feb 16 02:21:44.803871 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2333 DEB Feb 16 02:21:44.803894 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+2334 INF Feb 16 02:21:44.803941 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2335 NOT Feb 16 02:21:44.803979 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2336 DEB Feb 16 02:21:44.804004 (24474-24474) mphone-total-Length = 50
+2341 INF Feb 16 02:21:44.874400 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2342 DEB Feb 16 02:21:44.874444 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+2343 INF Feb 16 02:21:44.874503 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2344 NOT Feb 16 02:21:44.874550 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2345 DEB Feb 16 02:21:44.874576 (24474-24474) mphone-total-Length = 50
+2350 INF Feb 16 02:21:44.917150 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2351 DEB Feb 16 02:21:44.917186 (24474-24474) mphone-setVolume: type=2, volume=0
+2352 NOT Feb 16 02:21:44.917218 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2353 DEB Feb 16 02:21:44.917236 (24474-24474) mphone-argv[1]=(2), 
+2354 DEB Feb 16 02:21:44.917250 (24474-24474) mphone-argv[2]=(0), 
+2355 DEB Feb 16 02:21:44.917263 (24474-24474) mphone-argv[3]=(0), 
+2356 NOT Feb 16 02:21:44.917332 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2357 DEB Feb 16 02:21:44.917350 (24474-24474) mphone-argv[1]=(2), 
+2358 DEB Feb 16 02:21:44.917364 (24474-24474) mphone-argv[2]=(10), 
+2359 DEB Feb 16 02:21:44.917377 (24474-24474) mphone-argv[3]=(0), 
+2361 NOT Feb 16 02:21:44.917556 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+2368 DEB Feb 16 02:21:44.919886 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+2369 DEB Feb 16 02:21:44.920758 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2370 NOT Feb 16 02:21:44.920808 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2372 NOT Feb 16 02:21:44.922978 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2373 DEB Feb 16 02:21:44.923026 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+2374 NOT Feb 16 02:21:44.923699 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+2375 NOT Feb 16 02:21:44.923720 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+2376 DEB Feb 16 02:21:44.923813 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2377 DEB Feb 16 02:21:44.923835 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+2378 INF Feb 16 02:21:44.923882 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2379 NOT Feb 16 02:21:44.923920 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2380 DEB Feb 16 02:21:44.923944 (24474-24474) mphone-total-Length = 50
+2385 INF Feb 16 02:21:44.993942 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2386 DEB Feb 16 02:21:44.993986 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+2387 INF Feb 16 02:21:44.994045 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2388 NOT Feb 16 02:21:44.994092 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2389 DEB Feb 16 02:21:44.994118 (24474-24474) mphone-total-Length = 50
+2394 INF Feb 16 02:21:45.037168 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2395 DEB Feb 16 02:21:45.037205 (24474-24474) mphone-setVolume: type=2, volume=1
+2396 NOT Feb 16 02:21:45.037236 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2397 DEB Feb 16 02:21:45.037254 (24474-24474) mphone-argv[1]=(2), 
+2398 DEB Feb 16 02:21:45.037268 (24474-24474) mphone-argv[2]=(1), 
+2399 DEB Feb 16 02:21:45.037281 (24474-24474) mphone-argv[3]=(1), 
+2400 NOT Feb 16 02:21:45.037348 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2401 DEB Feb 16 02:21:45.037367 (24474-24474) mphone-argv[1]=(2), 
+2402 DEB Feb 16 02:21:45.037381 (24474-24474) mphone-argv[2]=(10), 
+2403 DEB Feb 16 02:21:45.037394 (24474-24474) mphone-argv[3]=(0), 
+2405 NOT Feb 16 02:21:45.037554 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+2412 DEB Feb 16 02:21:45.039874 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+2413 DEB Feb 16 02:21:45.040753 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2414 NOT Feb 16 02:21:45.040802 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2416 NOT Feb 16 02:21:45.042999 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2417 DEB Feb 16 02:21:45.043042 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+2418 NOT Feb 16 02:21:45.043703 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+2419 NOT Feb 16 02:21:45.043725 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+2420 DEB Feb 16 02:21:45.043817 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2421 DEB Feb 16 02:21:45.043839 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+2422 INF Feb 16 02:21:45.043888 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2423 NOT Feb 16 02:21:45.043925 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2424 DEB Feb 16 02:21:45.043950 (24474-24474) mphone-total-Length = 50
+2429 INF Feb 16 02:21:45.118126 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2430 DEB Feb 16 02:21:45.118170 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+2431 INF Feb 16 02:21:45.118226 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2432 NOT Feb 16 02:21:45.118274 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2433 DEB Feb 16 02:21:45.118300 (24474-24474) mphone-total-Length = 50
+2438 INF Feb 16 02:21:45.161193 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2439 DEB Feb 16 02:21:45.161235 (24474-24474) mphone-setVolume: type=2, volume=0
+2440 NOT Feb 16 02:21:45.161270 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2441 DEB Feb 16 02:21:45.161289 (24474-24474) mphone-argv[1]=(2), 
+2442 DEB Feb 16 02:21:45.161303 (24474-24474) mphone-argv[2]=(0), 
+2443 DEB Feb 16 02:21:45.161315 (24474-24474) mphone-argv[3]=(0), 
+2444 NOT Feb 16 02:21:45.161390 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2445 DEB Feb 16 02:21:45.161410 (24474-24474) mphone-argv[1]=(2), 
+2446 DEB Feb 16 02:21:45.161424 (24474-24474) mphone-argv[2]=(10), 
+2447 DEB Feb 16 02:21:45.161437 (24474-24474) mphone-argv[3]=(0), 
+2449 NOT Feb 16 02:21:45.161613 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+2456 DEB Feb 16 02:21:45.164195 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+2457 DEB Feb 16 02:21:45.165353 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2458 NOT Feb 16 02:21:45.165406 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2460 NOT Feb 16 02:21:45.167764 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2461 DEB Feb 16 02:21:45.167808 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+2462 NOT Feb 16 02:21:45.168816 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+2463 NOT Feb 16 02:21:45.168876 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+2464 DEB Feb 16 02:21:45.168982 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2465 DEB Feb 16 02:21:45.169005 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+2466 INF Feb 16 02:21:45.169054 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2467 NOT Feb 16 02:21:45.169100 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2468 DEB Feb 16 02:21:45.169126 (24474-24474) mphone-total-Length = 50
+2473 INF Feb 16 02:21:45.241825 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2474 DEB Feb 16 02:21:45.241880 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+2475 INF Feb 16 02:21:45.241938 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2476 NOT Feb 16 02:21:45.241985 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2477 DEB Feb 16 02:21:45.242011 (24474-24474) mphone-total-Length = 50
+2482 INF Feb 16 02:21:45.285184 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2483 DEB Feb 16 02:21:45.285227 (24474-24474) mphone-setVolume: type=2, volume=1
+2484 NOT Feb 16 02:21:45.285260 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2485 DEB Feb 16 02:21:45.285278 (24474-24474) mphone-argv[1]=(2), 
+2486 DEB Feb 16 02:21:45.285292 (24474-24474) mphone-argv[2]=(1), 
+2487 DEB Feb 16 02:21:45.285304 (24474-24474) mphone-argv[3]=(1), 
+2488 NOT Feb 16 02:21:45.285384 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2489 DEB Feb 16 02:21:45.285402 (24474-24474) mphone-argv[1]=(2), 
+2490 DEB Feb 16 02:21:45.285417 (24474-24474) mphone-argv[2]=(10), 
+2491 DEB Feb 16 02:21:45.285430 (24474-24474) mphone-argv[3]=(0), 
+2493 NOT Feb 16 02:21:45.285592 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+2500 DEB Feb 16 02:21:45.287887 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+2501 DEB Feb 16 02:21:45.288765 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2502 NOT Feb 16 02:21:45.288815 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2504 NOT Feb 16 02:21:45.290992 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2505 DEB Feb 16 02:21:45.291041 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+2506 NOT Feb 16 02:21:45.291682 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+2507 NOT Feb 16 02:21:45.291702 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+2508 DEB Feb 16 02:21:45.291792 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2509 DEB Feb 16 02:21:45.291814 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+2510 INF Feb 16 02:21:45.291861 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2511 NOT Feb 16 02:21:45.291897 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2512 DEB Feb 16 02:21:45.291921 (24474-24474) mphone-total-Length = 50
+2517 INF Feb 16 02:21:45.362236 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2518 DEB Feb 16 02:21:45.362280 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+2519 INF Feb 16 02:21:45.362335 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2520 NOT Feb 16 02:21:45.362381 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2521 DEB Feb 16 02:21:45.362406 (24474-24474) mphone-total-Length = 50
+2527 INF Feb 16 02:21:45.405173 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2528 DEB Feb 16 02:21:45.405209 (24474-24474) mphone-setVolume: type=2, volume=0
+2529 NOT Feb 16 02:21:45.405240 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2530 DEB Feb 16 02:21:45.405259 (24474-24474) mphone-argv[1]=(2), 
+2531 DEB Feb 16 02:21:45.405272 (24474-24474) mphone-argv[2]=(0), 
+2532 DEB Feb 16 02:21:45.405285 (24474-24474) mphone-argv[3]=(0), 
+2533 NOT Feb 16 02:21:45.405360 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2534 DEB Feb 16 02:21:45.405380 (24474-24474) mphone-argv[1]=(2), 
+2535 DEB Feb 16 02:21:45.405394 (24474-24474) mphone-argv[2]=(10), 
+2536 DEB Feb 16 02:21:45.405407 (24474-24474) mphone-argv[3]=(0), 
+2538 NOT Feb 16 02:21:45.405563 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+2545 DEB Feb 16 02:21:45.407863 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+2546 DEB Feb 16 02:21:45.408749 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2547 NOT Feb 16 02:21:45.408799 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2549 NOT Feb 16 02:21:45.411030 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2550 DEB Feb 16 02:21:45.411075 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+2551 NOT Feb 16 02:21:45.411713 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+2552 NOT Feb 16 02:21:45.411734 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+2553 DEB Feb 16 02:21:45.411824 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2554 DEB Feb 16 02:21:45.411845 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+2555 INF Feb 16 02:21:45.411892 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2556 NOT Feb 16 02:21:45.411929 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2557 DEB Feb 16 02:21:45.411954 (24474-24474) mphone-total-Length = 50
+2562 INF Feb 16 02:21:45.486283 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2563 DEB Feb 16 02:21:45.486326 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+2564 INF Feb 16 02:21:45.486383 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2565 NOT Feb 16 02:21:45.486429 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2566 DEB Feb 16 02:21:45.486455 (24474-24474) mphone-total-Length = 50
+2571 INF Feb 16 02:21:45.529182 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2572 DEB Feb 16 02:21:45.529218 (24474-24474) mphone-setVolume: type=2, volume=1
+2573 NOT Feb 16 02:21:45.529250 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2574 DEB Feb 16 02:21:45.529268 (24474-24474) mphone-argv[1]=(2), 
+2575 DEB Feb 16 02:21:45.529281 (24474-24474) mphone-argv[2]=(1), 
+2576 DEB Feb 16 02:21:45.529295 (24474-24474) mphone-argv[3]=(1), 
+2577 NOT Feb 16 02:21:45.529364 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2578 DEB Feb 16 02:21:45.529383 (24474-24474) mphone-argv[1]=(2), 
+2579 DEB Feb 16 02:21:45.529397 (24474-24474) mphone-argv[2]=(10), 
+2580 DEB Feb 16 02:21:45.529410 (24474-24474) mphone-argv[3]=(0), 
+2582 NOT Feb 16 02:21:45.529569 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+2589 DEB Feb 16 02:21:45.531862 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+2590 DEB Feb 16 02:21:45.532731 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2591 NOT Feb 16 02:21:45.532780 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2593 NOT Feb 16 02:21:45.535261 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2594 DEB Feb 16 02:21:45.535313 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+2595 NOT Feb 16 02:21:45.536042 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+2596 NOT Feb 16 02:21:45.536067 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+2597 DEB Feb 16 02:21:45.536164 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2598 DEB Feb 16 02:21:45.536186 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+2599 INF Feb 16 02:21:45.536234 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2600 NOT Feb 16 02:21:45.536275 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2601 DEB Feb 16 02:21:45.536299 (24474-24474) mphone-total-Length = 50
+2606 INF Feb 16 02:21:45.606088 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2607 DEB Feb 16 02:21:45.606132 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+2608 INF Feb 16 02:21:45.606186 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2609 NOT Feb 16 02:21:45.606233 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2610 DEB Feb 16 02:21:45.606259 (24474-24474) mphone-total-Length = 50
+2615 INF Feb 16 02:21:45.649184 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2616 DEB Feb 16 02:21:45.649222 (24474-24474) mphone-setVolume: type=2, volume=0
+2617 NOT Feb 16 02:21:45.649252 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2618 DEB Feb 16 02:21:45.649271 (24474-24474) mphone-argv[1]=(2), 
+2619 DEB Feb 16 02:21:45.649284 (24474-24474) mphone-argv[2]=(0), 
+2620 DEB Feb 16 02:21:45.649297 (24474-24474) mphone-argv[3]=(0), 
+2621 NOT Feb 16 02:21:45.649368 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2622 DEB Feb 16 02:21:45.649387 (24474-24474) mphone-argv[1]=(2), 
+2623 DEB Feb 16 02:21:45.649401 (24474-24474) mphone-argv[2]=(10), 
+2624 DEB Feb 16 02:21:45.649414 (24474-24474) mphone-argv[3]=(0), 
+2626 NOT Feb 16 02:21:45.649568 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+2633 DEB Feb 16 02:21:45.651910 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+2634 DEB Feb 16 02:21:45.652782 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2635 NOT Feb 16 02:21:45.652831 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2637 NOT Feb 16 02:21:45.655083 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2638 DEB Feb 16 02:21:45.655128 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+2639 NOT Feb 16 02:21:45.655832 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+2640 NOT Feb 16 02:21:45.655853 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+2641 DEB Feb 16 02:21:45.655947 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2642 DEB Feb 16 02:21:45.655970 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+2643 INF Feb 16 02:21:45.656020 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2644 NOT Feb 16 02:21:45.656061 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2645 DEB Feb 16 02:21:45.656086 (24474-24474) mphone-total-Length = 50
+2650 INF Feb 16 02:21:45.726541 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2651 DEB Feb 16 02:21:45.726583 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+2652 INF Feb 16 02:21:45.726643 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2653 NOT Feb 16 02:21:45.726689 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2654 DEB Feb 16 02:21:45.726716 (24474-24474) mphone-total-Length = 50
+2659 INF Feb 16 02:21:45.769243 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2660 DEB Feb 16 02:21:45.769286 (24474-24474) mphone-setVolume: type=2, volume=1
+2661 NOT Feb 16 02:21:45.769320 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2662 DEB Feb 16 02:21:45.769338 (24474-24474) mphone-argv[1]=(2), 
+2663 DEB Feb 16 02:21:45.769352 (24474-24474) mphone-argv[2]=(1), 
+2664 DEB Feb 16 02:21:45.769365 (24474-24474) mphone-argv[3]=(1), 
+2665 NOT Feb 16 02:21:45.769433 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2666 DEB Feb 16 02:21:45.769452 (24474-24474) mphone-argv[1]=(2), 
+2667 DEB Feb 16 02:21:45.769466 (24474-24474) mphone-argv[2]=(10), 
+2668 DEB Feb 16 02:21:45.769479 (24474-24474) mphone-argv[3]=(0), 
+2670 NOT Feb 16 02:21:45.769638 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+2677 DEB Feb 16 02:21:45.771968 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+2678 DEB Feb 16 02:21:45.772883 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2679 NOT Feb 16 02:21:45.772933 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2681 NOT Feb 16 02:21:45.775403 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2682 DEB Feb 16 02:21:45.775449 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+2683 NOT Feb 16 02:21:45.776222 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+2684 NOT Feb 16 02:21:45.776247 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+2685 DEB Feb 16 02:21:45.776511 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2686 DEB Feb 16 02:21:45.776536 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+2687 INF Feb 16 02:21:45.776584 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2688 NOT Feb 16 02:21:45.776632 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2689 DEB Feb 16 02:21:45.776656 (24474-24474) mphone-total-Length = 50
+2694 INF Feb 16 02:21:45.850151 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2695 DEB Feb 16 02:21:45.850196 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+2696 INF Feb 16 02:21:45.850254 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2697 NOT Feb 16 02:21:45.850301 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2698 DEB Feb 16 02:21:45.850327 (24474-24474) mphone-total-Length = 50
+2703 INF Feb 16 02:21:45.893164 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2704 DEB Feb 16 02:21:45.893203 (24474-24474) mphone-setVolume: type=2, volume=0
+2705 NOT Feb 16 02:21:45.893236 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2706 DEB Feb 16 02:21:45.893258 (24474-24474) mphone-argv[1]=(2), 
+2707 DEB Feb 16 02:21:45.893271 (24474-24474) mphone-argv[2]=(0), 
+2708 DEB Feb 16 02:21:45.893284 (24474-24474) mphone-argv[3]=(0), 
+2709 NOT Feb 16 02:21:45.893350 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2710 DEB Feb 16 02:21:45.893369 (24474-24474) mphone-argv[1]=(2), 
+2711 DEB Feb 16 02:21:45.893383 (24474-24474) mphone-argv[2]=(10), 
+2712 DEB Feb 16 02:21:45.893396 (24474-24474) mphone-argv[3]=(0), 
+2714 NOT Feb 16 02:21:45.893555 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+2721 DEB Feb 16 02:21:45.896137 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+2722 DEB Feb 16 02:21:45.897117 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2723 NOT Feb 16 02:21:45.897168 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2725 NOT Feb 16 02:21:45.899445 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2726 DEB Feb 16 02:21:45.899488 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+2727 NOT Feb 16 02:21:45.900150 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+2728 NOT Feb 16 02:21:45.900171 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+2729 DEB Feb 16 02:21:45.900262 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2730 DEB Feb 16 02:21:45.900284 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+2731 INF Feb 16 02:21:45.900333 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2732 NOT Feb 16 02:21:45.900371 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2733 DEB Feb 16 02:21:45.900397 (24474-24474) mphone-total-Length = 50
+2738 INF Feb 16 02:21:45.970513 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2739 DEB Feb 16 02:21:45.970559 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+2740 INF Feb 16 02:21:45.970619 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2741 NOT Feb 16 02:21:45.970666 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2742 DEB Feb 16 02:21:45.970692 (24474-24474) mphone-total-Length = 50
+2747 INF Feb 16 02:21:46.013166 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2748 DEB Feb 16 02:21:46.013204 (24474-24474) mphone-setVolume: type=2, volume=1
+2749 NOT Feb 16 02:21:46.013238 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2750 DEB Feb 16 02:21:46.013256 (24474-24474) mphone-argv[1]=(2), 
+2751 DEB Feb 16 02:21:46.013270 (24474-24474) mphone-argv[2]=(1), 
+2752 DEB Feb 16 02:21:46.013284 (24474-24474) mphone-argv[3]=(1), 
+2753 NOT Feb 16 02:21:46.013354 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2754 DEB Feb 16 02:21:46.013373 (24474-24474) mphone-argv[1]=(2), 
+2755 DEB Feb 16 02:21:46.013388 (24474-24474) mphone-argv[2]=(10), 
+2756 DEB Feb 16 02:21:46.013400 (24474-24474) mphone-argv[3]=(0), 
+2758 NOT Feb 16 02:21:46.013562 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+2765 DEB Feb 16 02:21:46.016139 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+2766 DEB Feb 16 02:21:46.017122 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2767 NOT Feb 16 02:21:46.017173 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2769 NOT Feb 16 02:21:46.019457 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2770 DEB Feb 16 02:21:46.019502 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+2771 NOT Feb 16 02:21:46.020152 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+2772 NOT Feb 16 02:21:46.020173 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+2773 DEB Feb 16 02:21:46.020262 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2774 DEB Feb 16 02:21:46.020284 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+2775 INF Feb 16 02:21:46.020332 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2776 NOT Feb 16 02:21:46.020369 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2777 DEB Feb 16 02:21:46.020394 (24474-24474) mphone-total-Length = 50
+2782 INF Feb 16 02:21:46.092580 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2783 DEB Feb 16 02:21:46.092625 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+2784 INF Feb 16 02:21:46.092680 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2785 NOT Feb 16 02:21:46.092727 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2786 DEB Feb 16 02:21:46.092753 (24474-24474) mphone-total-Length = 50
+2791 INF Feb 16 02:21:46.133159 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2792 DEB Feb 16 02:21:46.133195 (24474-24474) mphone-setVolume: type=2, volume=0
+2793 NOT Feb 16 02:21:46.133227 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2794 DEB Feb 16 02:21:46.133246 (24474-24474) mphone-argv[1]=(2), 
+2795 DEB Feb 16 02:21:46.133259 (24474-24474) mphone-argv[2]=(0), 
+2796 DEB Feb 16 02:21:46.133272 (24474-24474) mphone-argv[3]=(0), 
+2797 NOT Feb 16 02:21:46.133342 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2798 DEB Feb 16 02:21:46.133361 (24474-24474) mphone-argv[1]=(2), 
+2799 DEB Feb 16 02:21:46.133375 (24474-24474) mphone-argv[2]=(10), 
+2800 DEB Feb 16 02:21:46.133388 (24474-24474) mphone-argv[3]=(0), 
+2802 NOT Feb 16 02:21:46.133551 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+2809 DEB Feb 16 02:21:46.136126 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+2810 DEB Feb 16 02:21:46.137079 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2811 NOT Feb 16 02:21:46.137129 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2813 NOT Feb 16 02:21:46.139541 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2814 DEB Feb 16 02:21:46.139585 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+2815 NOT Feb 16 02:21:46.140258 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+2816 NOT Feb 16 02:21:46.140282 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+2817 DEB Feb 16 02:21:46.140379 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2818 DEB Feb 16 02:21:46.140400 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+2819 INF Feb 16 02:21:46.140450 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2820 NOT Feb 16 02:21:46.140492 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2821 DEB Feb 16 02:21:46.140517 (24474-24474) mphone-total-Length = 50
+2826 INF Feb 16 02:21:46.214324 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2827 DEB Feb 16 02:21:46.214368 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+2828 INF Feb 16 02:21:46.214424 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2829 NOT Feb 16 02:21:46.214470 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2830 DEB Feb 16 02:21:46.214496 (24474-24474) mphone-total-Length = 50
+2835 INF Feb 16 02:21:46.257179 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2836 DEB Feb 16 02:21:46.257218 (24474-24474) mphone-setVolume: type=2, volume=1
+2837 NOT Feb 16 02:21:46.257251 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2838 DEB Feb 16 02:21:46.257269 (24474-24474) mphone-argv[1]=(2), 
+2839 DEB Feb 16 02:21:46.257282 (24474-24474) mphone-argv[2]=(1), 
+2840 DEB Feb 16 02:21:46.257295 (24474-24474) mphone-argv[3]=(1), 
+2841 NOT Feb 16 02:21:46.257372 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2842 DEB Feb 16 02:21:46.257391 (24474-24474) mphone-argv[1]=(2), 
+2843 DEB Feb 16 02:21:46.257405 (24474-24474) mphone-argv[2]=(10), 
+2844 DEB Feb 16 02:21:46.257418 (24474-24474) mphone-argv[3]=(0), 
+2846 NOT Feb 16 02:21:46.257621 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+2853 DEB Feb 16 02:21:46.259955 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+2854 DEB Feb 16 02:21:46.260871 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2855 NOT Feb 16 02:21:46.260921 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2857 NOT Feb 16 02:21:46.263109 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2858 DEB Feb 16 02:21:46.263152 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+2859 NOT Feb 16 02:21:46.263812 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+2860 NOT Feb 16 02:21:46.263833 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+2861 DEB Feb 16 02:21:46.263927 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2862 DEB Feb 16 02:21:46.263950 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+2863 INF Feb 16 02:21:46.263997 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2864 NOT Feb 16 02:21:46.264033 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2865 DEB Feb 16 02:21:46.264057 (24474-24474) mphone-total-Length = 50
+2870 INF Feb 16 02:21:46.334045 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2871 DEB Feb 16 02:21:46.334091 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+2872 INF Feb 16 02:21:46.334157 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2873 NOT Feb 16 02:21:46.334204 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2874 DEB Feb 16 02:21:46.334230 (24474-24474) mphone-total-Length = 50
+2879 INF Feb 16 02:21:46.377317 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2880 DEB Feb 16 02:21:46.377355 (24474-24474) mphone-setVolume: type=2, volume=0
+2881 NOT Feb 16 02:21:46.377387 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2882 DEB Feb 16 02:21:46.377405 (24474-24474) mphone-argv[1]=(2), 
+2883 DEB Feb 16 02:21:46.377419 (24474-24474) mphone-argv[2]=(0), 
+2884 DEB Feb 16 02:21:46.377432 (24474-24474) mphone-argv[3]=(0), 
+2885 NOT Feb 16 02:21:46.377499 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2886 DEB Feb 16 02:21:46.377518 (24474-24474) mphone-argv[1]=(2), 
+2887 DEB Feb 16 02:21:46.377532 (24474-24474) mphone-argv[2]=(10), 
+2888 DEB Feb 16 02:21:46.377576 (24474-24474) mphone-argv[3]=(0), 
+2892 NOT Feb 16 02:21:46.377803 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+2898 DEB Feb 16 02:21:46.380166 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+2899 DEB Feb 16 02:21:46.381075 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2900 NOT Feb 16 02:21:46.381125 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2902 NOT Feb 16 02:21:46.383283 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2903 DEB Feb 16 02:21:46.383332 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+2904 NOT Feb 16 02:21:46.383977 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+2905 NOT Feb 16 02:21:46.383998 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+2906 DEB Feb 16 02:21:46.384090 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2907 DEB Feb 16 02:21:46.384112 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+2908 INF Feb 16 02:21:46.384160 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2909 NOT Feb 16 02:21:46.384197 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2910 DEB Feb 16 02:21:46.384222 (24474-24474) mphone-total-Length = 50
+2915 INF Feb 16 02:21:46.454233 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2916 DEB Feb 16 02:21:46.454279 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+2917 INF Feb 16 02:21:46.454337 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2918 NOT Feb 16 02:21:46.454385 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2919 DEB Feb 16 02:21:46.454411 (24474-24474) mphone-total-Length = 50
+2924 INF Feb 16 02:21:46.497168 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2925 DEB Feb 16 02:21:46.497205 (24474-24474) mphone-setVolume: type=2, volume=1
+2926 NOT Feb 16 02:21:46.497233 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2927 DEB Feb 16 02:21:46.497252 (24474-24474) mphone-argv[1]=(2), 
+2928 DEB Feb 16 02:21:46.497266 (24474-24474) mphone-argv[2]=(1), 
+2929 DEB Feb 16 02:21:46.497278 (24474-24474) mphone-argv[3]=(1), 
+2930 NOT Feb 16 02:21:46.497358 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2931 DEB Feb 16 02:21:46.497377 (24474-24474) mphone-argv[1]=(2), 
+2932 DEB Feb 16 02:21:46.497391 (24474-24474) mphone-argv[2]=(10), 
+2933 DEB Feb 16 02:21:46.497404 (24474-24474) mphone-argv[3]=(0), 
+2935 NOT Feb 16 02:21:46.497566 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+2942 DEB Feb 16 02:21:46.499892 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+2943 DEB Feb 16 02:21:46.500766 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2944 NOT Feb 16 02:21:46.500818 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2946 NOT Feb 16 02:21:46.503037 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2947 DEB Feb 16 02:21:46.503082 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+2948 NOT Feb 16 02:21:46.503740 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+2949 NOT Feb 16 02:21:46.503761 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+2950 DEB Feb 16 02:21:46.503853 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2951 DEB Feb 16 02:21:46.503876 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+2952 INF Feb 16 02:21:46.503925 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2953 NOT Feb 16 02:21:46.503962 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2954 DEB Feb 16 02:21:46.503988 (24474-24474) mphone-total-Length = 50
+2959 INF Feb 16 02:21:46.573853 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2960 DEB Feb 16 02:21:46.573899 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+2961 INF Feb 16 02:21:46.573957 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2962 NOT Feb 16 02:21:46.574008 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2963 DEB Feb 16 02:21:46.574034 (24474-24474) mphone-total-Length = 50
+2968 INF Feb 16 02:21:46.617220 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+2969 DEB Feb 16 02:21:46.617261 (24474-24474) mphone-setVolume: type=2, volume=0
+2970 NOT Feb 16 02:21:46.617296 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+2971 DEB Feb 16 02:21:46.617314 (24474-24474) mphone-argv[1]=(2), 
+2972 DEB Feb 16 02:21:46.617329 (24474-24474) mphone-argv[2]=(0), 
+2973 DEB Feb 16 02:21:46.617342 (24474-24474) mphone-argv[3]=(0), 
+2974 NOT Feb 16 02:21:46.617414 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+2975 DEB Feb 16 02:21:46.617433 (24474-24474) mphone-argv[1]=(2), 
+2976 DEB Feb 16 02:21:46.617447 (24474-24474) mphone-argv[2]=(10), 
+2977 DEB Feb 16 02:21:46.617460 (24474-24474) mphone-argv[3]=(0), 
+2979 NOT Feb 16 02:21:46.617615 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+2986 DEB Feb 16 02:21:46.619957 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+2987 DEB Feb 16 02:21:46.620827 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+2988 NOT Feb 16 02:21:46.620908 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+2990 NOT Feb 16 02:21:46.623092 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+2991 DEB Feb 16 02:21:46.623137 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+2992 NOT Feb 16 02:21:46.623844 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+2993 NOT Feb 16 02:21:46.623865 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+2994 DEB Feb 16 02:21:46.623959 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+2995 DEB Feb 16 02:21:46.623982 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+2996 INF Feb 16 02:21:46.624030 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+2997 NOT Feb 16 02:21:46.624069 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+2998 DEB Feb 16 02:21:46.624094 (24474-24474) mphone-total-Length = 50
+3003 INF Feb 16 02:21:46.693939 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+3004 DEB Feb 16 02:21:46.693984 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+3005 INF Feb 16 02:21:46.694043 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+3006 NOT Feb 16 02:21:46.694090 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+3007 DEB Feb 16 02:21:46.694116 (24474-24474) mphone-total-Length = 50
+3012 INF Feb 16 02:21:46.737179 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+3013 DEB Feb 16 02:21:46.737216 (24474-24474) mphone-setVolume: type=2, volume=1
+3014 NOT Feb 16 02:21:46.737247 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+3015 DEB Feb 16 02:21:46.737266 (24474-24474) mphone-argv[1]=(2), 
+3016 DEB Feb 16 02:21:46.737280 (24474-24474) mphone-argv[2]=(1), 
+3017 DEB Feb 16 02:21:46.737293 (24474-24474) mphone-argv[3]=(1), 
+3018 NOT Feb 16 02:21:46.737361 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+3019 DEB Feb 16 02:21:46.737380 (24474-24474) mphone-argv[1]=(2), 
+3020 DEB Feb 16 02:21:46.737395 (24474-24474) mphone-argv[2]=(10), 
+3021 DEB Feb 16 02:21:46.737408 (24474-24474) mphone-argv[3]=(0), 
+3023 NOT Feb 16 02:21:46.737564 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+3030 DEB Feb 16 02:21:46.739991 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+3031 DEB Feb 16 02:21:46.740911 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+3032 NOT Feb 16 02:21:46.740961 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+3034 NOT Feb 16 02:21:46.743147 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+3035 DEB Feb 16 02:21:46.743180 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+3036 NOT Feb 16 02:21:46.743896 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+3037 NOT Feb 16 02:21:46.743918 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+3038 DEB Feb 16 02:21:46.744011 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+3039 DEB Feb 16 02:21:46.744034 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+3040 INF Feb 16 02:21:46.744082 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+3041 NOT Feb 16 02:21:46.744115 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+3042 DEB Feb 16 02:21:46.744140 (24474-24474) mphone-total-Length = 50
+3047 INF Feb 16 02:21:46.814079 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+3048 DEB Feb 16 02:21:46.814122 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+3049 INF Feb 16 02:21:46.814181 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+3050 NOT Feb 16 02:21:46.814229 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+3051 DEB Feb 16 02:21:46.814256 (24474-24474) mphone-total-Length = 50
+3056 INF Feb 16 02:21:46.857168 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+3057 DEB Feb 16 02:21:46.857206 (24474-24474) mphone-setVolume: type=2, volume=0
+3058 NOT Feb 16 02:21:46.857233 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+3059 DEB Feb 16 02:21:46.857252 (24474-24474) mphone-argv[1]=(2), 
+3060 DEB Feb 16 02:21:46.857265 (24474-24474) mphone-argv[2]=(0), 
+3061 DEB Feb 16 02:21:46.857278 (24474-24474) mphone-argv[3]=(0), 
+3062 NOT Feb 16 02:21:46.857358 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+3063 DEB Feb 16 02:21:46.857377 (24474-24474) mphone-argv[1]=(2), 
+3064 DEB Feb 16 02:21:46.857390 (24474-24474) mphone-argv[2]=(10), 
+3065 DEB Feb 16 02:21:46.857403 (24474-24474) mphone-argv[3]=(0), 
+3067 NOT Feb 16 02:21:46.857572 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+3074 DEB Feb 16 02:21:46.859997 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+3075 DEB Feb 16 02:21:46.860921 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+3076 NOT Feb 16 02:21:46.860977 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+3078 NOT Feb 16 02:21:46.863197 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+3079 DEB Feb 16 02:21:46.863275 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+3080 NOT Feb 16 02:21:46.863914 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+3081 NOT Feb 16 02:21:46.863936 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+3082 DEB Feb 16 02:21:46.864027 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+3083 DEB Feb 16 02:21:46.864051 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+3084 INF Feb 16 02:21:46.864100 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+3085 NOT Feb 16 02:21:46.864138 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+3086 DEB Feb 16 02:21:46.864163 (24474-24474) mphone-total-Length = 50
+3091 INF Feb 16 02:21:46.933731 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+3092 DEB Feb 16 02:21:46.933776 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+3093 INF Feb 16 02:21:46.933838 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+3094 NOT Feb 16 02:21:46.933885 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+3095 DEB Feb 16 02:21:46.933911 (24474-24474) mphone-total-Length = 50
+3100 INF Feb 16 02:21:46.977173 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+3101 DEB Feb 16 02:21:46.977209 (24474-24474) mphone-setVolume: type=2, volume=1
+3102 NOT Feb 16 02:21:46.977237 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+3103 DEB Feb 16 02:21:46.977255 (24474-24474) mphone-argv[1]=(2), 
+3104 DEB Feb 16 02:21:46.977269 (24474-24474) mphone-argv[2]=(1), 
+3105 DEB Feb 16 02:21:46.977281 (24474-24474) mphone-argv[3]=(1), 
+3106 NOT Feb 16 02:21:46.977353 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+3107 DEB Feb 16 02:21:46.977373 (24474-24474) mphone-argv[1]=(2), 
+3108 DEB Feb 16 02:21:46.977387 (24474-24474) mphone-argv[2]=(10), 
+3109 DEB Feb 16 02:21:46.977400 (24474-24474) mphone-argv[3]=(0), 
+3111 NOT Feb 16 02:21:46.977558 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+3118 DEB Feb 16 02:21:46.980025 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+3119 DEB Feb 16 02:21:46.980937 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+3120 NOT Feb 16 02:21:46.980987 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+3122 NOT Feb 16 02:21:46.983185 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+3123 DEB Feb 16 02:21:46.983226 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+3124 NOT Feb 16 02:21:46.983915 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+3125 NOT Feb 16 02:21:46.983938 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+3126 DEB Feb 16 02:21:46.984032 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+3127 DEB Feb 16 02:21:46.984055 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+3128 INF Feb 16 02:21:46.984102 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+3129 NOT Feb 16 02:21:46.984140 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+3130 DEB Feb 16 02:21:46.984164 (24474-24474) mphone-total-Length = 50
+3135 INF Feb 16 02:21:47.054237 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+3136 DEB Feb 16 02:21:47.054281 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 0
+3137 INF Feb 16 02:21:47.054338 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+3138 NOT Feb 16 02:21:47.054386 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+3139 DEB Feb 16 02:21:47.054413 (24474-24474) mphone-total-Length = 50
+3144 INF Feb 16 02:21:47.097171 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+3145 DEB Feb 16 02:21:47.097209 (24474-24474) mphone-setVolume: type=2, volume=0
+3146 NOT Feb 16 02:21:47.097240 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+3147 DEB Feb 16 02:21:47.097259 (24474-24474) mphone-argv[1]=(2), 
+3148 DEB Feb 16 02:21:47.097273 (24474-24474) mphone-argv[2]=(0), 
+3149 DEB Feb 16 02:21:47.097286 (24474-24474) mphone-argv[3]=(0), 
+3150 NOT Feb 16 02:21:47.097355 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+3151 DEB Feb 16 02:21:47.097374 (24474-24474) mphone-argv[1]=(2), 
+3152 DEB Feb 16 02:21:47.097389 (24474-24474) mphone-argv[2]=(10), 
+3153 DEB Feb 16 02:21:47.097402 (24474-24474) mphone-argv[3]=(0), 
+3155 NOT Feb 16 02:21:47.097559 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":0,"isRinger":true}
+3162 DEB Feb 16 02:21:47.099984 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 0
+3163 DEB Feb 16 02:21:47.100909 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"0","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+3164 NOT Feb 16 02:21:47.100959 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+3166 NOT Feb 16 02:21:47.103141 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+3167 DEB Feb 16 02:21:47.103186 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:0
+3168 NOT Feb 16 02:21:47.103840 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=1>
+3169 NOT Feb 16 02:21:47.103862 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=1>
+3170 DEB Feb 16 02:21:47.103953 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+3171 DEB Feb 16 02:21:47.103975 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 0, ringerVolumeTemp = 1
+3172 INF Feb 16 02:21:47.104025 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+3173 NOT Feb 16 02:21:47.104059 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+3174 DEB Feb 16 02:21:47.104083 (24474-24474) mphone-total-Length = 50
+3180 INF Feb 16 02:21:47.174984 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+3181 DEB Feb 16 02:21:47.175030 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 1
+3182 INF Feb 16 02:21:47.175087 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+3183 NOT Feb 16 02:21:47.175155 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+3184 DEB Feb 16 02:21:47.175183 (24474-24474) mphone-total-Length = 50
+3199 INF Feb 16 02:21:47.217203 (24474-24474) mphone-CRemoteRepoProto_saveObject Exit
+3200 DEB Feb 16 02:21:47.217242 (24474-24474) mphone-setVolume: type=2, volume=1
+3201 NOT Feb 16 02:21:47.217275 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SET_VOLUME argc=3
+3202 DEB Feb 16 02:21:47.217293 (24474-24474) mphone-argv[1]=(2), 
+3203 DEB Feb 16 02:21:47.217307 (24474-24474) mphone-argv[2]=(1), 
+3204 DEB Feb 16 02:21:47.217320 (24474-24474) mphone-argv[3]=(1), 
+3205 NOT Feb 16 02:21:47.217392 (24474-24474) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_PLAY_RINGTONE_ONCE argc=3
+3206 DEB Feb 16 02:21:47.217410 (24474-24474) mphone-argv[1]=(2), 
+3207 DEB Feb 16 02:21:47.217424 (24474-24474) mphone-argv[2]=(10), 
+3208 DEB Feb 16 02:21:47.217437 (24474-24474) mphone-argv[3]=(0), 
+3210 NOT Feb 16 02:21:47.217593 (24474-24474) mphone-CQtRender_startToast toastDataStr: {"type":1,"toastIcon":0,"toastDuration":2000,"minValue":0,"maxValue":15,"currentValue":1,"isRinger":true}
+3217 DEB Feb 16 02:21:47.219946 (24474-24474) mphone-loadListItemFromTable: lajiang, level: 1
+3218 DEB Feb 16 02:21:47.220816 (24474-24474) mphone-[truncated] CQtRender_setList, pPageId=RingToneAndVolume, replace=1, len=2234 , str=[{"id":"0","index":0,"type":36,"labelName":"","value":"1","enabled":true,"editable":false,"nextPage":false,"iconValue":"ringerVolumeLevel","itemState":0,"desc":""},{"id":"1","index":1,"type":9,"labelName":"Ext 1 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"2","index":2,"type":9,"labelName":"Ext 2 - Ring tone","value":"Mischief","enabled":true,"editable":false,"nextPage":true},{"id":"3","index":3,"type":9,"labelName":"Ext 3 - Ring tone","value":"Mellow","enabled":true,"editable":false,"nextPage":true},{"id":"4","index":4,"type":9,"labelName":"Ext 4 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"5","index":5,"type":9,"labelName":"Ext 5 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"6","index":6,"type":9,"labelName":"Ext 6 - Ring tone","value":"Sunrise","enabled":true,"editable":false,"nextPage":true},{"id":"7","index":7,"type":9,"lab
+3219 NOT Feb 16 02:21:47.220906 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, in
+3221 NOT Feb 16 02:21:47.223131 (24474-24474) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=RingToneAndVolume, out
+3222 DEB Feb 16 02:21:47.223176 (24474-24559) mphone- CQtClient_invokeSliderValueChanged: RingToneAndVolume:1
+3223 NOT Feb 16 02:21:47.223814 (24474-24474) mphone-CScreen_dispatch(): call agent process <Application_RingerVolume?value=0>
+3224 NOT Feb 16 02:21:47.223835 (24474-24474) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_RingerVolume?value=0>
+3225 DEB Feb 16 02:21:47.223927 (24474-24474) mphone-CSORingerVolume_process, lajiang, resetVolumeTimer
+3226 DEB Feb 16 02:21:47.223950 (24474-24474) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE ringerVolume = 1, ringerVolumeTemp = 0
+3227 INF Feb 16 02:21:47.223998 (24474-24474) mphone-CRemoteRepoProto_saveObject Enter
+3228 NOT Feb 16 02:21:47.224035 (24474-24474) mphone-CProto_encodeDataObjectToPayLoad(): Class Name: <VolumeSetting> Field Count: <15>
+
+
+
+
+
+1. because 
+
+
+

@@ -1,0 +1,35 @@
+
+
+
+class MissingDependencyError(GenmakeError):
+    def __init__(self, module_name: str, bo_name: str):
+        value = f"""{bo_name}: Failed to find {module_name} dependency
+
+This means that "{bo_name}" build object depends, directly or
+indirectly, on the build object "{module_name}", and the latter is not included in your product."""
+        super().__init__(f'{value}', False)
+        
+
+def _stage2(self):
+libs = self.get_build_env('libraries', recurse=False, default=[])
+libs += self.get_build_env('late_libraries', recurse=False, default=[])	====> libsigncore在libs里面
+pack = self.get_package()
+for lib in libs:
+	bo = pack._lookup_module(lib)	====> 但是在pack找不到libsigncore
+
+        
+        
+log:
+INFO:build:Stage 2: Populating the environment [2.329]
+ERROR:build:genmake.exception.MissingLibraryDependencyError: /bumblebee/abisign:program: Failed to find libsigncore dependency
+
+This means that "/bumblebee/abisign:program" build object depends, directly or
+indirectly, on the build object "libsigncore", and the latter is not included in your product.
+
+
+结论:
+在product/bumblebee/common/rootfs/genmake.def 写入, 就是build _build/bumblebee/rootfs/xxxxx
+py里面写死addtool, 就是_build/bumblebee/diskwizz
+
+genmake根据你给的方式, 生成ninja文件,  里面包含了所有的编译指令, 相当于makefile
+可看下 _build/bumblebee/product/bumblebee/complete/build.ninja

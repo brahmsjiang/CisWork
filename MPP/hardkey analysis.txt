@@ -1,0 +1,138 @@
+
+
+
+8535 NOT Jun 10 18:25:43.880621 (3514-3563) CDP-cdpRcvPkt(): deviceId is switch_lajiang
+8536 DEB Jun 10 18:25:53.329860 (3280-3280) NTP-sock_cb: event on sock4: timeout
+8537 DEB Jun 10 18:25:53.335272 (3280-3280) NTP-timeGuard(): file sync
+8538 DEB Jun 10 18:25:53.337367 (3280-3280) NTP-timeout_queries: called to check 2 items
+8539 WRN Jun 10 18:25:53.337424 (3280-3280) NTP-sock_cb: exit for timeout!!!!
+8540 WRN Jun 10 18:26:01.764337 (19743-19743) guiapp-[Profiling-Stub] keyPressedOnHome(): Key_Headset
+8541 WRN Jun 10 18:26:01.764851 (19743-19743) guiapp-[Profiling-Stub] keyReleasedOnHome(): Key_Headset
+8542 NOT Jun 10 18:26:01.765185 (19837-19837) mphone-CScreen_dispatch(): call agent process <Application_Key_HEADSET>
+8543 NOT Jun 10 18:26:01.765216 (19837-19837) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_Key_HEADSET>
+8544 NOT Jun 10 18:26:01.765316 (19837-19837) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_SEND_KEY argc=3
+8545 NOT Jun 10 18:26:01.765507 (19824-19824) voice-[Profiling-Stub] handleKey : QPE_GUI_MSG_SEND_KEY, key=261, down=1
+8546 NOT Jun 10 18:26:01.765549 (19824-19824) voice-Jianc2: CQW:handle Key:30 down?1
+8547 NOT Jun 10 18:26:01.774421 (19824-19946) voice-CC:30 Key 128
+8548 NOT Jun 10 18:26:01.774444 (19824-19946) voice-CC_processHalCmd: <AUD_Path> HEADSET key detected
+8549 NOT Jun 10 18:26:01.774463 (19824-19946) voice-### switch on audio dev 2, pap=0
+8550 NOT Jun 10 18:26:01.774652 (19837-19837) mphone-CCallProxy_service(): [PXY]svcrecv QPE_VOIP_MSG_SYSTEM_AUDIO_PATH argc=3
+8551 NOT Jun 10 18:26:01.774714 (19801-19801) ms-APATH.ms_setInputAudioPath Saving [input audio device = AD_INPUT_HEADSET_ANALOG]
+8552 NOT Jun 10 18:26:01.774747 (19801-19801) ms-APATH.ms_setInputAudioPath No active streams, exiting
+8553 NOT Jun 10 18:26:01.774830 (19801-19801) ms-APATH.ms_setOutputAudioPath Saving [output audio device = AD_OUTPUT_HEADSET_ANALOG][volumeStep=9]
+8554 NOT Jun 10 18:26:01.774852 (19801-19801) ms-APATH.ms_setOutputAudioPath No active streams, exiting
+8555 NOT Jun 10 18:26:01.774916 (19801-19801) ms-APATH.ms_setSideTone enable side tone
+8556 NOT Jun 10 18:26:01.775066 (19824-19946) voice-ehs.c::EHS_sendAudioStatus Set audio status: 1
+8557 NOT Jun 10 18:26:01.775109 (19824-19946) voice-[CCTRL]Obtain Call Obj(175) 0xf0e37bd4(0:0)<0:0>
+8558 NOT Jun 10 18:26:01.775131 (19824-19946) voice-cepIdleProc: lid=0, event=10(CC_EV_USR_SEIZURE), par=0, par2=(nil)
+8559 WRN Jun 10 18:26:01.775541 (19824-19946) voice-[WLAN_API-wlanApiConnectStatusGet] Got status, enabled=1, profile=0, state=9
+8560 NOT Jun 10 18:26:01.775689 (19824-19946) voice-[Profiling-Stub] lineSeized : event=QPE_VOIP_MSG_CALL_EVENT_SEIZURE, CID=0
+8561 NOT Jun 10 18:26:01.775749 (19824-19946) voice-LOG_NEW_CALL_STATE {"ref_id": "00000", "old_state": "CC_CST_IDLE", "new_state": "CC_CST_DIALING"}
+8562 NOT Jun 10 18:26:01.775776 (19824-19946) voice-VDBUS.CallControlIPC_SignalCallStateChanged Signal call state changed for line (0) call (0) and new state is (6)
+8563 NOT Jun 10 18:26:01.776071 (19801-19801) ms-APATH.ms_setMute [setting mute on]
+8564 NOT Jun 10 18:26:01.776104 (19801-19801) ms-AUXAPI.aux_sendMsg AUX_SET_MUTE mode 1
+8565 NOT Jun 10 18:26:01.776126 (19801-19801) ms-ACOUSTINTER.acoustici_setMute set mute[1]
+8566 NOT Jun 10 18:26:01.776142 (19801-19801) ms-AOMXCOMP.aomxSource_setMute successfully set mute[1].
+8567 NOT Jun 10 18:26:01.776161 (19801-19801) ms-DSPMGR.dm_mute mute is on
+8568 NOT Jun 10 18:26:01.776272 (19801-19801) ms-APATH.ms_setMute [setting mute off]
+8569 NOT Jun 10 18:26:01.776291 (19801-19801) ms-AUXAPI.aux_sendMsg AUX_SET_MUTE mode 0
+8570 NOT Jun 10 18:26:01.776306 (19801-19801) ms-ACOUSTINTER.acoustici_setMute set mute[0]
+8571 NOT Jun 10 18:26:01.776320 (19801-19801) ms-AOMXCOMP.aomxSource_setMute successfully set mute[0].
+8572 NOT Jun 10 18:26:01.776333 (19801-19801) ms-DSPMGR.dm_mute mute is off
+8573 NOT Jun 10 18:26:01.776528 (19824-19946) voice-aud_wb.c::AUDWB_startCpTone lid 0 current tone 0 (SYS_TONE_NONE) request 1 (SYS_TONE_DIAL)
+8574 NOT Jun 10 18:26:01.776585 (19801-19801) ms-TONESESSION.ms_startToneDescription [session=2][local=1]
+8575 NOT Jun 10 18:26:01.776608 (19801-19801) ms-TONESESSION.saveToneDescription save description to slot 0; new toneIndex is 36, toneId is 0
+8576 INF Jun 10 18:26:01 Jun 10 18:26:01.804020 Jun 10 18:26:01.803999 kernel: [155308.797472] DSPG : 432MHz, 115200 Baudratel3
+8577 NOT Jun 10 18:26:01.812884 (19801-19801) ms-CALLBKMGR.cb_mediaLocalAdded [callId=0][seh=2]
+8578 NOT Jun 10 18:26:01.812958 (19801-19801) ms-TONECORE.tonecorePlayATone_ TONE_START: [toneIndex=Unknown Index][local=1][network=0][numberDestinations=0][session=2]
+8579 NOT Jun 10 18:26:01.812997 (19801-19801) ms-SESSIONMGR.ms_startSession[T:2] enter
+8580 DEB Jun 10 18:26:01.812984 (19849-19911) voice_feedback-libms: libmsAEventThread - AEvent- recv, fid = 22, len = 8132, callback type = 27
+8581 DEB Jun 10 18:26:01.813017 (19849-19911) voice_feedback-libms: libmsAEventThread - Received Local Media Added, sessionid x2
+8582 NOT Jun 10 18:26:01.813020 (19801-19801) ms-SESSIONMGR.ms_startSession[T:2] exit [status=0][errno=0]
+8583 NOT Jun 10 18:26:01.813122 (19801-19801) ms-APATH.ms_setInputAudioPath Saving [input audio device = AD_INPUT_HEADSET_ANALOG]
+8584 NOT Jun 10 18:26:01.813144 (19801-19801) ms-APATH.ms_setInputAudioPath No active streams, exiting
+8585 NOT Jun 10 18:26:01.813207 (19801-19801) ms-APATH.ms_setOutputAudioPath Saving [output audio device = AD_OUTPUT_HEADSET_ANALOG][volumeStep=9]
+8586 NOT Jun 10 18:26:01.813230 (19801-19801) ms-HDSMGR.hdsmgr_bypassAECModules No modules need be bypassed!
+8587 NOT Jun 10 18:26:01.813332 (19801-19801) ms-APATH.ms_setSideTone enable side tone
+8588 NOT Jun 10 18:26:01.813714 (19824-19946) voice-aud_wb.c::AUDWB_startCpTone lid 0 current tone 1 (SYS_TONE_DIAL) request 1 (SYS_TONE_DIAL)
+8589 NOT Jun 10 18:26:01.813744 (19824-19946) voice-aud_wb.c::AUDWB_startCpTone requested tone 1 (SYS_TONE_DIAL) already playing
+8590 NOT Jun 10 18:26:01.813786 (19801-19801) ms-APATH.ms_setInputAudioPath Saving [input audio device = AD_INPUT_HEADSET_ANALOG]
+8591 NOT Jun 10 18:26:01.813805 (19801-19801) ms-APATH.ms_setInputAudioPath No active streams, exiting
+8592 NOT Jun 10 18:26:01.813865 (19801-19801) ms-APATH.ms_setOutputAudioPath Saving [output audio device = AD_OUTPUT_HEADSET_ANALOG][volumeStep=9]
+8593 NOT Jun 10 18:26:01.813885 (19801-19801) ms-HDSMGR.hdsmgr_bypassAECModules No modules need be bypassed!
+8594 NOT Jun 10 18:26:01.813957 (19801-19801) ms-APATH.ms_setSideTone enable side tone
+8595 NOT Jun 10 18:26:01.818817 (19837-19837) mphone-CCallProxy_service(): [PXY]svcrecv QPE_VOIP_MSG_CALL_EVENT_SEIZURE argc=2
+8596 NOT Jun 10 18:26:01.818865 (19837-19837) mphone-[Profiling-Stub] handleCallSeize : got event QPE_VOIP_MSG_CALL_EVENT_SEIZURE
+8597 NOT Jun 10 18:26:01.821313 (19837-19837) mphone-CScreen_dispatch(): call agent process <Application_CallEditDial?refID=00000>
+8598 NOT Jun 10 18:26:01.821352 (19837-19837) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_CallEditDial?refID=00000>
+8599 NOT Jun 10 18:26:01.821414 (19837-19837) mphone-[Profiling-Stub] CSODialScreen_process CSODialScreen_process in
+8600 NOT Jun 10 18:26:01.821480 (19837-19837) mphone-GetNetworkStatus: l2ConnectionFailed=0, l3ConnectionFailed=0
+8601 NOT Jun 10 18:26:01.827722 (19837-19837) mphone-[Profiling-Stub] CSODialScreen_process CSODialScreen_process out
+8602 NOT Jun 10 18:26:01.829590 (19837-19837) mphone-[Profiling-Stub] MphoneQt_initPage : pageID=NewCall, in
+8603 NOT Jun 10 18:26:01.830176 (19743-19743) guiapp-getPage(): NewCall not found
+8604 NOT Jun 10 18:26:01.854949 (19837-19837) mphone-[Profiling-Stub] MphoneQt_initPage : pageID=NewCall, out
+8605 NOT Jun 10 18:26:01.872847 (19837-19837) mphone-CSEngine_handleInternalURI(): Info: csscript: eval Internal URI <Application_DialScreenStartTimer>
+8606 NOT Jun 10 18:26:01.872983 (19837-19837) mphone-[Profiling-Stub] CSODialScreenStartTimer_process : in
+8607 NOT Jun 10 18:26:01.873023 (19837-19837) mphone-CCallProxy_sendRequest(): [PXY]send QPE_GUI_MSG_RESET_DIALPLAN_TIMER argc=1
+8608 NOT Jun 10 18:26:01.873292 (19837-19837) mphone-[Profiling-Stub] CSODialScreenStartTimer_process : out
+8609 NOT Jun 10 18:26:01.873912 (19837-19837) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=NewCall, in
+8610 NOT Jun 10 18:26:01.874412 (19824-19946) voice-CC_eventProc(event=4107(CC_EV_GUI_DIGIT_PRESSED), lid=0, par=0, par2=(nil))
+8611 NOT Jun 10 18:26:01.874481 (19824-19946) voice-cepDialingProc: lid=0, event=4107(CC_EV_GUI_DIGIT_PRESSED), par=0, par2=(nil)
+8612 NOT Jun 10 18:26:01.874652 (19824-19946) voice-aud_wb.c::AUDWB_startCpTone lid 0 current tone 1 (SYS_TONE_DIAL) request 1 (SYS_TONE_DIAL)
+8613 NOT Jun 10 18:26:01.874690 (19824-19946) voice-aud_wb.c::AUDWB_startCpTone requested tone 1 (SYS_TONE_DIAL) already playing
+8614 NOT Jun 10 18:26:01.875005 (19801-19801) ms-APATH.ms_setInputAudioPath Saving [input audio device = AD_INPUT_HEADSET_ANALOG]
+8615 NOT Jun 10 18:26:01.875054 (19801-19801) ms-APATH.ms_setInputAudioPath No active streams, exiting
+8616 NOT Jun 10 18:26:01.875303 (19801-19801) ms-APATH.ms_setOutputAudioPath Saving [output audio device = AD_OUTPUT_HEADSET_ANALOG][volumeStep=9]
+8617 NOT Jun 10 18:26:01.875340 (19801-19801) ms-HDSMGR.hdsmgr_bypassAECModules No modules need be bypassed!
+8618 NOT Jun 10 18:26:01.875506 (19801-19801) ms-APATH.ms_setSideTone enable side tone
+8619 NOT Jun 10 18:26:01.900404 (19837-19837) mphone-[Profiling-Stub] MphoneQt_setPageDataListModel : pageID=NewCall, out
+8620 NOT Jun 10 18:26:01.904924 (19837-19837) mphone-[Profiling-Stub] MphoneQt_showPage : pageID=NewCall, isVisible=1, in
+8621 WRN Jun 10 18:26:01.905337 (19743-19743) guiapp-[Profiling-Stub] showPage(): NewCall  isVisible: true
+8622 NOT Jun 10 18:26:01.907637 (19837-19837) mphone-[Profiling-Stub] MphoneQt_showPage : pageID=NewCall, isVisible=1, out
+8623 NOT Jun 10 18:26:01.916138 (19837-19837) mphone-CSEngine_handleInternalURI(): Info: csscript: eval Internal URI <Application_UpdateLineSelection>
+8624 NOT Jun 10 18:26:01.916515 (19837-19837) mphone-CScreen_dispatch(): call agent process <Application_UpdateLineSelection?refID=00000&name=&number=>
+8625 NOT Jun 10 18:26:01.916551 (19837-19837) mphone-[Profiling-Stub] CScreen_dispatch call agent process <Application_UpdateLineSelection?refID=00000&name=&number=>
+8626 NOT Jun 10 18:26:01.921437 (19837-19837) mphone-CCallProxy_service(): [PXY]svcrecv QPE_VOIP_MSG_CALL_EVENT_TRANSFER argc=2
+8627 NOT Jun 10 18:26:02.552569 (19824-19943) voice-fapp-line_active - is_a_call_in_progress() is 1
+
+
+
+
+
+由qtapp/utilities/kmap2qmap工具将bumblebee.kmap(可编辑)生成bumblebee.qmap(二进制文件)
+keymaps 0-127
+#headset
+keycode 82 = F8			//即为Qt::Key_F8
+
+
+然后genmake安装在board的usr/mbin/位置:(on_target_file到底是怎么安装的? 可以研究下)
+m.on_target_file('utilities/kmap2qmap/bumblebee.qmap', 'usr/mbin/')
+
+最后guiapp.sh启动脚本通过指定qt环境变量读取platform-gpio-keys-event 以及 bumblebee.qmap
+export QT_QPA_EVDEV_KEYBOARD_PARAMETERS=/dev/input/event0:/dev/input/event1:/dev/input/event2:/dev/input/event3:keymap=/usr/mbin/bumblebee.qmap
+其分别对应
+lrwxrwxrwx    1 root     root             9 Jan  1  2018 platform-98007d00.i2c-event -> ../event0
+lrwxrwxrwx    1 root     root             9 Jan  1  2018 platform-gpio-keys-event -> ../event2
+lrwxrwxrwx    1 root     root       	    9 Jan  1  2018 platform-matrix-keypad-event -> ../event
+
+那么和
+
+
+原始的qnamespace.h的定义:
+Key_F8 = 0x01000037,	//16777271	,这个应该仅仅是Key_F8的enum编号而已, 和keymap没有关系
+qtbase/src/plugins/generic/bsdkeyboard/qbsdkeyboard_defaultmap.h
+而不同平台的keymap定义所有不同, 同样映射到Key_F8, 平台keycode不一样.自行指定bumblebee.kmap就是替代缺省的map(generic Key_F8可能是66)
+
+qtapp/qt5/src/include/keymap.h, 把Qt内置Key-enum映射成bbb的hardkey
+enum VKey {
+    Qt_VK_HEADSET       = Qt::Key_F8,		//log按下hardkey貌似是这个
+};
+// Qt key code => mphone key code
+static scancode_map_entry scancode_map[] = {
+    //Cisco IP Phone Extended Key
+    {Qt_VK_HEADSET,       PK_HEADSET},	//160 + 5
+};
+
+
+refer to:
+https://wiki.cisco.com/display/CRDCIPCSW/Keyboard+input+in+Qt+guiapp

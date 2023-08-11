@@ -1,0 +1,238 @@
+
+在setting.xml,
+<Row>
+    <name>RAV</name>
+    <Label>
+        <class>MenuLabel</class>
+        <text>$L_RINGTONE_VOLUME</text>
+    </Label>
+    <Field>
+        <class>FieldNextPage</class>
+        <subType>nextpage</subType>
+        <dataField>A</dataField>
+        <onRightKey>Application_RingtoneSetting</onRightKey>					<-----
+    </Field>
+</Row>
+
+            
+		{"Application_RingtoneSetting", DISPATCH_ASYNC, "setting_ringtone.xml",		<-----这个就是刚刚点击rightkey进入的rongtone设置界面所调用的
+     CSORingtoneSetting_process, NULL, CS_INFO, FLAG_KEEP_HISTORY,
+     FLAG_KEEP_BACKGROUND, FLAG_NOT_TO_CLOSE, FLAG_AUTH}
+     
+static int CSORingtoneSetting_process(CEnv * pEnv, char *pParam, char *pRedirectURL)
+	rc = pBO->getVolumeSetting(pBO, &gInputVolumeSetting);	//获取当前音量
+	pEnv->addInteger(pEnv, KEYWORD_RINGER_VOLUME_LEVEL, gInputVolumeSetting.ringerVolume);	//把音量设置到所谓内部用的环境变量env, 供下次读取
+	
+-------------------------------------
+
+slider设置方面所调用的函数, 可能要仿照vol up/down hardkey去做:
+int CSOCallKey_VOL_UP_process(CEnv * pEnv, char *pParam, char *pRedirectURL)
+    return startSetVolumeApp(pEnv, pParam, pRedirectURL);
+
+----
+	    <Slider>
+	        <class>Slider_Vol</class>
+	        <name>slider</name>
+	        <text>Volume</text>
+	        <subType>ringerVolumeLevel</subType>
+	        <dataField>result</dataField>
+	        <Field>
+	            <name>level</name>
+	            <dataField>VolumeSetting.ringerVolumeTemp</dataField>
+	        </Field>
+	        <onClick>Application_RingerVolumeClick</onClick>					《-----和这个是对应的, 只是滑动slider不会调
+	    </Slider>
+
+    {"Application_RingerVolumeClick", DISPATCH_ASYNC, "", CSORingerVolume_click,   《---调的应该是这个
+     NULL, CS_TEMP, FLAG_KEEP_HISTORY, FLAG_REFRESH_BACKGROUND,
+     FLAG_NOT_TO_CLOSE}
+     
+     
+static int CSORingerVolume_click(CEnv * pEnv, char *pParam, char *pRedirectURL)
+    static void resetVolumeTimer(int type)
+    	  case VOLUME_TYPE_RINGTONE:
+        	gInputVolumeSetting.ringerVolume = gInputVolumeSetting.ringerVolumeTemp;
+
+----
+而gInputVolumeSetting.ringerVolumeTemp是这里设定的:
+
+static int startSetVolumeApp(
+	CS_STRCPY(pRedirectURL, "Application_RingerVolume");
+	
+{"Application_RingerVolume", DISPATCH_ASYNC, "",
+ CSORingerVolume_process, NULL, CS_TEMP, FLAG_KEEP_HISTORY,
+ FLAG_REFRESH_BACKGROUND, FLAG_NOT_TO_CLOSE}
+ 
+gInputVolumeSetting.ringerVolumeTemp = processVolumeKey(gInputVolumeSetting.ringerVolumeTemp, pEnv);
+	static int processVolumeKey(
+		char *key = pEnv->getString(pEnv, KEYWORD_KEY); //通过env的key是0/1来判断是vol up/down
+        
+--------------------------------------------------------------------------
+
+类比brightness:
+int CSOScreenContrastSetting_click(CEnv * pEnv, char *pParam, char *pRedirectURL)
+
+	rc = pBOB->setContrastLevel(pBOB, gInputScreenSetting.contrastLevel, 1);
+	
+	static int CSetting_setScreenSetting(void *object, SScreenSetting * pScreenSetting)
+	{
+	    *gScreenSetting = *pScreenSetting;
+	    saveObjectData("ScreenSetting", (unsigned char *) gScreenSetting, CSetting_isUserMode());
+	        
+        
+====================================================================
+vol up/down hardkey和slider联动
+
+static int CSORingerVolume_click(
+	void CStatus_renderToast(
+		pToastData->m_nCurrentValue = CStatus_getAudioPathVolume(); 	//获取已设置音量
+		void CQtRender_startToast(
+			void MphoneQt_startToast(char *jsonDataSet)
+					static void CToastDate_addToastDataAttrs(
+					        cJSON_AddItemToObject(object, TAG_CURRENT_VALUE, cJSON_CreateNumber(pToastData->m_nCurrentValue)); ---》给guiapp的currentvalue
+					        
+LOG:
+1371 DEB Jan 26 11:48:52.738146 (20936-20936) mphone-CSORingerVolume_process: lajiang, pParam: (null), pRedirectURL: Application_RingerVolume
+1372 DEB Jan 26 11:48:52.739862 (20936-20936) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE
+1381 DEB Jan 26 11:48:52.811412 (20936-20936) mphone-CSORingerVolume_click: lajiang, pParam: (null), pRedirectURL: Application_RingerVolume
+1382 DEB Jan 26 11:48:52.811434 (20936-20936) mphone-resetVolumeTimer: lajiang VOLUME_TYPE_RINGTONE
+1419 DEB Jan 26 11:48:52.855180 (20912-20912) guiapp-setHUDToastData(): lajiang: emit currentValueChanged
+1424 DEB Jan 26 11:48:52.855347 (20912-20912) guiapp-setHUDToastData(): lajiang: emit isRingerChanged
+
+---
+
+class Toast : public QObject
+     Q_PROPERTY(int currentValue READ currentValue NOTIFY currentValueChanged)  //show vol toast的时候这2个notification会发出
+     Q_PROPERTY(bool isRinger READ isRinger NOTIFY isRingerChanged)
+     
+     
+     
+class PhoneDevice : public QObject
+    Q_PROPERTY(int volume READ volume NOTIFY volumeChanged)	//这个现在却没有发出
+    
+
+        cJSON_AddItemToObject(listItemObject, TAG_INDEX, cJSON_CreateNumber(nIndex));
+
+        pInputItem->addChangeAttrs(listItemObject, pInputItem);
+        cJSON_AddItemToArray(array, listItemObject);
+        
+        
+        
+        
+==============
+参考wifi
+
+    this->getCardEnv = CBrowser_getCardEnv;
+
+
+static int CEnv_attachCell(
+    void *object,
+    char *pName,
+    char *pValue)
+{
+    int i;
+    SCell *pCell = NULL;
+    CEnv *this = (CEnv *) object;
+    for (i = 0; i < this->m_nSize; i++) {
+        pCell = &(this->m_pCellList[i]);
+        if (CS_STRCMP(pName, pCell->pName) == 0)
+            break;
+    }
+    if (i < this->m_nSize) {
+        pCell->pValue = pValue;
+        pCell->bAllocate = 0;
+    } else {
+        pCell = &(this->m_pCellList[i]);
+        pCell->pName = this->dupString(this, pName);
+        pCell->pValue = pValue;
+        pCell->bAllocate = 0;
+        this->m_nSize++;
+    }
+    return 0;
+}
+
+typedef struct {
+    void *pDataList;
+    char *pObjClassName;
+    int nCurrentItem;
+    int nEntry;
+    int nMaxEntry;
+    int (*modelListener) (void *object);
+    void *pView;
+    unsigned char bDirtyFlag;
+    char pInput[DLEN(LEN_INPUT)];
+} SListDataModel;
+
+static int CWirelessSurvey_updateScanList(
+
+
+
+
+pListModel->modelListener(pListModel->pView); //this->modelListener = CBTable_modelListener;
+
+
+
+static void refreshWifiPage(CEnv * pEnv)
+{
+    pEnv->addInteger(pEnv, KEYWORD_TOGGLE_VALUE, gWirelessSettingEnabled);
+
+    UpdateWirelessConnectedInfo(pEnv);//更新desc信息道pEnv
+    CWirelessSurvey *pBO = CWirelessSurvey_getInstance();
+    SListDataModel *pListModel = pBO->m_pListModel;
+
+    if (!gWirelessSettingEnabled) {
+        int oobPhase = getOutOfBoxPhase();
+        int backDisabled = 0;
+        if ((oobPhase == OOB_WELCOME || oobPhase == OOB_DETECTING_NETWORK)) {
+            backDisabled = OOB_PAGE_STATE_BACK_DISABLED;
+        }
+
+        pListModel->nEntry = 0;
+        // update sub-title
+        pEnv->addString(pEnv, "NetworkStatus", NLS_getString("L_NOT_CONNECTED"));
+        pEnv->addString(pEnv, "ColorIndicator", "hint_red");
+        MphoneQt_setPageSubtitle("WifiConnection", NLS_getString("L_NOT_CONNECTED"));
+        MphoneQt_setPageState("WifiConnection", NETWORK_PAGE_STATE_NOT_CONNECTED + backDisabled);
+
+        bShowJoinOtherNetwork = false;
+    } else {
+        bShowJoinOtherNetwork = true;
+    }
+
+    pEnv->attachCell(pEnv, KEYWORD_RESULT, (void *) pBO->m_pListModel);
+    pListModel->bDirtyFlag = 1;
+
+    if (pListModel->modelListener && pListModel->pView) {
+        pListModel->modelListener(pListModel->pView);
+    }
+}
+=====>CQtRender_setListItem
+
+
+#define CARD_NAME_RINGER_VOLUME "RingerVolumeSetting"
+
+    CEnv * pCurrentEnv = Card_getCardEnv(CARD_NAME_WIFI_SETTING);
+    if (!pCurrentEnv) {
+        return -1;
+    }
+
+    refreshWifiPage(pCurrentEnv);
+    
+    
+
+
+    char strCardName[LEN_CARD_NAME] = { 0 };
+    Card_getCurrentCardName(strCardName);
+
+
+
+
+
+        CEnv * pCurrentEnv = Card_getCardEnv(CARD_NAME_BT_SETTING);
+        if (!pCurrentEnv) {
+            return -1;
+        }
+
+        int deletedIndex = pCurrentEnv->getInteger(pCurrentEnv, KEYWORD_TOUCH_INDEX);
+        
+        

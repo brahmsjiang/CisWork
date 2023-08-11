@@ -1,0 +1,40 @@
+
+
+build.ninja============>
+rule generate_jar
+  description = ${buildtext}DESC: generate_jar
+  command = $javac $some_parameters -classpath $jar_files -d $classes_folder @$filename_1  &&  $jar cfm $jar_name $manifest_file -C $classes_folder .  &&  $jar uf $jar_name -C $resource_folder resources
+
+
+build _build/bumblebee/rootfs/java/java_jar: generate_jar  |  || 
+  buildtext = [/bumblebee/rootfs] 
+  javac = /usr/bin/javac
+  jar = /usr/bin/jar
+  some_parameters = -encoding ISO-8859-1 -J-Xms256m -J-Xmx256m -g:none -O
+  
+  (tools/*.jar 也是genmake指定的,
+  编译java-jar需要tools/dbus-java-2.7.1.jar, 而不用libmatthew/java-utils/slf4j-api
+  在external_jar_list指定libmatthew/java-utils/slf4j-api, 会在manifest.txt内生成)
+  jar_files = /home/lajiang/Workspace/bumblebee/sl-main/tools/classes.zip:/home/lajiang/Workspace/bumblebee/sl-main/tools/commons-fileupload-1.2.2.jar:/home/lajiang/Workspace/bumblebee/sl-main/tools/dbus-java-2.7.1.jar:/home/lajiang/Workspace/bumblebee/sl-main/tools/json-simple-1.1.1.jar:/home/lajiang/Workspace/bumblebee/sl-main/tools/libmatthew-0.8.1.jar:/home/lajiang/Workspace/bumblebee/sl-main/tools/java-utils-1.0.2.jar:/home/lajiang/Workspace/bumblebee/sl-main/tools/slf4j-api-1.6.0.jar
+  
+  classes_folder = /home/lajiang/Workspace/bumblebee/sl-main/java/SIP_classes/
+  jar_name = /home/lajiang/Workspace/bumblebee/sl-main/java/Bumblebee.jar
+  manifest_file = /home/lajiang/Workspace/bumblebee/sl-main/java/manifest.txt
+  filename_1 = /home/lajiang/Workspace/bumblebee/sl-main/java/javac_sip.in
+  resource_folder = /home/lajiang/Workspace/bumblebee/sl-main/java/SIP_resource/
+  
+  
+  
+/home/lajiang/Workspace/bumblebee/sl-main/java/manifest.txt============>(由genmake java根据指定的jar包写入)
+Class-Path: commons-fileupload-1.2.2.jar dbus-java-2.7.1.jar json-simple-1.1.1.jar libmatthew-0.8.1.jar java-utils-1.0.2.jar slf4j-api-1.6.0.jar 
+
+
+问题
+1. /tools/*.jar 会自动复制到 /usr/lib 下面吗? 或者说 manifest 和 /usr/lib 有啥关系?
+==》java-dbus作为第三方的jar应该在os侧指定安装到 /usr/lib 下面
+
+1.1 product/mountlake/rootos/osbuild.def 指定的[install] 有什么作用? 是否各个模块的build.py就不需要指定/usr/lib?
+==》
+
+2. 为何 /usr/lib/*.jar 会起作用?
+==》/lib: /usr/lib: /usr/local/lib：系统使用的函数库的目录，程序在执行过程中，需要调用一些额外的参数时需要函数库的协助，比较重要的目录为 /lib/modules。

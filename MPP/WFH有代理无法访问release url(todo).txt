@@ -1,0 +1,51 @@
+
+
+
+
+INFO:build:Stage 2: Populating the environment [533.592]
+
+卡住:
+INFO:lys_utils.cache_client:Rsyncing https://engci-maven.cisco.com/artifactory/releases/bumblebee/boot/20220602-48b2a7077de -> 
+boot/20220602-48b2a7077de...
+
+
+正常(无代理):
+INFO:lys_utils.cache_client:Rsyncing https://engci-maven.cisco.com/artifactory/releases/bumblebee/boot/20220602-48b2a7077de -> /home/lajiang/.genmake/artifactory/releases/bumblebee/boot/20220602-48b2a7077de...
+INFO:lys_utils.cache_client:Rsyncing https://engci-maven.cisco.com/artifactory/releases/bumblebee/os/20220712-5eb1051e85c-dev -> /home/lajiang/.genmake/artifactory/releases/bumblebee/os/20220712-5eb1051e85c-dev...
+INFO:lys_utils.cache_client:Rsyncing https://engci-maven.cisco.com/artifactory/synlite2-thirdparty/machine-learning/voice-commands/en_US.l12.01-09-2021.commands -> /home/lajiang/.genmake/artifactory/synlite2-thirdparty/machine-learning/voice-commands/en_US.l12.01-09-2021.commands...
+
+
+
+
+docker外面, 无代理:
+lajiang@liajiang-lnx:~/Workspace/bumblebee/backup$ nslookup https://engci-maven.cisco.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+** server can't find https://engci-maven.cisco.com: NXDOMAIN
+
+
+
+
+代码:
+def get(
+    self,
+    asset: PathOrStr,
+    rename: Optional[PathOrStr] = None,
+    force: bool = False,
+) -> Path:
+    synced, local_path = self.has(asset if rename is None else rename)
+    if force or not synced:
+        url = self.remote_url() + str(asset)
+        logger.info(f'Rsyncing {url} -> {local_path}...')
+    return Path(cast(str, self._do_rpc(
+        'get', asset=asset, rename=rename, force=force)))
+
+        
+def _do_rpc(
+    self, method: str, **params: cache_rpc.JSONParam
+) -> cache_rpc.JSONResult:
+    self._request_id += 1
+    send_buf = cache_rpc.make_request(self._request_id, method, **params)
+    recv_buf = self._send_and_recv(send_buf)
+    return cache_rpc.parse_response(recv_buf, self._request_id)

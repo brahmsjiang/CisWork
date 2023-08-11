@@ -1,0 +1,42 @@
+
+void CQtRender_setList(
+static bool addItemObjects(
+static bool getListItemInJSON(
+    cJSON *listItemObject,
+static bool loadListItemFromTable(
+    cJSON *listItemObject, ===========> modify this
+		
+		CEnv *pEnv = table->m_pEnv;  //这是table的env
+
+		char value[2048] = {0};
+		int level = pEnv->getInteger(pEnv, KEYWORD_RINGER_VOLUME_LEVEL);
+		sprintf(value, "%d", level);
+		
+		pListItem = (CListItem *) createIconItem(type, label, value, enabled, editable, nextPage, icon, itemState, description);
+		pListItem->addAllAttrs(listItemObject, pListItem);
+
+
+-----------
+pEnv->attachCell(pEnv, KEYWORD_RESULT, (void *) pBO->m_pListModel);
+    pListModel->bDirtyFlag = 1;
+
+    if (pListModel->modelListener && pListModel->pView) {
+        pListModel->modelListener(pListModel->pView);
+    }
+----------
+    CDirAll *pBO;
+    SListDataModel *pListModel = NULL;
+
+    pBO = CDirAll_getInstance();
+    CDirAll_applyModel(pBO);
+    pListModel = pBO->m_pListModel;
+    
+        // Mark the model dirty for refresh and call refresh on table
+        pListModel->bDirtyFlag = 1;
+        //Card_refreshControl(CARD_NAME_DIRALL_LANDHOME, CONTACT_RESULT_TABLE);
+
+        // Notify contact view to redraw window
+        if (pListModel->modelListener && pListModel->pView){
+            pListModel->modelListener(pListModel->pView);
+        }
+        

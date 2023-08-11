@@ -1,0 +1,96 @@
+
+7298 DEB Jan 20 08:13:21.184277 (4126-4126) mphone-CBTable_applyFilters: nCurrentItem = 0
+7299 DEB Jan 20 08:13:21.184503 (4126-4126) mphone-===>lajiang backtrace() returned 13 address
+7300 DEB Jan 20 08:13:21.188560 (4126-4126) mphone-lajiang /usr/mbin/mphone(DumpTraceback+0x38) [0xc63d70]
+7301 DEB Jan 20 08:13:21.188614 (4126-4126) mphone-lajiang /usr/mbin/mphone(+0xb193c) [0xc2093c]
+7302 DEB Jan 20 08:13:21.188652 (4126-4126) mphone-lajiang /usr/mbin/mphone(CBTable_defineSpec+0x5c) [0xc242f0]
+7303 DEB Jan 20 08:13:21.188687 (4126-4126) mphone-lajiang /usr/mbin/mphone(+0xb84cc) [0xc274cc]
+7304 DEB Jan 20 08:13:21.188721 (4126-4126) mphone-lajiang /usr/mbin/mphone(CRender_render+0x188) [0xc2d628]
+7305 DEB Jan 20 08:13:21.188755 (4126-4126) mphone-lajiang /usr/mbin/mphone(+0xc23b4) [0xc313b4]
+7306 DEB Jan 20 08:13:21.188788 (4126-4126) mphone-lajiang /usr/mbin/mphone(+0xa737c) [0xc1637c]
+7307 DEB Jan 20 08:13:21.188821 (4126-4126) mphone-lajiang /usr/mbin/mphone(+0x9f7ac) [0xc0e7ac]
+7308 DEB Jan 20 08:13:21.188855 (4126-4126) mphone-lajiang /usr/mbin/mphone(+0xa041c) [0xc0f41c]
+7309 DEB Jan 20 08:13:21.188888 (4126-4126) mphone-lajiang /usr/mbin/mphone(CAppl_process+0x17c) [0xcdc480]
+7310 DEB Jan 20 08:13:21.188921 (4126-4126) mphone-lajiang /usr/mbin/mphone(PICO_main+0x84) [0xcdc830]
+7311 DEB Jan 20 08:13:21.188955 (4126-4126) mphone-lajiang /usr/mbin/mphone(main+0xb4) [0xbf9cfc]
+7312 DEB Jan 20 08:13:21.188989 (4126-4126) mphone-lajiang /lib/libc.so.6(__libc_start_main+0x10c) [0xf664f68c]
+7313 DEB Jan 20 08:13:21.189024 (4126-4126) mphone-<===lajiang backtrace() end
+
+
+static int CRender_doCGraphicMenuTable(
+static int CRender_doCETable(
+static int CRender_doCESection(
+static int CRender_doCESection1(
+
+
+    RenderEntry(TAGID_GraphicMenuTable, CRender_doCGraphicMenuTable,
+	  RenderEntry(TAGID_ETable, CRender_doCETable, RENDER_ONCE),
+    RenderEntry(TAGID_ESection, CRender_doCESection, RENDER_ONCE),
+    RenderEntry(TAGID_ESection1, CRender_doCESection1, RENDER_ONCE),
+    
+
+
+    for (i = 0; i < pCard->_controlItemCount; i++) {
+        SRenderEntry *pRenderEntry;
+        RenderFunc pFunction;
+        nBegin = CS_getRefTimeDiff();;
+        pItem = pCard->ControlItem[i];
+        pRenderEntry = CRender_getRenderEntry(this, pItem->tagID);
+
+        if (pRenderEntry != NULL) {
+            pFunction = (RenderFunc) pRenderEntry->pFunction;
+            if (pRenderEntry->nFlag & RENDER_ONCE) {
+                if (bFlag == 0)
+                    pFunction(this, pParam, pItem, pEnv);
+            } else
+                pFunction(this, pParam, pItem, pEnv);
+        }
+        
+        
+--------
+static int CRender_doCESection(
+    void *object,
+    void *pParam,
+    SDNode * pItem,
+    CEnv * pEnv)
+    
+    section->defineSpec(section, pItem->_childItemCount, pItem->ChildItem);
+    
+
+int CBTable_defineSpec(
+    void *object,
+    int nControlItems,
+    SDNode ** pControlItems)
+    
+    	CBTable_applyFilters(this, nControlItems, pControlItems, NULL, focusLine);
+    	
+    	
+    	
+root cause!!!!!!!!!!!!
+vol:
+0483 DEB Jan 21 06:25:38.165589 (6884-6884) mphone-CBTable_applyFilters lajiang, ----enterring, nControlItems:1
+0484 DEB Jan 21 06:25:38.165679 (6884-6884) mphone-CBTable_filteredByFeatures lajiang, ----pFeatureList: Ext1Ring Ext2Ring Ext3Ring Ext4Ring Ext5Ring Ext6Ring Ext7Ring Ext8Ring Ext9Ring Ext10Ring Ext11Ring Ext12Ring Ext13Ring Ext14Ring Ext15Ring Ext16Ring rwonly, pItem->name:slider
+0485 DEB Jan 21 06:25:38.165751 (6884-6884) mphone-CBTable_applyFilters lajiang, ----after CBTable_filteredByFeatures, nControlItems:0
+
+brightness:
+0684 DEB Jan 21 06:30:23.173599 (6884-6884) mphone-CBTable_applyFilters lajiang, ----enterring, nControlItems:1
+0685 DEB Jan 21 06:30:23.173656 (6884-6884) mphone-CBTable_applyFilters lajiang, ----after CBTable_filteredByFeatures, nControlItems:1
+0686 DEB Jan 21 06:30:23.173709 (6884-6884) mphone-CBTable_applyFilters lajiang, pProxyItems[0][0] 46
+
+
+
+            <Row>
+                <name>slider</name>
+                <Slider>
+                    <class>Slider_Vol</class>
+                    <name>slider</name>
+                    <text>Volume</text>
+                    <subType>speaker</subType>
+                    <dataField>result</dataField>
+                    <Field>
+                        <name>level</name>
+                        <dataField>VolumeSetting.ringerVolumeTemp</dataField>
+                    </Field>
+                    <onClick>Application_RingerVolumeClick</onClick>
+                </Slider>
+            </Row>
