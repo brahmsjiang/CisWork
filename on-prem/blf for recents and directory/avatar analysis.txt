@@ -1,0 +1,112 @@
+
+
+log:
+create blf spd:
+9686 INF Apr 14 17:34:48.017154 (13253-13474) JAVA-Thread-10|cip.sipcc.SipCcAdapter$CcMgmtListener:  - addSpeedDialBlf: numb=
+	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.callagent.IManagement$Proxy.newFeatureStatNotify(Unknown Source)
+		at cip.callagent.EmbraceCcRouter$SIPUIListener.newFeatureStatNotify(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.addSpeedDialBlf(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.initializeFeature(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.initializeLines(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.initializeLinePlane(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.ccReady(Unknown Source)
+		at cip.sipcc.SipCcEventDispatcher.onDeviceEvent(Unknown Source)
+
+
+8940 NOT Apr 14 17:34:48.294507 (13253-13435) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:lajiang - newFeatureStatNotify
+8971 NOT Apr 14 17:34:48.297017 (13253-13435) JAVA-callagent MQThread|cip.callagent.ICallAgentListener$Proxy:lajiang - before getSink().sinkMessage ID_CREATE_DYNAMIC
+9000 ERR Apr 14 17:34:48.304483 (13253-13435) JAVA-17:34:48|Message : / by zero
+	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.callagent.ICallAgentListener$Proxy.createDynamicFeature(Unknown Source)
+		at cip.callagent.CallAgent$MyListeners.newFeatureStatNotify(Unknown Source)
+		at cip.callagent.IManagement$Dispatcher.sinkMessage(Unknown Source)
+		at cip.callagent.IManagement$Dispatcher.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+		at cip.sys.MessageQueueThread.onRun(Unknown Source)
+		at cip.sys.SystemThread.run(Unknown Source)
+		
+9114 DEB Apr 14 17:34:48.313421 (13253-13436) JAVA-callui MQThread|cip.callui.LineListModel:lajiang createDynamicFeature - position=1 label=label 12588 featureid=1
+9122 ERR Apr 14 17:34:48.314225 (13253-13436) JAVA-17:34:48|Message : / by zero
+	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.callui.LineListModel$MyCallAgentListener.createDynamicFeature(Unknown Source)
+		at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+		at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+		at cip.sys.MessageQueueThread.onRun(Unknown Source)
+		at cip.sys.SystemThread.run(Unknown Source)
+		
+		
+===========
+update blf spd:
+8114 ERR Apr 13 17:25:38.249159 (13165-13431) JAVA-17:25:38|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callagent.IManagement$Proxy.newFeatureStatNotify(Unknown Source)
+                at cip.callagent.EmbraceCcRouter$SIPUIListener.newFeatureStatNotify(Unknown Source)
+                at cip.sipcc.SubscriptionHandler.NotifyStatus(Unknown Source)
+                at cip.sipcc.SipCcEventDispatcher.onFeatureEvent(Unknown Source)
+8115 DEB Apr 13 17:25:38.249315 (13165-13432) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+8116 DEB Apr 13 17:25:38.249366 (13165-13432) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SIP/2.0 200 OK  Cseq:107 NOTIFY CallId:2f178380-1ee1f7dc-1deb-93394f0a@10.79.57.147    
+8117 NOT Apr 13 17:25:38.249420 (13165-13394) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:lajiang - newFeatureStatNotify
+8118 ERR Apr 13 17:25:38.250374 (13165-13394) JAVA-17:25:38|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callagent.CallAgent$MyListeners.newFeatureStatNotify(Unknown Source)
+                at cip.callagent.IManagement$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callagent.IManagement$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+8119 DEB Apr 13 17:25:38.250685 (13165-13395) JAVA-callui MQThread|cip.callui.LineListModel:setDynamicFeature - : setDynamicFeature, position=2 label=label 1267 featureid=1
+8120 ERR Apr 13 17:25:38.250781 (13165-13395) JAVA-IO_JNI| !!! cpr_led_set() return failed!
+8121 DEB Apr 13 17:25:38.251278 (13165-13395) JAVA-callui MQThread|cip.callui.CallUiFullDisplay:lajiang updateLine - json data:{"lineKeyType":3,"featureState":15,"lineKeyExtraInfo":"","index":2,"labelName":"label 1267","featureId":21,"selected":false,"desc":"In use"}
+8122 ERR Apr 13 17:25:38.252488 (13165-13395) JAVA-17:25:38|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.callui.AbstractCallUiFullDisplay.updateLine(Unknown Source)
+                at cip.callui.AbstractCallUiFullDisplay.update(Unknown Source)
+                at cip.comp.SLComponentView.update(Unknown Source)
+                at cip.comp.SLComponentModel.notifyUpdateToView(Unknown Source)
+                at cip.callui.AbstractCallUiModel.updateLine(Unknown Source)
+                at cip.callui.AbstractCallUiModel.updateLine(Unknown Source)
+                at cip.callui.LineListModel$MyCallAgentListener.setDynamicFeature(Unknown Source)  <------
+                at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.callagent.ICallAgentListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+
+
+
+java:
+    private int mapToDynamicFeatureState(int state) {
+        int dynamicState = state;
+        } else if (state == BLFStates.IN_USE.getId()) {
+            
+	    private int dynamicFeatureState;
+	lineFeatureStateMap.put(LineItemModel.DFEAT_STATE_BLF_INUSE, GUIStatusConstants.DFEAT_STATE_BLF_SD_INUSE);
+
+
+guiapp:
+    enum dynamicFeatureStates {
+        DFEAT_STATE_ON = 5,
+        DFEAT_STATE_OFF,
+        DFEAT_STATE_BLF_SD_ALERTING = 14,
+        DFEAT_STATE_BLF_SD_INUSE = 15,
+        DFEAT_STATE_BLF_SD_CALLPARKED = 16,
+        DFEAT_STATE_BLF_SD_IDLE = 17,
+
+        DFEAT_STATE_CUCM_START = 1000,
+        DFEAT_STATE_BLF_SD_UNKNOWN = 1001,
+        DFEAT_STATE_BLF_SD_DND = 1002,
+    };
+    
+    
