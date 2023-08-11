@@ -1,0 +1,47 @@
+
+openjdk-extra-depends-arm-gnueabihf				===》
+
+
+
+
+openjdk-extra-depend folder:
+ 提交在
+ Hi Ning, I have upload the extra libraries to https://cisco-my.sharepoint.com/:f:/p/chcole2/En6RCOvA8qlJvX-K4kq08GkB-8nGVIDSKw9-mFpNy5dPIw in the openjdk-extra-depend folder.
+ 而且centos的docker也有:
+
+openjdk-extra-depends-aarch64-poky-linux
+openjdk-extra-depends-armv5e-poky-linux-gnueabi
+openjdk-extra-depends-cortexa9-neon-poky-linux-gnueabi
+openjdk-extra-depends-cortexa9hf-neon-poky-linux-gnueabi
+=============
+Hi Ning and Rodger, thanks for the information. Do the new updated volantis and bumblebee use the same toolchain or is there one specific to bumblebee?
+ 
+ftp://10.79.63.26/aarch64_gcc-9.3.0_glibc-2.31-x86_64-linux.tar.gz
+ftp://10.79.63.26/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf.tar.gz
+id/pw: nyuan/dtg123
+
+aarch64_gcc-9.3.0_glibc-2.31-x86_64-linux is for kernel, arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf is for rootfs
+
+-------------------------
+ 
+used your fedora docker image to try and build OpenJDK using current method. The OpenJDK build requires a "bootstrap JDK", so adding the fedora java-11-openjdk-devel package to Dockerfile.fedora is required. 
+
+The only other dependency is a set of libraries (X11, audio, etc) for the target that are required at build time but not at runtime. The Cisco OpenJDK runtime only includes "java.base" module but when building OpenJDK it only support building everything (java.awt, java.swing, etc) and then using jlink to create a runtime that only includes subset of modules. 
+ 
+I built these libraries for each ABI (application binary interface) one time using yocto (see https://bitbucket-eng-sjc1.cisco.com/bitbucket/users/chcole2/repos/openjdk-build/browse/docker/yocto).
+For current OpenJDK build method, these libraries are stored in the docker image. 
+But for your SL2 build maybe they could be stored in git or downloaded from a Cisco file server. Again these libraries are just so things like Java graphics and be built but is not used in final JRE for device. But with these to items added I can build OpenJDK with the Fedora 32 image, so that is good.
+ 
+ 
+ 
+Hi Ning, I have upload the extra libraries to https://cisco-my.sharepoint.com/:f:/p/chcole2/En6RCOvA8qlJvX-K4kq08GkB-8nGVIDSKw9-mFpNy5dPIw in the openjdk-extra-depend folder.
+
+
+hi Christopher, do you mean we need update our fedora 32 Dockfile to enable: 1) install  java-11-openjdk-devel  2) wget the extra libraries from some server. I see these similar steps in your docker file https://bitbucket-eng-sjc1.cisco.com/bitbucket/users/chcole2/repos/openjdk-build/browse/docker/Dockerfile, so we can use that file as a reference ?
+
+Hi Ning, in terms of 1) I would suggest that you update fedora 32 Dockerfile to install java-11-openjdk-devel.
+
+In terms of 2) I would suggest that you handle this similar to the device toolchains and download the extra libraries to ~/.cache/cisco/??? as the first part of of building OpenJDK as part of the phone os build.
+
+
+

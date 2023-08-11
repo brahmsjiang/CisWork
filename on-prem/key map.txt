@@ -1,0 +1,99 @@
+
+// Qt key code => mphone key code
+class GuiappKeyCodeMap {
+    // Guiapp Key Code definitions (same with mphone currently)
+    final static int ZERO = (int)'0';
+    final static int ONE = ZERO + 1;
+    final static int TWO = ZERO + 2;
+    final static int THREE = ZERO + 3;
+    final static int FOUR = ZERO + 4;
+    final static int FIVE = ZERO + 5;
+    final static int SIX = ZERO + 6;
+    final static int SEVEN = ZERO + 7;
+    final static int EIGHT = ZERO + 8;
+    final static int NINE = ZERO + 9;
+    final static int AST = ZERO + 10;
+    final static int PLUS = ZERO + 11;
+    final static int HEX = ZERO + 12;
+
+    final static int VMAIL = 160 + 3;
+    final static int SPEAKER = 160 + 4;
+    final static int HEADSET = 160 + 5;
+    final static int MUTE = 160 + 6;
+    final static int VOL_UP = 160 + 7;
+    final static int VOL_DOWN = 160 + 8;
+    final static int HOLD = 160 + 9;
+    final static int ON_HOOK = 160 + 11;
+    final static int DIRECTORY = 160 + 14;
+    final static int SERVICES = 160 + 15;
+    final static int TRANSFER = 160 + 17;
+    final static int CONFERENCE = 160 + 18;
+    final static int SHUTTER_OPENED = 160 + 20;
+    final static int HOME = 160 + 24;
+    final static int POWER = 160 + 25;
+
+
+//jphone hardkey code:
+public final class MediaValues {
+    public static final int SPEAKER      = NativeMediaValues.SPEAKER;
+    public static final int HEADSET      = NativeMediaValues.HEADSET;
+    
+final class NativeMediaValues {
+    @java.lang.annotation.Native
+    static final int SPEAKER      = 1;
+    static final int HEADSET      = 2;
+    static final int MUTE         = 3;
+    static final int VOLUME_UP    = 4;
+    static final int VOLUME_DOWN  = 5;
+    
+    
+    
+
+inputmanager:
+    public void processGuiAppKeyEvents( int eventType,  int eventValue) {
+        TraceDefaults.traceInterface.debug(getClass().getName(), Category.NA, "eventType: "+eventType + ", eventValue:" + eventValue);
+        processEvent(EventTypes.DTMF, (eventType == 0 ? KeyActionValues.KEY_DOWN : KeyActionValues.KEY_UP), eventValue, null, 0, 0);
+    }
+    
+
+
+
+private void processEvent( int eventType,  int eventValue,  int action, Object jValue, int xCoord, int yCoord){
+    KeyAction theKeyAction = KeyActionFactory.getKeyAction( action );
+        switch ( eventType ) {
+            case EventTypes.DTMF:
+            	forwardKeyEvent(theDtmfKey, theKeyAction);
+				    case EventTypes.GANGOFFOUR:
+				     	forwardGangOfFourEvent
+				     	
+				     	
+eventtype:				     	
+public final class EventTypes {
+    public final static int DTMF         = NativeEventTypes.DTMF;
+    public final static int NAVIGATION   = NativeEventTypes.NAVIGATION;
+    public final static int LINE         = NativeEventTypes.LINE;
+    public final static int GANGOFFOUR   = NativeEventTypes.GANGOFFOUR;
+    public final static int SOFT         = NativeEventTypes.SOFT;
+    public final static int MEDIA        = NativeEventTypes.MEDIA;
+    public final static int HOOK_SWITCH  = NativeEventTypes.HOOK_SWITCH;
+    public final static int MWL          = NativeEventTypes.MWL;
+    public final static int R2D          = NativeEventTypes.R2D;
+    public final static int SCREENCTRL   = NativeEventTypes.SCREENCTRL;
+    public final static int VIDEO        = NativeEventTypes.VIDEO;
+    public final static int CHAR         = NativeEventTypes.CHAR;
+    public final static int APPLICATION  = NativeEventTypes.APPLICATION;
+    public final static int CALLSERVICES = NativeEventTypes.CALLSERVICES;
+    public final static int PAGING       = NativeEventTypes.PAGING;
+    public final static int BEIGNETSPECIFIC  = NativeEventTypes.BEIGNETSPECIFIC;
+    public final static int SESSION      = NativeEventTypes.SESSION;
+    public final static int SHUTTER      = NativeEventTypes.SHUTTER;
+    public final static int BRAAVOSSPECIFIC = NativeEventTypes.BRAAVOSSPECIFIC;
+    
+public final class MediaValues {
+    public static final int SPEAKER      = NativeMediaValues.SPEAKER;
+    public static final int HEADSET      = NativeMediaValues.HEADSET;
+    public static final int MUTE         = NativeMediaValues.MUTE;
+}
+    
+    package cip.userio.EventTypes	//same package, may no need
+    int eventType = EventTypes.DTMF;

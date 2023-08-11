@@ -1,0 +1,35 @@
+
+
+
+
+        SLCallContent {
+            id: callInfo
+            mainLabel: call_label
+            subLabel: call_dn
+            hgLabel: call_hg
+            lineInfo: call_lineInfo
+            lineInfoVisible: true
+            callForwardInfo: call_forwardInfo
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.verticalCenterOffset: (dispositionText ? 0 : Skin.CALL_INFO_TEXT_HEIGHT/2) - Skin.HEADER_BAR_HEIGHT / 2
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            Component.onCompleted : {
+                console.log("lajiang Incoming SLCallContent complete call_label:" + call_label + " call_dn:" + call_dn, " call_hg:"+ call_hg);
+            }
+        }
+        
+        
+
+        CallPartyId huntPilotPartyId = callFeature.getHuntPilotParty();
+        boolean isHunt = !(huntPilotPartyId.partyName.equals("") && huntPilotPartyId.partyNumber.equals(""));
+
+        if (partyName.equals("")) {
+            // primary label
+            returnLabels.add(partyDnOrUri);
+
+            // secondary label
+            String secdLabel = "";
+            if (isHunt && callState == CallControlState.RINGIN.getId()) {
+                secdLabel = PhraseTags.HuntGroup.toString(getCallerIdSingleLineLabel(huntPilotPartyId));
+ 

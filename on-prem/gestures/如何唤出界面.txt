@@ -1,0 +1,461 @@
+
+
+
+=============》如何唤出界面, 参考Contacts sk:
+638 ERR Apr 26 17:56:30.220257 (4906-5092) JAVA-17:56:30|Message : / by zero					《---callui线程
+	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.app.SLApplicationEnvironment.setDynamicFeatures(Unknown Source)
+		at cip.comp.SLTaskModel.controlDynamicFeatures(Unknown Source)
+		at cip.comp.SLTaskModel.access$200(Unknown Source)
+		at cip.comp.SLTaskModel$ApplicationProxy.controlDynamicFeatures(Unknown Source)		《-----启动时ContactsSk初始化, SLTaskModel controlDynamicFeatures
+		at cip.comp.SLComponentModel.setDynamicFeatures(Unknown Source)
+		at cip.callui.AbstractCallUiModel.inService(Unknown Source)
+		at cip.callui.AbstractCallUiModel.propertyChanged(Unknown Source)
+		at cip.callui.CallUiModel.propertyChanged(Unknown Source)
+		at cip.props.IPropertyListener$Dispatcher.sinkMessage(Unknown Source)
+		at cip.props.IPropertyListener$Dispatcher.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+		at cip.sys.MessageQueueThread.onRun(Unknown Source)
+		at cip.sys.SystemThread.run(Unknown Source)
+9639 NOT Apr 26 17:56:30.220501 (4906-5092) JAVA-callui MQThread|cip.app.SLApplicationEnvironment:lajiang AppSoftkeyFeature - new ( (ApplicationFeature) feature).setListener, label:Contacts
+......
+9958 WRN Apr 26 17:56:50.214340 (4956-4956) guiapp-[Profiling-Stub] sendSoftkeyClicked(): page: CallUi featureIndex: 1
+9959 DEB Apr 26 17:56:50.218092 (4906-5066) JAVA-Thread-3|cip.dbus.GuiAppDBusSignalHandler:? - --Begin to handle() signal/event from GuiApp--
+9960 DEB Apr 26 17:56:50.219956 (4906-5066) JAVA-Thread-3|cip.userio.GuiAppClient:? - invokeSoftKey method was called.
+9961 ERR Apr 26 17:56:50.220198 (4906-5066) JAVA-Thread-3|cip.app.AppFrameSoftkeyBar:? - invokeSoftKey Contacts, type=0 index=1
+9962 NOT Apr 26 17:56:50.220380 (4906-5066) JAVA-Thread-3|cip.app.AppSoftkeyFeature:lajiang - invoke, reason:2
+9963 ERR Apr 26 17:56:50.220439 (4906-5066) JAVA-Thread-3|cip.app.AppFrameSoftkeyBar:? - invokeSoftKey Contacts, type=1 index=1
+9964 NOT Apr 26 17:56:50.220526 (4906-5066) JAVA-Thread-3|cip.app.AppSoftkeyFeature:lajiang - invoke, reason:4						《---dbus线程
+9965 NOT Apr 26 17:56:50.220622 (4906-5066) JAVA-Thread-3|cip.app.AppSoftkeyFeature:lajiang - onInvoke		《-----点击ContactSk,  dbus发出调用SLTaskModel sinkMessage
+9966 ERR Apr 26 17:56:50.221462 (4906-5092) JAVA-17:56:50|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.comp.SLTaskModel.sinkMessage(Unknown Source)
+                at cip.comp.ComponentApplication$1.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+9967 NOT Apr 26 17:56:50.221633 (4906-5092) JAVA-callui MQThread|cip.callui.OverviewModel:detect key - model:CallUi		
+9968 INF Apr 26 17:56:50.224446 (4906-5092) JAVA-callui MQThread|UriRegistry:? - URI search successful. BuiltinApp:DirectoryApp
+9969 INF Apr 26 17:56:50.224496 (4906-5092) JAVA-callui MQThread|UriRegistry:executeUri - Executing BuiltinApp:DirectoryApp. 
+9970 INF Apr 26 17:56:50.224558 (4906-5092) JAVA-callui MQThread|UriRegistry:? - string=<CiscoIPPhoneExecute>^M			《-----去触发uri
+         <ExecuteItem Priority="0" URL="BuiltinApp:DirectoryApp"/> </CiscoIPPhoneExecute>^M
+9971 DEB Apr 26 17:56:50.225616 (4906-5092) JAVA-callui MQThread|cip.app.AppSoftkeyFeature:? - Got Feature Invocation on Directory App Feature
+9972 INF Apr 26 17:56:50.225723 (4906-5100) JAVA-PushThread|PushService:? - Number of pending URI's: 1							《---PushThread线程
+9973 DEB Apr 26 17:56:50.225783 (4906-5100) JAVA-PushThread|cip.push.PushThread:execute - previous= current=BuiltinApp:DirectoryApp i=0 total=1
+9974 INF Apr 26 17:56:50.225831 (4906-5100) JAVA-PushThread|UriRegistry:? - URI search successful. BuiltinApp:DirectoryApp
+9975 INF Apr 26 17:56:50.225943 (4906-5100) JAVA-PushThread|UriRegistry:? - URI search successful. Display:On:60
+9976 INF Apr 26 17:56:50.225972 (4906-5100) JAVA-PushThread|UriRegistry:executeUri - Executing Display:On:60. 
+9977 INF Apr 26 17:56:50.226031 (4906-5100) JAVA-PushThread|UriRegistry:? - string=<CiscoIPPhoneExecute>^M
+         <ExecuteItem Priority="0" URL="Display:On:60"/> </CiscoIPPhoneExecute>^M
+9978 INF Apr 26 17:56:50.226564 (4906-5100) JAVA-PushThread|PushService:? - Number of pending URI's: 2
+9979 NOT Apr 26 17:56:50.226595 (4906-5104) JAVA-go4 MQThread|cip.app.SLApplicationFeature:lajiang - invoke, reason:0
+9980 DEB Apr 26 17:56:50.226626 (4906-5100) JAVA-PushThread|cip.push.PushThread:execute - Sleep for 100ms previous= current=Display:On:60 i=0 total=1
+9981 NOT Apr 26 17:56:50.226655 (4906-5104) JAVA-go4 MQThread|cip.app.SLApplicationFeature:lajiang - onInvoke
+9982 ERR Apr 26 17:56:50.227399 (4906-5104) JAVA-17:56:50|Message : / by zero		《---这里sk和hw都是线程go4来触发的
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.app.ISLAppFeatureListener$Proxy.featureInvoked(Unknown Source)
+                at cip.app.ApplicationFeature.onInvoke(Unknown Source)
+                at cip.app.Feature.invoke(Unknown Source)
+                at cip.app.Feature.invoke(Unknown Source)
+                at cip.go4.Go4Manager.uriFired(Unknown Source)									《---对比hw: cip.go4.Go4Manager.directories
+                at cip.push.IUriListener$Dispatcher.sinkMessage(Unknown Source)	《---对比hw: cip.userio.IGo4ButtonListener$Dispatcher.sinkMessage
+                at cip.push.IUriListener$Dispatcher.sinkMessage(Unknown Source)	《---对比hw: cip.userio.IGo4ButtonListener$Dispatcher.sinkMessage
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+9983 INF Apr 26 17:56:50.227601 (4906-5104) JAVA-go4 MQThread|PushService:? - Pending Elements: 1
+9984 NOT Apr 26 17:56:50.227670 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryApp:featureInvoked - directories
+9985 INF Apr 26 17:56:50.227699 (4906-5104) JAVA-go4 MQThread|cip.push.UriRegistry$1:? - Got response : <?xml version="1.0" encoding="utf-8"?>^M
+        <CiscoIPPhoneResponse>^M
+        <ResponseItem URL="BuiltinApp:DirectoryApp" Data="Success" Status="0" />^M
+        </CiscoIPPhoneResponse>^M
+9988 ERR Apr 26 17:56:50.231692 (4906-5144) JAVA-17:56:50|Message : / by zero		《---Cisco/Directory线程
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.app.ApplicationManager.notifySwappedEnvironments(Unknown Source)
+                at cip.app.ApplicationManager.raise(Unknown Source)
+                at cip.app.Application.raise(Unknown Source)
+                at cip.app.Application.raise(Unknown Source)
+                at cip.contacts.DirectoryApp.directories(Unknown Source)
+                at cip.contacts.DirectoryApp.featureInvoked(Unknown Source)
+                at cip.go4.SLApplication$MyListener.featureInvoked(Unknown Source)
+                at cip.app.ISLAppFeatureListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.app.ISLAppFeatureListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+9989 ERR Apr 26 17:56:50.232135 (4906-5078) JAVA-17:56:50|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.app.ApplicationManager.processSwappedEnvironment(Unknown Source)
+                at cip.app.ApplicationManager.access$1900(Unknown Source)
+                at cip.app.ApplicationManager$ApplicationManagerThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+9990 DEB Apr 26 17:56:50.232228 (4906-5078) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] oldEnvironment:"Call UI"/callui(15) Environment, newEnvironment:"Contacts"/Cisco/Directory(42) Environment, inFocusEnvironment:"Call UI"/callui(15) Environment, focusType:1, actionCode:ApplicationAction - Raise
+9991 DEB Apr 26 17:56:50.232287 (4906-5078) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] => [logAppManagerVars] inFocusEnvironment:"Call UI"/callui(15) Environment, loweringEnvironment:null, raisingEnvironment:"Call UI"/callui(15) Environment
+9992 INF Apr 26 17:56:50.232337 (4906-5078) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] new lowering environment: "Call UI"/callui(15) Environment
+9993 INF Apr 26 17:56:50.232424 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryApp:? - gettingFocus
+9994 DEB Apr 26 17:56:50.232677 (4906-5092) JAVA-callui MQThread|cip.callui.CallUi:lostFocus - requestToLoseFocus:false, closeAppOnRequestToLoseFocus:false
+9995 INF Apr 26 17:56:50.233031 (4906-5092) JAVA-callui MQThread|cip.app.SLApplicationManager:? - [yield]: focus changing from "Call UI"/callui(15) Environment to "Contacts"/Cisco/Directory(42) Environment
+9996 NOT Apr 26 17:56:50.233142 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryApp:onGotFocus - Enter
+9997 DEB Apr 26 17:56:50.234955 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryApp:getTopLevelMenuItem - set theUrl to null
+9998 DEB Apr 26 17:56:50.235267 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:initializeControl - isInitialized:false
+9999 DEB Apr 26 17:56:50.235306 (4906-5144) JAVA-Cisco/Directory MQThread|cip.comp.SLComponentView:initialize - initialize DirSearchList enter
+0000 NOT Apr 26 17:56:50.237471 (4956-4956) guiapp-initPage(): DirSearchList initPage json: 
+0001 DEB Apr 26 17:56:50.237540 (4956-4956) guiapp-getPageQmlFile(): qmlFile: qml/pages/Directory.qml
+0002 INF Apr 26 17:56:50.326831 (4906-5100) JAVA-PushThread|UriRegistry:? - URI search successful. Display:On:60
+0003 DEB Apr 26 17:56:50.327185 (4906-5086) JAVA-display MQThread|cip.display.DisplayManager:? - uriFired: Display:On:60
+0004 DEB Apr 26 17:56:50.327442 (4906-5086) JAVA-display MQThread|cip.display.DisplayManager:? - clearUriTimer
+0005 DEB Apr 26 17:56:50.327510 (4906-5086) JAVA-display MQThread|cip.display.DisplayManager:? - DisplayOn(): is display currently on? true,ew:false
+0006 INF Apr 26 17:56:50.327680 (4906-5086) JAVA-display MQThread|PushService:? - Pending Elements: 0
+0007 INF Apr 26 17:56:50.327775 (4906-5086) JAVA-display MQThread|cip.push.UriRegistry$1:? - Got response : <?xml version="1.0" encoding="utf-8"?>^M
+        <CiscoIPPhoneResponse>^M
+        <ResponseItem URL="Display:On:60" Data="Success" Status="0" />^M
+        </CiscoIPPhoneResponse>^M
+0008 DEB Apr 26 17:56:50.487986 (4956-4956) guiapp-getDisplayedSoftkeys(): Empty size: 0
+0009 WRN Apr 26 17:56:50.572327 (4956-4956) guiapp-file:///usr/mbin/qml/pages/Directory.qml:25: TypeError: Cannot read property 'visible' of null
+0010 WRN Apr 26 17:56:50.572429 (4956-4956) guiapp-file:///usr/mbin/qml/components/LineList.qml:67: ReferenceError: callPreserved is not defined
+0011 DEB Apr 26 17:56:50.572701 (4956-4956) guiapp-getDisplayedSoftkeys(): DirSearchList size: 0
+0012 DEB Apr 26 17:56:50.579426 (4956-4956) guiapp-notifyFocusChanged(): Directory_QMLTYPE_307(0x1c7bef8, name = DirSearchList) is focused
+0013 DEB Apr 26 17:56:50.580727 (4906-5144) JAVA-Cisco/Directory MQThread|cip.comp.SLComponentView:initialize - initialize DirSearchList exit
+0014 NOT Apr 26 17:56:50.585150 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryService:startDirectoryService - isRunning: false
+0015 DEB Apr 26 17:56:50.585254 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryService:initialize - 
+0016 DEB Apr 26 17:56:50.585512 (4906-5144) JAVA-Cisco/Directory MQThread|cip.util.ObjectPool:? - ObjectPool created: Name: ITimerListener Size: 4 CurrentCapacity: 4 StartSize: 4 MaxSize: 16 isEmpty: false
+0017 DEB Apr 26 17:56:50.585706 (4906-5144) JAVA-Cisco/Directory MQThread|cip.callagent.CallAgentListProperty:? - current registerAddress: 10.79.57.147
+0018 DEB Apr 26 17:56:50.585741 (4906-5144) JAVA-Cisco/Directory MQThread|cip.callagent.CallAgentListProperty:? - current ipAddress: 10.79.57.147
+0019 DEB Apr 26 17:56:50.585806 (4906-5144) JAVA-Cisco/Directory MQThread|cip.callagent.CallAgentListProperty:? - current ipAddress for Uri: 10.79.57.147
+0020 ERR Apr 26 17:56:50.586344 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryService:getSecurePort - MalformedURL Exception when trying to get the SecureUDSUsersAccessURL
+0021 DEB Apr 26 17:56:50.586525 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:? - updateSelectedIndex new: -1 invoke:false notifyView:true
+0022 DEB Apr 26 17:56:50.586590 (4906-5144) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:update - field:11
+0023 NOT Apr 26 17:56:50.589630 (4956-4956) guiapp-setPageSoftkeys(): DirSearchList json: []
+0024 DEB Apr 26 17:56:50.589736 (4956-4956) guiapp-defaultArrangement mDisplayedSize--> 0 0 "DirSearchList"
+0025 DEB Apr 26 17:56:50.589772 (4956-4956) guiapp-mppScreenDump(): UI screen dump not enable
+0026 DEB Apr 26 17:56:50.590688 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:? - ==! notify update focus, field=INPUT_FIELD
+0027 DEB Apr 26 17:56:50.590964 (4906-5144) JAVA-Cisco/Directory MQThread|cip.comp.SLInputEngine:enterInputMode - ==! enterInputMode...
+0028 DEB Apr 26 17:56:50.592070 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:? - Subscribed directory service id: Personal Directory name:Personal directory
+0029 DEB Apr 26 17:56:50.592145 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:? - Subscribed directory service id: Corporate Directory name:Corporate directory
+0030 DEB Apr 26 17:56:50.592202 (4906-5144) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:update - field:9
+0031 DEB Apr 26 17:56:50.592939 (4906-5144) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:setPageDataListModel - list size: 5
+0032 DEB Apr 26 17:56:50.603876 (4906-5144) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:update - field:5
+0033 DEB Apr 26 17:56:50.605875 (4956-4956) guiapp-setPageInputModel(): DirSearchList json: {"kateCursorPosition":0,"editable":true,"nextPage":false,"inputMode":"t","index":0,"type":2,"labelName":"","value":"","enabled":true,"placeHolder":"Tap to search","inputFlags":"normal","desc":""}
+0034 DEB Apr 26 17:56:50.607615 (4906-5144) JAVA-Cisco/Directory MQThread|cip.go4.OverviewModel:openMe - openMe enter
+0035 DEB Apr 26 17:56:50.607805 (4906-5144) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:open - inForeground:true, isInitialized:false
+0036 DEB Apr 26 17:56:50.607883 (4906-5144) JAVA-Cisco/Directory MQThread|cip.go4.OverviewModel:openMe - openMe exit
+0037 DEB Apr 26 17:56:50.607926 (4906-5144) JAVA-Cisco/Directory MQThread|cip.go4.OverviewModel:openChild - open child DirSearchList enter
+0038 DEB Apr 26 17:56:50.608031 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:activate - activate enter
+0039 DEB Apr 26 17:56:50.608159 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:openMe - openMe enter
+0040 DEB Apr 26 17:56:50.608212 (4906-5144) JAVA-Cisco/Directory MQThread|cip.comp.SLComponentView:processOpen - isOpen:false, isPause:false
+0041 INF Apr 26 17:56:50.608239 (4906-5077) JAVA-appmgr MQThread|cip.app.AppFrameSoftkeyBar:? - showSoftkeyBar true
+0042 DEB Apr 26 17:56:50.608263 (4906-5144) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:open - inForeground:true, isInitialized:true
+0043 DEB Apr 26 17:56:50.623995 (4956-4956) guiapp-setPageState(): DirSearchList pageState: -1
+0044 DEB Apr 26 17:56:50.642962 (4956-4956) guiapp-setPageCornerKeys(): DirSearchList json: {"bottomleft":"","topleft":"back","topright":"","right":[]}
+0045 DEB Apr 26 17:56:50.650877 (4906-5144) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:open - inForeground:true, to set data
+0046 DEB Apr 26 17:56:50.651355 (4906-5144) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:setPageDataListModel - list size: 5
+0047 DEB Apr 26 17:56:50.662419 (4906-5144) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:fullShow - pages: CallUi DirSearchList 
+0048 WRN Apr 26 17:56:50.673181 (4956-4956) guiapp-[Profiling-Stub] showPage(): DirSearchList isVisible: true
+0049 WRN Apr 26 17:56:50.673244 (4956-4956) guiapp-[Profiling-Stub] setVisible(): DirSearchList isVisible: true
+0050 DEB Apr 26 17:56:50.721067 (4956-4956) guiapp-notifyFocusChanged(): SLTextInput_QMLTYPE_302(0x1c5cd38, name = object_textinput) is focused
+0051 DEB Apr 26 17:56:50.721449 (4956-4956) guiapp-showPage(): App container visible: true
+0052 NOT Apr 26 17:56:50.721544 (4956-4956) guiapp-recv(): DBusWrapper unlocked
+0053 DEB Apr 26 17:56:50.721600 (4956-4956) guiapp-mppScreenDump(): UI screen dump not enable
+0054 DEB Apr 26 17:56:50.722782 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:activated - activated entry:-1 enter
+0055 DEB Apr 26 17:56:50.724929 (4956-4956) guiapp-setPageCallbackToken(): DirSearchList json: 1682503010722
+0056 DEB Apr 26 17:56:50.725939 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:activated - activated entry:-1 exit
+0057 DEB Apr 26 17:56:50.726023 (4906-5144) JAVA-Cisco/Directory MQThread|cip.comp.SLInputEngine:enterInputMode - ==! enterInputMode...
+0058 DEB Apr 26 17:56:50.726112 (4906-5144) JAVA-Cisco/Directory MQThread|cip.go4.OverviewView:processChildOpened - processChildOpened enter
+0059 DEB Apr 26 17:56:50.726145 (4906-5144) JAVA-Cisco/Directory MQThread|cip.go4.OverviewView:onChildOpened - to hide
+0060 DEB Apr 26 17:56:50.726176 (4906-5144) JAVA-Cisco/Directory MQThread|cip.go4.OverviewView:processChildOpened - processChildOpened exit
+0061 DEB Apr 26 17:56:50.726209 (4906-5144) JAVA-Cisco/Directory MQThread|cip.go4.OverviewModel:childOpened - childOpened child:DirSearchList
+0062 DEB Apr 26 17:56:50.726237 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:openMe - openMe exit
+0063 DEB Apr 26 17:56:50.726264 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:activate - activate exit
+0064 DEB Apr 26 17:56:50.726295 (4906-5144) JAVA-Cisco/Directory MQThread|cip.go4.OverviewModel:openChild - open child DirSearchList exit
+0065 INF Apr 26 17:56:50.726762 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryApp:? - gotFocus
+0066 DEB Apr 26 17:56:50.804820 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryService:timerFired - timer fired: directory_trigger_search
+0067 NOT Apr 26 17:56:50.804983 (4906-5144) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryService:sendQueryRequest - https://10.79.57.147:8443/cucm-uds/users
+
+
+
+
+=============》如何唤出界面, 参考recents hw:
+5720 WRN Apr 26 10:55:32.857781 (781-781) guiapp-[Profiling-Stub] keyPressedOnHome(): Key_Directory
+5721 DEB Apr 26 10:55:32.861377 (728-892) JAVA-Thread-3|cip.dbus.GuiAppDBusSignalHandler:? - --Begin to handle() signal/event from GuiApp--
+5722 DEB Apr 26 10:55:32.863179 (728-892) JAVA-Thread-3|cip.userio.GuiAppClient:? - postKeyEvent method was called.
+5723 DEB Apr 26 10:55:32.863305 (728-892) JAVA-Thread-3|cip.userio.GuiAppClient:? - keyCode: 174, keyType:0
+5724 ERR Apr 26 10:55:32.866601 (728-892) JAVA-10:55:32|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.userio.IGo4ButtonListener$Proxy.directories(Unknown Source)  <-----///IGo4ButtonListener$Proxy.directories
+       					<-----go4Manager.java: theGo4AppButtonInterface = (IGo4ButtonListener) getQueueManager().createProxy ( new IGo4ButtonListener.Dispatcher (this), IGo4ButtonListener.FAMILY );
+       					<-----inputManager.addListener ( theGo4AppButtonInterface, IGo4ButtonListener.class );
+       					
+                at cip.userio.InputManager.forwardGangOfFourEvent(Unknown Source)
+                at cip.userio.InputManager.processEvent(Unknown Source)
+                at cip.userio.InputManager.forwardEvent(Unknown Source)
+                at cip.userio.InputManager.processNativeEvents(Unknown Source)		<-----intput manager
+                at cip.userio.GuiAppClient.mapNativeEvents(Unknown Source)
+                at cip.userio.GuiAppClient.postKeyEvent(Unknown Source)  					<-----postKeyEvent, from dbus
+                at cip.dbus.GuiAppDBusSignalHandler.handle(Unknown Source)
+                at org.freedesktop.dbus.AbstractConnection$2.run(AbstractConnection.java:956)
+                at org.freedesktop.dbus.AbstractConnection$WorkerThread.run(AbstractConnection.java:197)
+5725 INF Apr 26 10:55:32.866883 (728-892) JAVA-Thread-3|cip.userio.InputManager:? - Received GOF4: 4
+5726 NOT Apr 26 10:55:32.872452 (728-931) JAVA-go4 MQThread|cip.app.SLApplicationFeature:lajiang - invoke, reason:2
+5727 DEB Apr 26 10:55:32.872627 (728-906) JAVA-appmgr MQThread|Appframe:ALERT stopNotification - 
+5728 DEB Apr 26 10:55:32.872820 (728-915) JAVA-display MQThread|cip.display.DisplayManager:? - [doDefaultUserActiveAction] ew:false
+5729 DEB Apr 26 10:55:32.872883 (728-915) JAVA-display MQThread|cip.display.DisplayManager:? - clearUriTimer
+5730 DEB Apr 26 10:55:32.872990 (728-915) JAVA-display MQThread|cip.display.DisplayManager:? - setIdleTimer(3600000)
+5731 DEB Apr 26 10:55:32.873055 (728-915) JAVA-display MQThread|cip.display.DisplayManager:? - IsIdleTimerSet NULL=false
+5732 ERR Apr 26 10:55:32.873325 (728-931) JAVA-display MQThread|cip.display.DisplayManager:? - IsIdleTimerSet NULL=falseMessage : / by zero
+        Exception Stack Trace : 																												《---线程go4
+        java.lang.ArithmeticException: / by zero
+                at cip.app.ISLAppFeatureListener$Proxy.featureInvoked(Unknown Source)	  <-----///ISLAppFeatureListener$Proxy.featureInvoked
+                <-----SLApplication.java:  featureListenerProxy = (ISLAppFeatureListener.Proxy)getQueueManager().createProxy (new ISLAppFeatureListener.Dispatcher (myListener), ISLAppFeatureListener.FAMILY );
+       					<-----SLApplicationFeature feature = getApplicationFeature();		feature.setListener(featureListenerProxy);
+                
+                at cip.app.ApplicationFeature.onInvoke(Unknown Source)
+                at cip.app.Feature.invoke(Unknown Source)
+                at cip.go4.Go4Manager.directories(Unknown Source)												<-----Go4Manager.directories
+                at cip.userio.IGo4ButtonListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.userio.IGo4ButtonListener$Dispatcher.sinkMessage(Unknown Source)	<-----///IGo4ButtonListener$Dispatcher
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+5733 NOT Apr 26 10:55:32.873458 (728-915) JAVA-display MQThread|EWProperty:getDurationFromNow - PSP is disabled
+5734 DEB Apr 26 10:55:32.874316 (728-915) JAVA-display MQThread|cip.display.DisplayManager:? - isPowerOffTimerRunning(): false
+5735 NOT Apr 26 10:55:32.874346 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryApp:featureInvoked - directories
+5736 DEB Apr 26 10:55:32.874389 (728-915) JAVA-display MQThread|cip.display.DisplayManager:? - doEnergyWiseUserActiveAction()
+        ew = false
+        energySaveProperty.isEnabled() = false
+        ew-enabled-today:false
+        isAlerting() = false
+        allowEnergyWiseOverrides.getValue() = false
+        in ew-alert timeframe?true
+        isWithinPowerOnTime()?true
+        isWithinPowerDownAlertTime = false
+        isDisplayOn() = true
+        isPowerOffTimerRunning() = false
+        powerdownFailed=false
+5737 DEB Apr 26 10:55:32.874438 (728-915) JAVA-display MQThread|cip.display.DisplayManager:? - DisplayOn(): is display currently on? true,ew:false
+5739 DEB Apr 26 10:55:32.875222 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryApp:getTopLevelMenuItem - set theUrl to null
+5740 ERR Apr 26 10:55:32.878509 (728-969) JAVA-10:55:32|Message : / by zero								《---Cisco/Directory线程
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.app.ApplicationManager.notifySwappedEnvironments(Unknown Source)		<--------///notifySwappedEnvironments
+                at cip.app.ApplicationManager.raise(Unknown Source)
+                at cip.app.Application.raise(Unknown Source)
+                at cip.app.Application.raise(Unknown Source)
+                at cip.contacts.DirectoryApp.directories(Unknown Source)
+                at cip.contacts.DirectoryApp.featureInvoked(Unknown Source)		<--------!!!!!!DirectoryApp.featureInvoked
+                at cip.go4.SLApplication$MyListener.featureInvoked(Unknown Source)	<--------!!!SLApplication$MyListener.featureInvoked, 应该favorites也是
+                at cip.app.ISLAppFeatureListener$Dispatcher.sinkMessage(Unknown Source)
+                at cip.app.ISLAppFeatureListener$Dispatcher.sinkMessage(Unknown Source)		<-----///ISLAppFeatureListener$Dispatcher
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+                at cip.sys.MessageQueueThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+5741 ERR Apr 26 10:55:32.878981 (728-907) JAVA-10:55:32|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.app.ApplicationManager.processSwappedEnvironment(Unknown Source)		<--------///processSwappedEnvironment
+                at cip.app.ApplicationManager.access$1900(Unknown Source)
+                at cip.app.ApplicationManager$ApplicationManagerThread.onRun(Unknown Source)
+                at cip.sys.SystemThread.run(Unknown Source)
+5742 DEB Apr 26 10:55:32.879080 (728-907) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] oldEnvironment:"Call UI"/callui(15) Environment, newEnvironment:"Contacts"/Cisco/Directory(42) Environment, inFocusEnvironment:"Call UI"/callui(15) Environment, focusType:1, actionCode:ApplicationAction - Raise
+5743 DEB Apr 26 10:55:32.879140 (728-907) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] => [logAppManagerVars] inFocusEnvironment:"Call UI"/callui(15) Environment, loweringEnvironment:null, raisingEnvironment:"Call UI"/callui(15) Environment
+5744 INF Apr 26 10:55:32.879187 (728-907) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] new lowering environment: "Call UI"/callui(15) Environment
+5745 INF Apr 26 10:55:32.879814 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryApp:? - gettingFocus
+5746 DEB Apr 26 10:55:32.880039 (728-919) JAVA-callui MQThread|cip.callui.CallUi:lostFocus - requestToLoseFocus:false, closeAppOnRequestToLoseFocus:false
+5747 INF Apr 26 10:55:32.880372 (728-919) JAVA-callui MQThread|cip.app.SLApplicationManager:? - [yield]: focus changing from "Call UI"/callui(15) Environment to "Contacts"/Cisco/Directory(42) Environment
+5748 NOT Apr 26 10:55:32.880480 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryApp:onGotFocus - Enter
+5749 DEB Apr 26 10:55:32.882290 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryApp:getTopLevelMenuItem - set theUrl to null
+5750 DEB Apr 26 10:55:32.882614 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:initializeControl - isInitialized:false
+5751 DEB Apr 26 10:55:32.882654 (728-969) JAVA-Cisco/Directory MQThread|cip.comp.SLComponentView:initialize - initialize DirSearchList enter
+5752 NOT Apr 26 10:55:32.884710 (781-781) guiapp-initPage(): DirSearchList initPage json: 
+5753 DEB Apr 26 10:55:32.884772 (781-781) guiapp-getPageQmlFile(): qmlFile: qml/pages/Directory.qml
+5754 DEB Apr 26 10:55:33.106215 (781-781) guiapp-getDisplayedSoftkeys(): Empty size: 0
+5755 WRN Apr 26 10:55:33.183773 (781-781) guiapp-file:///usr/mbin/qml/pages/Directory.qml:25: TypeError: Cannot read property 'visible' of null
+5756 WRN Apr 26 10:55:33.183873 (781-781) guiapp-file:///usr/mbin/qml/components/LineList.qml:67: ReferenceError: callPreserved is not defined
+5757 DEB Apr 26 10:55:33.184144 (781-781) guiapp-getDisplayedSoftkeys(): DirSearchList size: 0
+5758 DEB Apr 26 10:55:33.190811 (781-781) guiapp-notifyFocusChanged(): Directory_QMLTYPE_307(0x17a4990, name = DirSearchList) is focused
+5759 WRN Apr 26 10:55:33.191459 (781-781) guiapp-[Profiling-Stub] keyReleasedOnHome(): Key_Directory
+5760 DEB Apr 26 10:55:33.192109 (728-969) JAVA-Cisco/Directory MQThread|cip.comp.SLComponentView:initialize - initialize DirSearchList exit
+5761 DEB Apr 26 10:55:33.194891 (728-889) JAVA-Thread-0|cip.dbus.GuiAppDBusSignalHandler:? - --Begin to handle() signal/event from GuiApp--
+5762 DEB Apr 26 10:55:33.194963 (728-889) JAVA-Thread-0|cip.userio.GuiAppClient:? - postKeyEvent method was called.
+5763 DEB Apr 26 10:55:33.194994 (728-889) JAVA-Thread-0|cip.userio.GuiAppClient:? - keyCode: 174, keyType:1
+5764 ERR Apr 26 10:55:33.195717 (728-889) JAVA-10:55:33|Message : / by zero
+        Exception Stack Trace : 
+        java.lang.ArithmeticException: / by zero
+                at cip.userio.IGo4ButtonListener$Proxy.directories(Unknown Source)
+                at cip.userio.InputManager.forwardGangOfFourEvent(Unknown Source)
+                at cip.userio.InputManager.processEvent(Unknown Source)
+                at cip.userio.InputManager.forwardEvent(Unknown Source)
+                at cip.userio.InputManager.processNativeEvents(Unknown Source)
+                at cip.userio.GuiAppClient.mapNativeEvents(Unknown Source)
+                at cip.userio.GuiAppClient.postKeyEvent(Unknown Source)
+                at cip.dbus.GuiAppDBusSignalHandler.handle(Unknown Source)
+                at org.freedesktop.dbus.AbstractConnection$2.run(AbstractConnection.java:956)
+                at org.freedesktop.dbus.AbstractConnection$WorkerThread.run(AbstractConnection.java:197)
+5765 INF Apr 26 10:55:33.195837 (728-889) JAVA-Thread-0|cip.userio.InputManager:? - Received GOF4: 4
+5766 NOT Apr 26 10:55:33.196877 (728-931) JAVA-go4 MQThread|cip.app.SLApplicationFeature:lajiang - invoke, reason:4
+5767 NOT Apr 26 10:55:33.197231 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryService:startDirectoryService - isRunning: false
+5768 DEB Apr 26 10:55:33.197322 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryService:initialize - 
+5769 DEB Apr 26 10:55:33.197540 (728-969) JAVA-Cisco/Directory MQThread|cip.util.ObjectPool:? - ObjectPool created: Name: ITimerListener Size: 4 CurrentCapacity: 4 StartSize: 4 MaxSize: 16 isEmpty: false
+5770 DEB Apr 26 10:55:33.197731 (728-969) JAVA-Cisco/Directory MQThread|cip.callagent.CallAgentListProperty:? - current registerAddress: 10.79.57.147
+5771 DEB Apr 26 10:55:33.197764 (728-969) JAVA-Cisco/Directory MQThread|cip.callagent.CallAgentListProperty:? - current ipAddress: 10.79.57.147
+5772 DEB Apr 26 10:55:33.197829 (728-969) JAVA-Cisco/Directory MQThread|cip.callagent.CallAgentListProperty:? - current ipAddress for Uri: 10.79.57.147
+5773 ERR Apr 26 10:55:33.198396 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryService:getSecurePort - MalformedURL Exception when trying to get the SecureUDSUsersAccessURL
+5774 DEB Apr 26 10:55:33.198565 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:? - updateSelectedIndex new: -1 invoke:false notifyView:true
+5775 DEB Apr 26 10:55:33.198631 (728-969) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:update - field:11
+5776 NOT Apr 26 10:55:33.201614 (781-781) guiapp-setPageSoftkeys(): DirSearchList json: []
+5777 DEB Apr 26 10:55:33.201720 (781-781) guiapp-defaultArrangement mDisplayedSize--> 0 0 "DirSearchList"
+5778 DEB Apr 26 10:55:33.201755 (781-781) guiapp-mppScreenDump(): UI screen dump not enable
+5779 DEB Apr 26 10:55:33.202694 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:? - ==! notify update focus, field=INPUT_FIELD
+5780 DEB Apr 26 10:55:33.202985 (728-969) JAVA-Cisco/Directory MQThread|cip.comp.SLInputEngine:enterInputMode - ==! enterInputMode...
+5781 DEB Apr 26 10:55:33.204109 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:? - Subscribed directory service id: Personal Directory name:Personal directory
+5782 DEB Apr 26 10:55:33.204178 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:? - Subscribed directory service id: Corporate Directory name:Corporate directory
+5783 DEB Apr 26 10:55:33.204231 (728-969) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:update - field:9
+5784 DEB Apr 26 10:55:33.204950 (728-969) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:setPageDataListModel - list size: 5
+5785 DEB Apr 26 10:55:33.215885 (728-969) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:update - field:5
+5786 DEB Apr 26 10:55:33.218066 (781-781) guiapp-setPageInputModel(): DirSearchList json: {"kateCursorPosition":0,"editable":true,"nextPage":false,"inputMode":"t","index":0,"type":2,"labelName":"","value":"","enabled":true,"placeHolder":"Tap to search","inputFlags":"normal","desc":""}
+5787 DEB Apr 26 10:55:33.219855 (728-969) JAVA-Cisco/Directory MQThread|cip.go4.OverviewModel:openMe - openMe enter
+5788 DEB Apr 26 10:55:33.220027 (728-969) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:open - inForeground:true, isInitialized:false
+5789 DEB Apr 26 10:55:33.220098 (728-969) JAVA-Cisco/Directory MQThread|cip.go4.OverviewModel:openMe - openMe exit
+5790 DEB Apr 26 10:55:33.220141 (728-969) JAVA-Cisco/Directory MQThread|cip.go4.OverviewModel:openChild - open child DirSearchList enter
+5791 DEB Apr 26 10:55:33.220250 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:activate - activate enter
+5792 DEB Apr 26 10:55:33.220377 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:openMe - openMe enter
+5793 INF Apr 26 10:55:33.220434 (728-906) JAVA-appmgr MQThread|cip.app.AppFrameSoftkeyBar:? - showSoftkeyBar true
+5794 DEB Apr 26 10:55:33.220466 (728-969) JAVA-Cisco/Directory MQThread|cip.comp.SLComponentView:processOpen - isOpen:false, isPause:false
+5795 DEB Apr 26 10:55:33.220519 (728-969) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:open - inForeground:true, isInitialized:true
+5796 DEB Apr 26 10:55:33.236155 (781-781) guiapp-setPageState(): DirSearchList pageState: -1
+5797 DEB Apr 26 10:55:33.255430 (781-781) guiapp-setPageCornerKeys(): DirSearchList json: {"bottomleft":"","topleft":"back","topright":"","right":[]}
+5798 DEB Apr 26 10:55:33.256523 (728-969) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:open - inForeground:true, to set data
+5799 DEB Apr 26 10:55:33.256971 (728-969) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:setPageDataListModel - list size: 5
+5800 DEB Apr 26 10:55:33.274083 (728-969) JAVA-Cisco/Directory MQThread|cip.comp.SLFullDisplay:fullShow - pages: CallUi DirSearchList 
+5801 WRN Apr 26 10:55:33.285303 (781-781) guiapp-[Profiling-Stub] showPage(): DirSearchList isVisible: true
+5802 WRN Apr 26 10:55:33.285366 (781-781) guiapp-[Profiling-Stub] setVisible(): DirSearchList isVisible: true
+5803 DEB Apr 26 10:55:33.331213 (781-781) guiapp-notifyFocusChanged(): SLTextInput_QMLTYPE_301(0x177ffc0, name = object_textinput) is focused
+5804 DEB Apr 26 10:55:33.331534 (781-781) guiapp-showPage(): App container visible: true
+5805 DEB Apr 26 10:55:33.331625 (781-781) guiapp-mppScreenDump(): UI screen dump not enable
+5806 DEB Apr 26 10:55:33.332835 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:activated - activated entry:-1 enter
+5807 DEB Apr 26 10:55:33.334998 (781-781) guiapp-setPageCallbackToken(): DirSearchList json: 1682477733332
+5808 DEB Apr 26 10:55:33.336046 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:activated - activated entry:-1 exit
+5809 DEB Apr 26 10:55:33.336155 (728-969) JAVA-Cisco/Directory MQThread|cip.comp.SLInputEngine:enterInputMode - ==! enterInputMode...
+5810 DEB Apr 26 10:55:33.336265 (728-969) JAVA-Cisco/Directory MQThread|cip.go4.OverviewView:processChildOpened - processChildOpened enter
+5811 DEB Apr 26 10:55:33.336306 (728-969) JAVA-Cisco/Directory MQThread|cip.go4.OverviewView:onChildOpened - to hide
+5812 DEB Apr 26 10:55:33.336342 (728-969) JAVA-Cisco/Directory MQThread|cip.go4.OverviewView:processChildOpened - processChildOpened exit
+5813 DEB Apr 26 10:55:33.336380 (728-969) JAVA-Cisco/Directory MQThread|cip.go4.OverviewModel:childOpened - childOpened child:DirSearchList
+5814 DEB Apr 26 10:55:33.336412 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:openMe - openMe exit
+5815 DEB Apr 26 10:55:33.336443 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryMenuModel:activate - activate exit
+5816 DEB Apr 26 10:55:33.336482 (728-969) JAVA-Cisco/Directory MQThread|cip.go4.OverviewModel:openChild - open child DirSearchList exit
+5817 INF Apr 26 10:55:33.336688 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryApp:? - gotFocus
+5818 DEB Apr 26 10:55:33.417043 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryService:timerFired - timer fired: directory_trigger_search
+5819 NOT Apr 26 10:55:33.417222 (728-969) JAVA-Cisco/Directory MQThread|cip.contacts.DirectoryService:sendQueryRequest - https://10.79.57.147:8443/cucm-uds/users
+5820 DEB Apr 26 10:55:33.417406 (728-969) JAVA-Cisco/Directory MQThread|HttpTask:? -  firstNullIndex=0 numActiveSessions=0
+5821 DEB Apr 26 10:55:33.420762 (728-969) JAVA-Cisco/Directory MQThread|HttpTask:? - New requestor's sessionId=0
+5822 WRN Apr 26 10:55:33.421183 (728-969) JAVA-Cisco/Directory MQThread|cip.http.HttpClientConnection:registerRequest - Current State = 0
+5823 INF Apr 26 10:55:33.421480 (728-969) JAVA-Cisco/Directory MQThread|cip.http.HttpClientConnection:registerRequest - dottedIpToInt(10.79.57.147)==172964243
+5824 INF Apr 26 10:55:33.421531 (728-969) JAVA-Cisco/Directory MQThread|cip.http.HttpClientConnection:registerRequest - dottedIpToInt(10.79.57.147) is valid ipv4 address
+
+
+
+
+
+=============》或者是bigeasy的speeddials:
+6559 NOT Apr 24 17:59:01.920398 (4386-4526) JAVA-NIOGetEvent: hard key event read: 0x0001001e
+6560 INF Apr 24 17:59:01.920450 (4386-4526) JAVA-[[MESSAGE_1.0]]: [NativeIO] --> 2.2(press) --> [JAVA] :
+6561 NOT Apr 24 17:59:01.920592 (4386-4526) JAVA-NativeUserInput|cip.userio.InputManager$NativeEventThread:? - Forwarding native input event
+6562 INF Apr 24 17:59:01.920728 (4386-4526) JAVA-NativeUserInput|cip.userio.InputManager:? - Received Navigation: 2
+6563 NOT Apr 24 17:59:01.920886 invalid event: No such file or directory
+6564 DEB Apr 24 17:59:01.921069 (4386-4527) JAVA-appmgr MQThread|Appframe:ALERT stopNotification - 
+6565 DEB Apr 24 17:59:01.921235 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - [doDefaultUserActiveAction] ew:false
+6566 DEB Apr 24 17:59:01.921283 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - clearUriTimer
+6567 DEB Apr 24 17:59:01.921347 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - setIdleTimer(3600000)
+6568 DEB Apr 24 17:59:01.921389 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - IsIdleTimerSet NULL=true
+6569 NOT Apr 24 17:59:01.921683 (4386-4537) JAVA-display MQThread|EWProperty:getDurationFromNow - PSP is disabled
+6570 DEB Apr 24 17:59:01.921755 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - isPowerOffTimerRunning(): true
+6571 DEB Apr 24 17:59:01.921809 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - doEnergyWiseUserActiveAction()
+	ew = false
+	energySaveProperty.isEnabled() = false
+	ew-enabled-today:false
+	isAlerting() = false
+	allowEnergyWiseOverrides.getValue() = false
+	in ew-alert timeframe?true
+	isWithinPowerOnTime()?true
+	isWithinPowerDownAlertTime = false
+	isDisplayOn() = true
+	isPowerOffTimerRunning() = true
+	powerdownFailed=false
+6572 DEB Apr 24 17:59:01.921866 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - DisplayOn(): is display currently on? true,ew:false
+6573 NOT Apr 24 17:59:02.030742 (4386-4526) JAVA-NIOGetEvent: hard key event read: 0x0002001e
+6574 INF Apr 24 17:59:02.030794 (4386-4526) JAVA-[[MESSAGE_1.0]]: [NativeIO] --> 2.2(release) --> [JAVA] :
+6575 NOT Apr 24 17:59:02.030897 (4386-4526) JAVA-NativeUserInput|cip.userio.InputManager$NativeEventThread:? - Forwarding native input event
+6576 INF Apr 24 17:59:02.031016 (4386-4526) JAVA-NativeUserInput|cip.userio.InputManager:? - Received Navigation: 2
+6577 NOT Apr 24 17:59:02.031261 invalid event: No such file or directory
+6578 NOT Apr 24 17:59:02.031448 (4386-4541) JAVA-callui MQThread|cip.callui.OverviewModel:detect key - model:CallUi
+6579 INF Apr 24 17:59:02.031625 (4386-4541) JAVA-callui MQThread|UriRegistry:? - URI search successful. Internal:SpeedDial
+6580 INF Apr 24 17:59:02.031670 (4386-4541) JAVA-callui MQThread|UriRegistry:executeUri - Executing Internal:SpeedDial.
+《----------------
+ 
+6581 INF Apr 24 17:59:02.031725 (4386-4541) JAVA-callui MQThread|UriRegistry:? - string=<CiscoIPPhoneExecute>^M
+	 <ExecuteItem Priority="0" URL="Internal:SpeedDial"/> </CiscoIPPhoneExecute>^M
+6582 INF Apr 24 17:59:02.032574 (4386-4550) JAVA-PushThread|PushService:? - Number of pending URI's: 4
+6583 INF Apr 24 17:59:02.032661 (4386-4550) JAVA-PushThread|cip.push.PushThread:execute - Sleep for 100ms previous= current=Internal:SpeedDial i=0 total=1
+6584 INF Apr 24 17:59:02.132849 (4386-4550) JAVA-PushThread|UriRegistry:? - URI search successful. Internal:SpeedDial
+6585 INF Apr 24 17:59:02.132960 (4386-4550) JAVA-PushThread|UriRegistry:? - URI search successful. Display:On:60
+6586 INF Apr 24 17:59:02.133014 (4386-4550) JAVA-PushThread|UriRegistry:executeUri - Executing Display:On:60. 
+6587 INF Apr 24 17:59:02.133101 (4386-4550) JAVA-PushThread|UriRegistry:? - string=<CiscoIPPhoneExecute>^M
+	 <ExecuteItem Priority="0" URL="Display:On:60"/> </CiscoIPPhoneExecute>^M
+6588 INF Apr 24 17:59:02.134026 (4386-4556) JAVA-favorites MQThread|PushService:? - Pending Elements: 3
+6589 INF Apr 24 17:59:02.134177 (4386-4556) JAVA-favorites MQThread|cip.push.UriRegistry$1:? - Got response : <?xml version="1.0" encoding="utf-8"?>^M
+	<CiscoIPPhoneResponse>^M
+	<ResponseItem URL="Internal:SpeedDial" Data="Success" Status="0" />^M
+	</CiscoIPPhoneResponse>^M
+6590 DEB Apr 24 17:59:02.134759 (4386-4528) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] oldEnvironment:"Call UI"/callui(14) Environment, newEnvironment:"Favorites"/favorites(24) Environment, inFocusEnvironment:"Call UI"/callui(14) Environment, focusType:1, actionCode:ApplicationAction - Raise
+《----------------processSwappedEnvironment,  raise(); !!!
+
+6591 DEB Apr 24 17:59:02.134865 (4386-4528) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] => [logAppManagerVars] inFocusEnvironment:"Call UI"/callui(14) Environment, loweringEnvironment:null, raisingEnvironment:"Call UI"/callui(14) Environment
+6592 INF Apr 24 17:59:02.134943 (4386-4528) JAVA-ApplicationManagerThread|cip.app.SLApplicationManager:? - [processSwappedEnvironment] new lowering environment: "Call UI"/callui(14) Environment
+6593 INF Apr 24 17:59:02.135094 (4386-4556) JAVA-favorites MQThread|cip.callhist.Favorites:? - gettingFocus
+《---------------listener.gettingFocus(newEnvironment);
+
+6594 DEB Apr 24 17:59:02.135134 (4386-4541) JAVA-callui MQThread|cip.callui.CallUi:lostFocus - requestToLoseFocus:false, closeAppOnRequestToLoseFocus:false
+6595 INF Apr 24 17:59:02.135261 (4386-4550) JAVA-PushThread|PushService:? - Number of pending URI's: 4
+6596 INF Apr 24 17:59:02.135335 (4386-4550) JAVA-PushThread|cip.push.PushThread:execute - Sleep for 100ms previous= current=Display:On:60 i=0 total=1
+6597 INF Apr 24 17:59:02.136073 (4386-4541) JAVA-callui MQThread|cip.app.SLApplicationManager:? - [yield]: focus changing from "Call UI"/callui(14) Environment to "Favorites"/favorites(24) Environment
+6598 DEB Apr 24 17:59:02.136568 (4386-4556) JAVA-favorites MQThread|cip.callhist.FavoritesMenuModel:initializeControl - isInitialized:false
+6599 DEB Apr 24 17:59:02.136651 (4386-4556) JAVA-favorites MQThread|cip.comp.SLComponentView:initialize - initialize FavoritesList enter
+6600 DEB Apr 24 17:59:02.136773 (4386-4556) JAVA-favorites MQThread|cip.comp.SLComponentView:initialize - initialize FavoritesList exit
+6601 DEB Apr 24 17:59:02.137064 (4386-4556) JAVA-favorites MQThread|cip.callhist.FavoritesMenuFullDisplay:update - field:9
+6602 DEB Apr 24 17:59:02.166215 (4386-4556) JAVA-favorites MQThread|cip.go4.OverviewModel:openMe - openMe enter
+6603 DEB Apr 24 17:59:02.166353 (4386-4556) JAVA-favorites MQThread|cip.comp.SLFullDisplay:open - inForeground:true, isInitialized:false
+6604 DEB Apr 24 17:59:02.166891 (4386-4556) JAVA-favorites MQThread|cip.go4.OverviewModel:openMe - openMe exit
+6605 DEB Apr 24 17:59:02.166965 (4386-4556) JAVA-favorites MQThread|cip.go4.OverviewModel:openChild - open child FavoritesList enter
+6606 DEB Apr 24 17:59:02.167285 (4386-4556) JAVA-favorites MQThread|cip.callhist.FavoritesMenuFullDisplay:update - field:8
+6607 DEB Apr 24 17:59:02.167407 (4386-4556) JAVA-favorites MQThread|cip.callhist.FavoritesMenuModel:activate - activate enter
+6608 DEB Apr 24 17:59:02.167661 (4386-4556) JAVA-favorites MQThread|cip.callhist.FavoritesMenuModel:openMe - openMe enter
+6609 DEB Apr 24 17:59:02.167735 (4386-4556) JAVA-favorites MQThread|cip.comp.SLComponentView:processOpen - isOpen:false, isPause:false
+6610 DEB Apr 24 17:59:02.167806 (4386-4556) JAVA-favorites MQThread|cip.callhist.FavoritesMenuFullDisplay:open - inForeground:true, isInitialized:true
+6611 DEB Apr 24 17:59:02.167941 (4386-4556) JAVA-favorites MQThread|cip.callhist.FavoritesMenuFullDisplay:open - inForeground:true, to set data
+6612 INF Apr 24 17:59:02.168356 (4386-4527) JAVA-appmgr MQThread|cip.app.AppFrameSoftkeyBar:? - showSoftkeyBar true
+6613 DEB Apr 24 17:59:02.178015 (4386-4556) JAVA-favorites MQThread|cip.callhist.FavoritesMenuModel:activated - activated entry:0 enter
+6614 DEB Apr 24 17:59:02.178243 (4386-4556) JAVA-favorites MQThread|cip.callhist.FavoritesMenuModel:activated - activated entry:0 exit
+6615 DEB Apr 24 17:59:02.178319 (4386-4556) JAVA-favorites MQThread|cip.go4.OverviewView:processChildOpened - processChildOpened enter
+6616 DEB Apr 24 17:59:02.178373 (4386-4556) JAVA-favorites MQThread|cip.go4.OverviewView:onChildOpened - to hide
+6617 DEB Apr 24 17:59:02.178469 (4386-4556) JAVA-favorites MQThread|cip.go4.OverviewView:processChildOpened - processChildOpened exit
+6618 DEB Apr 24 17:59:02.178548 (4386-4556) JAVA-favorites MQThread|cip.go4.OverviewModel:childOpened - childOpened child:FavoritesList
+6619 DEB Apr 24 17:59:02.178599 (4386-4556) JAVA-favorites MQThread|cip.callhist.FavoritesMenuModel:openMe - openMe exit
+6620 DEB Apr 24 17:59:02.178643 (4386-4556) JAVA-favorites MQThread|cip.callhist.FavoritesMenuModel:activate - activate exit
+6621 DEB Apr 24 17:59:02.178692 (4386-4556) JAVA-favorites MQThread|cip.go4.OverviewModel:openChild - open child FavoritesList exit
+6622 INF Apr 24 17:59:02.179179 (4386-4556) JAVA-favorites MQThread|cip.callhist.Favorites:? - gotFocus
+6623 INF Apr 24 17:59:02.235597 (4386-4550) JAVA-PushThread|UriRegistry:? - URI search successful. Display:On:60
+6624 DEB Apr 24 17:59:02.235963 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - uriFired: Display:On:60
+6625 DEB Apr 24 17:59:02.236109 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - clearUriTimer
+6626 DEB Apr 24 17:59:02.236188 (4386-4537) JAVA-display MQThread|cip.display.DisplayManager:? - DisplayOn(): is display currently on? true,ew:false
+6627 INF Apr 24 17:59:02.236383 (4386-4537) JAVA-display MQThread|PushService:? - Pending Elements: 3

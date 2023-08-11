@@ -1,0 +1,18 @@
+
+1. docker file modify
+vim dockerfile
+
+
+2. toolchain, extrafile necessary:
+https://cisco-my.sharepoint.com/:f:/p/chcole2/En6RCOvA8qlJvX-K4kq08GkB-8nGVIDSKw9-mFpNy5dPIw
+openjdk-extra-depend folder
+
+we need to figure out merge it into current toolchain used. e.x, download it from URL.
+Curently, use wget to download them to .cache/cisco/toolchain
+
+
+3. compare openjdk's build.sh with os/linux/xx/build.py, try to invoke os build openjdk automatically.
+os would compare a ver of post merge, sl-main uses this ver(commit-id) to download corresponding rootfs tar to .cache/cisco/bbb/xxxxx
+and unzip it to _build/bbb/rootfs, finally pake them into a load pageage.
+These mentioned should be accomplished by genmake.
+

@@ -1,0 +1,89 @@
+
+
+
+
+
+
+how to comm with cucm and phone? for exp, del DN and result in unprovision:
+
+
+		----------------
+4713 DEB Feb 01 17:36:01.351553 (9510-9681) JAVA-callagent MQThread|cip.callagent.CallAgent:doReset - ----- ready to reset
+4714 ERR Feb 01 17:36:01.353658 (9510-9681) JAVA-17:36:01|Message : / by zero
+	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.callagent.CallAgent.doReset(Unknown Source)
+		at cip.callagent.CallAgent.handleReset(Unknown Source)
+		at cip.callagent.CallAgent.access$300(Unknown Source)
+		at cip.callagent.CallAgent$2.statusChanged(Unknown Source)
+		at cip.sys.IResetListener$Dispatcher.sinkMessage(Unknown Source)
+		at cip.sys.IResetListener$Dispatcher.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+		at cip.sys.MessageQueueThread.onRun(Unknown Source)
+		at cip.sys.SystemThread.run(Unknown Source)
+
+
+9257 ERR Feb 01 17:18:54.716328 (6184-6328) JAVA-sipcc MQThread|SipCcAdapter:  - readyForSoftReset(): mgmtState=MGMT_AWAIT_SHUTDOWN_SOFT_RESET(11), configFetchRequested:false, sipcc-service started?true17:18:54|Message : / by zero
+	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.callagent.CallAgent.setHeaderPrimaryPrompt(Unknown Source)
+		at cip.sys.ResetService.resetReady(Unknown Source)
+		at cip.sys.IReset$Dispatcher.sinkMessage(Unknown Source)
+		at cip.sys.IReset$Dispatcher.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)
+		at cip.sys.MessageQueueThread.sendElement(Unknown Source)
+		at cip.sys.MessageQueueThread.onRun(Unknown Source)
+		at cip.sys.SystemThread.run(Unknown Source)
+		
+		----------------上面和unprovision alert无关, 仅先是resetsev导致的
+
+
+7230 INF Feb 01 17:36:06.228299 (9510-9718) JAVA-Thread-9|SipCcEventDispatcher:  - onDeviceEvent: deviceEvent=0 deviceId=0 deviceInfoRef=-247860528
+
+
+
+7247 DEB Feb 01 17:36:06.229771 (9510-9681) JAVA-callagent MQThread|cip.callagent.CallList:? - CallList.dispose() activeCallCountProperty set to 0! Properties.CALL_COUNT_PROPERTY_NAME.
+7248 ERR Feb 01 17:36:06.230100 (9510-9718) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:? - No Property matches "device.callagent.speeddials."Message : / by zero
+	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.callagent.CallAgent.setHeaderPrimaryPrompt(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.initializeLinePlane(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.ccReady(Unknown Source)
+		at cip.sipcc.SipCcEventDispatcher.onDeviceEvent(Unknown Source)
+		
+7249 DEB Feb 01 17:36:06.230137 (9510-9681) JAVA-callagent MQThread|cip.callagent.CallAgent$MyListeners:? - No Property matches "device.callagent.speeddials."Message : / by zero
+	Exception Stack Trace : 
+	java.lang.ArithmeticException: / by zero
+		at cip.callagent.CallAgent.setHeaderPrimaryPrompt(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.initializeLinePlane(Unknown Source)
+		at cip.sipcc.SipCcAdapter$CcMgmtListener.ccReady(Unknown Source)
+		at cip.sipcc.SipCcEventDispatcher.onDeviceEvent(Unknown Source)
+7250 DEB Feb 01 17:36:06.230207 (9510-9718) JAVA-Thread-9|cip.callui.CallUiFullDisplay:propertyChanged - header-1st-line-prompt is changed from Phone is registering to Unprovisioned			<=============onDeviceEvent这个是sipcc通过jni调用的!!!!
+
+		----------------这里才是unprovision的事件
+		
+		
+		
+  } else if (theProperty.getName().equals(cip.callagent.Properties.REG_PROMPT_PROPERTY_NAME)) {
+      CallUiHelper.debug(curClassName,"propertyChanged","header-1st-line-prompt is changed from " + regStatePrompt + " to " + ((StringProperty)theProperty).getValue());
+      regStatePrompt = ((StringProperty)theProperty).getValue();
+      if (regStatePrompt.equals(PhraseTags.getPhraseText(PhraseTags.UNPROVISION)) == true) {
+      
+          String alertMsg = PhraseTags.getPhraseText(PhraseTags.UNPROVISIONED_ALERT_TEXT);
+          
+    public static void setHeaderPrimaryPrompt(String priPrompt) {
+        if (Property.propertyExists(cip.callagent.Properties.REG_PROMPT_PROPERTY_NAME)) {
+            StringProperty subPromptProperty = (StringProperty)Property.getProperty(cip.callagent.Properties.REG_PROMPT_PROPERTY_NAME);
+            if(subPromptProperty.getValue().equals(priPrompt)) { //force to update primary header prompt
+                subPromptProperty.notifyChanged();
+            } else {
+                subPromptProperty.setValue(priPrompt);
+            }
+        }
+    }
+    
+ =======================
+ 那么huntgroup ougout是哪个event呢? online event还是ondevice event?
+ 
+ 

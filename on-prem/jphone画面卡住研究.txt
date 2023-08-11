@@ -1,0 +1,412 @@
+
+# /etc/init.d/guiapp.sh restart; sdump
+Restarting guiapp: complete
+sdump: PID = 4745
+2 - Cisco Systems - Model=8875 Version=PHONEOS-8875.bda785af0d-20220719-bda785af0ddev[TZ=GMT+00:00
+] Wed Jul 20 08:44:32 2022
+=============================================================[V01][HW ver: V03][2]
+4204 DEB Jul 20 08:44:32 Jul 20 08:44:32.692618 Jul 20 08:44:32.692609 wpa_supplicant[4045]: nl80211: Regulatory information - country=CNve
+4205 DEB Jul 20 08:44:32 Jul 20 08:44:32.692960 Jul 20 08:44:32.692952 wpa_supplicant[4045]: nl80211: 2402-2482 @ 40 MHzti
+4206 DEB Jul 20 08:44:32 Jul 20 08:44:32.692986 Jul 20 08:44:32.692978 wpa_supplicant[4045]: nl80211: 5170-5250 @ 80 MHzti
+4207 DEB Jul 20 08:44:32 Jul 20 08:44:32.693010 Jul 20 08:44:32.693002 wpa_supplicant[4045]: nl80211: 5250-5330 @ 80 MHzti
+4208 DEB Jul 20 08:44:32 Jul 20 08:44:32.693034 Jul 20 08:44:32.693026 wpa_supplicant[4045]: nl80211: 5735-5835 @ 80 MHzti
+4209 DEB Jul 20 08:44:32 Jul 20 08:44:32.693058 Jul 20 08:44:32.693050 wpa_supplicant[4045]: nl80211: 57240-59400 @ 2160 MHz -
+4210 DEB Jul 20 08:44:32 Jul 20 08:44:32.693112 Jul 20 08:44:32.693074 wpa_supplicant[4045]: nl80211: 59400-63720 @ 2160 MHz -
+4211 DEB Jul 20 08:44:32 Jul 20 08:44:32.693139 Jul 20 08:44:32.693131 wpa_supplicant[4045]: nl80211: 63720-65880 @ 2160 MHz -
+4212 NOT Jul 20 08:44:32.692850 (2962-2962) sarchmon-/var/log/messages.3 not present
+4213 DEB Jul 20 08:44:32.966013 (3301-3301) NTP-sock_cb: event on sock4: timeout
+4214 DEB Jul 20 08:44:32.971247 (3301-3301) NTP-timeGuard(): file sync
+4215 DEB Jul 20 08:44:32.979349 (3301-3301) NTP-timeout_queries: called to check 2 items
+4216 WRN Jul 20 08:44:32.979404 (3301-3301) NTP-sock_cb: exit for timeout!!!!
+4217 WRN Jul 20 08:44:37.691279 (3778-3783) DHCP-dhcpwRestart(): WLAN is not the active interface 
+4218 DEB Jul 20 08:44:41.464071 (0-3468) syslog-dbus_manager::Sleeping 60 seconds
+4219 ERR Jul 20 08:44:42.672607 (3350-3503) CDP-get_activeqos:Network QOS is not availible: file does not exist. /tmp/activeQos.cfg
+4220 ERR Jul 20 08:44:42.672682 (3350-3503) CDP-get_activeqos:Network QOS is not availible: file does not exist. /tmp/activeQos.cfg
+4221 ERR Jul 20 08:44:42.672699 (3350-3503) CDP-lldpSend(): Default Network Policy: voice included 
+4222 NOT Jul 20 08:45:13.341123 (3350-3503) CDP-cdpRcvPkt(): deviceId is switch_lajiang
+4223 NOT Jul 20 08:45:21.743788 (4744-4744) guiapp-main(): custom message handler installed
+4224 DEB Jul 20 08:45:21.744430 (4744-4744) guiapp-installed signal handler for SIGTRAP for malloc trace
+4225 NOT Jul 20 08:45:21.744684 (1825-1827) restart_mgr-new connection 21
+4226 NOT Jul 20 08:45:21.744771 (1825-1827) restart_mgr-connection 21, msg rcvd: 
+4227 NOT Jul 20 08:45:21.744807 (1825-1827) restart_mgr-         procname = guiapp
+4228 DEB Jul 20 08:45:21.744834 (1825-1827) restart_mgr-         modID    = 0x4
+4229 NOT Jul 20 08:45:21.744860 (1825-1827) restart_mgr-         pid      = 4744
+4230 NOT Jul 20 08:45:21.744885 (1825-1827) restart_mgr-         cmd      = 0x3 (LSOCK_CMD_REGISTER)
+4231 DEB Jul 20 08:45:21.744936 (1825-1827) restart_mgr-parsing config file /etc/restart.conf for guiapp
+4232 NOT Jul 20 08:45:21.745117 (1825-1827) restart_mgr-kill order: mphone
+4233 NOT Jul 20 08:45:21.745158 (1825-1827) restart_mgr-kill order: spr_voip
+4234 NOT Jul 20 08:45:21.745188 (1825-1827) restart_mgr-kill order: voice_feedback
+4235 NOT Jul 20 08:45:21.745214 (1825-1827) restart_mgr-kill order: ms
+4236 NOT Jul 20 08:45:21.745240 (1825-1827) restart_mgr-kill order: apigateway
+4237 NOT Jul 20 08:45:21.745265 (1825-1827) restart_mgr-kill order: tcpdump
+4238 WRN Jul 20 08:45:21.818058 (4744-4744) guiapp-QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+4239 DEB Jul 20 08:45:21.930221 (4744-4744) guiapp-initialize(): fps enabled: false
+4240 NOT Jul 20 08:45:21.969318 (4744-4744) guiapp-createSocketPool Using socket video
+4241 NOT Jul 20 08:45:21.969498 (4744-4744) guiapp-initializeSocketServersImp
+4242 NOT Jul 20 08:45:21.969543 (4744-4744) guiapp-serverSetup
+4243 INF Jul 20 08:45:21.992580 (4744-4744) guiapp-cprIsShutterOpen:camera shutter is closed
+4244 NOT Jul 20 08:45:22.229993 (4744-4744) guiapp-launch(): qApp enters the main event loop
+4245 WRN Jul 20 08:45:22.242446 (4744-4744) guiapp-QVncServer created on port 5900
+4246 DEB Jul 20 08:45:41.476691 (0-3468) syslog-dbus_manager::Sleeping 60 seconds
+4247 ERR Jul 20 08:45:42.678100 (3350-3503) CDP-get_activeqos:Network QOS is not availible: file does not exist. /tmp/activeQos.cfg
+4248 ERR Jul 20 08:45:42.678214 (3350-3503) CDP-get_activeqos:Network QOS is not availible: file does not exist. /tmp/activeQos.cfg
+4249 ERR Jul 20 08:45:42.678250 (3350-3503) CDP-lldpSend(): Default Network Policy: voice included 
+4250 DEB Jul 20 08:45:43.855141 (3301-3301) NTP-sock_cb: event on sock4: timeout
+4251 DEB Jul 20 08:45:43.864641 (3301-3301) NTP-timeGuard(): file sync
+4252 DEB Jul 20 08:45:43.866687 (3301-3301) NTP-timeout_queries: called to check 2 items
+4253 WRN Jul 20 08:45:43.866775 (3301-3301) NTP-sock_cb: exit for timeout!!!!
+4254 ERR Jul 20 08:45:54.668043 (3278-3278) wlanmgr-WIFI_DIAG event: sub type is 5
+4255 NOT Jul 20 08:46:05.727263 (3350-3503) CDP-cdpRcvPkt(): deviceId is switch_lajiang
+4256 DEB Jul 20 08:46:41.489576 (0-3468) syslog-dbus_manager::Sleeping 60 seconds
+4257 ERR Jul 20 08:46:42.683807 (3350-3503) CDP-get_activeqos:Network QOS is not availible: file does not exist. /tmp/activeQos.cfg
+4258 ERR Jul 20 08:46:42.683927 (3350-3503) CDP-get_activeqos:Network QOS is not availible: file does not exist. /tmp/activeQos.cfg
+4259 ERR Jul 20 08:46:42.683964 (3350-3503) CDP-lldpSend(): Default Network Policy: voice included 
+4260 WRN Jul 20 08:46:52 Jul 20 08:46:52.472089 Jul 20 08:46:52.472050 kernel: [  457.892592] wl_process_host_event: Link event 12, flags 0, status 0so
+4261 WRN Jul 20 08:46:52 Jul 20 08:46:52.472178 Jul 20 08:46:52.472158 kernel: [  457.899082] MACEVENT: WLC_E_DISASSOC_IND, MAC 74:a2:e6:26:b5:dd, reason 1a
+4262 WRN Jul 20 08:46:52 Jul 20 08:46:52.472237 Jul 20 08:46:52.472218 kernel: [  457.906243] wl_process_host_event: Link event 6, flags 0, status 0ea
+4263 WRN Jul 20 08:46:52 Jul 20 08:46:52.485504 Jul 20 08:46:52.485479 kernel: [  457.912612] MACEVENT: WLC_E_DEAUTH_IND, MAC 74:a2:e6:26:b5:dd, reason 108
+        ]
+4264 DEB Jul 20 08:46:52 Jul 20 08:46:52.486884 Jul 20 08:46:52.486857 wpa_supplicant[4045]: nl80211: Drv Event 48 (NL80211_CMD_DISCONNECT) received for wlan0]
+4265 DEB Jul 20 08:46:52 Jul 20 08:46:52.486985 Jul 20 08:46:52.486964 wpa_supplicant[4045]: nl80211: Disconnect event80
+4266 DEB Jul 20 08:46:52 Jul 20 08:46:52.487124 Jul 20 08:46:52.487045 wpa_supplicant[4045]: wlan0: Event DEAUTH (12) receivedD_
+4267 DEB Jul 20 08:46:52 Jul 20 08:46:52.487189 Jul 20 08:46:52.487170 wpa_supplicant[4045]: wlan0: Deauthentication notificationIS
+4268 DEB Jul 20 08:46:52 Jul 20 08:46:52.487270 Jul 20 08:46:52.487251 wpa_supplicant[4045]: wlan0:  * reason 1at
+4269 DEB Jul 20 08:46:52 Jul 20 08:46:52.487371 Jul 20 08:46:52.487332 wpa_supplicant[4045]: Deauthentication frame IE(s) - hexdump(len=0): [NULL]ed
+4270 NOT Jul 20 08:46:52 Jul 20 08:46:52.487448 Jul 20 08:46:52.487412 wpa_supplicant[4045]: wlan0: CTRL-EVENT-DISCONNECTED bssid=74:a2:e6:26:b5:dd reason=1n0
+4271 DEB Jul 20 08:46:52 Jul 20 08:46:52.487545 Jul 20 08:46:52.487525 wpa_supplicant[4045]: CTRL_IFACE monitor send - hexdump(len=21): 2f 74 6d 70 2f 77 70 61 5f 63 74 72 6c 5f 33 32 37 38 2d 32 000 
+4272 DEB Jul 20 08:46:52 Jul 20 08:46:52.487605 Jul 20 08:46:52.487586 wpa_supplicant[4045]: wlan0: Auto connect enabled: try to reconnect (wps=0 wpa_state=9, reason_code=1)c 
+4273 DEB Jul 20 08:46:52 Jul 20 08:46:52.487663 Jul 20 08:46:52.487645 wpa_supplicant[4045]: wlan0: Driver based fast reconnect (Broadcom) (
+4274 DEB Jul 20 08:46:52 Jul 20 08:46:52.487720 Jul 20 08:46:52.487702 wpa_supplicant[4045]: wlan0: To get drv_reconnect_bssec
+4275 DEB Jul 20 08:46:52 Jul 20 08:46:52.487793 Jul 20 08:46:52.487774 wpa_supplicant[4045]: wlan0: State: COMPLETED -> DISCONNECTEDad
+4276 DEB Jul 20 08:46:52 Jul 20 08:46:52.487852 Jul 20 08:46:52.487833 wpa_supplicant[4045]: wlan0: Setting interface down report timeout: 1 sec 0 usecta
+4277 DEB Jul 20 08:46:52 Jul 20 08:46:52.487945 Jul 20 08:46:52.487907 wpa_supplicant[4045]: wlan0: id=0 state=0 BSSID=74:a2:e6:26:b5:dd SSID=internetct
+4278 DEB Jul 20 08:46:52 Jul 20 08:46:52.488206 Jul 20 08:46:52.488178 wpa_supplicant[4045]: CTRL_IFACE monitor send - hexdump(len=21): 2f 74 6d 70 2f 77 70 61 5f 63 74 72 6c 5f 33 32 37 38 2d 32 000 
+4279 DEB Jul 20 08:46:52 Jul 20 08:46:52.488273 Jul 20 08:46:52.488254 wpa_supplicant[4045]: EAPOL: External notification - portEnabled=0f 
+4280 DEB Jul 20 08:46:52 Jul 20 08:46:52.488333 Jul 20 08:46:52.488314 wpa_supplicant[4045]: EAPOL: SUPP_PAE entering state DISCONNECTED0f
+4281 DEB Jul 20 08:46:52 Jul 20 08:46:52.488426 Jul 20 08:46:52.488392 wpa_supplicant[4045]: EAPOL: Supplicant port status: Unauthorized0f
+4282 DEB Jul 20 08:46:52 Jul 20 08:46:52.488507 Jul 20 08:46:52.488487 wpa_supplicant[4045]: nl80211: Set supplicant port unauthorized for 00:00:00:00:00:00 6
+4283 WRN Jul 20 08:46:52 Jul 20 08:46:52.496170 Jul 20 08:46:52.496151 kernel: [  457.919992] wl_process_host_event: Link event 16, flags 0, status 00:
+4284 WRN Jul 20 08:46:52 Jul 20 08:46:52.496238 Jul 20 08:46:52.496222 kernel: [  457.926467] MACEVENT: WLC_E_LINK DOWNnk
+4285 DEB Jul 20 08:46:52 Jul 20 08:46:52.500081 Jul 20 08:46:52.500048 wpa_supplicant[4045]: EAPOL: SUPP_BE entering state INITIALIZEla
+4286 NOT Jul 20 08:46:52.499727 (3350-3507) CDP-nlThrd(): msg rcvd 68
+4287 DEB Jul 20 08:46:52 Jul 20 08:46:52.500193 Jul 20 08:46:52.500178 wpa_supplicant[4045]: EAPOL: Supplicant port status: Unauthorizeds 
+4288 NOT Jul 20 08:46:52.499774 (3350-3507) CDP-nlThrd(): Dump link info: ifi_family 0x0, pad 0x0,type 0x01, ifi_index 5, ifi_flags 0x11043, ifi_change 0x0
+4289 DEB Jul 20 08:46:52 Jul 20 08:46:52.500262 Jul 20 08:46:52.500248 wpa_supplicant[4045]: nl80211: Set supplicant port unauthorized for 00:00:00:00:00:00x6
+4290 DEB Jul 20 08:46:52 Jul 20 08:46:52.500502 Jul 20 08:46:52.500483 wpa_supplicant[4045]: EAPOL: External notification - portValid=0fo
+4291 DEB Jul 20 08:46:52 Jul 20 08:46:52.500550 Jul 20 08:46:52.500536 wpa_supplicant[4045]: EAPOL: Supplicant port status: Unauthorized
+        0
+4292 DEB Jul 20 08:46:52 Jul 20 08:46:52.500594 Jul 20 08:46:52.500580 wpa_supplicant[4045]: nl80211: Set supplicant port unauthorized for 00:00:00:00:00:00x6
+4293 NOT Jul 20 08:46:52.500492 (3350-3503) CDP-PALS: is DISABLED [0] palsEnable=0  
+4294 NOT Jul 20 08:46:52 Jul 20 08:46:52.501091 Jul 20 08:46:52.501070 wpa_supplicant[4045]: wlan0: Trying to associate with 74:a2:e6:26:b5:dd (SSID='internet' freq=5260 MHz) 5
+4295 DEB Jul 20 08:46:52 Jul 20 08:46:52.501141 Jul 20 08:46:52.501125 wpa_supplicant[4045]: CTRL_IFACE monitor send - hexdump(len=21): 2f 74 6d 70 2f 77 70 61 5f 63 74 72 6c 5f 33 32 37 38 2d 32 000 
+4296 DEB Jul 20 08:46:52 Jul 20 08:46:52.501206 Jul 20 08:46:52.501190 wpa_supplicant[4045]: FT: Stored MDIE and FTIE from (Re)Association Response - hexdump(len=0): 7
+4297 DEB Jul 20 08:46:52 Jul 20 08:46:52.501250 Jul 20 08:46:52.501237 wpa_supplicant[4045]: wlan0: Cancelling scan request(R
+4298 DEB Jul 20 08:46:52 Jul 20 08:46:52.501296 Jul 20 08:46:52.501283 wpa_supplicant[4045]: wlan0: WPA: clearing own WPA/RSN IEss
+4299 DEB Jul 20 08:46:52 Jul 20 08:46:52.501338 Jul 20 08:46:52.501325 wpa_supplicant[4045]: wlan0: Automatic auth_alg selection: 0x1at
+4300 DEB Jul 20 08:46:52 Jul 20 08:46:52.501380 Jul 20 08:46:52.501367 wpa_supplicant[4045]: wlan0: WPA: clearing AP WPA IEct
+4301 DEB Jul 20 08:46:52 Jul 20 08:46:52.501421 Jul 20 08:46:52.501408 wpa_supplicant[4045]: wlan0: WPA: clearing AP RSN IEct
+4302 DEB Jul 20 08:46:52 Jul 20 08:46:52.501462 Jul 20 08:46:52.501449 wpa_supplicant[4045]: wlan0: WPA: clearing own WPA/RSN IE: 
+4303 DEB Jul 20 08:46:52 Jul 20 08:46:52.501504 Jul 20 08:46:52.501490 wpa_supplicant[4045]: wlan0: No keys have been configured - skip key clearing- 
+4304 DEB Jul 20 08:46:52 Jul 20 08:46:52.501546 Jul 20 08:46:52.501532 wpa_supplicant[4045]: wlan0: State: DISCONNECTED -> ASSOCIATINGp 
+4305 DEB Jul 20 08:46:52 Jul 20 08:46:52.501587 Jul 20 08:46:52.501574 wpa_supplicant[4045]: wlan0: id=-1 state=5 BSSID=00:00:00:00:00:00 SSID=ar
+4306 DEB Jul 20 08:46:52 Jul 20 08:46:52.501652 Jul 20 08:46:52.501636 wpa_supplicant[4045]: CTRL_IFACE monitor send - hexdump(len=21): 2f 74 6d 70 2f 77 70 61 5f 63 74 72 6c 5f 33 32 37 38 2d 32 000 
+4307 DEB Jul 20 08:46:52 Jul 20 08:46:52.501696 Jul 20 08:46:52.501682 wpa_supplicant[4045]: Limit connection to BSSID 74:a2:e6:26:b5:dd freq=5260 MHz based on scan results (bssid_set=0) 3
+4308 DEB Jul 20 08:46:52 Jul 20 08:46:52.501739 Jul 20 08:46:52.501726 wpa_supplicant[4045]: nl80211: Set mode ifindex 5 iftype 2 (STATION)eq
+4309 DEB Jul 20 08:46:52 Jul 20 08:46:52.501781 Jul 20 08:46:52.501767 wpa_supplicant[4045]: nl80211: Unsubscribe mgmt frames handle 0x261b6d8 (mode change) o
+4310 DEB Jul 20 08:46:52 Jul 20 08:46:52.501823 Jul 20 08:46:52.501809 wpa_supplicant[4045]: nl80211: Subscribe to mgmt frames with non-AP handle 0x261b6d8) 
+4311 DEB Jul 20 08:46:52 Jul 20 08:46:52.501865 Jul 20 08:46:52.501851 wpa_supplicant[4045]: nl80211: Register frame type=0xd0 nl_handle=0x261b6d80x
+4312 DEB Jul 20 08:46:52 Jul 20 08:46:52.501906 Jul 20 08:46:52.501893 wpa_supplicant[4045]: nl80211: Register frame match - hexdump(len=2): 04 0a0x
+4313 DEB Jul 20 08:46:52 Jul 20 08:46:52.501969 Jul 20 08:46:52.501954 wpa_supplicant[4045]: nl80211: Register frame type=0xd0 nl_handle=0x261b6d80x
+4314 DEB Jul 20 08:46:52 Jul 20 08:46:52.502013 Jul 20 08:46:52.501999 wpa_supplicant[4045]: nl80211: Register frame match - hexdump(len=2): 04 0b0x
+4315 DEB Jul 20 08:46:52 Jul 20 08:46:52.502072 Jul 20 08:46:52.502057 wpa_supplicant[4045]: nl80211: Register frame type=0xd0 nl_handle=0x261b6d80x
+4316 DEB Jul 20 08:46:52 Jul 20 08:46:52.502115 Jul 20 08:46:52.502101 wpa_supplicant[4045]: nl80211: Register frame match - hexdump(len=2): 04 0c0x
+4317 DEB Jul 20 08:46:52 Jul 20 08:46:52.502175 Jul 20 08:46:52.502160 wpa_supplicant[4045]: nl80211: Register frame type=0xd0 nl_handle=0x261b6d80x
+4318 DEB Jul 20 08:46:52 Jul 20 08:46:52.502218 Jul 20 08:46:52.502204 wpa_supplicant[4045]: nl80211: Register frame match - hexdump(len=2): 04 0d0x
+4319 DEB Jul 20 08:46:52 Jul 20 08:46:52.502278 Jul 20 08:46:52.502263 wpa_supplicant[4045]: nl80211: Register frame type=0xd0 nl_handle=0x261b6d80x
+4320 DEB Jul 20 08:46:52 Jul 20 08:46:52.502322 Jul 20 08:46:52.502308 wpa_supplicant[4045]: nl80211: Register frame match - hexdump(len=1): 066d
+4321 DEB Jul 20 08:46:52 Jul 20 08:46:52.502364 Jul 20 08:46:52.502350 wpa_supplicant[4045]: nl80211: Register frame type=0xd0 nl_handle=0x261b6d80x
+4322 DEB Jul 20 08:46:52 Jul 20 08:46:52.502405 Jul 20 08:46:52.502392 wpa_supplicant[4045]: nl80211: Register frame match - hexdump(len=2): 0a 070x
+4323 DEB Jul 20 08:46:52 Jul 20 08:46:52.502469 Jul 20 08:46:52.502454 wpa_supplicant[4045]: nl80211: Register frame type=0xd0 nl_handle=0x261b6d80x
+4324 DEB Jul 20 08:46:52 Jul 20 08:46:52.502512 Jul 20 08:46:52.502498 wpa_supplicant[4045]: nl80211: Register frame match - hexdump(len=2): 0a 110x
+4325 DEB Jul 20 08:46:52 Jul 20 08:46:52.502571 Jul 20 08:46:52.502557 wpa_supplicant[4045]: nl80211: Connect (ifindex=5)h 
+4326 DEB Jul 20 08:46:52 Jul 20 08:46:52.502649 Jul 20 08:46:52.502635 wpa_supplicant[4045]:   * bssid=74:a2:e6:26:b5:dd)h
+4327 DEB Jul 20 08:46:52 Jul 20 08:46:52.502694 Jul 20 08:46:52.502680 wpa_supplicant[4045]:   * freq=5260a2
+4328 DEB Jul 20 08:46:52 Jul 20 08:46:52.502736 Jul 20 08:46:52.502722 wpa_supplicant[4045]:   * IEs - hexdump(len=0):dd
+4329 DEB Jul 20 08:46:52 Jul 20 08:46:52.502777 Jul 20 08:46:52.502764 wpa_supplicant[4045]:   * Auth Type 0mp
+4330 DEB Jul 20 08:46:52 Jul 20 08:46:52.519857 Jul 20 08:46:52.519824 wpa_supplicant[4045]: nl80211: Connect request send successfullyn=
+4331 DEB Jul 20 08:46:52 Jul 20 08:46:52.519927 Jul 20 08:46:52.519913 wpa_supplicant[4045]: wlan0: Setting authentication timeout: 10 sec 0 usec10
+4332 DEB Jul 20 08:46:52 Jul 20 08:46:52.519971 Jul 20 08:46:52.519957 wpa_supplicant[4045]: wlan0: Cancelling interface down report timeout u
+4333 DEB Jul 20 08:46:52 Jul 20 08:46:52.520015 Jul 20 08:46:52.520000 wpa_supplicant[4045]: wlan0: Setting interface down report timeout: 11 sec 0 usec6d
+4334 DEB Jul 20 08:46:52 Jul 20 08:46:52.520080 Jul 20 08:46:52.520065 wpa_supplicant[4045]: EAPOL: External notification - EAP success=0: 
+4335 DEB Jul 20 08:46:52 Jul 20 08:46:52.520124 Jul 20 08:46:52.520110 wpa_supplicant[4045]: EAPOL: Supplicant port status: Unauthorized0:
+4336 DEB Jul 20 08:46:52 Jul 20 08:46:52.520166 Jul 20 08:46:52.520152 wpa_supplicant[4045]: nl80211: Set supplicant port unauthorized for 00:00:00:00:00:00
+         
+4337 INF Jul 20 08:46:52 Jul 20 08:46:52.522719 Jul 20 08:46:52.522703 kernel: [  457.939925] CFG80211-ERROR) wl_cfg80211_connect : ed
+4338 WRN Jul 20 08:46:52 Jul 20 08:46:52.522766 Jul 20 08:46:52.522751 kernel: [  457.944723] Connecting with74:a2:e6:26:b5:dd ssid "internet", len (8) channel=52an
+4339 WRN Jul 20 08:46:52 Jul 20 08:46:52.522807 Jul 20 08:46:52.522794 kernel: [  457.944723] Co
+4340 DEB Jul 20 08:46:52 Jul 20 08:46:52.546251 Jul 20 08:46:52.546233 wpa_supplicant[4045]: EAPOL: External notification - EAP fail=0nt
+4341 DEB Jul 20 08:46:52 Jul 20 08:46:52.546300 Jul 20 08:46:52.546286 wpa_supplicant[4045]: EAPOL: Supplicant port status: Unauthorizeder
+4342 DEB Jul 20 08:46:52 Jul 20 08:46:52.546344 Jul 20 08:46:52.546330 wpa_supplicant[4045]: nl80211: Set supplicant port unauthorized for 00:00:00:00:00:00ne
+4343 DEB Jul 20 08:46:52 Jul 20 08:46:52.546824 Jul 20 08:46:52.546807 wpa_supplicant[4045]: EAPOL: External notification - portControl=ForceAuthorized00
+4344 DEB Jul 20 08:46:52 Jul 20 08:46:52.546871 Jul 20 08:46:52.546858 wpa_supplicant[4045]: EAPOL: Supplicant port status: UnauthorizedFo
+4345 DEB Jul 20 08:46:52 Jul 20 08:46:52.546915 Jul 20 08:46:52.546901 wpa_supplicant[4045]: nl80211: Set supplicant port unauthorized for 00:00:00:00:00:00ne
+4346 DEB Jul 20 08:46:52 Jul 20 08:46:52.547412 Jul 20 08:46:52.547394 wpa_supplicant[4045]: RTM_NEWLINK: operstate=1 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])2a
+4347 DEB Jul 20 08:46:52 Jul 20 08:46:52.547457 Jul 20 08:46:52.547443 wpa_supplicant[4045]: RTM_NEWLINK, IFLA_IFNAME: Interface 'wlan0' addedRU
+4348 DEB Jul 20 08:46:52 Jul 20 08:46:52.547500 Jul 20 08:46:52.547486 wpa_supplicant[4045]: nl80211: if_removed already cleared - ignore event
+        I
+4349 DEB Jul 20 08:46:52 Jul 20 08:46:52.547560 Jul 20 08:46:52.547545 wpa_supplicant[4045]: nl80211: Drv Event 36 (NL80211_CMD_REG_CHANGE) received for wlan0P]
+4350 DEB Jul 20 08:46:52 Jul 20 08:46:52.547603 Jul 20 08:46:52.547589 wpa_supplicant[4045]: nl80211: Regulatory domain changeD_
+4351 DEB Jul 20 08:46:52 Jul 20 08:46:52.547645 Jul 20 08:46:52.547631 wpa_supplicant[4045]: wlan0: Event CHANNEL_LIST_CHANGED (31) receivedre
+4352 DEB Jul 20 08:46:52 Jul 20 08:46:52.548143 Jul 20 08:46:52.548128 wpa_supplicant[4045]: nl80211: Regulatory information - country=00ve
+4353 DEB Jul 20 08:46:52 Jul 20 08:46:52.548186 Jul 20 08:46:52.548173 wpa_supplicant[4045]: nl80211: 2402-2472 @ 40 MHzti
+4354 DEB Jul 20 08:46:52 Jul 20 08:46:52.548230 Jul 20 08:46:52.548217 wpa_supplicant[4045]: nl80211: 2457-2482 @ 20 MHzti
+4355 DEB Jul 20 08:46:52 Jul 20 08:46:52.548273 Jul 20 08:46:52.548259 wpa_supplicant[4045]: nl80211: 2474-2494 @ 20 MHzti
+4356 DEB Jul 20 08:46:52 Jul 20 08:46:52.548315 Jul 20 08:46:52.548301 wpa_supplicant[4045]: nl80211: 5170-5250 @ 80 MHzti
+4357 DEB Jul 20 08:46:52 Jul 20 08:46:52.548356 Jul 20 08:46:52.548343 wpa_supplicant[4045]: nl80211: 5250-5330 @ 80 MHzti
+4358 DEB Jul 20 08:46:52 Jul 20 08:46:52.548397 Jul 20 08:46:52.548384 wpa_supplicant[4045]: nl80211: 5490-5730 @ 160 MHz
+         
+4359 DEB Jul 20 08:46:52 Jul 20 08:46:52.548438 Jul 20 08:46:52.548425 wpa_supplicant[4045]: nl80211: 5735-5835 @ 80 MHzz
+4360 DEB Jul 20 08:46:52 Jul 20 08:46:52.548480 Jul 20 08:46:52.548467 wpa_supplicant[4045]: nl80211: 57240-63720 @ 2160 MHz 
+4361 WRN Jul 20 08:46:52 Jul 20 08:46:52.562626 Jul 20 08:46:52.562605 kernel: [  457.985153] MACEVENT: WLC_E_ASSOC_REQ_IEHz
+4362 WRN Jul 20 08:46:52 Jul 20 08:46:52.562679 Jul 20 08:46:52.562664 kernel: [  457.989325] MACEVENT: WLC_E_AUTH, MAC 74:a2:e6:26:b5:dd, Open System, SUCCESS
+        a
+4363 WRN Jul 20 08:46:52 Jul 20 08:46:52.681505 Jul 20 08:46:52.681482 kernel: [  458.099837] MACEVENT: WLC_E_ASSOC_RESP_IEa2
+4364 WRN Jul 20 08:46:52 Jul 20 08:46:52.681566 Jul 20 08:46:52.681549 kernel: [  458.106672] MACEVENT: WLC_E_ASSOC, MAC 74:a2:e6:26:b5:dd, SUCCESSte
+4365 WRN Jul 20 08:46:52 Jul 20 08:46:52.681653 Jul 20 08:46:52.681636 kernel: [  458.115626] wl_process_host_event: Link event 16, flags 1, status 0m,
+4366 WRN Jul 20 08:46:52 Jul 20 08:46:52.697182 Jul 20 08:46:52.697159 kernel: [  458.124882] MACEVENT: WLC_E_LINK UPLi
+4367 DEB Jul 20 08:46:52 Jul 20 08:46:52.701831 Jul 20 08:46:52.701808 wpa_supplicant[4045]: nl80211: Drv Event 46 (NL80211_CMD_CONNECT) received for wlan0CE
+4368 DEB Jul 20 08:46:52 Jul 20 08:46:52.701891 Jul 20 08:46:52.701875 wpa_supplicant[4045]: nl80211: Connect event(N
+4369 NOT Jul 20 08:46:52.701581 (3350-3507) CDP-nlThrd(): msg rcvd 200
+4370 NOT Jul 20 08:46:52.701633 (3350-3507) CDP-nlThrd(): Dump link info: ifi_family 0x0, pad 0x0,type 0x01, ifi_index 5, ifi_flags 0x11043, ifi_change 0x0
+4371 NOT Jul 20 08:46:52.701721 (3350-3507) CDP-nlThrd(): msg rcvd 272
+4372 DEB Jul 20 08:46:52 Jul 20 08:46:52.702023 Jul 20 08:46:52.702007 wpa_supplicant[4045]: nl80211: Associated on 5260 MHze_
+4373 NOT Jul 20 08:46:52.701750 (3350-3507) CDP-nlThrd(): Dump link info: ifi_family 0x0, pad 0x0,type 0x01, ifi_index 5, ifi_flags 0x11043, ifi_change 0x0
+4374 DEB Jul 20 08:46:52 Jul 20 08:46:52.702100 Jul 20 08:46:52.702085 wpa_supplicant[4045]: nl80211: Associated with 74:a2:e6:26:b5:dd_0
+4375 NOT Jul 20 08:46:52.701796 (3350-3507) CDP-nlThrd(): msg rcvd 68
+4376 DEB Jul 20 08:46:52 Jul 20 08:46:52.702175 Jul 20 08:46:52.702159 wpa_supplicant[4045]: nl80211: Operating frequency for the associated BSS from scan results: 5260 MHzg(
+4377 NOT Jul 20 08:46:52.701824 (3350-3507) CDP-nlThrd(): Dump link info: ifi_family 0x0, pad 0x0,type 0x01, ifi_index 5, ifi_flags 0x11043, ifi_change 0x0
+4378 DEB Jul 20 08:46:52 Jul 20 08:46:52.702253 Jul 20 08:46:52.702238 wpa_supplicant[4045]: wlan0: Event ASSOC (0) receivede_
+4379 DEB Jul 20 08:46:52 Jul 20 08:46:52.702300 Jul 20 08:46:52.702285 wpa_supplicant[4045]: wlan0: Association info evented
+4380 DEB Jul 20 08:46:52 Jul 20 08:46:52.702359 Jul 20 08:46:52.702334 wpa_supplicant[4045]: req_ies - hexdump(len=143): 00 08 69 6e 74 65 72 6e 65 74 01 04 b0 48 60 6c 21 02 03 e0 24 0a 24 04 34 04 64 0c 95 04 a5 01 2d 1a 63 00 17 ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 7f 08 00 00 00 00 01 00 00 40 bf 0c 32 50 80 0f fe ff 00 00 fe ff 00 00 85 1e 00 00 66 0a 00 00 00 00 18 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 dd 09 00 10 18 02 00 10 10 00 00 dd 07 00 50 f2 02 00 01 0f dd 05 00 40 96 03 040 
+4381 NOT Jul 20 08:46:52.702137 (3350-3503) CDP-PALS: is DISABLED [0] palsEnable=0  
+4382 NOT Jul 20 08:46:52.702346 (3350-3503) CDP-PALS: is DISABLED [0] palsEnable=0  
+4383 DEB Jul 20 08:46:52 Jul 20 08:46:52.702478 Jul 20 08:46:52.702449 wpa_supplicant[4045]: resp_ies - hexdump(len=214): 01 04 b0 48 60 6c 2d 1a ee 19 1b ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3d 16 34 05 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 7f 08 00 10 00 00 01 40 00 40 bf 0c b2 79 83 0f ea ff 00 00 ea ff 00 00 c0 05 00 00 00 c0 ff 85 1e 00 00 8f 0a 3f 00 ff 03 40 00 73 68 6e 36 2d 31 32 2d 63 61 70 39 00 00 00 00 07 00 00 47 95 0a 00 40 96 00 0a 4b 11 25 00 00 dd 05 00 40 96 03 05 dd 18 00 50 f2 02 01 01 80 00 0c a6 00 00 2c a8 00 00 45 53 00 00 62 42 00 00 6e 2e 00 00 02 01 04 01 06 01 0a 02 0c 02 0e 02 12 03 14 03 16 03 1a 04 22 05 2e 06 30 07 38 07 00 07 08 0f 10 17 18 1f 20 27 28 2f 30 37 38 3fuu
+4384 DEB Jul 20 08:46:52 Jul 20 08:46:52.702530 Jul 20 08:46:52.702516 wpa_supplicant[4045]: wlan0: freq=5260 MHzen
+4385 DEB Jul 20 08:46:52 Jul 20 08:46:52.702646 Jul 20 08:46:52.702563 wpa_supplicant[4045]: wlan0: WPA: clearing own WPA/RSN IEb0
+4386 DEB Jul 20 08:46:52 Jul 20 08:46:52.702744 Jul 20 08:46:52.702726 wpa_supplicant[4045]: FT: Stored MDIE and FTIE from (Re)Association Response - hexdump(len=0):0 
+4387 NOT Jul 20 08:46:52 Jul 20 08:46:52.702818 Jul 20 08:46:52.702802 wpa_supplicant[4045]: wlan0: ft_completed 0TI
+4388 DEB Jul 20 08:46:52 Jul 20 08:46:52.702870 Jul 20 08:46:52.702853 wpa_supplicant[4045]: CTRL_IFACE monitor send - hexdump(len=21): 2f 74 6d 70 2f 77 70 61 5f 63 74 72 6c 5f 33 32 37 38 2d 32 000 
+4389 NOT Jul 20 08:46:52.702558 (3350-3503) CDP-PALS: is DISABLED [0] palsEnable=0  
+4390 DEB Jul 20 08:46:52 Jul 20 08:46:52.702944 Jul 20 08:46:52.702929 wpa_supplicant[4045]: wlan0: State: ASSOCIATING -> ASSOCIATED1)
+4391 DEB Jul 20 08:46:52 Jul 20 08:46:52.702993 Jul 20 08:46:52.702977 wpa_supplicant[4045]: wlan0: id=0 state=6 BSSID=00:00:00:00:00:00 SSID=internet 7
+4392 DEB Jul 20 08:46:52 Jul 20 08:46:52.703043 Jul 20 08:46:52.703026 wpa_supplicant[4045]: CTRL_IFACE monitor send - hexdump(len=21): 2f 74 6d 70 2f 77 70 61 5f 63 74 72 6c 5f 33 32 37 38 2d 32 000 
+4393 DEB Jul 20 08:46:52 Jul 20 08:46:52.703092 Jul 20 08:46:52.703076 wpa_supplicant[4045]: wlan0: Associated to a new BSS: BSSID=74:a2:e6:26:b5:dd2f
+4394 NOT Jul 20 08:46:52 Jul 20 08:46:52.703140 Jul 20 08:46:52.703125 wpa_supplicant[4045]: wlan0: Associated with 74:a2:e6:26:b5:dd:a
+4395 DEB Jul 20 08:46:52 Jul 20 08:46:52.703189 Jul 20 08:46:52.703172 wpa_supplicant[4045]: CTRL_IFACE monitor send - hexdump(len=21): 2f 74 6d 70 2f 77 70 61 5f 63 74 72 6c 5f 33 32 37 38 2d 32 000 
+4396 DEB Jul 20 08:46:52 Jul 20 08:46:52.703238 Jul 20 08:46:52.703223 wpa_supplicant[4045]: wlan0: WPA: Association event - clear replay counter70
+4397 DEB Jul 20 08:46:52 Jul 20 08:46:52.703286 Jul 20 08:46:52.703271 wpa_supplicant[4045]: wlan0: WPA: Clear old PTKve
+4398 DEB Jul 20 08:46:52 Jul 20 08:46:52.703334 Jul 20 08:46:52.703318 wpa_supplicant[4045]: EAPOL: External notification - portEnabled=0 c
+4399 DEB Jul 20 08:46:52 Jul 20 08:46:52.703381 Jul 20 08:46:52.703366 wpa_supplicant[4045]: EAPOL: Supplicant port status: Unauthorized0 
+4400 DEB Jul 20 08:46:52 Jul 20 08:46:52.703430 Jul 20 08:46:52.703414 wpa_supplicant[4045]: nl80211: Set supplicant port unauthorized for 74:a2:e6:26:b5:dd 6
+4401 DEB Jul 20 08:46:52 Jul 20 08:46:52.703958 Jul 20 08:46:52.703939 wpa_supplicant[4045]: EAPOL: External notification - portValid=0fo
+4402 DEB Jul 20 08:46:52 Jul 20 08:46:52.704011 Jul 20 08:46:52.703995 wpa_supplicant[4045]: EAPOL: Supplicant port status: Unauthorized
+        7
+4403 DEB Jul 20 08:46:52 Jul 20 08:46:52.704061 Jul 20 08:46:52.704045 wpa_supplicant[4045]: nl80211: Set supplicant port unauthorized for 74:a2:e6:26:b5:dd 6
+4404 DEB Jul 20 08:46:52 Jul 20 08:46:52.704688 Jul 20 08:46:52.704669 wpa_supplicant[4045]: EAPOL: External notification - portEnabled=1r 
+4405 DEB Jul 20 08:46:52 Jul 20 08:46:52.704738 Jul 20 08:46:52.704723 wpa_supplicant[4045]: EAPOL: SUPP_PAE entering state S_FORCE_AUTH1r
+4406 DEB Jul 20 08:46:52 Jul 20 08:46:52.704788 Jul 20 08:46:52.704772 wpa_supplicant[4045]: EAPOL: Supplicant port status: AuthorizedTH
+4407 DEB Jul 20 08:46:52 Jul 20 08:46:52.704837 Jul 20 08:46:52.704821 wpa_supplicant[4045]: nl80211: Set supplicant port authorized for 74:a2:e6:26:b5:dddd
+4408 DEB Jul 20 08:46:52 Jul 20 08:46:52.705581 Jul 20 08:46:52.705561 wpa_supplicant[4045]: EAPOL: SUPP_BE entering state IDLEri
+4409 DEB Jul 20 08:46:52 Jul 20 08:46:52.705634 Jul 20 08:46:52.705617 wpa_supplicant[4045]: wlan0: Cancelling authentication timeoutfo
+4410 DEB Jul 20 08:46:52 Jul 20 08:46:52.705682 Jul 20 08:46:52.705667 wpa_supplicant[4045]: wlan0: State: ASSOCIATED -> COMPLETEDou
+4411 DEB Jul 20 08:46:52 Jul 20 08:46:52.705730 Jul 20 08:46:52.705714 wpa_supplicant[4045]: wlan0: Cancelling interface down report timeouta2
+4412 NOT Jul 20 08:46:52 Jul 20 08:46:52.705779 Jul 20 08:46:52.705763 wpa_supplicant[4045]: wlan0: CTRL-EVENT-CONNECTED - Connection to 74:a2:e6:26:b5:dd completed (auth) [id=0 id_str=] 3
+4413 DEB Jul 20 08:46:52 Jul 20 08:46:52.705829 Jul 20 08:46:52.705813 wpa_supplicant[4045]: CTRL_IFACE monitor send - hexdump(len=21): 2f 74 6d 70 2f 77 70 61 5f 63 74 72 6c 5f 33 32 37 38 2d 32 000 
+4414 DEB Jul 20 08:46:52 Jul 20 08:46:52.705898 Jul 20 08:46:52.705882 wpa_supplicant[4045]: wpa_driver_nl80211_set_operstate: operstate 1->1 (UP)0 
+4415 DEB Jul 20 08:46:52 Jul 20 08:46:52.705950 Jul 20 08:46:52.705935 wpa_supplicant[4045]: netlink: Operstate: linkmode=-1, operstate=61-
+4416 DEB Jul 20 08:46:52 Jul 20 08:46:52.705998 Jul 20 08:46:52.705982 wpa_supplicant[4045]: wlan0: id=0 state=9 BSSID=74:a2:e6:26:b5:dd SSID=internet 7
+4417 DEB Jul 20 08:46:52 Jul 20 08:46:52.706048 Jul 20 08:46:52.706031 wpa_supplicant[4045]: CTRL_IFACE monitor send - hexdump(len=21): 2f 74 6d 70 2f 77 70 61 5f 63 74 72 6c 5f 33 32 37 38 2d 32 000 
+4418 DEB Jul 20 08:46:52 Jul 20 08:46:52.706096 Jul 20 08:46:52.706081 wpa_supplicant[4045]: wlan0: Cancelling scan requestum
+4419 DEB Jul 20 08:46:52 Jul 20 08:46:52.706144 Jul 20 08:46:52.706128 wpa_supplicant[4045]: RTM_NEWLINK: operstate=1 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])f 
+4420 DEB Jul 20 08:46:52 Jul 20 08:46:52.706192 Jul 20 08:46:52.706177 wpa_supplicant[4045]: RTM_NEWLINK, IFLA_IFNAME: Interface 'wlan0' addedRU
+4421 DEB Jul 20 08:46:52 Jul 20 08:46:52.706239 Jul 20 08:46:52.706224 wpa_supplicant[4045]: nl80211: if_removed already cleared - ignore event
+        I
+4422 DEB Jul 20 08:46:52 Jul 20 08:46:52.706288 Jul 20 08:46:52.706272 wpa_supplicant[4045]: RTM_NEWLINK: operstate=1 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])f 
+4423 DEB Jul 20 08:46:52 Jul 20 08:46:52.706335 Jul 20 08:46:52.706320 wpa_supplicant[4045]: RTM_NEWLINK, IFLA_IFNAME: Interface 'wlan0' addedRU
+4424 DEB Jul 20 08:46:52 Jul 20 08:46:52.706383 Jul 20 08:46:52.706367 wpa_supplicant[4045]: nl80211: if_removed already cleared - ignore event
+        I
+4425 DEB Jul 20 08:46:52 Jul 20 08:46:52.706431 Jul 20 08:46:52.706415 wpa_supplicant[4045]: RTM_NEWLINK: operstate=1 ifi_flags=0x11043 ([UP][RUNNING][LOWER_UP])f 
+4426 DEB Jul 20 08:46:52 Jul 20 08:46:52.706479 Jul 20 08:46:52.706463 wpa_supplicant[4045]: RTM_NEWLINK, IFLA_IFNAME: Interface 'wlan0' addedRU
+4427 DEB Jul 20 08:46:52 Jul 20 08:46:52.706527 Jul 20 08:46:52.706511 wpa_supplicant[4045]: nl80211: if_removed already cleared - ignore event
+        I
+4428 DEB Jul 20 08:46:52 Jul 20 08:46:52.706684 Jul 20 08:46:52.706662 wpa_supplicant[4045]: wlan0: Control interface command 'GET_NETWORK 0 ssid'I
+4429 DEB Jul 20 08:46:52 Jul 20 08:46:52.706745 Jul 20 08:46:52.706728 wpa_supplicant[4045]: CTRL_IFACE: GET_NETWORK id=0 name='ssid'TW
+4430 DEB Jul 20 08:46:52 Jul 20 08:46:52.706935 Jul 20 08:46:52.706917 wpa_supplicant[4045]: wlan0: Control interface command 'GET_NETWORK 0 priority'[L
+4431 DEB Jul 20 08:46:52 Jul 20 08:46:52.706986 Jul 20 08:46:52.706970 wpa_supplicant[4045]: CTRL_IFACE: GET_NETWORK id=0 name='priority'K 
+4432 DEB Jul 20 08:46:52 Jul 20 08:46:52.707160 Jul 20 08:46:52.707141 wpa_supplicant[4045]: wlan0: Control interface command 'GET_NETWORK 0 scan_ssid'
+        E
+4433 DEB Jul 20 08:46:52 Jul 20 08:46:52.707212 Jul 20 08:46:52.707196 wpa_supplicant[4045]: CTRL_IFACE: GET_NETWORK id=0 name='scan_ssid' 0
+4434 DEB Jul 20 08:46:52 Jul 20 08:46:52.707412 Jul 20 08:46:52.707395 wpa_supplicant[4045]: wlan0: Control interface command 'GET_NETWORK 0 key_mgmt''
+4435 DEB Jul 20 08:46:52 Jul 20 08:46:52.707462 Jul 20 08:46:52.707447 wpa_supplicant[4045]: CTRL_IFACE: GET_NETWORK id=0 name='key_mgmt'K 
+4436 DEB Jul 20 08:46:52 Jul 20 08:46:52.707625 Jul 20 08:46:52.707607 wpa_supplicant[4045]: wlan0: Control interface command 'GET_NETWORK 0 eap'mg
+4437 DEB Jul 20 08:46:52 Jul 20 08:46:52.707674 Jul 20 08:46:52.707658 wpa_supplicant[4045]: CTRL_IFACE: GET_NETWORK id=0 name='eap'ET
+4438 DEB Jul 20 08:46:52 Jul 20 08:46:52.707722 Jul 20 08:46:52.707707 wpa_supplicant[4045]: CTRL_IFACE: Failed to get network variable 'eap'ea
+4439 DEB Jul 20 08:46:52 Jul 20 08:46:52.707858 Jul 20 08:46:52.707841 wpa_supplicant[4045]: wlan0: Control interface command 'GET_NETWORK 0 identity''
+4440 DEB Jul 20 08:46:52 Jul 20 08:46:52.707907 Jul 20 08:46:52.707892 wpa_supplicant[4045]: CTRL_IFACE: GET_NETWORK id=0 name='identity'K 
+4441 DEB Jul 20 08:46:52 Jul 20 08:46:52.707974 Jul 20 08:46:52.707958 wpa_supplicant[4045]: CTRL_IFACE: Failed to get network variable 'identity'it
+4442 DEB Jul 20 08:46:52 Jul 20 08:46:52.708088 Jul 20 08:46:52.708071 wpa_supplicant[4045]: wlan0: Control interface command 'GET_NETWORK 0 password''
+4443 DEB Jul 20 08:46:52 Jul 20 08:46:52.708137 Jul 20 08:46:52.708121 wpa_supplicant[4045]: CTRL_IFACE: GET_NETWORK id=0 name='password'K 
+4444 DEB Jul 20 08:46:52 Jul 20 08:46:52.708185 Jul 20 08:46:52.708169 wpa_supplicant[4045]: CTRL_IFACE: Failed to get network variable 'password'or
+4445 ERR Jul 20 08:46:52.708615 (3278-3278) wlanmgr-WIFI_DIAG callback, diag msg: [Connected to AP, MAC 74:a2:e6:26:b5:dd on channel 52]
+4446 DEB Jul 20 08:46:52 Jul 20 08:46:52.719986 Jul 20 08:46:52.719948 wpa_supplicant[4045]: nl80211: Drv Event 36 (NL80211_CMD_REG_CHANGE) received for wlan0]]
+4447 DEB Jul 20 08:46:52 Jul 20 08:46:52.720065 Jul 20 08:46:52.720049 wpa_supplicant[4045]: nl80211: Regulatory domain changeD_
+4448 DEB Jul 20 08:46:52 Jul 20 08:46:52.720117 Jul 20 08:46:52.720101 wpa_supplicant[4045]: wlan0: Event CHANNEL_LIST_CHANGED (31) receivedre
+4449 DEB Jul 20 08:46:52 Jul 20 08:46:52.720704 Jul 20 08:46:52.720687 wpa_supplicant[4045]: nl80211: Regulatory information - country=CNve
+4450 DEB Jul 20 08:46:52 Jul 20 08:46:52.720754 Jul 20 08:46:52.720738 wpa_supplicant[4045]: nl80211: 2402-2482 @ 40 MHzti
+4451 DEB Jul 20 08:46:52 Jul 20 08:46:52.720802 Jul 20 08:46:52.720787 wpa_supplicant[4045]: nl80211: 5170-5250 @ 80 MHzti
+4452 DEB Jul 20 08:46:52 Jul 20 08:46:52.720849 Jul 20 08:46:52.720834 wpa_supplicant[4045]: nl80211: 5250-5330 @ 80 MHzti
+4453 DEB Jul 20 08:46:52 Jul 20 08:46:52.720896 Jul 20 08:46:52.720881 wpa_supplicant[4045]: nl80211: 5735-5835 @ 80 MHzti
+4454 DEB Jul 20 08:46:52 Jul 20 08:46:52.720944 Jul 20 08:46:52.720928 wpa_supplicant[4045]: nl80211: 57240-59400 @ 2160 MHz -
+4455 DEB Jul 20 08:46:52 Jul 20 08:46:52.720992 Jul 20 08:46:52.720977 wpa_supplicant[4045]: nl80211: 59400-63720 @ 2160 MHz -
+4456 DEB Jul 20 08:46:52 Jul 20 08:46:52.721039 Jul 20 08:46:52.721024 wpa_supplicant[4045]: nl80211: 63720-65880 @ 2160 MHz -
+4457 WRN Jul 20 08:46:52 Jul 20 08:46:52.745268 Jul 20 08:46:52.745239 kernel: [  458.165018] MACEVENT: WLC_E_JOIN, MAC 74:a2:e6:26:b5:ddve
+4458 WRN Jul 20 08:46:52 Jul 20 08:46:52.745335 Jul 20 08:46:52.745318 kernel: [  458.170924] MACEVENT: WLC_E_SET_SSID, MAC 74:a2:e6:26:b5:dd
+        i
+4459 DEB Jul 20 08:46:54.743833 (3301-3301) NTP-sock_cb: event on sock4: timeout
+4460 DEB Jul 20 08:46:54.753575 (3301-3301) NTP-timeGuard(): file sync
+4461 DEB Jul 20 08:46:54.755499 (3301-3301) NTP-timeout_queries: called to check 2 items
+4462 WRN Jul 20 08:46:54.755591 (3301-3301) NTP-sock_cb: exit for timeout!!!!
+4463 NOT Jul 20 08:46:56.269409 (3350-3503) CDP-cdpRcvPkt(): deviceId is switch_lajiang
+4464 WRN Jul 20 08:46:57.719898 (3778-3783) DHCP-dhcpwRestart(): WLAN is not the active interface
+
+
+
+
+=============================
+现在要在java侧,仿照mphone调以下2个函数:
+void MphoneQt_loadPages(void)
+void MphoneQt_initPage(const char *pageID, const char *callbackToken, const char *jsonDataSet)
+
+
+
+java侧的入口应该是:
+    protected void fullInitialize (){
+        QtProvider.initializePage(getPageId(), view.getModel().isShowIndex());
+    }
+
+	public static void loadPages(){
+	    TraceDefaults.notice("UILibLoader", "loadPages", "enter");
+		//contrast
+        if (!Property.propertyExists(ContrastProperty.PROPERTY_NAME)) {
+            try {
+                Property.addProperty(
+                		ContrastProperty.PROPERTY_NAME,
+                        new ContrastProperty(ContrastProperty.DEFAULT_VALUE),
+                        true);
+            }
+            catch (PropertyException e) {
+                if (TraceDefaults.checkLevel(Level.ERROR)) {
+                    TraceDefaults.traceInterface.printStackTrace(e);
+                }
+            }
+        }
+		ContrastProperty contrastProp = (ContrastProperty)SystemManager.getPropertyManager().getProperty( ContrastProperty.PROPERTY_NAME ); 
+        float result = (float) (contrastProp.getValue() * 1.00/(contrastProp.MAX_VALUE * 1.00)); 
+        String contrast = String.valueOf(result);
+        QtProvider.setContrast(contrast);
+        QtProvider.loadPages(DeviceOtherCapabilities.supportsColor(),DeviceOtherCapabilities.getPlatform());
+	}
+	
+调用处:
+    private static void loadStartupModules () {
+            UILibLoader.loadUILibPhrases();	//这个估计不需要
+            UILibLoader.loadPages();
+            
+            
+    public void initialize() {
+        if (!isInitialized()) {
+            fullInitialize();
+    	
+    	
+    
+=============================
+Mphone流程:
+static int CScreen_dispatch(
+	static int CAgent_process(
+		static int CBrowser_render(
+			static int CBrowser_addCard(
+				void *CPane_new(
+					static int CPane_init(
+					
+						SPageIDEntry *pPageIdEntry = CPage_getEntry(this->m_pCardName);
+						if (pPageIdEntry) {
+        			char *pPageId = (char *) pPageIdEntry->pPageId;
+							if (CPage_isRealPageId(pPageId)) {
+							
+								void MphoneQt_initPage(const char *pageID, const char *callbackToken, const char *jsonDataSet)
+									void GuiAppManager::initPage(const QString &pageID, const QString &callbackToken, const QString &jsonDataSet)
+				
+		
+static int CSOSipCallAppearance_process(
+
+void MphoneQt_loadPages(void)
+
+
+
+
+=============================
+如果按照原先流程, UILibLoader调用时loadPage, 这时Dbus还没初始化完成
+
+0516 NOT Jul 21 08:46:20.767171 (18517-18519) JAVA-main|lajiang, UILibLoader:initializeUI - enter^M                                                                                                              
+0517 NOT Jul 21 08:46:20.788067 (18517-18519) JAVA-main|lajiang, UILibLoader:loadUILib - enter^M   
+
+0683 NOT Jul 21 08:46:22.152816 (18517-18538) JAVA-Startup Module Loader|lajiang, UILibLoader:loadUILibPhrases - enter^M                                                                                         
+0684 NOT Jul 21 08:46:22.162247 (18517-18538) JAVA-Startup Module Loader|lajiang, UILibLoader:loadPages - enter^M 
+                
+1504 NOT Jul 21 08:46:26.708699 (18517-18613) JAVA-callui MQThread|cip.callui.CallUiFullDisplay:lajiang, fullShow - before fullShow^M
+《----Module Loader把Dbus装载完再调用
+
+
+============================
+0937 NOT Jul 21 09:41:51.210494 (6932-6953) JAVA-Startup Module Loader|SystemManager:? - SystemManager n/a      module "Call UI"/callui(14) is PRELOADING^M                    
+
+1895 NOT Jul 21 09:41:55.326844 (6932-7075) JAVA-callui MQThread|cip.comp.SLComponentView:////////lajiang, initialize - initialize CallUi enter//////^M
+1927 NOT Jul 21 09:41:55.365455 (6932-7075) JAVA-callui MQThread|cip.callui.CallUiFullDisplay:lajiang, fullShow - before fullShow^M                       
+1928 ERR Jul 21 09:41:55.367024 (6932-7075) JAVA-9:41:55am|Message : fullShow, test for stack trace^M                                                                                       
+        Exception Stack Trace : ^M                                                                                                                                   
+        java.lang.Exception: fullShow, test for stack trace^M                                                                                          
+                at cip.comp.SLFullDisplay.fullShow(Unknown Source)^M                                                                                                                                 
+                at cip.comp.SLFullDisplay.open(Unknown Source)^M                                                                                    
+                at cip.comp.SLComponentView.processOpen(Unknown Source)^M                                                                    
+                at cip.comp.SLComponentModel.openMe(Unknown Source)^M                                                                                                    
+                at cip.comp.SLComponentModel.activate(Unknown Source)^M                                                                    
+                at cip.comp.SLComponentModel.openChild(Unknown Source)^M                                                                   
+                at cip.callui.OverviewModel.activate(Unknown Source)^M                                                                            
+                at cip.callui.CallUi.onGotFocus(Unknown Source)^M                                                                                   
+                at cip.comp.ComponentApplication.gotFocus(Unknown Source)^M                                                                                              
+                at cip.callui.CallUi.gotFocus(Unknown Source)^M                                                                                                          
+                at cip.app.Application$Listener.gotFocus(Unknown Source)^M                                                                          
+                at cip.app.IInputFocusListener$Dispatcher.sinkMessage(Unknown Source)^M                                                      
+                at cip.app.IInputFocusListener$Dispatcher.sinkMessage(Unknown Source)^M                                                                                                                   
+                at cip.sys.MessageQueueManager.sinkMessage(Unknown Source)^M                                                                            
+                at cip.sys.MessageQueueThread.sendElement(Unknown Source)^M                                                                                              
+                at cip.sys.MessageQueueThread.onRun(Unknown So^M
+                
+                
+==========================
+假如先loadpage:
+7275 NOT Jul 23 03:09:41.368571 (18075-18177) JAVA-configmgr MQThread|callui MQThreadConfigManager:|?cip.comp.SLComponentView - :[displayAllConnectionProperties] Wired-tftpv4-2  = lajiang - before fullDisplay.xxxx^M
+7277 NOT Jul 23 03:09:41.368708 (18075-18177) JAVA-callui MQThread|cip.callui.CallUiFullDisplay:lajiang - enter fullInitialize^M
+7281 DEB Jul 23 03:09:41.414576 (18075-18177) JAVA-callui MQThread|getGuiAppServiceInterface:? - addSigHandler: GuiAppService.saveSliderValue.class^M
+7282 DEB Jul 23 03:09:41.423319 (18162-18162) guiapp-getPageQmlFile(): qmlFile: StaticPage^M
+7283 DEB Jul 23 03:09:41.423406 (18162-18162) guiapp-getPageQmlFile(): qmlFile: StaticPage^M
+7284 NOT Jul 23 03:09:41.473146 (18162-18162) guiapp-Context Menu visible:false^M
+7285 WRN Jul 23 03:09:41.502304 (18162-18162) guiapp-file:///usr/mbin/qml/components/SLWallPaper.qml:23:5: QML Image: Cannot open: qrc:/background/wallpaper-.png^M
+7286 WRN Jul 23 03:09:41.502724 (18162-18162) guiapp-file:///usr/mbin/qml/components/SLHomeTimeDate.qml:66:13: Unable to assign [undefined] to QString^M
+7287 NOT Jul 23 03:09:41.505434 (18075-18177) JAVA-callui MQThread|cip.comp.SLComponentView:lajiang - after fullDisplay.xxxx^M
+
+
+
+root cause:
+在启动 guiapp.sh 之前, 要先启动 display.sh
+

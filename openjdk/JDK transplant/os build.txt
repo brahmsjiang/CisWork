@@ -1,0 +1,92 @@
+单个模块的编译文件
+os/linux/curl/build/ build.py
+
+_setup = _setupclass(options)
+
+
+name()
+	设置模块名, 设给_setup的name,tarfile,srctarfile
+	
+version()
+	设置模块version, 设给_setup的version
+
+source()
+	添加源文件, 设给_setup的sources
+
+workdir()
+	设置源文件所在的路径, 设给_setup的workdir,srcworkdir
+
+license_files()
+	设置license类型, 提供证书文件及其路径
+	_setup.addlicense(os.path.join(_setup.filesdir, f), license_type, check_only)
+
+setenv()
+	设置环境变量, 设给_setup的env, os的environ
+
+includedir()
+	设置include目录, 设给_setup的includedirs
+
+sdklibdir()
+	设置sdklib目录, 设给_setup的sdklibdirs
+
+
+addconfigcmd(cmd, args=None)
+	添加配置命令, 设给_setup的configcmds
+	def sed(args):
+		sedcmd = ['sed']; return sedcmd + args
+	addconfigcmd(sed, ['s/$wl-soname $wl$soname/-Wl,-soname,libcurl2.so/g', 'configure'])
+			_setup.addconfigcmd(cmd, args)
+				self.addcmd(self.configcmds, cmd, args)
+	------------------
+	class MakeInstall(Make):
+    def __init__(self, args=None, cwd=None):
+        super(MakeInstall, self).__init__(args + ['install'], cwd=cwd)
+	addconfigcmd(MakeInstall(['-C', hostbuilddir]))
+	
+
+addbuildcmd()
+	添加编译命令, 设给_setup的buildcmds
+	class CommandBase(object):	===>object是所有类的超类
+	class ExternalCommand(CommandBase):
+		    def __init__(self, argv, cwd=None, stdin=None, stdout=None, append=False, envmods=None):
+	        self.argv = list(argv)	===>假如“argv+args”为make install, argv是[make, install]
+	        self.cwd = cwd
+	      def execute(self): 
+        	ret = subprocess.call(self.argv, cwd=self.cwd, stdin=stdin, stdout=stdout, env=env) 	===>通过exexute()来call
+	class ExternalMutableCommand(ExternalCommand):
+	class Make(ExternalMutableCommand):
+		    def __init__(self, args=None, cwd=None, envmods=None):
+        	argv = ["make"]
+        	super(Make, self).__init__(argv + args, cwd=cwd, envmods=envmods)	 	===>如果MakeInstall无参数, “argv+args”为make install
+	
+	
+
+addinstallcmd()
+	添加安装命令, 设给_setup的installcmds
+	def createdir(args):
+		cmdline = ['mkdir', '-p'] 	===>mkdir -p include/lib/bin/man/man1
+	addinstallcmd(createdir, ['include', 'lib', 'bin', 'man/man1'])
+		_setup.addinstallcmd(cmd, args)
+	------------------
+
+
+	addinstallcmd(MakeInstall())
+
+	
+go()
+	开始编译
+	
+	def _run_cmds(stage, cmds):
+		for cmd in cmds:
+			ret = cmd.execute()
+            	
+	_config()
+		_run_cmds("CONFIG", _setup.configcmds)
+	
+	_build()
+	_install()
+	_check_results()
+	_license()
+	_package()
+
+

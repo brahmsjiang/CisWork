@@ -1,0 +1,47 @@
+
+mphone==============================>
+Model:
+SScreenSetting gInputScreenSetting;
+SVolumeSetting gInputVolumeSetting;
+
+View:
+////old////
+ENTRY("Slider", TAGID_Slider),
+RenderEntry(TAGID_Slider, CRender_doCSlider, RENDER_ONCE),
+////new////
+SLSlider {
+    onValueChanged: {
+			touchEventIO.sliderValueChanged(curPageID, sliderControl, value)
+    }
+}
+
+Controller:
+////guiapp--->mphone////
+void TouchEventIO::sliderValueChanged(const QString &pageId, const int & slider_contol, const int &value)
+static int CSOScreenContrastSetting_click(
+	    rc = pBOB->setContrastLevel(pBOB, gInputScreenSetting.contrastLevel, 1);
+
+////mphone--->guiapp////
+static int CSORingerVolume_click(
+	pCardEnv->addInteger(pCardEnv, KEYWORD_RINGER_VOLUME_LEVEL, gInputVolumeSetting.ringerVolume);
+	SListDataModel *pDataModel = pCardEnv->getData(pCardEnv, KEYWORD_RESULT);
+	pDataModel->modelListener(pDataModel->pView);
+	////this->modelListener = CBTable_modelListener////
+	CQtRender_setList(this, true);
+		void MphoneQt_updatePageDataListModel(const char *pageID, const char *jsonDataSet)
+
+
+jphone==============================>
+Model:
+
+View:
+SLSlider {
+    onValueChanged: {
+			touchEventIO.sliderValueChanged(curPageID, sliderControl, value)
+    }
+}
+
+Controller:
+
+
+

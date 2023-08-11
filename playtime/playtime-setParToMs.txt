@@ -1,0 +1,54 @@
+
+
+
+static omx_comp_info *pSource = 0;
+
+err = aomxSource_create(&pSource, SOURCE_NAME, &pSourceCallbacks);
+//OMX_ERRORTYPE aomxSource_create(omx_comp_info **ppSourceComp, OMX_STRING cComponentName, OMX_CALLBACKTYPE* pCallBacks)
+
+	pCallBacks->FillBufferDone = &sourceFillBufferDone;//we used
+	
+	aomxComp_create(pSourceComp, cComponentName, pCallBacks);
+	//OMX_ERRORTYPE  aomxComp_create(omx_comp_info *pComp, char *pCompName, OMX_CALLBACKTYPE *pCallbacks)
+		OMX_GetHandle(&pComp->compHandle, pCompName, pComp, pCallbacks); //pCallbacks be set to pComp->compHandle
+			//OMX_ERRORTYPE OMX_GetHandle(OMX_HANDLETYPE * pHandle, OMX_STRING cComponentName, OMX_PTR pAppData, OMX_CALLBACKTYPE * pCallBacks)
+			(componentType->SetCallbacks) (*pHandle, pCallBacks, pAppData);
+------------------
+cisco_omx_base_component_SetCallbacks(OMX_HANDLETYPE hComponent, OMX_CALLBACKTYPE* pCallbacks,OMX_PTR pAppData)
+	OMX_COMPONENTTYPE *omxcomponent = (OMX_COMPONENTTYPE*)hComponent;
+	omx_base_component_PrivateType* omx_base_component_Private = (omx_base_component_PrivateType*)omxcomponent->pComponentPrivate;
+	omx_base_component_Private->callbacks = pCallbacks;				//callback set
+	omx_base_component_Private->callbackData = pAppData;			//pAppData set
+	
+		pPort = omx_base_component_Private->ports[i];
+		pPort->BufferProcessedCallback = omx_base_component_Private->callbacks->FillBufferDone;
+------------------
+			
+	*ppSourceComp = pSourceComp;
+
+
+
+
+
+static OMX_ERRORTYPE sourceFillBufferDone(OMX_HANDLETYPE hComponent, OMX_PTR pAppData, OMX_BUFFERHEADERTYPE* pBuffer)
+{
+    omx_comp_info *pSourceComp = (omx_comp_info*) pAppData;
+    
+
+
+
+
+
+set appData:
+omx_ERRORTYPE omx_createComponent(omx_COMPONENTTYPE type, int mediaType, void *pAppData, void *params,
+                                  omx_BufferDone pUserCB, omx_COMPONENT_INDEXTYPE *compindex)
+
+
+
+
+
+
+
+
+5491 DEB Mar 01 02:39:47.706031 (19660-19660) ms-DSPMGR Open Audio Decoder [codecType=g711][packetPeriod=20]
+5992 DEB Mar 01 02:39:48.276522 (19660-19660) ms-DSPMGR.dm_openAudioEncoder DSPMGR Open Audio Encoder [codecType=g711][packetPeriod=20][control=0]

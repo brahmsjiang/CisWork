@@ -1,0 +1,29 @@
+
+
+java:
+设置model数据
+protected void setPageDataListModel() {
+	public static void setPageDataListModel(String pageID, String jsonDataSet) {
+		public void setPageDataListModel(String pageID, String jsonDataSet);
+
+qt:
+设置model数据
+void GuiAppManager::setPageDataListModel(const QString &pageID, const QString &jsonDataSet)
+	void SLPageManager::setPageDataListModel(const QString &pageID, const QString &jsonDataSet)
+		void SLPage::setDataListModel(const QString &jsonData)
+		===》execDataListModel(jsonData, std::bind(&MenuList::setItems, mpMenuList, std::placeholders::_1));
+		
+加载页面
+pageQmls->insert(PAGE_CALLUI, QML_STATIC);
+pageQmls->insert(PAGE_FAVORITES, QML_FAVORITES);
+
+
+
+qml:
+SLHomeSwipePages {
+	models: pageCallUi.pageModelLists[2]
+
+
+
+
+

@@ -1,0 +1,145 @@
+
+FROM centos:7
+
+RUN \
+ yum -y update && \
+ yum -y groupinstall "Development Tools" && \
+ yum -y install \
+  git mercurial \
+  java-11-openjdk java-11-openjdk-devel \
+  libX11-devel libXtst-devel libXt-devel libXrender-devel libXi-devel libXrandr-devel libXext-devel \
+  libX11-devel.i686 libXtst-devel.i686 libXt-devel.i686 libXrender-devel.i686 libXi-devel.i686 libXrandr-devel.i686 libXext-devel.i686 \
+  cups-devel fontconfig-devel alsa-lib-devel freetype-devel \
+  cups-devel.i686 fontconfig-devel.i686 alsa-lib-devel.i686 freetype-devel.i686 \
+  which sudo wget glibc.i686 libstdc++.i686 \
+  zlib.i686 libstdc++-static libstdc++-static.i686 libstdc++-devel.i686 \
+  glibc-devel.i686 && \
+ yum clean all
+
+RUN mkdir /tmp/toolchain
+
+WORKDIR /tmp/toolchain
+
+RUN wget -q \
+  http://localhost:8080/openjdk-extra-depends-cortexa9-neon-poky-linux-gnueabi.tar.gz && \
+ mkdir -p /opt/openjdk-extra-depends/poky-cortexa9-softfp && \
+ tar xzf openjdk-extra-depends-cortexa9-neon-poky-linux-gnueabi.tar.gz \
+  -C /opt/openjdk-extra-depends/poky-cortexa9-softfp && \
+ rm -f openjdk-extra-depends-cortexa9-neon-poky-linux-gnueabi.tar.gz
+
+RUN wget -q \
+  http://localhost:8080/openjdk-extra-depends-armv5e-poky-linux-gnueabi.tar.gz && \
+ mkdir -p /opt/openjdk-extra-depends/poky-armv5e-sf && \
+ tar xzf openjdk-extra-depends-armv5e-poky-linux-gnueabi.tar.gz \
+  -C /opt/openjdk-extra-depends/poky-armv5e-sf && \
+ rm -f openjdk-extra-depends-armv5e-poky-linux-gnueabi.tar.gz
+
+RUN wget -q \
+  http://localhost:8080/poky-glibc-x86_64-core-image-openjdk-depend-cortexa9-neon-toolchain-2.4.4.sh && \
+ chmod a+x poky-glibc-x86_64-core-image-openjdk-depend-cortexa9-neon-toolchain-2.4.4.sh && \
+ ./poky-glibc-x86_64-core-image-openjdk-depend-cortexa9-neon-toolchain-2.4.4.sh -y && \
+ rm -f poky-glibc-x86_64-core-image-openjdk-depend-cortexa9-neon-toolchain-2.4.4.sh
+
+RUN wget -q \
+  http://localhost:8080/poky-glibc-x86_64-core-image-openjdk-depend-armv5e-toolchain-2.4.4.sh && \
+ chmod a+x poky-glibc-x86_64-core-image-openjdk-depend-armv5e-toolchain-2.4.4.sh && \
+ ./poky-glibc-x86_64-core-image-openjdk-depend-armv5e-toolchain-2.4.4.sh -y && \
+ rm -f poky-glibc-x86_64-core-image-openjdk-depend-armv5e-toolchain-2.4.4.sh
+
+RUN wget -q \
+  http://localhost:8080/bigeasycr2-toolchain-2.3.2.C-linux64.sh && \
+ chmod a+x bigeasycr2-toolchain-2.3.2.C-linux64.sh && \
+ ./bigeasycr2-toolchain-2.3.2.C-linux64.sh -y && \
+ rm -f bigeasycr2-toolchain-2.3.2.C-linux64.sh
+
+RUN wget -q http://localhost:8080/dspg-v1.2.7.C-rc3/patchelf && \
+ wget -q http://localhost:8080/dspg-v1.2.7.C-rc3/installer.sh && \
+ wget -q http://localhost:8080/dspg-v1.2.7.C-rc3/dspg-eglibc-i686-arm-toolchain-dspg-v1.2.7.C-rc3.tar.bz2 && \
+ chmod a+x installer.sh && \
+ chmod a+x patchelf && \
+ ./installer.sh -y -f /tmp/toolchain/dspg-eglibc-i686-arm-toolchain-dspg-v1.2.7.C-rc3.tar.bz2 -p /tmp/toolchain && \
+ rm -f dspg-eglibc-i686-arm-toolchain-dspg-v1.2.7.C-rc3.tar.bz2 && \
+ rm -f installer.sh
+
+RUN wget $WGET_OPTS http://localhost:8080/bigeasy_toolchain_installer.sh && \
+ chmod a+x bigeasy_toolchain_installer.sh
+
+RUN wget -q http://localhost:8080/gcc-linaro-armv7l-meego-linux-gnueabi-2013.04_linux.tar.gz && \
+ ./bigeasy_toolchain_installer.sh -y \
+  -f /tmp/toolchain/gcc-linaro-armv7l-meego-linux-gnueabi-2013.04_linux.tar.gz \
+  -p /tmp/toolchain \
+  -d /opt/meego/gcc-linaro-armv7l-meego-linux-gnueabi-2013.04_linux && \
+ rm -f gcc-linaro-armv7l-meego-linux-gnueabi-2013.04_linux.tar.gz
+
+RUN wget -q http://localhost:8080/gcc-armv7l-meego-linux-gnueabi-2016.01_linux.tar.gz && \
+ ./bigeasy_toolchain_installer.sh -y \
+  -f /tmp/toolchain/gcc-armv7l-meego-linux-gnueabi-2016.01_linux.tar.gz \
+  -p /tmp/toolchain \
+  -d /opt/meego/gcc-armv7l-meego-linux-gnueabi-2016.01_linux && \
+ rm -f gcc-armv7l-meego-linux-gnueabi-2016.01_linux.tar.gz && \
+ rm -f bigeasy_toolchain_installer.sh && \
+ rm -f patchelf
+
+RUN wget -q \
+  http://localhost:8080/volantis-toolchain-3.2.1.8-linux64.sh && \
+ chmod a+x volantis-toolchain-3.2.1.8-linux64.sh && \
+ ./volantis-toolchain-3.2.1.8-linux64.sh -y \
+  -d /opt/opensdk/oecore-x86_64 && \
+ rm -f volantis-toolchain-3.2.1.8-linux64.sh
+
+RUN wget -q http://localhost:8080/arago-linux-devkit.tar.gz && \
+ mkdir -p /opt/arago/linux-devkit && \
+ tar xzf arago-linux-devkit.tar.gz -C /opt/arago/linux-devkit && \
+ rm -f arago-linux-devkit.tar.gz
+
+RUN wget -q \
+  http://localhost:8080/openjdk-extra-depends-aarch64-poky-linux.tar.gz && \
+ mkdir -p /opt/openjdk-extra-depends/poky-aarch64 && \
+ tar xzf openjdk-extra-depends-aarch64-poky-linux.tar.gz \
+  -C /opt/openjdk-extra-depends/poky-aarch64 && \
+ rm -f openjdk-extra-depends-aarch64-poky-linux.tar.gz
+
+RUN wget -q \
+  http://localhost:8080/poky-glibc-x86_64-core-image-openjdk-depend-aarch64-toolchain-2.4.4.sh && \
+ chmod a+x poky-glibc-x86_64-core-image-openjdk-depend-aarch64-toolchain-2.4.4.sh && \
+ ./poky-glibc-x86_64-core-image-openjdk-depend-aarch64-toolchain-2.4.4.sh -y && \
+ rm -f poky-glibc-x86_64-core-image-openjdk-depend-aarch64-toolchain-2.4.4.sh
+
+RUN wget -q \
+  http://localhost:8080/fsl-imx-wayland-glibc-x86_64-core-image-minimal-aarch64-toolchain-4.14-sumo.sh && \
+ chmod a+x fsl-imx-wayland-glibc-x86_64-core-image-minimal-aarch64-toolchain-4.14-sumo.sh && \
+ ./fsl-imx-wayland-glibc-x86_64-core-image-minimal-aarch64-toolchain-4.14-sumo.sh -y && \
+ rm -f fsl-imx-wayland-glibc-x86_64-core-image-minimal-aarch64-toolchain-4.14-sumo.sh
+
+RUN wget -q \
+  http://localhost:8080/dspg-glibc-x86_64-arm-toolchain-dspg-qte-v2.6.2.C.sh && \
+ chmod a+x dspg-glibc-x86_64-arm-toolchain-dspg-qte-v2.6.2.C.sh && \
+ ./dspg-glibc-x86_64-arm-toolchain-dspg-qte-v2.6.2.C.sh -y && \
+ rm -f dspg-glibc-x86_64-arm-toolchain-dspg-qte-v2.6.2.C.sh
+
+RUN wget -q \
+  http://localhost:8080/openjdk-extra-depends-cortexa9hf-neon-poky-linux-gnueabi.tar.gz && \
+ mkdir -p /opt/openjdk-extra-depends/poky-cortexa9-hf && \
+ tar xzf openjdk-extra-depends-cortexa9hf-neon-poky-linux-gnueabi.tar.gz \
+  -C /opt/openjdk-extra-depends/poky-cortexa9-hf && \
+ rm -f openjdk-extra-depends-cortexa9hf-neon-poky-linux-gnueabi.tar.gz
+
+RUN wget -q \
+  http://localhost:8080/poky-glibc-x86_64-core-image-openjdk-depend-cortexa9hf-neon-toolchain-2.4.4.sh && \
+ chmod a+x poky-glibc-x86_64-core-image-openjdk-depend-cortexa9hf-neon-toolchain-2.4.4.sh && \
+ ./poky-glibc-x86_64-core-image-openjdk-depend-cortexa9hf-neon-toolchain-2.4.4.sh -y && \
+ rm -f poky-glibc-x86_64-core-image-openjdk-depend-cortexa9hf-neon-toolchain-2.4.4.sh
+
+RUN wget -q \
+  http://localhost:8080/volantis-toolchain-8.3-dual.tar.gz && \
+ tar xzf volantis-toolchain-8.3-dual.tar.gz -C /opt && \
+ rm -f volantis-toolchain-8.3-dual.tar.gz
+
+
+WORKDIR /openjdk/build
+
+RUN passwd -d root
+
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8

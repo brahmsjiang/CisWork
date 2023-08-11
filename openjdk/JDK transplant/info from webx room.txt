@@ -1,0 +1,98 @@
+
+
+
+The 8875 phone is based on DSPG SOC dvf2300.
+
+Also if 32 bit (AARCH32 ABI) then also what floating point calling conventions (aka what -mfloat-abi= options in used for compiling, hard, softfp, etc )? I just built OpenJDK for "Volantis/8832 respin" that is ARMv8 SoC running java in 32 mode and  -mfloat-abi=hard. Note that current ARMv7  88xx phones are using -mfloat-abi=softfp.
+
+
+for our BumbleBee：
+It‘s 4-core ARMv8 Cortex A53... 1.4 Ghz each core.
+Kernel runs in 64-bit mode, but apps/libs are built using 32-bit toolchain.
+And -mfloat-abi=hard
+Volantis SOC is DVF1100，and Bumblebee is DVF2300
+
+
+Do the new updated volantis and bumblebee use the same toolchain or is there one specific to bumblebee?
+ftp://10.79.63.26/aarch64_gcc-9.3.0_glibc-2.31-x86_64-linux.tar.gz
+ftp://10.79.63.26/arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf.tar.gz
+id/pw: nyuan/dtg123
+And, aarch64_gcc-9.3.0_glibc-2.31-x86_64-linux is for kernel, arm_gcc-8.3.0_glibc-2.28-x86_64-linux-gnueabihf is for rootfs
+
+
+In Bumbleebee project we apply a new approach to maintain 3rd-party open source softwares:
+the source codes are stored in the server, the build script will download and build it when building phone loads. So we need the openJDK source codes and guidance about how to build. Can you please help on it?
+---
+The OpenJDK building somewhat complicated and I believe there is going to be some effort on my end and Cisco's end to implement this. The OpenJDK open source code is at:
+https://bitbucket-eng-sjc1.cisco.com/bitbucket/users/chcole2/repos/jdk11u
+With some changes (like support for ARMv5, etc), which is based on OpenJDK sources at:
+https://github.com/openjdk/jdk11u
+There is also a closed source repo created that has a Cisco specific build scripts, toolchain configuration options, docker configuration file, etc. Please see that README.md file for instructions on how to build OpenJDK for Cisco devices, at:
+https://bitbucket-eng-sjc1.cisco.com/bitbucket/users/chcole2/repos/openjdk-build		<----------important!
+
+Currently OpenJDK build uses a custom CentOS 7 docker image at:
+https://containers.cisco.com/repository/chcole2/openjdk-build
+This docker image includes the various toolchains for Cisco devices, extra shared library dependencies (that are required at build time but not at runtime), CentOS packages that are required for OpenJDK build system, etc.
+
+Would it be okay for phone build docker container to start OpenJDK docker container to build OpenJDK? Or would the phone build docker container need to build OpenJDK itself (in which case that docker image might need updates to support OpenJDK).
+Can you point me to where Bumblebee build source code is. Is it the same build system as other IP Phone (bigeasy, volantis, etc) or something different?
+
+
+Bumblebee build is using a docker running fedora 32, the docker is hosted on a ubuntu machine. We would like to use the same docker to build OpenJDK as well as existing packages. The build system is based on Genmake, which is different than the build system used on bigeasy.
+The build codes is located at:
+https://sqbu-github.cisco.com/SL/sl-main
+https://sqbu-github.cisco.com/SL/os
+"os" accommodates kernel, uboot and all open source softwares, "sl-main" contains cisco owned code and is responsible for build the phone image.
+this is a introduction of bumblebee build system:
+https://cisco.sharepoint.com/:p:/r/sites/SynergyLite2DevelopmentTeamSite/_layouts/15/Doc.aspx?sourcedoc=%7B339C02AF-55A7-4FF1-8837-5B9792901AED%7D&file=SL2.0%20Build%20System%20Summary.pptx&action=edit&mobileredirect=true&cid=34ee2b77-3fd5-4592-a296-f108ccab9510
+
+
+
+Hi Ning can you provide me the Fedora 32 Dockerfile that you use to build. I can start with this to see what might need to be added for building OpenJDK directly in the docker container.
+Hi Ning, never mind I see it now at sl-main/build/docker as you indicated above.
+
+
+hi Christopher, bigeasy phone is currently using openJDK 11.0.12+9, we would like to use same version on bumblebee.
+Hi Ning, my recommendation would be to use version 11.0.14 (or 11.0.15 that will be released upstream in one month). Note that Java does a major version release every 6 months now, current version is 17.0.2. The difference between 11.0.12 and 11.0.14/15 is just bugs fixes. There are not any critical fixes in terms of the configuration your are using, but I would suggest the latest minor version of Java 11.
+But either way is fine, if you are more comfortable with using 11.0.12 that other phone are currently using that would be fine. Note that "+9" is that build number, so if I provide 11.0.12 version it would be 11.0.12+10 or something larger than +10.
+hi Christopher, I would prefer as first step we use same openJDK version on bumblebee, then wait for a chance in future to upgrade to a newer version for all phone models.
+
+Hi Ning I have an initial build of OpenJDK using provided toolchain. Currently this is based on OpenJDK version 11.0.14 because I have already merged in upstream changes to master branch or repository I manage (I can switch to 11.0.12, but just need to think about how I want to handle branches which I haven't done is this repository before). You might want to try nfs mounting directory with files from openjdk-cisco-aarch32-hf-8.3-release-11.0.14+11-minimal.tar.gz at:
+https://cisco-my.sharepoint.com/:f:/p/chcole2/En6RCOvA8qlJvX-K4kq08GkB-8nGVIDSKw9-mFpNy5dPIw
+You can start by just running bin/java without any options and make sure that works.
+I have starting testing this on raspberry pi using OpenJDK JCK and so far things look good on this device.
+This is using current method to build, which I realize will get replaced with building in your environment, but this initial build will help see if there are any issues running on bumblebee.
+
+
+By default the OpenJDK build uses GCC "link time optimization" aka lto, but this what causing the provided toolchain to crash when trying to link. I have disabled lto for now. I can provided more information about this crash later when I have time to investigate more.
+
+Also, in term of the docker pull, there is no "latest" tag. So try "docker pull containers.cisco.com/chcole2/openjdk-build:8. (Add the "8" for the tag).
+Hi, sounds good. On CLVS VM you might try and run docker as root, "sudo docker pull ..." some systems require this.
+
+------------
+I used your fedora docker image to try and build OpenJDK using current method. The OpenJDK build requires a "bootstrap JDK", so adding the fedora java-11-openjdk-devel package to Dockerfile.fedora is required. The only other dependency is a set of libraries (X11, audio, etc) for the target that are required at build time but not at runtime. The Cisco OpenJDK runtime only includes "java.base" module but when building OpenJDK it only support building everything (java.awt, java.swing, etc) and then using jlink to create a runtime that only includes subset of modules. I built these libraries for each ABI (application binary interface) one time using yocto (see https://bitbucket-eng-sjc1.cisco.com/bitbucket/users/chcole2/repos/openjdk-build/browse/docker/yocto). For current OpenJDK build method, these libraries are stored in the docker image. But for your SL2 build maybe they could be stored in git or downloaded from a Cisco file server. Again these libraries are just so things like Java graphics and be built but is not used in final JRE for device. But with these to items added I can build OpenJDK with the Fedora 32 image, so that is good.
+
+Hi Ning, I have upload the extra libraries to https://cisco-my.sharepoint.com/:f:/p/chcole2/En6RCOvA8qlJvX-K4kq08GkB-8nGVIDSKw9-mFpNy5dPIw in the openjdk-extra-depend folder.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

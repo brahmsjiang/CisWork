@@ -1,0 +1,57 @@
+
+
+
+obj sync with cucm:
+timezone
+separator
+date format(Y-M-D)
+time format(24hour)
+
+
+jphone:
+		//tz update
+		configInterface = (IConfig) getQueueManager().createProxy( new IConfig.Dispatcher( this ), IConfig.FAMILY );
+                    
+		public void updateConfigProperties(XmlDocument object) {
+			public void processConfigObject(XmlDocument xmlDocObject,boolean isApplyingConfigFromFlash) {
+		or
+		private void handleTftpResponse(String srcname, String filename, int status) {
+
+				int processConfigNoError(XmlDocument theXmlObject) {
+					final XmlConfigObject theConfigObject = getXmlConfigObject(newConfigObject);
+					private boolean processTimeZone(XmlConfigObject theConfigObject) {
+						String phoneTz = theConfigObject.getPhoneTimeZone();
+			
+			private void setTimeZone() {
+	
+		
+	util:
+    public static void setTimeDateInfo( TimeZone timezone, char dateFieldSeparator, int[] dateFieldOrder, boolean useMilitaryTime  ) {
+    
+		protected boolean buildTree () {
+	    private void retrieveProperties( Enumeration theProperties, PropertyStore thePropertyStore ) {
+				synchronized protected Property updatePropertyObject ( Object recordId, Property theProperty ) {
+			    protected final void readProperty (DataInput is) throws EOFException, IOException, PropertyVersionException {
+			    
+			    	//TimeDateProperty.java
+					  readAttributes(DataInput in) throws java.io.IOException,
+			        CURRENT_TIMEZONE_NAME = in.readUTF();
+			        dateFieldSeperator = in.readChar();
+			        useMilitaryTime = in.readBoolean();									<-----24hour
+			        dateFieldOrder = new int[in.readInt()];
+			        TimeFormat.setTimeDateInfo(getCurrentTimeZone(), getDateFieldSeperator(),
+			                                   getDateFieldOrder(), useMilitaryTime());
+
+
+
+jphone-->qt:
+    if(roleName == PageConstants::TAG_HOUR_MINUTE)
+        return DeviceRole::hourMinuteRole;
+    if(roleName == PageConstants::TAG_WEEKDAY)
+        return DeviceRole::weekdayRole;
+    if(roleName == PageConstants::TAG_MONTH_DATE)
+        return DeviceRole::monthDateRole;
+    if(roleName == PageConstants::TAG_USE_24_HOUR_TIME)
+        return DeviceRole::use24HourTimeRole;
+        
+        

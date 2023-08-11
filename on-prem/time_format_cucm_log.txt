@@ -1,0 +1,771 @@
+
+7997 DEB Aug 24 15:25:05.850916 (3948-4146) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+7998 DEB Aug 24 15:25:05.851230 (3948-4146) JAVA-sipio-recv<--- NOTIFY sip:***@10.79.57.124:50589 SIP/2.0^M
+        Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK22666306c456^M
+        From: <sip:10.79.57.147>;tag=1715934168^M
+        To: <sip:***@10.79.57.124>^M
+        Call-ID: 5f8eac80-1ee1417c-1e8a-93394f0a@10.79.57.147^M
+        CSeq: 101 NOTIFY^M
+        Max-Forwards: 70^M
+        Date: Wed, 24 Aug 2022 06:52:54 GMT^M
+        User-Agent: Cisco-CUCM14.0^M
+        Event: service-control^M
+        Subscription-State: active^M
+        Contact: <sip:10.79.57.147:5060;transport=tcp>^M
+        Content-Type: text/plain^M
+        Content-Length: 412^M
+        ^M
+        action=apply-config
+        RegisterCallId={482e7292-dfb30004-291f98f5-4de8d2a2@10.79.57.124}
+        ConfigVersionStamp={1661323952-39292702-07ce-4537-89d8-6de672a15fc0}
+        DialplanVersionStamp={}
+        SoftkeyVersionStamp={}
+        FeatureControlVersionStamp={0000000000-c7a6c673-7479-46b0-839e-014d3d093963}
+        HeadsetVersionStamp={0-0}
+        CUCMResult=No_Change
+        LoadId={}
+        InactiveLoadId={}
+        LoadServer={}
+        LogServer={}
+        PPID=enabled
+        UpgradeTime=now
+        ^M
+7999 DEB Aug 24 15:25:05.851305 (3948-4146) JAVA-::End-Of-Sip-Message::
+8000 DEB Aug 24 15:25:05.851353 (3948-4146) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> NOTIFY sip:***@10.79.57.124:50589 SIP/2.0() --> [SIPCC] : 
+8001 NOT Aug 24 15:25:05.851416 (3948-4146) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:NOTIFY : <sip:10.79.57.147>;tag=1715934168 :101 NOTIFY::5f8eac80-1ee1417c-1e8a-93394f0a@10.79.57.147
+8002 DEB Aug 24 15:25:05.851732 (3948-4146) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+8003 NOT Aug 24 15:25:05.851737 (3714-3714) metmand-update_sessionid: Received NULL or Invalid Type
+8004 DEB Aug 24 15:25:05.851782 (3948-4146) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:NOTIFY sip:***@10.79.57.124:50589 SIP/2.0  Cseq:101 NOTIFY CallId:5f8eac80-1ee1417c-1e8a-93394f0a@10.79.57.147    
+8005 NOT Aug 24 15:25:05.851786 (3714-3714) metmand-update_sessionid: Local UUID: 
+8006 NOT Aug 24 15:25:05.851819 (3714-3714) metmand-update_sessionid: Remote UUID: 
+8007 DEB Aug 24 15:25:05.852085 (3948-4146) JAVA-SIPCC-MSG_SEND_RESP: sipSPISendErrorResponse: Sending response 200...
+8008 DEB Aug 24 15:25:05.852259 (3948-4146) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+8009 DEB Aug 24 15:25:05.852662 (3948-4146) JAVA-edge_send_get: Length of data read from edge_gateway 64
+8010 DEB Aug 24 15:25:05.852751 (3948-4146) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8875_eeaacc58-0010-5000-a000-482e7292dfb3
+8011 DEB Aug 24 15:25:05.852800 (3948-4146) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: eeaacc5800105000a000482e7292dfb3 remote_uuid: 
+8012 DEB Aug 24 15:25:05.852924 (3948-4146) JAVA-SIPCC-SIP_STORE: sipRelDevCoupledMessageStore: Storing for reTx (cseq=101, method=NOTIFY, to_tag=<>)
+8013 DEB Aug 24 15:25:05.853072 (3948-4146) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[366] 
+8014 NOT Aug 24 15:25:05.853154 (3948-4146) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:200 OK^M: <sip:***@10.79.57.124> :101 NOTIFY::5f8eac80-1ee1417c-1e8a-93394f0a@10.79.57.147
+8015 DEB Aug 24 15:25:05.853297 (3948-4146) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<58>,length=<366>, message=
+8016 DEB Aug 24 15:25:05.853446 (3948-4146) JAVA-sipio-sent---> SIP/2.0 200 OK^M
+        Via: SIP/2.0/TCP 10.79.57.147:5060;branch=z9hG4bK22666306c456^M
+        From: <sip:10.79.57.147>;tag=1715934168^M
+        To: <sip:***@10.79.57.124>^M
+        Call-ID: 5f8eac80-1ee1417c-1e8a-93394f0a@10.79.57.147^M
+        Session-ID: eeaacc5800105000a000482e7292dfb3;remote=00000000000000000000000000000000^M
+        Date: Wed, 24 Aug 2022 06:25:05 GMT^M
+        CSeq: 101 NOTIFY^M
+        Content-Length: 0^M
+        ^M
+8017 DEB Aug 24 15:25:05.853516 (3948-4146) JAVA-::End-Of-Sip-Message::
+8018 DEB Aug 24 15:25:05.853571 (3948-4146) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> SIP/2.0 200 OK() --> [10.79.57.147] : 
+8019 NOT Aug 24 15:25:05.853770 (3714-3714) metmand-update_sessionid: Received NULL or Invalid Type
+8020 DEB Aug 24 15:25:05.853780 (3948-4146) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+8021 NOT Aug 24 15:25:05.853815 (3714-3714) metmand-update_sessionid: Local UUID: 
+8022 DEB Aug 24 15:25:05.853820 (3948-4146) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:SIP/2.0 200 OK  Cseq:101 NOTIFY CallId:5f8eac80-1ee1417c-1e8a-93394f0a@10.79.57.147    
+8023 NOT Aug 24 15:25:05.853848 (3714-3714) metmand-update_sessionid: Remote UUID: 
+8024 NOT Aug 24 15:25:05.853979 (3948-4145) JAVA-SIPCC-HEADSET_APP: headsetCheckConfigVersion: [0-0]
+8025 NOT Aug 24 15:25:05.854222 (3948-4145) JAVA-Thread-10|cip.headset.Headset:onConfigVersionReceived - ENTER
+8026 NOT Aug 24 15:25:05.855142 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:cfg.SeamlessUpgrade - applyConfig(): called....
+         newActiveLoadName=.loads newInactiveLoadName= existing activeload= existing inactiveLoad =
+8027 NOT Aug 24 15:25:05.855479 (3948-4070) JAVA-upgrade MQThread|UpgradeService: - request => 
+        IPv4 Load Server: -> , IPv6 Load Server: -> , IPv4 Log Server: -> , ip-addressing-mode:0, ppid-enabled:true -> true
+8028 NOT Aug 24 15:25:05.857888 (3948-5881) JAVA-Seamless Upgrade Thread|UpgradeService: - Got request for () when we are already running ()
+8029 NOT Aug 24 15:25:05.857998 (3948-5881) JAVA-Seamless Upgrade Thread|UpgradeService: -  and () when we already have (). Ignoring this request.
+8030 NOT Aug 24 15:25:05.858172 (3948-5881) JAVA-Seamless Upgrade Thread|UpgradeService: - notifyListeners Notifying 3 listeners of status=4
+8031 NOT Aug 24 15:25:05.858285 (3948-5881) JAVA-Seamless Upgrade Thread|UpgradeService: - notifyListeners calling statusChanged on cip.display.EW@13a9ffe
+8032 NOT Aug 24 15:25:05.858512 (3948-5881) JAVA-Seamless Upgrade Thread|UpgradeService: - notifyListeners calling statusChanged on cip.cfg.SipConfig@1fd78e9
+8033 NOT Aug 24 15:25:05.858612 (3948-5881) JAVA-Seamless Upgrade Thread|cip.cfg.Config:  - statusChanged >> status=4
+8034 NOT Aug 24 15:25:05.858705 (3948-5881) JAVA-Seamless Upgrade Thread|cip.cfg.Config:  - statusChanged << status=4
+8035 NOT Aug 24 15:25:05.858815 (3948-5881) JAVA-Seamless Upgrade Thread|UpgradeService: - notifyListeners calling statusChanged on cip.sys.IUpgradeListener$Proxy@8af6
+8036 NOT Aug 24 15:25:05.858956 (3948-5881) JAVA-Seamless Upgrade Thread|UpgradeService: - notifyListeners << leaving status=4
+8037 NOT Aug 24 15:25:05.859009 (3948-4115) JAVA-configmgr MQThread|cip.cfg.ConditionalRestart$1:? -  Upgrade status msg=IMAGE_UPGRADE_CURRENT status_load_id= newActiveLoadName=.loads
+8038 NOT Aug 24 15:25:05.860035 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:? - applyConfig(): Requesting........Download of config file.
+8039 NOT Aug 24 15:25:05.860940 (3948-4115) JAVA-configmgr MQThread|ConfigManager:? - haveIPConnectivity -> [isIPStackValid]
+8040 NOT Aug 24 15:25:05.861080 (3948-4115) JAVA-configmgr MQThread|ConfigManager:? - haveIPConnectivity -> [isIPStackValid] V4-only stack is valid
+8041 NOT Aug 24 15:25:05.861173 (3948-4115) JAVA-configmgr MQThread|ConfigManager:? - haveIPConnectivity -> [isIPStackValid] valid:true
+8042 NOT Aug 24 15:25:05.861354 (3948-4115) JAVA-configmgr MQThread|Vpn:? - Vpn: vpn url list is empty!!!
+8043 NOT Aug 24 15:25:05.861442 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - [clearTftpTimeout] to reset tftp-timeout error
+8044 NOT Aug 24 15:25:05.864525 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - setDnldUnsignedFileViaHttps, set value: false
+8045 DEB Aug 24 15:25:05.864692 (3948-4115) JAVA-getStringProperty: read value for device.settings.config.unSignedFileDnldHttps: 0
+8046 NOT Aug 24 15:25:05.864935 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - Requesting CONFIG file: ram/SEP482E7292DFB3.cnf.xml.36827 from TFTP Service(1), encrypt = false,isApplyingConfigFromFlash:false
+8047 INF Aug 24 15:25:05.865025 (3948-4115) JAVA-[[MESSAGE_1.0]]: [CONFIG-MGR] --> tftpRequest(ram/SEP482E7292DFB3.cnf.xml.36827) --> [TFTP] : 
+8048 NOT Aug 24 15:25:05.865212 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - [propertyChanged()] propName:"device.settings.config.sipprofile.local.tftpcode"
+8049 NOT Aug 24 15:25:05.866190 (3296-5882) downd-start the monitor timer
+8050 NOT Aug 24 15:25:05.866261 (3296-5882) downd-GETXXTP [GT3296][src=SEP482E7292DFB3.cnf.xml][dest=/tmp/ram/SEP482E7292DFB3.cnf.xml.36827][serv=][serv6=][sec=2]
+8051 NOT Aug 24 15:25:05.866394 (3296-5882) downd-In normal mode, call - > makeXXTPrequest (V6...)
+8052 NOT Aug 24 15:25:05.866475 (3296-5882) downd-EMCC mode is false
+8053 NOT Aug 24 15:25:05.872359 (3296-5882) downd-parseDhcpInfoIntoTftpList(): no valid load server
+8054 NOT Aug 24 15:25:05.872438 (3296-5882) downd-AUTH.SRVR [GT3296] look up server - 0 - 10.79.57.147
+8055 NOT Aug 24 15:25:05.922982 (3296-5882) downd-AUTH.SRVR [GT3296] authentication retval = 9 
+8056 NOT Aug 24 15:25:05.923040 (3296-5882) downd-XXTP Secure file requested 
+8057 NOT Aug 24 15:25:05.923075 (3296-5882) downd-XXTP authenticated file approved - add .sgn if necessary -- SEP482E7292DFB3.cnf.xml.sgn  
+8058 NOT Aug 24 15:25:05.923190 (3296-5882) downd-XXTP start request, server 1 - 10.79.57.147 
+8059 NOT Aug 24 15:25:05.923357 (3296-5882) downd-XXTP actualserver [10.79.57.147] httpua=(null)
+8060 NOT Aug 24 15:25:05.928735 (3296-5885) downd-XXX arg[0] /usr/sbin/gethtp
+8061 NOT Aug 24 15:25:05.928876 (3296-5885) downd-XXX arg[1] -t
+8062 NOT Aug 24 15:25:05.928910 (3296-5885) downd-XXX arg[2] 10.79.57.147
+8063 NOT Aug 24 15:25:05.928940 (3296-5885) downd-XXX arg[3] -i0
+8064 NOT Aug 24 15:25:05.928970 (3296-5885) downd-XXX arg[4] SEP482E7292DFB3.cnf.xml.sgn
+8065 NOT Aug 24 15:25:05.928999 (3296-5885) downd-XXX arg[5] /tmp/ram/SEP482E7292DFB3.cnf.xml.36827
+8066 NOT Aug 24 15:25:05.963982 (5885-5885) GHTTP-LIMIT downdload will be limited to 2048 KB
+8067 NOT Aug 24 15:25:05.964148 (5885-5885) GHTTP-getByCurl -- reqByCurlInternal
+8068 NOT Aug 24 15:25:05.964202 (5885-5885) GHTTP-reqByCurlInternal isHttps 0 isNand 0 pSrvName null pSrvIP 10.79.57.147 url null pDestFileName /tmp/ram/SEP482E7292DFB3.cnf.xml.36827 pSrcFileName SEP482E7292DFB3.cnf.xml.sgn ua  ip_version 0
+8069 NOT Aug 24 15:25:05.974446 (5885-5885) GHTTP-reqByCurlInternal setting up http response callback, respfile = [/tmp/ram/SEP482E7292DFB3.cnf.xml.36827], [res] = 0
+8070 NOT Aug 24 15:25:05.974528 (5885-5885) GHTTP-reqByCurlInternal srvAddr=10.79.57.147, actual pSrcFileName >SEP482E7292DFB3.cnf.xml.sgn<, after removing / >SEP482E7292DFB3.cnf.xml.sgn<
+8071 NOT Aug 24 15:25:05.974581 (5885-5885) GHTTP-enter setProxyParams
+8072 NOT Aug 24 15:25:05.974645 (5885-5885) GHTTP-setAuthUserAgent:1065 auth set up done res=0 uid len 0 pwd len 0
+8073 NOT Aug 24 15:25:05.974720 (5885-5885) GHTTP-buildHttpReqHeader adding accept header, Accept: */*
+8074 NOT Aug 24 15:25:05.974764 (5885-5885) GHTTP-buildHttpReqHeader adding language header Accept-Language: en
+8075 NOT Aug 24 15:25:05.974797 (5885-5885) GHTTP-buildHttpReqHeader adding charset header, Accept-Charset: iso-8859-1
+8076 NOT Aug 24 15:25:05.974847 (5885-5885) GHTTP-reqByCurlInternal accept_encoding=
+8077 NOT Aug 24 15:25:05.974901 (5885-5885) GHTTP-reqByCurlInternal sending http request out..., url: http://10.79.57.147:6970/SEP482E7292DFB3.cnf.xml.sgn
+8078 NOT Aug 24 15:25:05.975692 (5885-5885) GHTTP-sockoptCallback setsockopt IP_TOS=0
+8079 NOT Aug 24 15:25:06.024240 (5885-5885) GHTTP-getHttpRespHeader header_name=Content-length, header_value=13467
+8080 NOT Aug 24 15:25:06.024302 (5885-5885) GHTTP-parseHttpRespHeader:678 content-length=13467
+8081 NOT Aug 24 15:25:06.024331 (5885-5885) GHTTP-getHttpRespHeader header_name=Cache-Control, header_value=no-store
+8082 NOT Aug 24 15:25:06.024361 (5885-5885) GHTTP-getHttpRespHeader header_name=Content-type, header_value=*/*
+8083 NOT Aug 24 15:25:06.024388 (5885-5885) GHTTP-parseHttpRespHeader:686 content-type=*/*
+8084 NOT Aug 24 15:25:06.024845 (5885-5885) GHTTP-reqByCurlInternal return from http request, [res] = 0 No error
+8085 NOT Aug 24 15:25:06.024885 (5885-5885) GHTTP-reqByCurlInternal curl response code 200, [res] = 0
+8086 NOT Aug 24 15:25:06.025524 (5885-5885) GHTTP-reqByCurlInternal exit rc 100
+8087 NOT Aug 24 15:25:06.029590 (3296-5882) downd-XXTP complete - status = 100 
+8088 NOT Aug 24 15:25:06.029768 (3296-5882) downd-AUTH: start of pad ('T' 0x0d) at TLV 15
+8089 WRN Aug 24 15:25:06.029801 (3296-5882) downd-AUTH: hdr ver 2.0 (knows only upto 1.1)
+8090 NOT Aug 24 15:25:06.029826 (3296-5882) downd-AUTH: skipping 3 trail bytes (pad and/or unknown TLVs)
+8091 NOT Aug 24 15:25:06.080372 (3296-5882) downd-Hashes match... authentication successful.
+8092 NOT Aug 24 15:25:06.080938 (3296-5882) downd-AUTH.FILE [GT3296][secVal=0] [isEncr=0] 
+8093 NOT Aug 24 15:25:06.080973 (3296-5882) downd-cancel the monitor timer
+8094 NOT Aug 24 15:25:06.081463 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - [SipConfig] endDownloadConfig-time:1661322306081
+8095 INF Aug 24 15:25:06.081545 (3948-4115) JAVA-[[MESSAGE_1.0]]: [TFTP] --> tftpResponse(ram/SEP482E7292DFB3.cnf.xml.36827) --> [CONFIG-MGR] : 
+8096 NOT Aug 24 15:25:06.092759 (3296-5882) downd-DDGETTFTP.RESULT [_100_  HTTP NO ERROR
+        ]
+8097 NOT Aug 24 15:25:06.132433 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - Config handleTftpResponse, status=18 for file=ram/SEP482E7292DFB3.cnf.xml.36827
+8098 NOT Aug 24 15:25:06.132547 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - [traceTftpErrors] to set tftp error to 18
+8099 NOT Aug 24 15:25:06.135970 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - config..handletftpresoponse..state=tftperr_noerr
+8100 NOT Aug 24 15:25:06.142549 (3948-4115) JAVA-configmgr MQThread|cip.xml.XmlParser:parse - Encoding Updated to UTF-8
+8101 NOT Aug 24 15:25:06.159057 (3948-4115) JAVA-configmgr MQThread|cip.xml.XmlSipConfigObject:? -  EMCC|processIPV4Adress(), ipv4=
+8102 NOT Aug 24 15:25:06.159181 (3948-4115) JAVA-configmgr MQThread|cip.xml.XmlSipConfigObject:? -  EMCC|processIPV6Address(), ipv6=
+8103 NOT Aug 24 15:25:06.159258 (3948-4115) JAVA-configmgr MQThread|cip.xml.XmlSipConfigObject:? -  EMCC|processIPV4Adress(), ipv4=
+8104 NOT Aug 24 15:25:06.159334 (3948-4115) JAVA-configmgr MQThread|cip.xml.XmlSipConfigObject:? -  EMCC|processIPV6Address(), ipv6=
+8105 DEB Aug 24 15:25:06.160287 (3948-4115) JAVA-configmgr MQThread|cip.cfg.SipConfig:? - NTP servers not configured
+8106 DEB Aug 24 15:25:06.161769 (3948-4115) JAVA-configmgr MQThread|cip.cfg.XmlConfigParmObject:getMetricsThresholds - thresholds is null
+8107 NOT Aug 24 15:25:06.162057 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - processConfigNoError: isInMraMode=[false]
+8108 NOT Aug 24 15:25:06.162216 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - setConfigTvsProperty IP mode 0IP Pref 0DSCP 96
+8109 NOT Aug 24 15:25:06.162503 (3948-4115) JAVA-configmgr MQThread|cip.sec.TvsProperty:? - Resolve Tvs Ipv4 Address to 10.79.57.147 from hostname 10.79.57.147
+8110 NOT Aug 24 15:25:06.414178 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - [commitEMCCProperties] to notify sipcc of EMCC:disabled
+8111 NOT Aug 24 15:25:06.414972 (3296-5894) downd-SETTFTP [3296] emcc_mode =0, override =0, tempTftp1= , tempTftp2 = , tempTftp3 = , tempTftp4 = 
+8112 NOT Aug 24 15:25:06.415031 (3296-5894) downd-SETTFTP [3296] EMCC Config file doesn't exist
+8113 NOT Aug 24 15:25:06.415080 (3296-5894) downd-dsettemptftp.RESULT [Error description unknown]
+8114 NOT Aug 24 15:25:06.465666 (3948-4114) JAVA-Set EMCC status to inactive while not in EMCC mode
+8115 NOT Aug 24 15:25:06.465974 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - ===not full config or not emcc mode ,so do vendor config
+8116 INF Aug 24 15:25:06.566397 (3948-3988) JAVA-RDH RDH RDH - event_receiver etype=6!
+8117 NOT Aug 24 15:25:06.567997 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:? - [comparePhoneProperties] Determining conditional restart mode....................
+8118 NOT Aug 24 15:25:06.568178 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:? - [isConfigCallAgentPropertiesChanged] ip-addressing-mode:IPv4 Only (0)
+8119 NOT Aug 24 15:25:06.568539 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:? - [isConfigCallAgentPropertiesChanged] ignore empty callagent object XmlCallAgentObject: IPv4-name=[] IPv6-name=[] ethernetPhonePort=0 sipPort=0 securedSipPort=0 priority=32767
+8120 NOT Aug 24 15:25:06.568647 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:? - [isConfigCallAgentPropertiesChanged] ignore empty callagent object XmlCallAgentObject: IPv4-name=[] IPv6-name=[] ethernetPhonePort=0 sipPort=0 securedSipPort=0 priority=32767
+8121 NOT Aug 24 15:25:06.568750 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:? - [isConfigCallAgentPropertiesChanged] ignore empty callagent object XmlCallAgentObject: IPv4-name=[] IPv6-name=[] ethernetPhonePort=0 sipPort=0 securedSipPort=0 priority=32767
+8122 NOT Aug 24 15:25:06.568852 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:? - [isConfigCallAgentPropertiesChanged] ignore empty callagent object XmlCallAgentObject: IPv4-name=[] IPv6-name=[] ethernetPhonePort=0 sipPort=0 securedSipPort=0 priority=32767
+8123 NOT Aug 24 15:25:06.572573 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:? - [comparePhoneProperties] apply-config phoneResult:1, reason:0
+8124 NOT Aug 24 15:25:06.572703 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:? - [isRestartNeeded] isConditionalRestartPending:true, phoneResult:1, applyConfigAborted:false, ignoreRegistration:false, requestedConfigFile:true
+8125 NOT Aug 24 15:25:06.572824 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:? - [isRestartNeeded] isConditionalRestartPending:true, phoneResult:1, applyConfigAborted:false, ignoreRegistration:false, requestedConfigFile:true, isRestartNeeded:false
+8126 NOT Aug 24 15:25:06.572975 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:? - [isRegistrationNeeded]isConditionalRestartPending:true,ignoreRegistration:false, registered:true
+8127 NOT Aug 24 15:25:06.573076 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:? - [isRegistrationNeeded]isConditionalRestartPending:true,ignoreRegistration:false, registerNeeded:true
+8128 NOT Aug 24 15:25:06.573203 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - full config file recieved
+8129 NOT Aug 24 15:25:06.573339 (3948-4115) JAVA-configmgr MQThread|cip.sipcc.SipCcAdapter$CcMgmtListener:  - mgmtState=MGMT_REGTD(5)
+8130 NOT Aug 24 15:25:06.573517 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - [commitIPAddressingModeProperty] ip-mode has not changed keeping the value 0(IPv4 Only)
+8131 NOT Aug 24 15:25:06.573620 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - [commitIPAddressingModeProperty] ip-mode: 0(IPv4 Only), delay-register: false
+8132 NOT Aug 24 15:25:06.634050 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - informationUrl is 
+8133 NOT Aug 24 15:25:06.634212 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - directoriesUrl is 
+8134 NOT Aug 24 15:25:06.634366 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - messagesUrl is 
+8135 NOT Aug 24 15:25:06.634461 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - servicesUrl is 
+8136 NOT Aug 24 15:25:06.634554 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - authenticationUrl is http://10.79.57.147:8080/ccmcip/authenticate.jsp
+8137 NOT Aug 24 15:25:06.634652 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - idleUrl is https://artist-localCI-ccm2:443/cucm-uds/xps/selfProvision
+8138 NOT Aug 24 15:25:06.634748 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - messagesUrl is null 
+8139 NOT Aug 24 15:25:06.634819 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - servicesUrl of null 
+8140 NOT Aug 24 15:25:06.634895 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - info url of null 
+8141 NOT Aug 24 15:25:06.634968 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - dir Url of null 
+8142 INF Aug 24 15:25:06.636583 (3948-4115) JAVA-configmgr MQThread|VendorConfig:? - vendorconfig : setConfigProperties
+8143 NOT Aug 24 15:25:07.637533 (3948-4115) JAVA-configmgr MQThread|VendorConfig:? - commit ipv6 loadserver => 
+8144 INF Aug 24 15:25:07.637957 (3948-4115) JAVA-configmgr MQThread|VendorConfig:? - 
+        About to set WebAccess 
+8145 NOT Aug 24 15:25:07.639304 (3948-4115) JAVA-configmgr MQThread|EWProperty:getDurationFromNow - PSP is disabled
+8146 NOT Aug 24 15:25:07.639578 (3948-4115) JAVA-configmgr MQThread|VendorConfig:? - Energywise Save property:
+        Enabled: false
+        isWithinPowerOnTime: true
+        On Time: 00:00 duration till: 08:35:00
+        Off Time: 24:00 duration till: 00:00:00
+        Idle Timeout: 60
+        Sunday: false 
+        Monday: false 
+        Tuesday: false 
+        Wednesday: false 
+        Thursday: false 
+        Friday: false 
+        Saturday: false 
+8147 ERR Aug 24 15:25:07.639836 (3948-4115) JAVA-configmgr MQThread|cip.setg.ScreenSaveProperty:? - Config file field <displayIdleTimeout:1:00> is incorrectly formatted. Default to 01:00
+8148 NOT Aug 24 15:25:07.645097 (3948-4115) JAVA-configmgr MQThread|VendorConfig:? - Power Save property:Display On Time: 07:30 duration till: 16:04:53
+        Display On Duration: 10:30
+        Display Idle Timeout: 01:00
+        Sunday: false 
+        Monday: true 
+        Tuesday: true 
+        Wednesday: true 
+        Thursday: true 
+        Friday: true 
+        Saturday: false 
+8149 INF Aug 24 15:25:07.645194 (3948-4115) JAVA-configmgr MQThread|VendorConfig:? - WebAccess true
+8150 INF Aug 24 15:25:07.645326 (3948-4115) JAVA-configmgr MQThread|VendorConfig:? - WebProtocol 0
+8151 INF Aug 24 15:25:07.645453 (3948-4115) JAVA-configmgr MQThread|VendorConfig:? - WebAdmin false
+8152 DEB Aug 24 15:25:07.646805 (3948-4115) JAVA-setportcfg(): pid: 3948 
+8153 DEB Aug 24 15:25:07.646938 (3948-4115) JAVA-setportcfg(): msgsnd() rc: 0  size: 1708 bytes  
+8154 DEB Aug 24 15:25:07.647015 (3948-4115) JAVA-setportcfg(): pid: 3948 
+8155 NOT Aug 24 15:25:07.647044 (3337-3492) CDP-cdpSetSwportCfgRemote 7 timer 30
+8156 NOT Aug 24 15:25:07.647096 (3337-3492) CDP-cdpSetSwportCfgRemote setting : Type=0 Cfg=7 portval=7 
+8157 DEB Aug 24 15:25:07.647111 (3948-4115) JAVA-setportcfg(): msgsnd() rc: 0  size: 1708 bytes  
+8158 NOT Aug 24 15:25:07.647938 (3382-3385) DMAN-rcvData():Received DM_CMD_SET_CONFIG command = 0x220004
+8159 NOT Aug 24 15:25:07.648009 (3382-3385) DMAN-Got the config data from UI. Sending config data to subsystem
+8160 NOT Aug 24 15:25:07.648044 (3382-3385) DMAN-rcvData(): Came back from USB subsystem
+8161 NOT Aug 24 15:25:07.648074 (3382-3385) DMAN-rcvData(): Came back from BT subsystem
+8162 NOT Aug 24 15:25:07.648103 (3382-3385) DMAN-rcvData(): Came back from SDIO subsystem
+8163 NOT Aug 24 15:25:07.648169 (3382-3385) DMAN-rcvData():Received DM_CMD_SET_CONFIG command = 0x20220002
+8164 NOT Aug 24 15:25:07.648203 (3382-3385) DMAN-Got the config data from UI. Sending config data to subsystem
+8165 NOT Aug 24 15:25:07.648233 (3382-3385) DMAN-rcvData(): Came back from USB subsystem
+8166 NOT Aug 24 15:25:07.648261 (3382-3385) DMAN-rcvData(): Came back from BT subsystem
+8167 NOT Aug 24 15:25:07.648290 (3382-3385) DMAN-rcvData(): Came back from SDIO subsystem
+8168 DEB Aug 24 15:25:07.648434 (3948-4115) JAVA-Enter wlanAPI_set_scep_config() with scep_config:  ; 
+8169 NOT Aug 24 15:25:07.650347 (3337-3492) CDP-cprSetPortCfg port:0:1  ret:0
+8170 NOT Aug 24 15:25:07.650403 (3337-3492) CDP-cdpSetSwportCfgRemote: Value Sent to IOCTL LOCAL[0] 1  1
+8171 NOT Aug 24 15:25:07.650484 (3337-3492) CDP-cdpSetPcportCfgRemote 7 
+8172 NOT Aug 24 15:25:07.650508 (3274-3283) NETSD-netsdSignal(): EV_LINK 
+8173 DEB Aug 24 15:25:07.650706 (3706-3709) vieo-events(3706): 96 bytes rcvd, rcvlen: 96 
+8174 INF Aug 24 15:25:07.650798 (3706-3709) vieo-events(3706): LINK change: status: 0x0 
+8175 NOT Aug 24 15:25:07.650799 (3365-3365) PAE: -paeNetsdRcvMsg(3365): LINK change: status: 0x0 : No such file or directory 
+8176 NOT Aug 24 15:25:07.650882 (3948-3990) JAVA-Calling handleNetSDEvent
+8177 DEB Aug 24 15:25:07.650959 (3706-3710) vieo-runTcpThread() rcvd control signal=0x2
+8178 DEB Aug 24 15:25:07.653153 (3948-4115) JAVA-Enter wlanAPI_set_scep_config() with scep_config:  ; 
+8179 NOT Aug 24 15:25:07.654831 (3337-3492) CDP-cprSetPortCfg port:1:1  ret:0
+8180 NOT Aug 24 15:25:07.654885 (3337-3492) CDP-cdpSetPcportCfgRemote Value Sent to IOCTL  LOCAL[0] 1 1 
+8181 NOT Aug 24 15:25:07.654956 (3274-3283) NETSD-netsdSignal(): EV_LINK 
+8182 NOT Aug 24 15:25:07.654973 (3337-3492) CDP-Setting CDP getportcfg value cmd: 5, SPAN TO PC = 11 
+8183 DEB Aug 24 15:25:07.655258 (3706-3709) vieo-events(3706): 96 bytes rcvd, rcvlen: 96 
+8184 NOT Aug 24 15:25:07.655324 (3706-3710) vieo-TCPIF PCPORT Link Change, but no status change
+8185 DEB Aug 24 15:25:07.655403 (3706-3710) vieo-runTcpThread() rcvd control signal=0x2
+8186 INF Aug 24 15:25:07.655496 (3706-3709) vieo-events(3706): LINK change: status: 0x0 
+8187 NOT Aug 24 15:25:07.655827 (3706-3710) vieo-TCPIF PCPORT Link Change, but no status change
+8188 NOT Aug 24 15:25:07.655989 (3365-3365) PAE: -paeNetsdRcvMsg(3365): LINK change: status: 0x0 : No such file or directory 
+8189 NOT Aug 24 15:25:07.656180 (3274-3320) NETSD-siginfoThrd(): tempvvlan: 4095  vvlan: 4095  linkState: 1  cdpState: 1 
+8190 NOT Aug 24 15:25:07.656233 (3274-3320) NETSD-siginfoThrd(): wlanInterface: enabled  activeInterface: WIRED  
+8191 NOT Aug 24 15:25:07.656270 (3274-3320) NETSD-setactiveinterface(): actinterface: 0; pid: 3274  
+8192 NOT Aug 24 15:25:07.656345 (3337-3492) CDP-Setting CDP getportcfg value cmd: 5, SPAN TO PC = 11 
+8193 NOT Aug 24 15:25:07.656357 (3274-3320) NETSD-setactiveinterface(): msgsnd():  rc: 0  size: 12 bytes  
+8194 NOT Aug 24 15:25:07.656444 (3517-3526) DHCP-dhcpSetActiveInterface(): new interface: 0  wlanInterface: 0 
+8195 NOT Aug 24 15:25:07.656491 (3517-3526) DHCP-dhcpSetActiveInterface(): WIRED active 
+8196 NOT Aug 24 15:25:07.656547 (3274-3283) NETSD-netsdWriteResolv(): 
+8197 NOT Aug 24 15:25:07.656566 (3354-3358) DHCP6: -process_command(): recv cmd 12
+8198 NOT Aug 24 15:25:07.656616 (3354-3358) DHCP6: -dhcpSetActiveInterface(): WIRED active 
+8199 NOT Aug 24 15:25:07.656638 (3517-3526) DHCP-get_ifaddress(): eth0 address: 0x0a4f397c  netmask: 0xffffff00
+8200 NOT Aug 24 15:25:07.656712 (3274-3283) NETSD-netsdWriteResolv(): open glb
+8201 NOT Aug 24 15:25:07.656757 (3274-3283) NETSD-netsdWriteResolv(): ipv6
+8202 NOT Aug 24 15:25:07.656833 (3274-3283) NETSD-netsdWriteResolv(): DNSDEBUG : Deploy Mode 1 :
+8203 NOT Aug 24 15:25:07.656868 (3274-3283) NETSD-======>GetMsgFromCmdFile enter
+8204 NOT Aug 24 15:25:07.656899 (3274-3283) NETSD-title:Domain:, tlen:7
+8205 NOT Aug 24 15:25:07.656923 (3517-3526) DHCP-isDefaultgwInproc: line:1 : Iface      Destination     Gateway         Flags   RefCnt  Use     Metric  Mask            MTU     Window  IRTT                                                       
+         
+8206 NOT Aug 24 15:25:07.656964 (3517-3526) DHCP-isDefaultgwInproc: line:2 : eth0       00000000        01394F0A        0003    0       0       0       00000000        0       0       0                                                                               
+         
+8207 NOT Aug 24 15:25:07.656998 (3517-3526) DHCP-isDefaultgwInproc: line:3 : eth0       00394F0A        00000000        0001    0       0       0       00FFFFFF        0       0       0                                                                               
+         
+8208 INF Aug 24 15:25:07.657022 (3481-3485) proxymanager_service-PACFetcher-dhcpCfgWatchThreadFunc read len:16
+8209 INF Aug 24 15:25:07.657072 (3481-3485) proxymanager_service-PACFetcher-wait_for_changes fd:10, interval:1800
+8210 NOT Aug 24 15:25:07.657099 (3517-3526) DHCP-get_macaddr(): eth0 
+8211 NOT Aug 24 15:25:07.657186 (3517-3526) DHCP-get_macaddr(): mac addr -- 48:2e:72:92:df:b3 
+8212 NOT Aug 24 15:25:07.657236 (3274-3283) NETSD-tmpbuf:Domain:
+8213 NOT Aug 24 15:25:07.657285 (3274-3283) NETSD-param:, valuebuf:, cc:0, count:255
+8214 NOT Aug 24 15:25:07.657332 (3274-3320) NETSD-setactiveinterface(): msgrcv() from dhcp: 12 bytes  
+8215 NOT Aug 24 15:25:07.657383 (3274-3320) NETSD-setactiveinterface(): msgrcv() from dhcp status 0  
+8216 NOT Aug 24 15:25:07.657439 (3274-3283) NETSD-GetMsgFromCmdFile suc end
+8217 NOT Aug 24 15:25:07.657521 (3274-3320) NETSD-setactiveinterface(): msgrcv() from dhcp6: 12 bytes  
+8218 NOT Aug 24 15:25:07.657572 (3274-3320) NETSD-setactiveinterface(): msgrcv() from dhcp6 status 0  
+8219 NOT Aug 24 15:25:07.657607 (3274-3320) NETSD-setactiveinterface(): return from FEATURE_WLAN_IPV6 0
+8220 NOT Aug 24 15:25:07.657638 (3274-3320) NETSD-siginfoThrd(): activechange: 0 
+8221 INF Aug 24 15:25:07.657640 (3481-3485) proxymanager_service-PACFetcher-dhcpCfgWatchThreadFunc read len:16
+8222 NOT Aug 24 15:25:07.657667 (3274-3320) NETSD-siginfoThrd(): force_dhcp: 0 
+8223 INF Aug 24 15:25:07.657681 (3481-3485) proxymanager_service-PACFetcher-wait_for_changes fd:10, interval:1800
+8224 INF Aug 24 15:25:07.657734 (3481-3485) proxymanager_service-PACFetcher-dhcpCfgWatchThreadFunc read len:32
+8225 INF Aug 24 15:25:07.657766 (3481-3485) proxymanager_service-PACFetcher-wait_for_changes fd:10, interval:1800
+8226 DEB Aug 24 15:25:07.659776 (3948-4115) JAVA-configmgr MQThread|cip.logserver.NativeLogServer:getLogProfile - parse strLogProfile : string=
+8227 DEB Aug 24 15:25:07.660072 (3402-3433) rlogcoll-cmd received: 0
+8228 DEB Aug 24 15:25:07.660121 (3948-4115) JAVA-setConsoleAccess(): sendRequest to the rlogcoll successfully
+8229 INF Aug 24 15:25:07.660179 (3402-3433) rlogcoll-restart_getty_sdump(): Enter...
+8230 DEB Aug 24 15:25:07.660253 (3948-4115) JAVA-sendRequest to the rlogcoll successfully 
+8231 NOT Aug 24 15:25:07.660245 (3402-3433) rlogcoll-can not open ehook_status, No such file or directory, assume it is disabled
+8232 INF Aug 24 15:25:07.660291 (3402-3433) rlogcoll-getty & sdump already run
+8233 INF Aug 24 15:25:07.660421 (3948-4115) JAVA-configmgr MQThread|VendorConfig:setConfigProperties - Edge Password Persistent:false(0)
+8234 INF Aug 24 15:25:07.660533 (3948-4115) JAVA-configmgr MQThread|VendorConfig:setConfigProperties - PRT URL:
+8235 DEB Aug 24 15:25:07.660803 (3948-4115) JAVA-WLAN-UI_JNI:Java_cip_wlan_jniNativeWlan_wlanSetCredFailureLimit:[Wlan SetCredFailureLimit
+        ]
+8236 INF Aug 24 15:25:07.660921 (3402-3433) rlogcoll-restart_getty_sdump(): ----- Leave
+8237 DEB Aug 24 15:25:07.661005 (3402-3433) rlogcoll-cmd received: 1
+8238 INF Aug 24 15:25:07.661231 (3402-3433) rlogcoll-RemoteLogOn = OFF
+8239 NOT Aug 24 15:25:07.671006 (3948-4101) JAVA-HTTP JNI| Java_cip_http_NativeHttpTask_updateUserLocaleCharSet: setting Http Char Set to [Accept-Charset: utf-8,iso-8859-1;q=0.8]
+8240 NOT Aug 24 15:25:07.671170 (3948-4101) JAVA-HTTP JNI| Java_cip_http_NativeHttpTask_updateUserLocaleLangCode: setting Http Language Tag to [Accept-Language: en_US]
+8241 NOT Aug 24 15:25:07.671213 (3948-4071) JAVA-localizationmgr MQThread|cip.l10n.LocalizationManager$1: - LocaleManager detect propety changed: device.settings.config.localization.userlocale.charset
+8242 DEB Aug 24 15:25:07.677232 (3948-4101) JAVA-setapptos(172): pid: 3948  
+8243 DEB Aug 24 15:25:07.677382 (3948-4101) JAVA-setapptos(): msgsnd():  rc: 0  size: 8 bytes  
+8244 NOT Aug 24 15:25:07.677424 (3948-4101) JAVA-HTTP JNI| setTos: call to mg_set_tos
+8245 INF Aug 24 15:25:07.688352 dnsmasq[3286]: read /etc/hosts - 2 addressesg
+8246 WRN Aug 24 15:25:07.688439 dnsmasq[3286]: ignoring nameserver 127.0.0.1 - local interface 
+8247 DEB Aug 24 15:25:07.699772 (3948-3990) JAVA-getassetid(): pid: 3948 
+8248 DEB Aug 24 15:25:07.699910 (3948-3990) JAVA-getassetid(): msgsnd() rc: 0, size: 44 bytes  
+8249 DEB Aug 24 15:25:07.700096 (3948-3990) JAVA-getassetid(): msgrcv() 44 bytes  
+8250 NOT Aug 24 15:25:07.707415 (3948-3990) JAVA-Thread-21|cip.setg.IpStacksStateProperty:? - IpStacksStateProperty changed from "IPv4-stack-state:2 (DHCP DISABLED), IPv6-stack-state:199 (IPV6 STACK TURNED OFF)" to "IPv4-stack-state:2 (DHCP DISABLED), IPv6-stack-state:199 (IPV6 STACK TURNED OFF)"
+8251 NOT Aug 24 15:25:07.707642 (3948-3990) JAVA-Calling handleNetSDEvent
+8252 DEB Aug 24 15:25:07.709297 (3948-3990) JAVA-getassetid(): pid: 3948 
+8253 DEB Aug 24 15:25:07.709404 (3948-3990) JAVA-getassetid(): msgsnd() rc: 0, size: 44 bytes  
+8254 DEB Aug 24 15:25:07.709546 (3948-3990) JAVA-getassetid(): msgrcv() 44 bytes  
+8255 NOT Aug 24 15:25:07.713097 /etc/init.d/ipv6replymcst.sh: d
+8256 NOT Aug 24 15:25:07.713183 line 23: .
+8257 NOT Aug 24 15:25:07.713226 /usr/sbin/ip6tables: not foundd
+8258 NOT Aug 24 15:25:07.714654 /etc/init.d/ipv6replymcst.sh: d
+8259 NOT Aug 24 15:25:07.714713 line 23: .
+8260 NOT Aug 24 15:25:07.714756 /usr/sbin/ip6tables: not foundd
+8261 NOT Aug 24 15:25:07.716108 /etc/init.d/ipv6replymcst.sh: d
+8262 NOT Aug 24 15:25:07.716165 line 23: .
+8263 NOT Aug 24 15:25:07.716207 /usr/sbin/ip6tables: not foundd
+8264 NOT Aug 24 15:25:07.716756 (3948-3990) JAVA-Thread-21|cip.setg.IpStacksStateProperty:? - IpStacksStateProperty changed from "IPv4-stack-state:2 (DHCP DISABLED), IPv6-stack-state:199 (IPV6 STACK TURNED OFF)" to "IPv4-stack-state:2 (DHCP DISABLED), IPv6-stack-state:199 (IPV6 STACK TURNED OFF)"
+8265 NOT Aug 24 15:25:07.717571 /etc/init.d/ipv6replymcst.sh: |
+8266 NOT Aug 24 15:25:07.717621 line 23: .
+8267 NOT Aug 24 15:25:07.717663 /usr/sbin/ip6tables: not found|
+8268 NOT Aug 24 15:25:07.719133 /etc/init.d/ipv6replymcst.sh: |
+8269 NOT Aug 24 15:25:07.719195 line 23: .
+8270 NOT Aug 24 15:25:07.719239 /usr/sbin/ip6tables: not found|
+8271 NOT Aug 24 15:25:07.721741 (3274-3320) NETSD-siginfoThrd(): tempvvlan: 4095  vvlan: 4095  linkState: 1  cdpState: 1 
+8272 NOT Aug 24 15:25:07.721807 (3274-3320) NETSD-siginfoThrd(): wlanInterface: enabled  activeInterface: WIRED  
+8273 NOT Aug 24 15:25:07.721845 (3274-3320) NETSD-setactiveinterface(): actinterface: 0; pid: 3274  
+8274 NOT Aug 24 15:25:07.721943 (3274-3320) NETSD-setactiveinterface(): msgsnd():  rc: 0  size: 12 bytes  
+8275 NOT Aug 24 15:25:07.722000 (3517-3526) DHCP-dhcpSetActiveInterface(): new interface: 0  wlanInterface: 0 
+8276 NOT Aug 24 15:25:07.722049 (3517-3526) DHCP-dhcpSetActiveInterface(): WIRED active 
+8277 NOT Aug 24 15:25:07.722094 (3274-3283) NETSD-netsdWriteResolv(): 
+8278 NOT Aug 24 15:25:07.722123 (3354-3358) DHCP6: -process_command(): recv cmd 12
+8279 NOT Aug 24 15:25:07.722171 (3354-3358) DHCP6: -dhcpSetActiveInterface(): WIRED active 
+8280 NOT Aug 24 15:25:07.722191 (3517-3526) DHCP-get_ifaddress(): eth0 address: 0x0a4f397c  netmask: 0xffffff00
+8281 NOT Aug 24 15:25:07.722261 (3274-3283) NETSD-netsdWriteResolv(): open glb
+8282 NOT Aug 24 15:25:07.722297 (3274-3283) NETSD-netsdWriteResolv(): ipv6
+8283 NOT Aug 24 15:25:07.722432 (3274-3283) NETSD-netsdWriteResolv(): DNSDEBUG : Deploy Mode 1 :
+8284 NOT Aug 24 15:25:07.722466 (3274-3283) NETSD-======>GetMsgFromCmdFile enter
+8285 NOT Aug 24 15:25:07.722497 (3274-3283) NETSD-title:Domain:, tlen:7
+8286 NOT Aug 24 15:25:07.722499 (3517-3526) DHCP-isDefaultgwInproc: line:1 : Iface      Destination     Gateway         Flags   RefCnt  Use     Metric  Mask            MTU     Window  IRTT                                                       
+         
+8287 NOT Aug 24 15:25:07.722540 (3517-3526) DHCP-isDefaultgwInproc: line:2 : eth0       00000000        01394F0A        0003    0       0       0       00000000        0       0       0                                                                               
+         
+8288 NOT Aug 24 15:25:07.722573 (3517-3526) DHCP-isDefaultgwInproc: line:3 : eth0       00394F0A        00000000        0001    0       0       0       00FFFFFF        0       0       0                                                                               
+         
+8289 NOT Aug 24 15:25:07.722625 (3274-3283) NETSD-tmpbuf:Domain:
+8290 NOT Aug 24 15:25:07.722659 (3274-3283) NETSD-param:, valuebuf:, cc:0, count:255
+8291 NOT Aug 24 15:25:07.722672 (3517-3526) DHCP-get_macaddr(): eth0 
+8292 NOT Aug 24 15:25:07.722703 (3274-3283) NETSD-GetMsgFromCmdFile suc end
+8293 NOT Aug 24 15:25:07.722758 (3517-3526) DHCP-get_macaddr(): mac addr -- 48:2e:72:92:df:b3 
+8294 NOT Aug 24 15:25:07.722827 (3274-3320) NETSD-setactiveinterface(): msgrcv() from dhcp: 12 bytes  
+8295 NOT Aug 24 15:25:07.722865 (3274-3320) NETSD-setactiveinterface(): msgrcv() from dhcp status 0  
+8296 NOT Aug 24 15:25:07.722905 (3274-3320) NETSD-setactiveinterface(): msgrcv() from dhcp6: 12 bytes  
+8297 NOT Aug 24 15:25:07.722936 (3274-3320) NETSD-setactiveinterface(): msgrcv() from dhcp6 status 0  
+8298 NOT Aug 24 15:25:07.722966 (3274-3320) NETSD-setactiveinterface(): return from FEATURE_WLAN_IPV6 0
+8299 NOT Aug 24 15:25:07.722997 (3274-3320) NETSD-siginfoThrd(): activechange: 0 
+8300 NOT Aug 24 15:25:07.723026 (3274-3320) NETSD-siginfoThrd(): force_dhcp: 0 
+8301 INF Aug 24 15:25:07.723950 (3481-3485) proxymanager_service-PACFetcher-dhcpCfgWatchThreadFunc read len:32
+8302 INF Aug 24 15:25:07.724015 (3481-3485) proxymanager_service-PACFetcher-wait_for_changes fd:10, interval:1800
+8303 NOT Aug 24 15:25:07.741922 (3948-4115) JAVA-configmgr MQThread|cip.cfg.TimeDateProperty:? - setTimeZone tz:Pacific/Palau ctz:Pacific/Palau
+8304 NOT Aug 24 15:25:07.745638 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - customerUUID is 
+8305 NOT Aug 24 15:25:07.745810 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - userUUID is 
+8306 INF Aug 24 15:25:07.749128 dnsmasq[3286]: read /etc/hosts - 2 addressesC
+8307 WRN Aug 24 15:25:07.749205 dnsmasq[3286]: ignoring nameserver 127.0.0.1 - local interfaceD
+8308 NOT Aug 24 15:25:07.752992 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - HEADSET_DISCOVERY_URL: https://{cucm}:9444/headset/{devicename}
+8309 NOT Aug 24 15:25:07.753157 (3948-4115) JAVA-configmgr MQThread|cip.cfg.SipConfig:  - Entering setProtocolConfigProperties() at 1661322307753 millisecs....<RemoveItLater>
+8310 ERR Aug 24 15:25:07.758002 (3948-4115) JAVA-connect() error, rv=-1, sock=62, name=/tmp/ntpCmdSock: No such file or directory
+8311 ERR Aug 24 15:25:07.758100 (3948-4115) JAVA-libntp: Cmd Socket connect to NTP failed, errno = 2
+8312 ERR Aug 24 15:25:07.758185 (3948-4115) JAVA-libntp: OpenNtpSocket() error[2]:No such file or directory
+8313 ERR Aug 24 15:25:07.758221 (3948-4115) JAVA-PropertySetNtpConfig: error set the NTP configuration file
+8314 ERR Aug 24 15:25:07.758639 (3948-4115) JAVA-configmgr MQThread|cip.props.NativePropertyStore:? - device.settings.config.datetimesetting.dontpcfg IO error.
+8315 INF Aug 24 15:25:07.765002 (3402-3433) rlogcoll- rlogcoll_isDebugshRunning(): debugsh is NOT running.
+8316 INF Aug 24 15:25:07.765107 (3402-3433) rlogcoll-rlogcoll_setLogProfile() is running . logprofile = 0
+8317 INF Aug 24 15:25:07.765144 (3402-3433) rlogcoll-rlogcoll_setLogProfile() setlogprofile
+8318 INF Aug 24 15:25:07.765176 (3402-3433) rlogcoll-rlogcoll_setLogProfile() over
+8319 NOT Aug 24 15:25:07.782298 /etc/init.d/ipv6replymcst.sh: c
+8320 NOT Aug 24 15:25:07.782434 line 23: .
+8321 NOT Aug 24 15:25:07.782454 /usr/sbin/ip6tables: not foundc
+8322 NOT Aug 24 15:25:07.783101 /etc/init.d/ipv6replymcst.sh: c
+8323 NOT Aug 24 15:25:07.783125 line 23: .
+8324 NOT Aug 24 15:25:07.783145 /usr/sbin/ip6tables: not foundc
+8325 NOT Aug 24 15:25:07.783744 /etc/init.d/ipv6replymcst.sh: c
+8326 NOT Aug 24 15:25:07.783765 line 23: .
+8327 NOT Aug 24 15:25:07.783784 /usr/sbin/ip6tables: not foundc
+8328 NOT Aug 24 15:25:07.784374 /etc/init.d/ipv6replymcst.sh: c
+8329 NOT Aug 24 15:25:07.784396 line 23: .
+8330 NOT Aug 24 15:25:07.784415 /usr/sbin/ip6tables: not foundc
+8331 NOT Aug 24 15:25:07.785005 /etc/init.d/ipv6replymcst.sh: c
+8332 NOT Aug 24 15:25:07.785030 line 23: .
+8333 NOT Aug 24 15:25:07.785050 /usr/sbin/ip6tables: not foundc
+8334 DEB Aug 24 15:25:07.807215 (3948-4115) JAVA-configmgr MQThread|cip.cfg.SipConfig:  - currentMwimask=[B@198a9de changeMask=[B@1213447
+8335 NOT Aug 24 15:25:07.807365 (3948-4115) JAVA-configmgr MQThread|cip.cfg.SipConfig:? - embrace feature hack, update line 
+8336 NOT Aug 24 15:25:07.809699 (3948-4115) JAVA-configmgr MQThread|cip.cfg.SipConfig:  - Exiting setProtocolConfigProperties() at 1661322307809 millisecs....<RemoveItLater>
+8337 NOT Aug 24 15:25:07.863194 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - CUCM in config file: #0 XmlCallAgentObject: IPv4-name=[10.79.57.147] IPv6-name=[] ethernetPhonePort=2000 sipPort=5060 securedSipPort=5061 priority=0
+8338 NOT Aug 24 15:25:07.863380 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - CUCM in config file: #1 XmlCallAgentObject: IPv4-name=[] IPv6-name=[] ethernetPhonePort=0 sipPort=0 securedSipPort=0 priority=32767
+8339 NOT Aug 24 15:25:07.863544 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - CUCM in config file: #2 XmlCallAgentObject: IPv4-name=[] IPv6-name=[] ethernetPhonePort=0 sipPort=0 securedSipPort=0 priority=32767
+8340 NOT Aug 24 15:25:07.863717 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - CUCM in config file: #3 XmlCallAgentObject: IPv4-name=[] IPv6-name=[] ethernetPhonePort=0 sipPort=0 securedSipPort=0 priority=32767
+8341 NOT Aug 24 15:25:07.863878 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - CUCM in config file: #4 XmlCallAgentObject: IPv4-name=[] IPv6-name=[] ethernetPhonePort=0 sipPort=0 securedSipPort=0 priority=32767
+8342 DEB Aug 24 15:25:07.864147 (3948-4115) JAVA-configmgr MQThread|cip.sec.CapfProperty:? - CapfProperty.setValue() -  IPv4 host:10.79.57.147[10.79.57.147] IPv6 host:[::] IP Mode :0 Auth Mode: 0 CAPF Port :3804
+8343 WRN Aug 24 15:25:07.948337 (3927-3927) guiapp-file:///usr/mbin/qml/components/SLHomeTimeDate.qml:83:9: Unable to assign [undefined] to QString
+8344 WRN Aug 24 15:25:08.018729 (3313-5949) SECUREAPP-SEC_CAPF_N_IN_USE: CAPF not in use, user cancel ignored
+8345 NOT Aug 24 15:25:08.068858 (3948-4115) JAVA-configmgr MQThread|cip.sec.CapfProperty:? - CapfProp 96
+8346 NOT Aug 24 15:25:08.220383 (3948-4071) JAVA-localizationmgr MQThreadsipcc MQThread||cip.l10n.LocalizationManager$1cip.sipcc.SipCcAdapter::  -  - LocaleManager detect propety changed: device.settings.config.localization.userlocalepropertyChanged(): device.settings.config.localization.userlocale
+8347 NOT Aug 24 15:25:08.220462 (3948-4139) JAVA-localizationmgr MQThreadsipcc MQThread||cip.l10n.LocalizationManager$1cip.sipcc.SipCcAdapter::  -  - LocaleManager detect propety changed: device.settings.config.localization.userlocalepropertyChanged(): device.settings.config.localization.userlocale
+8348 NOT Aug 24 15:25:08.220518 (3948-4071) JAVA-localizationmgr MQThread|cip.l10n.LocalizationManager$1: - userLoclaeState = 3
+8349 NOT Aug 24 15:25:08.220566 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - handleOAuthMode, is fullconfig: true, curOAuthMode: 0, newOAuthMode: 0
+8350 INF Aug 24 15:25:08.220628 (3948-4071) JAVA-localizationmgr MQThread|cip.l10n.UserLocaleProperty:? - LocaleChanged: name=English_United_States version=12.0.0.0(1)
+8351 INF Aug 24 15:25:08.220681 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.SipCcAdapter:  - UserLocaleRdy=false networklocaleRdy=true cmchanged=false dcxInupgrade=false
+8352 NOT Aug 24 15:25:08.220822 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.SipCcAdapter:  - propertyChanged(): device.settings.config.localization.userlocale
+8353 INF Aug 24 15:25:08.220946 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.SipCcAdapter:  - UserLocaleRdy=false networklocaleRdy=true cmchanged=false dcxInupgrade=false
+8354 NOT Aug 24 15:25:08.221335 (3296-5953) downd-SETTFTP [3296] emcc_mode =0, override =1, tempTftp1= , tempTftp2 = , tempTftp3 = , tempTftp4 = 
+8355 NOT Aug 24 15:25:08.221409 (3296-5953) downd-SETTFTP [3296] EMCC Config file doesn't exist
+8356 NOT Aug 24 15:25:08.221472 (3296-5953) downd-dsettemptftp.RESULT [Error description unknown]
+8357 NOT Aug 24 15:25:08.223675 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - setDnldUnsignedFileViaHttps, set value: false
+8358 DEB Aug 24 15:25:08.223806 (3948-4115) JAVA-getStringProperty: read value for device.settings.config.unSignedFileDnldHttps: 0
+8359 NOT Aug 24 15:25:08.223921 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - sl_master, test ctg build, will remove after testing done
+8360 INF Aug 24 15:25:08.224013 (3948-4115) JAVA-configmgr MQThread|cip.cfg.SipConfig:? - processConfigNoError: result=0
+8361 INF Aug 24 15:25:08.224151 (3948-4115) JAVA-configmgr MQThread|cip.cfg.SipConfig:? - processConfigNoError: result=0, configFilename:SEP482E7292DFB3.cnf.xml, configFileAvailableInRam:true, configFilenameInRam:ram/SEP482E7292DFB3.cnf.xml.36827, tempFlashFilename:sip-SEP482E7292DFB3.cnf.xml
+8362 INF Aug 24 15:25:08.227345 (3948-4115) JAVA-configmgr MQThread|cip.cfg.SipConfig:? - processConfigNoError: stored config to flash
+8363 DEB Aug 24 15:25:08.227453 (3948-4115) JAVA-configmgr MQThread|cip.cfg.ConfigFileHandler:? - Enter EncryptXmlTagFromFile() to encryptsshPassword
+8364 INF Aug 24 15:25:08.228940 (3948-4115) JAVA-configmgr MQThread|cip.cfg.ConfigFileHandler:? - Need encrypt data is null: return.
+8365 DEB Aug 24 15:25:08.230567 (3948-4115) JAVA-configmgr MQThread|cip.cfg.ConfigFileHandler:? - Enter EncryptXmlTagFromFile() to encryptphonePassword
+8366 INF Aug 24 15:25:08.232289 (3948-4115) JAVA-configmgr MQThread|cip.cfg.ConfigFileHandler:? - Need encrypt data is null: return.
+8367 DEB Aug 24 15:25:08.233757 (3948-4115) JAVA-configmgr MQThread|cip.cfg.ConfigFileHandler:? - Enter EncryptXmlTagFromFile() to encryptauthPassword
+8368 INF Aug 24 15:25:08.235464 (3948-4115) JAVA-configmgr MQThread|cip.cfg.ConfigFileHandler:? - No tag authPassword in /usr/local/flash0/sip-SEP482E7292DFB3.cnf.xml
+8369 INF Aug 24 15:25:08.235554 (3948-4115) JAVA-configmgr MQThread|cip.cfg.SipConfig:? - encrypt Password done
+8370 INF Aug 24 15:25:08.238059 (3948-4115) JAVA-configmgr MQThread|cip.cfg.ConfigFileHandler:? - Enter RemoveXmlTagFromFile() to remove WirelessLANProfileGroup
+8371 INF Aug 24 15:25:08.239736 (3948-4115) JAVA-configmgr MQThread|cip.cfg.ConfigFileHandler:? - No tag WirelessLANProfileGroupin /usr/local/flash0/sip-SEP482E7292DFB3.cnf.xml
+8372 NOT Aug 24 15:25:08.239958 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - There is no active call, to immediately notify wlanmgr for a possible CUCM profile change...
+8373 DEB Aug 24 15:25:08.240156 (3948-4115) JAVA-Enter PropertySetUpdateCUCMProfile() with property: /usr/local/wifi/SEP482E7292DFB3.cnf.xml.wlan
+8374 DEB Aug 24 15:25:08.240197 (3948-4115) JAVA-Enter wlan_load_cucm_profiles() with /usr/local/wifi/SEP482E7292DFB3.cnf.xml.wlan
+8375 DEB Aug 24 15:25:08.240256 (3948-4115) JAVA-Enter wlanAPI_load_admin_profiles() with cfgfile: /usr/local/wifi/SEP482E7292DFB3.cnf.xml.wlan
+8376 WRN Aug 24 15:25:08.247308 (3268-3268) wlanmgr-[sync_profiles]: /usr/local/wifi/cucm_wlan_profiles.xml does not exists. No new cucm profiles. Do nothing
+8377 NOT Aug 24 15:25:08.257581 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - Sending update notice to Metmand
+8378 NOT Aug 24 15:25:08.257844 (3714-3714) metmand-config_parser_main parsing /usr/local/flash0/sip-SEP482E7292DFB3.cnf.xml
+8379 NOT Aug 24 15:25:08.257874 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - Sending update notice to Metmand - COMPLETE
+8380 NOT Aug 24 15:25:08.257968 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - Config processConfigNoError() result code=CONFIG_FILE_NO_CHANGE
+8381 NOT Aug 24 15:25:08.260473 (3714-3714) metmand-config_get_elements  device 
+8382 NOT Aug 24 15:25:08.260524 (3714-3714) metmand-config_get_elements   deviceUUID 9bbf0b63-ed01-4ea5-baab-f0b0d2e02711
+8383 NOT Aug 24 15:25:08.260909 (3714-3714) metmand-config_parser_main SEP MAC file parsing done
+8384 WRN Aug 24 15:25:08.260948 (3714-3714) metmand-updateConfigValues interval of 3 levels are all zero
+8385 ERR Aug 24 15:25:08.261384 (3714-3714) metmand-getMetricReportString INVALID metric report type requested, report type=0
+8386 NOT Aug 24 15:25:08.261423 (3714-3714) metmand-Metrics: report=invalid interval=0
+8387 NOT Aug 24 15:25:08.261455 (3714-3714) metmand-invto1820_setup: Invite to 18X setup function: disabled
+8388 NOT Aug 24 15:25:08.261483 (3714-3714) metmand-sdptorxstart_setup: SDP to Rx Start setup function: disabled
+8389 NOT Aug 24 15:25:08.261511 (3714-3714) metmand-anstotxstart_setup: Answer to Tx start setup function: disabled
+8390 NOT Aug 24 15:25:08.272044 (3948-4114) JAVA-Set EMCC status to inactive while not in EMCC mode
+8391 INF Aug 24 15:25:08.272527 (3948-4071) JAVA-localizationmgr MQThread|cip.l10n.UserLocaleProperty:? - getFile--(remoteFileName:English_United_States/sl-bbb-sip.jar)
+8392 INF Aug 24 15:25:08.272800 (3948-4112) JAVA-tftp MQThreadlocalizationmgr MQThread||cip.tftp.TftpService:cip.l10n.LocalizationManager$1?: - .... tftpLargeFileRequest... - 
+8393 NOT Aug 24 15:25:08.272859 (3948-4071) JAVA-tftp MQThreadlocalizationmgr MQThread||cip.tftp.TftpService:cip.l10n.LocalizationManager$1?: - .... tftpLargeFileRequest... - LocaleManager detect propety changed: device.settings.config.localization.userlocale
+8394 NOT Aug 24 15:25:08.272968 (3948-4071) JAVA-localizationmgr MQThread|cip.l10n.LocalizationManager$1: - userLoclaeState = 4
+8395 NOT Aug 24 15:25:08.273701 (3296-5958) downd-start the monitor timer
+8396 NOT Aug 24 15:25:08.273766 (3296-5958) downd-GETXXTP [GT3296][src=English_United_States/sl-bbb-sip.jar][dest=/tmp/ram/L10N857215144][serv=][serv6=][sec=2]
+8397 NOT Aug 24 15:25:08.273852 (3296-5958) downd-In normal mode, call - > makeXXTPrequest (V6...)
+8398 NOT Aug 24 15:25:08.273921 (3296-5958) downd-EMCC mode is false
+8399 NOT Aug 24 15:25:08.279137 (3296-5958) downd-parseDhcpInfoIntoTftpList(): no valid load server
+8400 NOT Aug 24 15:25:08.279215 (3296-5958) downd-AUTH.SRVR [GT3296] look up server - 0 - 10.79.57.147
+8401 NOT Aug 24 15:25:08.329672 (3296-5958) downd-AUTH.SRVR [GT3296] authentication retval = 9 
+8402 NOT Aug 24 15:25:08.329730 (3296-5958) downd-XXTP Secure file requested 
+8403 NOT Aug 24 15:25:08.329760 (3296-5958) downd-XXTP authenticated file approved - add .sgn if necessary -- English_United_States/sl-bbb-sip.jar.sgn  
+8404 NOT Aug 24 15:25:08.329860 (3296-5958) downd-XXTP start request, server 1 - 10.79.57.147 
+8405 NOT Aug 24 15:25:08.329989 (3296-5958) downd-XXTP actualserver [10.79.57.147] httpua=(null)
+8406 NOT Aug 24 15:25:08.334871 (3296-5962) downd-XXX arg[0] /usr/sbin/gethtp
+8407 NOT Aug 24 15:25:08.335010 (3296-5962) downd-XXX arg[1] -t
+8408 NOT Aug 24 15:25:08.335040 (3296-5962) downd-XXX arg[2] 10.79.57.147
+8409 NOT Aug 24 15:25:08.335067 (3296-5962) downd-XXX arg[3] -Huge
+8410 NOT Aug 24 15:25:08.335091 (3296-5962) downd-XXX arg[4] -i0
+8411 NOT Aug 24 15:25:08.335119 (3296-5962) downd-XXX arg[5] English_United_States/sl-bbb-sip.jar.sgn
+8412 NOT Aug 24 15:25:08.335144 (3296-5962) downd-XXX arg[6] /tmp/ram/L10N857215144
+8413 NOT Aug 24 15:25:08.364474 (5962-5962) GHTTP-LIMIT downdload will be limited to 8192 KB
+8414 NOT Aug 24 15:25:08.364618 (5962-5962) GHTTP-getByCurl -- reqByCurlInternal
+8415 NOT Aug 24 15:25:08.364664 (5962-5962) GHTTP-reqByCurlInternal isHttps 0 isNand 0 pSrvName null pSrvIP 10.79.57.147 url null pDestFileName /tmp/ram/L10N857215144 pSrcFileName English_United_States/sl-bbb-sip.jar.sgn ua  ip_version 0
+8416 NOT Aug 24 15:25:08.373107 (5962-5962) GHTTP-reqByCurlInternal setting up http response callback, respfile = [/tmp/ram/L10N857215144], [res] = 0
+8417 NOT Aug 24 15:25:08.373188 (5962-5962) GHTTP-reqByCurlInternal srvAddr=10.79.57.147, actual pSrcFileName >English_United_States/sl-bbb-sip.jar.sgn<, after removing / >English_United_States/sl-bbb-sip.jar.sgn<
+8418 NOT Aug 24 15:25:08.373249 (5962-5962) GHTTP-enter setProxyParams
+8419 NOT Aug 24 15:25:08.373316 (5962-5962) GHTTP-setAuthUserAgent:1065 auth set up done res=0 uid len 0 pwd len 0
+8420 NOT Aug 24 15:25:08.373362 (5962-5962) GHTTP-buildHttpReqHeader adding accept header, Accept: */*
+8421 NOT Aug 24 15:25:08.373392 (5962-5962) GHTTP-buildHttpReqHeader adding language header Accept-Language: en
+8422 NOT Aug 24 15:25:08.373420 (5962-5962) GHTTP-buildHttpReqHeader adding charset header, Accept-Charset: iso-8859-1
+8423 NOT Aug 24 15:25:08.373467 (5962-5962) GHTTP-reqByCurlInternal accept_encoding=
+8424 NOT Aug 24 15:25:08.373528 (5962-5962) GHTTP-reqByCurlInternal sending http request out..., url: http://10.79.57.147:6970/English_United_States/sl-bbb-sip.jar.sgn
+8425 NOT Aug 24 15:25:08.374202 (5962-5962) GHTTP-sockoptCallback setsockopt IP_TOS=0
+8426 NOT Aug 24 15:25:08.376437 (5962-5962) GHTTP-getHttpRespHeader header_name=Content-length, header_value=0
+8427 NOT Aug 24 15:25:08.376509 (5962-5962) GHTTP-parseHttpRespHeader:678 content-length=0
+8428 NOT Aug 24 15:25:08.376555 (5962-5962) GHTTP-getHttpRespHeader header_name=Content-type, header_value=*/*
+8429 NOT Aug 24 15:25:08.376594 (5962-5962) GHTTP-parseHttpRespHeader:686 content-type=*/*
+8430 NOT Aug 24 15:25:08.376718 (5962-5962) GHTTP-reqByCurlInternal return from http request, [res] = 0 No error
+8431 NOT Aug 24 15:25:08.376767 (5962-5962) GHTTP-reqByCurlInternal curl response code 404, [res] = 0
+8432 NOT Aug 24 15:25:08.377489 (5962-5962) GHTTP-reqByCurlInternal exit rc 101
+8433 NOT Aug 24 15:25:08.380706 (3948-4115) JAVA-configmgr MQThread|cip.sipcc.SipCcAdapter$CcMgmtListener:  - mgmtState=MGMT_REGTD(5)
+8434 NOT Aug 24 15:25:08.381819 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - applyConfig: isConditionalRestartPending=true,configFileRequestPending=false,configFileAvailableInRam=true
+8435 WRN Aug 24 15:25:08.381935 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - [TBD] to applyConfig: configFilename= /tmp/ram/SEP482E7292DFB3.cnf.xml.36827
+8436 NOT Aug 24 15:25:08.382002 (3948-4115) JAVA-CFG : config_parser_main : Starting config file parse.
+8437 NOT Aug 24 15:25:08.382144 (3948-4115) JAVA-SIPCC-CC_API: preConfigParse: HFU feature disabled.
+8438 NOT Aug 24 15:25:08.382532 (3296-5958) downd-cancel the monitor timer
+8439 NOT Aug 24 15:25:08.382707 /tmp/ram/SEP482E7292DFB3.cnf.xml.36827:2: i
+8440 NOT Aug 24 15:25:08.382777 namespace E
+8441 NOT Aug 24 15:25:08.382811 error : e
+8442 NOT Aug 24 15:25:08.382895 Namespace prefix xsi for type on device is not defined 
+8443 NOT Aug 24 15:25:08.382927 xsi:type="axl:XIPPhone" ctiid="59" uuid="{9bbf0b63-ed01-4ea5-baab-f0b0d2e02711}" 
+8444 NOT Aug 24 15:25:08.382956                                                                                ^ 
+8445 NOT Aug 24 15:25:08.386046 (3296-5964) downd-start the monitor timer
+8446 NOT Aug 24 15:25:08.386221 (3296-5966) downd-SETTFTP [3296] emcc_mode =0, override =0, tempTftp1= , tempTftp2 = , tempTftp3 = , tempTftp4 = 
+8447 NOT Aug 24 15:25:08.386292 (3296-5966) downd-SETTFTP [3296] EMCC Config file doesn't exist
+8448 NOT Aug 24 15:25:08.386441 (3296-5964) downd-GETXXTP [GT3296][src=SKb0ec918f-b9ee-994b-57ae-345883c1fde8.xml][dest=/tmp/cache/SK-2049037978][serv=][serv6=][sec=2]
+8449 NOT Aug 24 15:25:08.386562 (3296-5964) downd-In normal mode, call - > makeXXTPrequest (V6...)
+8450 NOT Aug 24 15:25:08.386670 (3296-5964) downd-EMCC mode is false
+8451 NOT Aug 24 15:25:08.387129 (3296-5966) downd-dsettemptftp.RESULT [Error description unknown]
+8452 NOT Aug 24 15:25:08.390597 (3296-5965) downd-parseDhcpInfoIntoTftpList(): no valid load server
+8453 NOT Aug 24 15:25:08.390681 (3296-5965) downd-GETSRVR [ip=10.79.57.147] resolved.
+8454 DEB Aug 24 15:25:08.390958 (3948-4115) JAVA-[getDeployMode] deploy-mode:1 
+8455 NOT Aug 24 15:25:08.391046 (3948-4115) JAVA-ccm0=10.79.57.147 ccm1=  ccm2=length=0
+8456 NOT Aug 24 15:25:08.391079 (3948-4115) JAVA-sip_port_0=5060 sip_port_1=5060 sip_port_2=5060
+8457 NOT Aug 24 15:25:08.391104 (3948-4115) JAVA-sec_sip_port_0=5061 sec_sip_port_1=5061 sec_sip_port_2=5061
+8458 NOT Aug 24 15:25:08.391128 (3948-4115) JAVA-sip_oauth_port_0=5090 sip_oauth_port_1=5090 sip_oauth_port_2=5090
+8459 NOT Aug 24 15:25:08.391152 (3948-4115) JAVA-sip_mra_oauth_port_0=5091 sip_mra_oauth_port_1=5091 sip_mra_oauth_port_2=5091
+8460 NOT Aug 24 15:25:08.391175 (3948-4115) JAVA-ccm0_v6= ccm1_v6=  ccm2_v6= lenght=0
+8461 NOT Aug 24 15:25:08.391198 (3948-4115) JAVA-device ip_mode is IPv4
+8462 NOT Aug 24 15:25:08.391415 (3948-4115) JAVA-config_process_ccm_properties: is in Edge mode = FALSE
+8463 INF Aug 24 15:25:08.391457 (3948-4115) JAVA-mac=48:2e:72:92:df:b3
+8464 NOT Aug 24 15:25:08.391650 (3948-4115) JAVA-CFG : config_set_srst_properties : SRST is not configured.
+8465 NOT Aug 24 15:25:08.392124 (3948-4115) JAVA-CFG : update_sipline_properties : lineMode:0
+8466 NOT Aug 24 15:25:08.392158 (3948-4115) JAVA-CFG : update_sipline_properties : HFU feature is disabled.
+8467 DEB Aug 24 15:25:08.392214 (3948-4115) JAVA-SIPCC-SIP_CC_PROV: ccsnap_set_line_label: btn=1 label=
+8468 NOT Aug 24 15:25:08.392705 (3948-4115) JAVA-CFG : config_parse_element : versionStamp new=1661323952-39292702-07ce-4537-89d8-6de672a15fc0 old=1661323902-e2e01b07-c0b7-454c-aac3-9fabeb06acfe 
+8469 DEB Aug 24 15:25:08.393001 (3948-4115) JAVA-SIPCC-SIP_CC_PROV: ccsnap_set_phone_services_provisioning: missed=1 placed=1 received=1
+8470 NOT Aug 24 15:25:08.393140 (3948-4115) JAVA-CFG : compare_or_set_multi_level_config_value :  compare_or_set: CONFIG_PARSER_APPLY
+8471 DEB Aug 24 15:25:08.393210 (3948-4115) JAVA-[getDeployMode] deploy-mode:1 
+8472 NOT Aug 24 15:25:08.393251 (3948-4115) JAVA-CFG : config_parser_main : Release memory for xml doc.
+8473 ERR Aug 24 15:25:08.394131 (3948-4115) JAVA-CFG : config_set_string : Parse function failed. ID: 105 myIpv6Addr:
+8474 NOT Aug 24 15:25:08.394193 (3948-4115) JAVA-CFG : postConfigParse : Set CFG: dev_name:SEP482E7292DFB3 signaling_ip:10.79.57.124 signaling_ipv6: media_ip:10.79.57.124 
+8475 NOT Aug 24 15:25:08.394224 (3948-4115) JAVA-CFG : postConfigParse : old CFG: timer_register_expires:3600, timer_invite_expires:180, timer_t1:500, voip_control_port:5060
+8476 NOT Aug 24 15:25:08.394248 (3948-4115) JAVA-CFG : postConfigParse : Set CFG: dev_name:SEP482E7292DFB3 signaling_ip:10.79.57.124 media_ip:10.79.57.124 
+8477 NOT Aug 24 15:25:08.394519 (3948-4145) JAVA-SIPCC-SIP_CC_PROV: ccappFeatureUpdated: CCAPP -> GSM:  Updating capability set (and generating line event) for line index=[1].
+8478 DEB Aug 24 15:25:08.394635 (3948-4145) JAVA-SNAPSHOT-CREATE: CCAPI_Line_getLineInfo:  reference pointer=f172dc10
+8479 DEB Aug 24 15:25:08.394674 (3948-4145) JAVA-SIPCC-SIP_CC_PROV: ccsnap_gen_lineEvent: event type : CAPSET_CHANGED
+8480 DEB Aug 24 15:25:08.394700 (3948-4145) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> CAPSET_CHANGED() --> [PHONE-APP] : 
+8481 NOT Aug 24 15:25:08.394750 (3948-4115) JAVA-SIPCC-DIAL_RULES: app_dial_rules_handle_dial_rule_files: Unable to fetch ADR file.
+8482 NOT Aug 24 15:25:08.394784 (3948-4115) JAVA-SIPCC-DIAL_RULES: app_dial_rules_handle_dial_rule_files: Unable to fetch DLR file.
+8483 NOT Aug 24 15:25:08.394809 (3948-4115) JAVA-CFG : config_parser_main : Completed config file parse. rtn_result:[2]
+8484 DEB Aug 24 15:25:08.394969 (3948-4145) JAVA-SIPCC-SIP_CC_PROV: 1/0, CCAPI_LineInfo_hasCapability: Query on line reference [0xf172dc10] for capability [0] returning [1]
+8485 INF Aug 24 15:25:08.395132 (3948-4145) JAVA-Thread-10|SipCcEventDispatcher:  - onLineEvent: LINEEVENT_CAPSET_CHANGED line:1 Mnc:false
+8486 DEB Aug 24 15:25:08.395192 (3948-4145) JAVA-SNAPSHOT-RELEASE: CCAPI_Line_releaseLineInfo:  reference pointer=f172dc10, ref released
+8487 NOT Aug 24 15:25:08.396061 (3296-5958) downd-DDGETTFTP.RESULT [_2_  File not found
+        ]
+8488 NOT Aug 24 15:25:08.399444 (3296-5964) downd-parseDhcpInfoIntoTftpList(): no valid load server
+8489 NOT Aug 24 15:25:08.399528 (3296-5964) downd-AUTH.SRVR [GT3296] look up server - 0 - 10.79.57.147
+8490 NOT Aug 24 15:25:08.403944 (3296-5965) downd-dgetserver.RESULT [_0_  [PASS] No error 
+        ]
+8491 NOT Aug 24 15:25:08.422812 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:? - [sendResultAlarm] <- "handleTftpResponse", isConditionalRestartPending:true
+8492 NOT Aug 24 15:25:08.422946 (3948-4115) JAVA-configmgr MQThread|ConditionalRestart:? - [sendResultAlarm] <- sendResultAlarm(handleTftpResponse), phoneResult:1,reason:0
+8493 NOT Aug 24 15:25:08.423213 (3948-4115) JAVA-CCAPIDevicesendAlarm: phone-app requesting alarm to be sent
+8494 DEB Aug 24 15:25:08.423267 (3948-4115) JAVA-SIPCC-SIP_ALARM: storeAlarm:  stored alarm at index [0].
+8495 DEB Aug 24 15:25:08.423336 (3948-4115) JAVA-[getDeployMode] deploy-mode:1 
+8496 DEB Aug 24 15:25:08.423437 (3948-4115) JAVA-SIPCC-SIP_ALARM: sendStoredSIPAlarm:  sent stored alarm[0] request_id=19 alarm_ptr=0xf171cd38
+8497 DEB Aug 24 15:25:08.423652 (3948-4146) JAVA-SIPCC-MSG_SEND_REQ: SIPSPISendSubscribe: Sending SUBSCRIBE...
+8498 DEB Aug 24 15:25:08.424095 (3948-4146) JAVA-edge_send_get: Length of data read from edge_gateway 64
+8499 DEB Aug 24 15:25:08.424170 (3948-4146) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: tracking ID: 8875_eeaacc58-0010-5000-a000-482e7292dfb3
+8500 DEB Aug 24 15:25:08.424204 (3948-4146) JAVA-SIPCC-SIP_SESSION_ID: sipAddSessionIdHeader: local_uuid: eeaacc5800105000a000482e7292dfb3 remote_uuid: 
+8501 DEB Aug 24 15:25:08.424278 (3948-4146) JAVA-SIPCC-SIP_SUB: sm_add_contact: adding device name [SEP482E7292DFB3] to contact header 
+8502 DEB Aug 24 15:25:08.424424 (3948-4146) JAVA-SIPCC-SIP_SUB: sipSPIAddRouteHeadersToSubNot: Route info not available; will not add Route header.
+8503 DEB Aug 24 15:25:08.424458 (3948-4146) JAVA-SIPCC-SIP_SUB: xmlEncodeEventData: Encode event data: entered,
+8504 DEB Aug 24 15:25:08.424486 (3948-4146) JAVA-SIPCC-SIP_SUB: xmlEncodeEventData: Framed raw buffer: length = 388,
+8505 DEB Aug 24 15:25:08.424553 (3948-4146) JAVA-SIP : sipTransportCreateSendMessage : sippmh_write() with message size=[1305] 
+8506 NOT Aug 24 15:25:08.424614 (3948-4146) JAVA-SIPCC-SIP_MSG_SEND: ccsip_dump_send_msg_info: <10.79.57.147:5060>:REFER s: <sip:10.79.57.147> :1000 REFER::482e7292-dfb30013-09de97b8-278f85f4@10.79.57.124
+8507 DEB Aug 24 15:25:08.424797 (3948-4146) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Sip msg sent handle=<58>,length=<1305>, message=
+8508 NOT Aug 24 15:25:08.425007 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - [propertyChanged()] propName:"device.settings.config.sipprofile.local.tftpcode"
+8509 DEB Aug 24 15:25:08.425046 (3948-4146) JAVA-sipio-sent---> REFER sip:10.79.57.147 SIP/2.0^M
+        Via: SIP/2.0/TCP 10.79.57.124:50589;branch=z9hG4bK5cac181f^M
+        From: "***" <sip:***@10.79.57.124>;tag=482e7292dfb3001e0a449ad2-55b78e44^M
+        To: <sip:10.79.57.147>^M
+        Call-ID: 482e7292-dfb30013-09de97b8-278f85f4@10.79.57.124^M
+        Session-ID: eeaacc5800105000a000482e7292dfb3;remote=00000000000000000000000000000000^M
+        Date: Wed, 24 Aug 2022 06:25:08 GMT^M
+        CSeq: 1000 REFER^M
+        User-Agent: Cisco-CP8875^M
+        Expires: 10^M
+        Max-Forwards: 70^M
+        Contact: <sip:***@10.79.57.124:50589;transport=tcp>;+u.sip!devicename.ccm.cisco.com="SEP482E7292DFB3"^M
+        Require: norefersub^M
+        Referred-By: "***" <sip:***@10.79.57.124>^M
+        Refer-To: cid:09227c3b@10.79.57.124^M
+        Content-Id: <09227c3b@10.79.57.124>^M
+        Allow: ACK,BYE,CANCEL,INVITE,NOTIFY,OPTIONS,REFER,REGISTER,UPDATE,SUBSCRIBE^M
+        Content-Length: 387^M
+        Content-Type: application/x-cisco-alarm+xml^M
+        Content-Disposition: session;handling=required^M
+        ^M
+        <?xml version="1.0" encoding="UTF-8"?>
+        <x-cisco-alarm>
+        <Alarm Name="DeviceApplyConfigResult">
+        <ParameterList>
+        <String name="Devi
+8510 DEB Aug 24 15:25:08.425078 (3948-4146) JAVA-ceName">SEP482E7292DFB3</String>
+        <String name="IPv4Address">10.79.57.124</String>
+        <String name="IPv6Address"></String>
+        <Enum name="CUCM_Result">1</Enum>
+        <Enum name="Phone_Result">1</Enum>
+        <Enum name="Reason">0</Enum>
+        </ParameterList>
+        </Alarm>
+        </x-cisco-alarm>
+8511 NOT Aug 24 15:25:08.425110 (3948-4115) JAVA-configmgr MQThread|ConfigManager:? - --->ConfigManager PropertyChanged: device.config.io.dscp.config
+8512 DEB Aug 24 15:25:08.425175 (3948-4115) JAVA-setapptos(42): pid: 3948  
+8513 DEB Aug 24 15:25:08.425263 (3948-4146) JAVA-::End-Of-Sip-Message::
+8514 DEB Aug 24 15:25:08.425307 (3948-4115) JAVA-setapptos(): msgsnd():  rc: 0  size: 8 bytes  
+8515 DEB Aug 24 15:25:08.425343 (3948-4146) JAVA-SIPCC-SIP_TRANS: sipTransportSendMessage: Starting reTx timer for 32000 secs
+8516 NOT Aug 24 15:25:08.425382 (3948-4115) JAVA-configmgr MQThread|ConfigManager:? - <---ConfigManager PropertyChanged: device.config.io.dscp.config
+8517 DEB Aug 24 15:25:08.425482 (3948-4146) JAVA-[[MESSAGE_1.0]]: [SIPCC] --> REFER sip:10.79.57.147 SIP/2.0() --> [10.79.57.147] : 
+8518 DEB Aug 24 15:25:08.425720 (3948-4146) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+8519 NOT Aug 24 15:25:08.425725 (3714-3714) metmand-update_sessionid: Received NULL or Invalid Type
+8520 DEB Aug 24 15:25:08.425753 (3948-4146) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_send_msg_for_alarm: Sent:REFER sip:***@10.79.57.124    
+8521 NOT Aug 24 15:25:08.425760 (3714-3714) metmand-update_sessionid: Local UUID: 
+8522 NOT Aug 24 15:25:08.425782 (3714-3714) metmand-update_sessionid: Remote UUID: 
+8523 DEB Aug 24 15:25:08.428564 (3948-4146) JAVA-SIP : sip_tcp_newmsg_to_spi : Sip message rcv: message=
+8524 DEB Aug 24 15:25:08.428674 (3948-4146) JAVA-sipio-recv<--- SIP/2.0 202 Accepted^M
+        Via: SIP/2.0/TCP 10.79.57.124:50589;branch=z9hG4bK5cac181f^M
+        From: "***" <sip:***@10.79.57.124>;tag=482e7292dfb3001e0a449ad2-55b78e44^M
+        To: <sip:10.79.57.147>;tag=1379527576^M
+        Date: Wed, 24 Aug 2022 06:52:56 GMT^M
+        Call-ID: 482e7292-dfb30013-09de97b8-278f85f4@10.79.57.124^M
+        CSeq: 1000 REFER^M
+        Contact: <sip:10.79.57.147:5060;transport=tcp>^M
+        Content-Length: 0^M
+        ^M
+8525 DEB Aug 24 15:25:08.428721 (3948-4146) JAVA-::End-Of-Sip-Message::
+8526 DEB Aug 24 15:25:08.428750 (3948-4146) JAVA-[[MESSAGE_1.0]]: [10.79.57.147] --> SIP/2.0 202 Accepted() --> [SIPCC] : 
+8527 NOT Aug 24 15:25:08.428799 (3948-4146) JAVA-SIPCC-SIP_MSG_RECV: ccsip_dump_recv_msg_info: <10.79.57.147:0   >:202 Acc: "***" <sip:***@10.79.57.124>;tag=482e7292dfb3001e0a449ad2-55b78e44 :1000 REFER::482e7292-dfb30013-09de97b8-278f85f4@10.79.57.124
+8528 NOT Aug 24 15:25:08.428937 (3714-3714) metmand-update_sessionid: Received NULL or Invalid Type
+8529 DEB Aug 24 15:25:08.428944 (3948-4146) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: local_uuid: , remote_uuid: , type:0, state:0
+8530 NOT Aug 24 15:25:08.428967 (3714-3714) metmand-update_sessionid: Local UUID: 
+8531 DEB Aug 24 15:25:08.428971 (3948-4146) JAVA-SIPCC-SIP_MSG_SEND: ccsip_store_rcvd_msg_for_alarm: Rcvd:SIP/2.0 202 Accepted  Cseq:1000 REFER CallId:482e7292-dfb30013-09de97b8-278f85f4@10.79.57.124    
+8532 NOT Aug 24 15:25:08.428989 (3714-3714) metmand-update_sessionid: Remote UUID: 
+8533 DEB Aug 24 15:25:08.429144 (3948-4146) JAVA-SIPCC-SIP_SESSION_ID: sipGetSessionId: Remote Session ID: (null)
+8534 DEB Aug 24 15:25:08.429290 (3948-4146) JAVA-[getDeployMode] deploy-mode:1 
+8535 DEB Aug 24 15:25:08.429329 (3948-4146) JAVA-SIPCC-SIP_ALARM: remove_stored_alarm: Alarm at index=0 of request_id=19 sent out successfully
+8536 NOT Aug 24 15:25:08.437273 (3948-4114) JAVA-Set EMCC status to inactive while not in EMCC mode
+8537 WRN Aug 24 15:25:08.437514 (3948-4071) JAVA-localizationmgr MQThread|cip.l10n.UserLocaleProperty:? - Unable to process LocaleProperty 'device.settings.config.localization.userlocale'
+8538 NOT Aug 24 15:25:08.437754 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.SipCcAdapter:  - propertyChanged(): device.settings.config.localization.userlocale
+8539 INF Aug 24 15:25:08.437868 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.SipCcAdapter:  - UserLocaleRdy=true networklocaleRdy=true cmchanged=false dcxInupgrade=false
+8540 NOT Aug 24 15:25:08.441459 (3948-4101) JAVA-HTTP JNI| Java_cip_http_NativeHttpTask_updateUserLocaleCharSet: setting Http Char Set to [Accept-Charset: utf-8,ISO-8859-1;q=0.8]
+8541 NOT Aug 24 15:25:08.444862 (3948-4101) JAVA-HTTP JNI| Java_cip_http_NativeHttpTask_updateUserLocaleLangCode: setting Http Language Tag to [Accept-Language: en]
+8542 NOT Aug 24 15:25:08.445022 (3948-4071) JAVA-localizationmgr MQThread|cip.l10n.LocalizationManager$1: - LocaleManager detect propety changed: device.settings.config.localization.userlocale
+8543 NOT Aug 24 15:25:08.445102 (3948-4071) JAVA-localizationmgr MQThread|cip.l10n.LocalizationManager$1: - userLoclaeState = 2
+8544 NOT Aug 24 15:25:08.450008 (3296-5964) downd-AUTH.SRVR [GT3296] authentication retval = 9 
+8545 NOT Aug 24 15:25:08.450051 (3296-5964) downd-XXTP Secure file requested 
+8546 NOT Aug 24 15:25:08.450076 (3296-5964) downd-XXTP authenticated file approved - add .sgn if necessary -- SKb0ec918f-b9ee-994b-57ae-345883c1fde8.xml.sgn  
+8547 NOT Aug 24 15:25:08.450168 (3296-5964) downd-XXTP start request, server 1 - 10.79.57.147 
+8548 NOT Aug 24 15:25:08.450331 (3296-5964) downd-XXTP actualserver [10.79.57.147] httpua=(null)
+8549 NOT Aug 24 15:25:08.454745 (3296-5976) downd-XXX arg[0] /usr/sbin/gethtp
+8550 NOT Aug 24 15:25:08.454877 (3296-5976) downd-XXX arg[1] -t
+8551 NOT Aug 24 15:25:08.454900 (3296-5976) downd-XXX arg[2] 10.79.57.147
+8552 NOT Aug 24 15:25:08.454920 (3296-5976) downd-XXX arg[3] -i0
+8553 NOT Aug 24 15:25:08.454944 (3296-5976) downd-XXX arg[4] SKb0ec918f-b9ee-994b-57ae-345883c1fde8.xml.sgn
+8554 NOT Aug 24 15:25:08.454965 (3296-5976) downd-XXX arg[5] /tmp/cache/SK-2049037978
+8555 NOT Aug 24 15:25:08.479062 (5976-5976) GHTTP-LIMIT downdload will be limited to 2048 KB
+8556 NOT Aug 24 15:25:08.479179 (5976-5976) GHTTP-getByCurl -- reqByCurlInternal
+8557 NOT Aug 24 15:25:08.479214 (5976-5976) GHTTP-reqByCurlInternal isHttps 0 isNand 0 pSrvName null pSrvIP 10.79.57.147 url null pDestFileName /tmp/cache/SK-2049037978 pSrcFileName SKb0ec918f-b9ee-994b-57ae-345883c1fde8.xml.sgn ua  ip_version 0
+8558 NOT Aug 24 15:25:08.482382 (3948-4071) JAVA-localizationmgr MQThread|cip.l10n.LocalizationManager$1: - LocaleManager detect propety changed: device.settings.config.localization.userlocale.charset
+8559 NOT Aug 24 15:25:08.485893 (5976-5976) GHTTP-reqByCurlInternal setting up http response callback, respfile = [/tmp/cache/SK-2049037978], [res] = 0
+8560 NOT Aug 24 15:25:08.485957 (5976-5976) GHTTP-reqByCurlInternal srvAddr=10.79.57.147, actual pSrcFileName >SKb0ec918f-b9ee-994b-57ae-345883c1fde8.xml.sgn<, after removing / >SKb0ec918f-b9ee-994b-57ae-345883c1fde8.xml.sgn<
+8561 NOT Aug 24 15:25:08.485987 (5976-5976) GHTTP-enter setProxyParams
+8562 NOT Aug 24 15:25:08.486035 (5976-5976) GHTTP-setAuthUserAgent:1065 auth set up done res=0 uid len 0 pwd len 0
+8563 NOT Aug 24 15:25:08.486066 (5976-5976) GHTTP-buildHttpReqHeader adding accept header, Accept: */*
+8564 NOT Aug 24 15:25:08.486088 (5976-5976) GHTTP-buildHttpReqHeader adding language header Accept-Language: en
+8565 NOT Aug 24 15:25:08.486110 (5976-5976) GHTTP-buildHttpReqHeader adding charset header, Accept-Charset: iso-8859-1
+8566 NOT Aug 24 15:25:08.486148 (5976-5976) GHTTP-reqByCurlInternal accept_encoding=
+8567 NOT Aug 24 15:25:08.486190 (5976-5976) GHTTP-reqByCurlInternal sending http request out..., url: http://10.79.57.147:6970/SKb0ec918f-b9ee-994b-57ae-345883c1fde8.xml.sgn
+8568 NOT Aug 24 15:25:08.486841 (5976-5976) GHTTP-sockoptCallback setsockopt IP_TOS=0
+8569 NOT Aug 24 15:25:08.488771 (5976-5976) GHTTP-getHttpRespHeader header_name=Content-length, header_value=4173
+8570 NOT Aug 24 15:25:08.488829 (5976-5976) GHTTP-parseHttpRespHeader:678 content-length=4173
+8571 NOT Aug 24 15:25:08.488859 (5976-5976) GHTTP-getHttpRespHeader header_name=Cache-Control, header_value=no-store
+8572 NOT Aug 24 15:25:08.488899 (5976-5976) GHTTP-getHttpRespHeader header_name=Content-type, header_value=*/*
+8573 NOT Aug 24 15:25:08.488923 (5976-5976) GHTTP-parseHttpRespHeader:686 content-type=*/*
+8574 NOT Aug 24 15:25:08.489146 (5976-5976) GHTTP-reqByCurlInternal return from http request, [res] = 0 No error
+8575 NOT Aug 24 15:25:08.489188 (5976-5976) GHTTP-reqByCurlInternal curl response code 200, [res] = 0
+8576 NOT Aug 24 15:25:08.490024 (5976-5976) GHTTP-reqByCurlInternal exit rc 100
+8577 NOT Aug 24 15:25:08.494131 (3296-5964) downd-XXTP complete - status = 100 
+8578 WRN Aug 24 15:25:08.494346 (3296-5964) downd-AUTH: early exit from parser loop; old version header?
+8579 WRN Aug 24 15:25:08.494381 (3296-5964) downd-AUTH: hdr ver 2.0 (knows only upto 1.1)
+8580 NOT Aug 24 15:25:08.544902 (3296-5964) downd-Hashes match... authentication successful.
+8581 NOT Aug 24 15:25:08.545310 (3296-5964) downd-AUTH.FILE [GT3296][secVal=0] [isEncr=0] 
+8582 NOT Aug 24 15:25:08.545344 (3296-5964) downd-cancel the monitor timer
+8583 NOT Aug 24 15:25:08.548474 (3296-5980) downd-start the monitor timer
+8584 NOT Aug 24 15:25:08.548549 (3296-5980) downd-GETXXTP [GT3296][src=AppDialRules.xml][dest=/tmp/cache/ADR-342599692][serv=][serv6=][sec=0]
+8585 NOT Aug 24 15:25:08.548639 (3296-5980) downd-In normal mode, call - > makeXXTPrequest (V6...)
+8586 NOT Aug 24 15:25:08.548696 (3296-5980) downd-EMCC mode is false
+8587 NOT Aug 24 15:25:08.553263 (3296-5980) downd-parseDhcpInfoIntoTftpList(): no valid load server
+8588 NOT Aug 24 15:25:08.553358 (3296-5980) downd-AUTH.SRVR [GT3296] look up server - 0 - 10.79.57.147
+8589 NOT Aug 24 15:25:08.557852 (3296-5964) downd-DDGETTFTP.RESULT [_100_  HTTP NO ERROR
+        ]
+8590 INF Aug 24 15:25:08.571666 (3948-3988) JAVA-RDH RDH RDH - event_receiver etype=6!
+8591 INF Aug 24 15:25:08.598490 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - scratchpad/default_keyset.xml/tmp/cache/default_keyset.xml
+8592 NOT Aug 24 15:25:08.603846 (3296-5980) downd-AUTH.SRVR [GT3296] authentication retval = 9 
+8593 NOT Aug 24 15:25:08.603895 (3296-5980) downd-XXTP Non secure file requested  
+8594 NOT Aug 24 15:25:08.603981 (3296-5980) downd-XXTP start request, server 1 - 10.79.57.147 
+8595 NOT Aug 24 15:25:08.604104 (3296-5980) downd-XXTP actualserver [10.79.57.147] httpua=(null)
+8596 NOT Aug 24 15:25:08.608407 (3296-5985) downd-XXX arg[0] /usr/sbin/gethtp
+8597 NOT Aug 24 15:25:08.608530 (3296-5985) downd-XXX arg[1] -t
+8598 NOT Aug 24 15:25:08.608554 (3296-5985) downd-XXX arg[2] 10.79.57.147
+8599 NOT Aug 24 15:25:08.608574 (3296-5985) downd-XXX arg[3] -i0
+8600 NOT Aug 24 15:25:08.608594 (3296-5985) downd-XXX arg[4] AppDialRules.xml
+8601 NOT Aug 24 15:25:08.608616 (3296-5985) downd-XXX arg[5] /tmp/cache/ADR-342599692
+8602 NOT Aug 24 15:25:08.616733 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - [propertyChanged()] propName:"device.settings.config.sipprofile.softkeys.verstamp"
+8603 NOT Aug 24 15:25:08.617575 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile(): ignoring unknown sk def, evID=22keyID=QRT
+8604 NOT Aug 24 15:25:08.617986 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile(): ignoring unknown sk def, evID=10007keyID=Selfview
+8605 WRN Aug 24 15:25:08.618132 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=SelfviewFrom Set No=47
+8606 WRN Aug 24 15:25:08.618216 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=QRTFrom Set No=47
+8607 WRN Aug 24 15:25:08.618770 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=QRTFrom Set No=47
+8608 WRN Aug 24 15:25:08.618877 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=QRTFrom Set No=47
+8609 WRN Aug 24 15:25:08.619040 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - processFile():ignoring keyDef:keyID=QRTFrom Set No=47
+8610 INF Aug 24 15:25:08.619344 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - Create Default : DO NOTHING
+8611 DEB Aug 24 15:25:08.619451 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - addSoftkeyDef: storingPrecLevel sfkey def at pos=55 maxpos =256
+8612 INF Aug 24 15:25:08.623448 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:  - scratchpad/SK-2049037978/tmp/cache/SK-2049037978
+8613 NOT Aug 24 15:25:08.629879 (3948-4115) JAVA-configmgr MQThread|cip.cfg.Config:  - [propertyChanged()] propName:"device.settings.config.sipprofile.softkeys.verstamp"
+8614 DEB Aug 24 15:25:08.631743 (3948-4139) JAVA-sipcc MQThread|cip.sipcc.FeatureKeyHandler:Spam detection: - no flag call sk in connected set
+8615 NOT Aug 24 15:25:08.633418 (5985-5985) GHTTP-LIMIT downdload will be limited to 2048 KB
+8616 NOT Aug 24 15:25:08.633513 (5985-5985) GHTTP-getByCurl -- reqByCurlInternal
+8617 NOT Aug 24 15:25:08.633556 (5985-5985) GHTTP-reqByCurlInternal isHttps 0 isNand 0 pSrvName null pSrvIP 10.79.57.147 url null pDestFileName /tmp/cache/ADR-342599692 pSrcFileName AppDialRules.xml ua  ip_version 0
+8618 NOT Aug 24 15:25:08.640533 (5985-5985) GHTTP-reqByCurlInternal setting up http response callback, respfile = [/tmp/cache/ADR-342599692], [res] = 0
+8619 NOT Aug 24 15:25:08.640600 (5985-5985) GHTTP-reqByCurlInternal srvAddr=10.79.57.147, actual pSrcFileName >AppDialRules.xml<, after removing / >AppDialRules.xml<
+8620 NOT Aug 24 15:25:08.640629 (5985-5985) GHTTP-enter setProxyParams
+8621 NOT Aug 24 15:25:08.640675 (5985-5985) GHTTP-setAuthUserAgent:1065 auth set up done res=0 uid len 0 pwd len 0
+8622 NOT Aug 24 15:25:08.640710 (5985-5985) GHTTP-buildHttpReqHeader adding accept header, Accept: */*
+8623 NOT Aug 24 15:25:08.640734 (5985-5985) GHTTP-buildHttpReqHeader adding language header Accept-Language: en
+8624 NOT Aug 24 15:25:08.640756 (5985-5985) GHTTP-buildHttpReqHeader adding charset header, Accept-Charset: iso-8859-1
+8625 NOT Aug 24 15:25:08.640830 (5985-5985) GHTTP-reqByCurlInternal accept_encoding=
+8626 NOT Aug 24 15:25:08.640870 (5985-5985) GHTTP-reqByCurlInternal sending http request out..., url: http://10.79.57.147:6970/AppDialRules.xml
+8627 NOT Aug 24 15:25:08.641461 (5985-5985) GHTTP-sockoptCallback setsockopt IP_TOS=0
+8628 NOT Aug 24 15:25:08.643354 (5985-5985) GHTTP-getHttpRespHeader header_name=Content-length, header_value=25
+8629 NOT Aug 24 15:25:08.643406 (5985-5985) GHTTP-parseHttpRespHeader:678 content-length=25
+8630 NOT Aug 24 15:25:08.643441 (5985-5985) GHTTP-getHttpRespHeader header_name=Cache-Control, header_value=no-store
+8631 NOT Aug 24 15:25:08.643473 (5985-5985) GHTTP-getHttpRespHeader header_name=Content-type, header_value=*/*
+8632 NOT Aug 24 15:25:08.643501 (5985-5985) GHTTP-parseHttpRespHeader:686 content-type=*/*
+8633 NOT Aug 24 15:25:08.643735 (5985-5985) GHTTP-reqByCurlInternal return from http request, [res] = 0 No error
+8634 NOT Aug 24 15:25:08.643773 (5985-5985) GHTTP-reqByCurlInternal curl response code 200, [res] = 0
+8635 NOT Aug 24 15:25:08.644419 (5985-5985) GHTTP-reqByCurlInternal exit rc 100
+8636 NOT Aug 24 15:25:08.648376 (3296-5980) downd-XXTP complete - status = 100 
+8637 NOT Aug 24 15:25:08.648443 (3296-5980) downd-cancel the monitor timer
+8638 NOT Aug 24 15:25:08.661063 (3296-5980) downd-DDGETTFTP.RESULT [_100_  HTTP NO ERROR
+        ]
+8639 INF Aug 24 15:25:10.577047 (3948-3988) JAVA-RDH RDH RDH - event_receiver etype=6!
+8640 ERR Aug 24 15:25:10.719291 (3337-3492) CDP-get_activeqos:Network QOS is not availible: file does not exist. /tmp/activeQos.cfg
+8641 ERR Aug 24 15:25:10.719393 (3337-3492) CDP-get_activeqos:Network QOS is not availible: file does not exist. /tmp/activeQos.cfg
+8642 ERR Aug 24 15:25:10.719429 (3337-3492) CDP-lldpSend(): Default Network Policy: voice included 
+8643 INF Aug 24 15:25:12.582699 (3948-3988) JAVA-RDH RDH RDH - event_receiver etype=6!
+8644 DEB Aug 24 15:25:14.180637 (0-3457) syslog-dbus_manager::Sleeping 60 seconds
+8645 DEB Aug 24 15:25:14.475948 (3291-3291) NTP-sock_cb: event on sock4: timeout
+8646 DEB Aug 24 15:25:14.487526 (3291-3291) NTP-timeGuard(): file sync
+8647 DEB Aug 24 15:25:14.489633 (3291-3291) NTP-timeout_queries: called to check 2 items
+8648 WRN Aug 24 15:25:14.489722 (3291-3291) NTP-sock_cb: exit for timeout!!!!
+8649 INF Aug 24 15:25:14.588076 (3948-3988) JAVA-RDH RDH RDH - event_receiver etype=6!
+8650 INF Aug 24 15:25:16.593724 (3948-3988) JAVA-RDH RDH RDH - event_receiver etype=6!
